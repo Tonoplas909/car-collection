@@ -14,6 +14,7 @@ Car collection game. `README.md` is the product/design spec; `design/` holds the
 - `npm test` — unit tests for the shared game rules (Vitest)
 - `npm run test:db` — runs the migration + seed on PGlite and exercises every SQL function (no Docker needed)
 - `npm run lint` — oxlint
+- `npm run cars:add` — appends the draft car rows in `scripts/add-cars.mjs` to `cars.json` (skips existing ids). New cars start `reviewed: false`
 - `npm run cars:enrich` — fills photos (free-license Wikimedia Commons only, with credits) into `cars.json`, checks year/country against Wikidata and writes `data/review.html` (git-ignored contact sheet). Options: `--force`, or car ids to limit it
 - `npm run db:seed` — regenerate `supabase/catalog.sql` (cars + race events, idempotent: safe to run on the live database) and `supabase/seed.sql` (for local resets) after changing the catalog
 - `npm run db:start` / `npm run db:reset` / `npm run functions:serve` — local Supabase stack (needs Docker)

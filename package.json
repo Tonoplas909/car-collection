@@ -14,7 +14,8 @@
     "db:start": "supabase start",
     "db:reset": "supabase db reset",
     "functions:serve": "supabase functions serve",
-    "cars:enrich": "node scripts/enrich-cars.mjs"
+    "cars:enrich": "node scripts/enrich-cars.mjs",
+    "cars:add": "node scripts/add-cars.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.3",

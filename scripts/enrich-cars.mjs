@@ -70,7 +70,7 @@ async function commons(name) {
 /** Does a Commons file name plausibly show this exact car? */
 function matcher(car) {
   const re = car.photoMatch ?? (/^[A-Z]{1,3}\d{1,3}[A-Z]?$/.test(car.gen) ? `(^|[^a-z0-9])${car.gen}([^a-z0-9]|$)` : null)
-  const reject = /interior|cockpit|dashboard|engine|badge|logo|detail|steering|schematic|drawing|brochure|poster|cutaway/i
+  const reject = /interior|cockpit|dashboard|engine|badge|logo|detail|steering|schematic|drawing|brochure|poster|cutaway|concept|model car|toy/i
   return name => !reject.test(name) && (!re || new RegExp(re, 'i').test(name.replace(/_/g, ' ')))
 }
 
