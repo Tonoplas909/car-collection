@@ -1,0 +1,1664 @@
+[
+  {
+    "id": "ferrari-f40",
+    "make": "Ferrari",
+    "model": "F40",
+    "gen": "",
+    "year": 1987,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 478,
+    "nm": 577,
+    "acc": 4.2,
+    "top": 324,
+    "kg": 1100,
+    "value": 412000,
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "blurb": "Built for Ferrari’s 40th anniversary and the last car Enzo Ferrari signed off personally. Twin-turbo V8, no power steering, no ABS.",
+    "wiki": "Ferrari F40",
+    "reviewed": true,
+    "photoMatch": "F40",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/F40_Ferrari_20090509.jpg?width=800",
+    "photoCredit": "Will ainsworth · CC BY-SA 3.0 · Wikimedia Commons"
+  },
+  {
+    "id": "mclaren-f1",
+    "make": "McLaren",
+    "model": "F1",
+    "gen": "",
+    "year": 1992,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Legendary",
+    "hp": 627,
+    "nm": 651,
+    "acc": 3.2,
+    "top": 386,
+    "kg": 1138,
+    "value": 980000,
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "blurb": "Central driving seat flanked by two passengers. Held the production car top-speed record for over a decade.",
+    "wiki": "McLaren F1",
+    "reviewed": true,
+    "photoMatch": "F1",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1996%20McLaren%20F1%20Chassis%20No%2063%206.1%20Front.jpg?width=800",
+    "photoCredit": "Chelsea Jay · CC BY-SA 4.0 · Wikimedia Commons"
+  },
+  {
+    "id": "porsche-911-rs27",
+    "make": "Porsche",
+    "model": "911 Carrera RS 2.7",
+    "gen": "F-series",
+    "year": 1973,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Legendary",
+    "hp": 210,
+    "nm": 255,
+    "acc": 5.8,
+    "top": 245,
+    "kg": 975,
+    "value": 268000,
+    "pools": [
+      "heritage"
+    ],
+    "tastes": [
+      "classics"
+    ],
+    "blurb": "A homologation special with thinner steel, lighter glass and the ducktail spoiler that became a 911 signature.",
+    "wiki": "Porsche 911 Carrera RS",
+    "reviewed": true,
+    "photoMatch": "Carrera RS|2\\.7|911 RS",
+    "photoQuery": "Porsche 911 Carrera RS 2.7",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Porsche%20911%20Carrera%20RS%2C%20Bj.%201972-73%20(2016-07-02%2001%20Sp).JPG?width=800",
+    "photoCredit": "Lothar Spurzem · CC BY-SA 2.0 de · Wikimedia Commons"
+  },
+  {
+    "id": "toyota-2000gt",
+    "make": "Toyota",
+    "model": "2000GT",
+    "gen": "MF10",
+    "year": 1967,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Legendary",
+    "hp": 150,
+    "nm": 175,
+    "acc": 8.6,
+    "top": 220,
+    "kg": 1120,
+    "value": 305000,
+    "pools": [
+      "heritage"
+    ],
+    "tastes": [
+      "classics",
+      "jdm"
+    ],
+    "blurb": "Japan’s first serious grand tourer. Around 350 were built, with a Yamaha-developed straight-six.",
+    "wiki": "Toyota 2000GT",
+    "reviewed": true,
+    "photoMatch": "2000 ?GT",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/TOYOTA_2000GT.jpg?width=800",
+    "photoCredit": "Unknown author · CC BY-SA 3.0 · Wikimedia Commons"
+  },
+  {
+    "id": "mercedes-300sl",
+    "make": "Mercedes-Benz",
+    "model": "300 SL Gullwing",
+    "gen": "W198",
+    "year": 1954,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Legendary",
+    "hp": 215,
+    "nm": 275,
+    "acc": 8.8,
+    "top": 260,
+    "kg": 1295,
+    "value": 498000,
+    "pools": [
+      "heritage"
+    ],
+    "tastes": [
+      "classics"
+    ],
+    "blurb": "Direct fuel injection and a spaceframe chassis so tall at the sills that the doors had to open upward.",
+    "wiki": "Mercedes-Benz 300 SL",
+    "reviewed": true,
+    "photoMatch": "300 ?SL([^S]|$)|Gullwing|W198",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercedes-Benz%20W198%20300%20SL%20Gullwing%20Genf%202019%201Y7A5009.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
+  },
+  {
+    "id": "porsche-959",
+    "make": "Porsche",
+    "model": "959",
+    "gen": "",
+    "year": 1986,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Legendary",
+    "hp": 450,
+    "nm": 500,
+    "acc": 3.7,
+    "top": 317,
+    "kg": 1450,
+    "value": 512000,
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "blurb": "Group B technology for the road: sequential twin turbos, adjustable ride height and computer-controlled all-wheel drive.",
+    "wiki": "Porsche 959",
+    "reviewed": true,
+    "photoMatch": "959",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Porsche_959_%E2%80%93_Frontansicht_(2)%2C_21._M%C3%A4rz_2013%2C_D%C3%BCsseldorf.jpg?width=800",
+    "photoCredit": "M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
+  },
+  {
+    "id": "nissan-skyline-r34",
+    "make": "Nissan",
+    "model": "Skyline GT-R V-Spec",
+    "gen": "R34",
+    "year": 1999,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Epic",
+    "hp": 280,
+    "nm": 392,
+    "acc": 4.9,
+    "top": 250,
+    "kg": 1560,
+    "value": 142000,
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "jdm"
+    ],
+    "blurb": "RB26 twin-turbo straight-six and ATTESA all-wheel drive. Officially rated at 280 hp under Japan’s gentlemen’s agreement.",
+    "wiki": "Nissan Skyline (R34)",
+    "reviewed": true,
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2001%20Nissan%20Skyline%20GT-R%20V-Spec%20II%20R34.jpg?width=800",
+    "photoCredit": "MrWalkr · CC BY-SA 4.0 · Wikimedia Commons"
+  },
+  {
+    "id": "honda-nsx-na1",
+    "make": "Honda",
+    "model": "NSX",
+    "gen": "NA1",
+    "year": 1990,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Epic",
+    "hp": 274,
+    "nm": 285,
+    "acc": 5.7,
+    "top": 270,
+    "kg": 1365,
+    "value": 96000,
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "jdm",
+      "supercars"
+    ],
+    "blurb": "An aluminium monocoque mid-engine car tuned with input from Formula 1 drivers, proving a supercar could be used daily.",
+    "wiki": "Honda NSX",
+    "reviewed": true,
+    "photoMatch": "NSX",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/AcuraNSX-05-cropped.jpg?width=800",
+    "photoCredit": "Travis Rigel Lukas Hornung · CC BY 2.0 · Wikimedia Commons"
+  },
+  {
+    "id": "lamborghini-countach",
+    "make": "Lamborghini",
+    "model": "Countach LP400",
+    "gen": "",
+    "year": 1974,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 375,
+    "nm": 368,
+    "acc": 5.6,
+    "top": 290,
+    "kg": 1065,
+    "value": 188000,
+    "pools": [
+      "heritage",
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "classics"
+    ],
+    "blurb": "Scissor doors and a wedge profile by Marcello Gandini. The early LP400 is the cleanest form, before the wings arrived.",
+    "wiki": "Lamborghini Countach",
+    "reviewed": true,
+    "photoMatch": "Countach",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lamborghini_Countach_-_Flickr_-_exfordy_(2)_(cropped-2).jpg?width=800",
+    "photoCredit": "Brian Snelson from Hockley, Essex, England · CC BY 2.0 · Wikimedia Commons"
+  },
+  {
+    "id": "toyota-supra-a80",
+    "make": "Toyota",
+    "model": "Supra RZ",
+    "gen": "A80",
+    "year": 1993,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Epic",
+    "hp": 330,
+    "nm": 431,
+    "acc": 4.6,
+    "top": 250,
+    "kg": 1490,
+    "value": 88000,
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "jdm"
+    ],
+    "blurb": "The 2JZ-GTE engine is known for handling far more boost than it left the factory with.",
+    "wiki": "Toyota Supra (A80)",
+    "reviewed": true,
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tuned%20Toyota%20Supra%20(A80)%20front.JPG?width=800",
+    "photoCredit": "Tokumeigakarinoaoshima · CC0 · Wikimedia Commons"
+  },
+  {
+    "id": "lancia-delta-evo",
+    "make": "Lancia",
+    "model": "Delta HF Integrale Evo",
+    "gen": "",
+    "year": 1991,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 210,
+    "nm": 300,
+    "acc": 5.7,
+    "top": 220,
+    "kg": 1340,
+    "value": 109000,
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "rally"
+    ],
+    "blurb": "Six consecutive World Rally Championship titles for Lancia. The Evo added wider arches and an adjustable rear spoiler.",
+    "wiki": "Lancia Delta HF Integrale",
+    "reviewed": true,
+    "photoMatch": "Integrale|HF",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lancia%20Delta%20HF%20Integrale%20Evo%205.jpg?width=800",
+    "photoCredit": "Calreyn88 · CC BY-SA 4.0 · Wikimedia Commons"
+  },
+  {
+    "id": "mercedes-c111",
+    "make": "Mercedes-Benz",
+    "model": "C111-II",
+    "gen": "",
+    "year": 1970,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 350,
+    "nm": 392,
+    "acc": 4.8,
+    "top": 300,
+    "kg": 1240,
+    "value": 160000,
+    "pools": [
+      "heritage"
+    ],
+    "tastes": [
+      "concepts"
+    ],
+    "blurb": "A four-rotor Wankel test bed in a glassfibre wedge. Mercedes famously refused the blank cheques offered to build it.",
+    "wiki": "Mercedes-Benz C111",
+    "reviewed": true,
+    "photoMatch": "C ?111",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercedes-Benz_Museum_C111_200901241511.jpg?width=800",
+    "photoCredit": "Bergfalke2 · CC BY-SA 3.0 · Wikimedia Commons"
+  },
+  {
+    "id": "lancia-stratos",
+    "make": "Lancia",
+    "model": "Stratos HF Stradale",
+    "gen": "",
+    "year": 1973,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 190,
+    "nm": 226,
+    "acc": 6.8,
+    "top": 230,
+    "kg": 980,
+    "value": 205000,
+    "pools": [
+      "heritage"
+    ],
+    "tastes": [
+      "rally",
+      "classics"
+    ],
+    "blurb": "Built around a Ferrari Dino V6 purely to win rallies. It took three straight World Rally Championship titles.",
+    "wiki": "Lancia Stratos",
+    "reviewed": true,
+    "photoMatch": "Stratos",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lancia%20Stratos%20HF%20001.JPG?width=800",
+    "photoCredit": "Tennen-Gas · CC BY-SA 3.0 · Wikimedia Commons"
+  },
+  {
+    "id": "jaguar-etype-s1",
+    "make": "Jaguar",
+    "model": "E-Type 3.8",
+    "gen": "Series 1",
+    "year": 1961,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 265,
+    "nm": 353,
+    "acc": 7,
+    "top": 241,
+    "kg": 1234,
+    "value": 175000,
+    "pools": [
+      "heritage"
+    ],
+    "tastes": [
+      "classics"
+    ],
+    "blurb": "Launched at the 1961 Geneva show with a claimed 150 mph, disc brakes all round and a price far below its rivals.",
+    "wiki": "Jaguar E-Type",
+    "reviewed": true,
+    "photoMatch": "E-?Type|Jaguar",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jaguar%20E-Type%20Series%201%203.8%20Litre%201961.jpg?width=800",
+    "photoCredit": "DeFacto · CC BY-SA 4.0 · Wikimedia Commons"
+  },
+  {
+    "id": "bmw-30-csl",
+    "make": "BMW",
+    "model": "3.0 CSL",
+    "gen": "E9",
+    "year": 1972,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 200,
+    "nm": 277,
+    "acc": 7.3,
+    "top": 220,
+    "kg": 1165,
+    "value": 68000,
+    "pools": [
+      "heritage"
+    ],
+    "tastes": [
+      "classics"
+    ],
+    "blurb": "A lightweight homologation coupé with aluminium panels. Its racing aero kit earned it the nickname Batmobile.",
+    "wiki": "BMW 3.0 CSL",
+    "reviewed": true,
+    "photoMatch": "CSL|E9",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/BMWE9CSc.jpg?width=800",
+    "photoCredit": "Olli1800 · CC BY-SA 3.0 · Wikimedia Commons"
+  },
+  {
+    "id": "mazda-rx7-fd",
+    "make": "Mazda",
+    "model": "RX-7",
+    "gen": "FD",
+    "year": 1992,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Rare",
+    "hp": 255,
+    "nm": 294,
+    "acc": 5.3,
+    "top": 250,
+    "kg": 1250,
+    "value": 54000,
+    "pools": [
+      "street",
+      "apex"
+    ],
+    "tastes": [
+      "jdm"
+    ],
+    "blurb": "A sequential twin-turbo rotary in a low, light body. Near 50:50 weight distribution.",
+    "wiki": "Mazda RX-7 (FD)",
+    "reviewed": true,
+    "photoMatch": "FD|RX-?7",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mazda-rx7-1st-generation01.jpg?width=800",
+    "photoCredit": "Taisyo · CC BY-SA 3.0 · Wikimedia Commons"
+  },
+  {
+    "id": "bmw-m3-e30",
+    "make": "BMW",
+    "model": "M3",
+    "gen": "E30",
+    "year": 1986,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 195,
+    "nm": 230,
+    "acc": 6.7,
+    "top": 235,
+    "kg": 1200,
+    "value": 71000,
+    "pools": [
+      "street",
+      "apex"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "blurb": "Developed to go touring-car racing, and went on to become one of the most successful touring cars ever.",
+    "wiki": "BMW M3 (E30)",
+    "reviewed": true,
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/BMW%20M3%20(E30)%20of%20Peter%20Brock%20at%20the%202025%20Adelaide%20Grand%20Final.jpg?width=800",
+    "photoCredit": "Yu Chu Chin · CC BY-SA 4.0 · Wikimedia Commons"
+  },
+  {
+    "id": "alfa-giulia-gta",
+    "make": "Alfa Romeo",
+    "model": "Giulia Sprint GTA",
+    "gen": "Tipo 105",
+    "year": 1965,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Rare",
+    "hp": 115,
+    "nm": 142,
+    "acc": 9.5,
+    "top": 185,
+    "kg": 745,
+    "value": 62000,
+    "pools": [
+      "heritage"
+    ],
+    "tastes": [
+      "classics"
+    ],
+    "blurb": "GTA stands for Gran Turismo Alleggerita: aluminium body panels over a lightened Giulia coupé.",
+    "wiki": "Alfa Romeo Giulia Sprint GT",
+    "reviewed": true,
+    "photoMatch": "GTA|Giulia",
+    "photoQuery": "Alfa Romeo Giulia Sprint GTA",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1965%20Alfa%20Romeo%20Giulia%20Sprint%20GTA%20Red.jpg?width=800",
+    "photoCredit": "MrWalkr · CC BY-SA 4.0 · Wikimedia Commons"
+  },
+  {
+    "id": "datsun-240z",
+    "make": "Datsun",
+    "model": "240Z",
+    "gen": "S30",
+    "year": 1969,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Rare",
+    "hp": 151,
+    "nm": 198,
+    "acc": 8,
+    "top": 200,
+    "kg": 1044,
+    "value": 44500,
+    "pools": [
+      "heritage"
+    ],
+    "tastes": [
+      "classics",
+      "jdm"
+    ],
+    "blurb": "A straight-six sports car priced against British roadsters. It became the best-selling sports car of its decade.",
+    "wiki": "Datsun 240Z",
+    "reviewed": true,
+    "photoMatch": "240 ?Z",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1972%20Datsun%20240Z%20S30.jpg?width=800",
+    "photoCredit": "MrWalkr · CC BY-SA 4.0 · Wikimedia Commons"
+  },
+  {
+    "id": "ford-sierra-cosworth",
+    "make": "Ford",
+    "model": "Sierra RS Cosworth",
+    "gen": "",
+    "year": 1986,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Rare",
+    "hp": 204,
+    "nm": 276,
+    "acc": 6.2,
+    "top": 241,
+    "kg": 1220,
+    "value": 41000,
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "rally"
+    ],
+    "blurb": "A Cosworth-developed turbo four and a whale-tail wing, built so Ford could go Group A touring-car racing.",
+    "wiki": "Ford Sierra RS Cosworth",
+    "reviewed": true,
+    "photoMatch": "Cosworth|Sierra",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cosworth800px.jpg?width=800",
+    "photoCredit": "Lemmus · Public domain · Wikimedia Commons"
+  },
+  {
+    "id": "ford-escort-cosworth",
+    "make": "Ford",
+    "model": "Escort RS Cosworth",
+    "gen": "Mk5",
+    "year": 1992,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Rare",
+    "hp": 227,
+    "nm": 304,
+    "acc": 6.2,
+    "top": 232,
+    "kg": 1275,
+    "value": 52000,
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "rally"
+    ],
+    "blurb": "Sierra Cosworth running gear under an Escort body, with a rear wing that made real downforce at road speeds.",
+    "wiki": "Ford Escort RS Cosworth",
+    "reviewed": true,
+    "photoMatch": "Cosworth",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Is%20this%20a%20genuine%20Cosworth%3F%20(8644064293).jpg?width=800",
+    "photoCredit": "Riley from Christchurch, New Zealand · CC BY 2.0 · Wikimedia Commons"
+  },
+  {
+    "id": "lancia-stratos-zero",
+    "make": "Lancia",
+    "model": "Stratos HF Zero",
+    "gen": "",
+    "year": 1970,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Rare",
+    "hp": 115,
+    "nm": 140,
+    "acc": 9,
+    "top": 200,
+    "kg": 800,
+    "value": 58000,
+    "pools": [
+      "heritage"
+    ],
+    "tastes": [
+      "concepts"
+    ],
+    "blurb": "A Bertone show car only 84 cm tall, entered through the hinged windscreen. It led directly to the rally Stratos.",
+    "wiki": "Lancia Stratos Zero",
+    "reviewed": true,
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lancia_Stratos_Zero_(7522598642).jpg?width=800",
+    "photoCredit": "Dustin May from Detroit, MI · CC BY-SA 2.0 · Wikimedia Commons"
+  },
+  {
+    "id": "vw-golf-gti-mk1",
+    "make": "Volkswagen",
+    "model": "Golf GTI",
+    "gen": "Mk1",
+    "year": 1976,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Common",
+    "hp": 110,
+    "nm": 140,
+    "acc": 9,
+    "top": 182,
+    "kg": 810,
+    "value": 14000,
+    "pools": [
+      "street",
+      "heritage"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "blurb": "Fuel injection in a small hatchback. The car that started the hot-hatch category.",
+    "wiki": "Volkswagen Golf Mk1",
+    "reviewed": true,
+    "photoMatch": "Golf.*(1|I)\b|GTI",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1982%20Volkswagen%20Golf%20GTi%20(Mk1)%20(14072934454).jpg?width=800",
+    "photoCredit": "Riley from Christchurch, New Zealand · CC BY 2.0 · Wikimedia Commons"
+  },
+  {
+    "id": "peugeot-205-gti",
+    "make": "Peugeot",
+    "model": "205 GTI 1.9",
+    "gen": "",
+    "year": 1986,
+    "country": "France",
+    "cc": "FR",
+    "tier": "Common",
+    "hp": 130,
+    "nm": 161,
+    "acc": 7.8,
+    "top": 206,
+    "kg": 875,
+    "value": 12500,
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "blurb": "Light, short and lively at the limit. The 1.9 added torque to the 1.6’s balance.",
+    "wiki": "Peugeot 205",
+    "reviewed": true,
+    "photoMatch": "205",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Peugeot_205_front_20080121.jpg?width=800",
+    "photoCredit": "Rudolf Stricker · CC BY-SA 3.0 · Wikimedia Commons"
+  },
+  {
+    "id": "mini-cooper-s",
+    "make": "Mini",
+    "model": "Cooper S",
+    "gen": "Mk1",
+    "year": 1964,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Common",
+    "hp": 76,
+    "nm": 108,
+    "acc": 10.9,
+    "top": 160,
+    "kg": 650,
+    "value": 9800,
+    "pools": [
+      "street",
+      "heritage"
+    ],
+    "tastes": [
+      "everyday",
+      "rally",
+      "classics"
+    ],
+    "blurb": "Front-wheel drive with a transverse engine. Won the Monte Carlo Rally outright in 1964.",
+    "wiki": "Mini Cooper",
+    "reviewed": true,
+    "photoMatch": "Cooper",
+    "photoQuery": "Austin Mini Cooper S 1275",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1965%20Austin%20Mini%20Cooper%20S%201275.jpg?width=800",
+    "photoCredit": "initialdave · CC BY 2.0 · Wikimedia Commons"
+  },
+  {
+    "id": "renault-clio-williams",
+    "make": "Renault",
+    "model": "Clio Williams",
+    "gen": "",
+    "year": 1993,
+    "country": "France",
+    "cc": "FR",
+    "tier": "Common",
+    "hp": 150,
+    "nm": 175,
+    "acc": 7.8,
+    "top": 215,
+    "kg": 990,
+    "value": 9400,
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "blurb": "A 2.0 litre homologation special named after Renault’s Formula 1 engine partnership.",
+    "wiki": "Renault Clio Williams",
+    "reviewed": true,
+    "photoMatch": "Williams",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Renault%20Clio%20Williams%202023.jpg?width=800",
+    "photoCredit": "SunflowerYuri · CC BY-SA 4.0 · Wikimedia Commons"
+  },
+  {
+    "id": "toyota-ae86",
+    "make": "Toyota",
+    "model": "Sprinter Trueno",
+    "gen": "AE86",
+    "year": 1983,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Common",
+    "hp": 130,
+    "nm": 149,
+    "acc": 8.5,
+    "top": 200,
+    "kg": 940,
+    "value": 13200,
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "jdm"
+    ],
+    "blurb": "Rear-wheel drive, a revvy 4A-GE twin-cam and pop-up lights. Mountain-pass drifters made it famous.",
+    "wiki": "Toyota AE86",
+    "reviewed": true,
+    "photoMatch": "AE86|Trueno|Levin",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/New%20stock%20ae86%20coupe.jpg?width=800",
+    "photoCredit": "Jeff lange at English Wikipedia · Public domain · Wikimedia Commons"
+  },
+  {
+    "id": "honda-civic-ek9",
+    "make": "Honda",
+    "model": "Civic Type R",
+    "gen": "EK9",
+    "year": 1997,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Common",
+    "hp": 185,
+    "nm": 160,
+    "acc": 6.7,
+    "top": 225,
+    "kg": 1050,
+    "value": 16000,
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "jdm"
+    ],
+    "blurb": "A hand-ported 1.6 litre VTEC making 185 hp, seam-welded shell and a helical limited-slip differential.",
+    "wiki": "Honda Civic Type R",
+    "reviewed": true,
+    "photoMatch": "EK9|Type R.*(1997|1998|1999|2000)",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Civic%20R%20EK9%201.JPG?width=800",
+    "photoCredit": "Kenneth Britishracer · CC BY-SA 3.0 · Wikimedia Commons"
+  },
+  {
+    "id": "ford-fiesta-xr2",
+    "make": "Ford",
+    "model": "Fiesta XR2",
+    "gen": "Mk1",
+    "year": 1981,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Common",
+    "hp": 84,
+    "nm": 128,
+    "acc": 10.5,
+    "top": 165,
+    "kg": 790,
+    "value": 7000,
+    "blurb": "Ford’s answer to the Golf GTI, with a 1.6 litre engine, sport seats and black trim. It made the hot hatch affordable.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Ford Fiesta XR2",
+    "reviewed": false,
+    "photoMatch": "XR2",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1983%20Ford%20Fiesta%20XR2%20BS%20O24.jpg?width=800",
+    "photoCredit": "MrWalkr · CC BY-SA 4.0 · Wikimedia Commons"
+  },
+  {
+    "id": "renault-5-gt-turbo",
+    "make": "Renault",
+    "model": "5 GT Turbo",
+    "gen": "",
+    "year": 1985,
+    "country": "France",
+    "cc": "FR",
+    "tier": "Common",
+    "hp": 115,
+    "nm": 163,
+    "acc": 7.9,
+    "top": 195,
+    "kg": 830,
+    "value": 11000,
+    "blurb": "A turbocharged supermini with a lot of lag and a lot of grin. It was quick enough in a straight line to embarrass bigger cars.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Renault 5 GT Turbo",
+    "reviewed": false,
+    "photoMatch": "GT Turbo|R5",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Renault%205%20GT%20Turbo%2C%2014.%20ADAC%20Stormarn%20Retro%2C%20Zarpen%20(TR257116).jpg?width=800",
+    "photoCredit": "Matti Blume · CC BY-SA 4.0 · Wikimedia Commons"
+  },
+  {
+    "id": "fiat-uno-turbo",
+    "make": "Fiat",
+    "model": "Uno Turbo i.e.",
+    "gen": "",
+    "year": 1985,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Common",
+    "hp": 105,
+    "nm": 147,
+    "acc": 8.3,
+    "top": 200,
+    "kg": 845,
+    "value": 9000,
+    "blurb": "A boxy Giugiaro hatchback with a turbo and fuel injection. In 1985 it was one of the fastest cars of its size.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Fiat Uno Turbo",
+    "reviewed": false,
+    "photoMatch": "Uno.*Turbo|Turbo.*Uno",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1986%20Fiat%20Uno%20Turbo%20i.e%20(25420774522).jpg?width=800",
+    "photoCredit": "Riley from Christchurch, New Zealand · CC BY 2.0 · Wikimedia Commons"
+  },
+  {
+    "id": "mazda-mx5-na",
+    "make": "Mazda",
+    "model": "MX-5",
+    "gen": "NA",
+    "year": 1989,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Common",
+    "hp": 115,
+    "nm": 136,
+    "acc": 9,
+    "top": 188,
+    "kg": 940,
+    "value": 13500,
+    "blurb": "Pop-up lights, rear-wheel drive and a manual box. It revived the cheap roadster and went on to become the best-selling two-seat sports car ever.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "jdm"
+    ],
+    "wiki": "Mazda MX-5",
+    "reviewed": false,
+    "photoMatch": "Mk ?1|[ _]NA[ _.]|Eunos",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mazda%20MX-5%20NA%20971.jpg?width=800",
+    "photoCredit": "User StepInTheMirror on en.wikipedia · Public domain · Wikimedia Commons"
+  },
+  {
+    "id": "toyota-mr2-aw11",
+    "make": "Toyota",
+    "model": "MR2",
+    "gen": "AW11",
+    "year": 1984,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Common",
+    "hp": 128,
+    "nm": 149,
+    "acc": 8,
+    "top": 200,
+    "kg": 950,
+    "value": 15000,
+    "blurb": "A small mid-engine coupé with a rev-happy twin-cam four. Few cars at this price have such an engine behind the driver.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "jdm"
+    ],
+    "wiki": "Toyota MR2",
+    "reviewed": false,
+    "photoMatch": "AW11|MR2 Mk ?1|first gen",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Toyota%20MR2%20AW11%20white.jpg?width=800",
+    "photoCredit": "Jacob Frey 4A · CC BY 2.0 · Wikimedia Commons"
+  },
+  {
+    "id": "peugeot-106-rallye",
+    "make": "Peugeot",
+    "model": "106 Rallye",
+    "gen": "",
+    "year": 1993,
+    "country": "France",
+    "cc": "FR",
+    "tier": "Common",
+    "hp": 100,
+    "nm": 108,
+    "acc": 9.2,
+    "top": 190,
+    "kg": 800,
+    "value": 8500,
+    "blurb": "Stripped out, light and steel-wheeled. Built to homologate a one-make rally cup and still a favourite on cheap club events.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "rally"
+    ],
+    "wiki": "Peugeot 106",
+    "reviewed": false,
+    "photoMatch": "Rallye(?! des)",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1995%20Peugeot%20106%20Rallye%202.jpg?width=800",
+    "photoCredit": "Calreyn88 · CC BY-SA 4.0 · Wikimedia Commons"
+  },
+  {
+    "id": "honda-integra-dc2",
+    "make": "Honda",
+    "model": "Integra Type R",
+    "gen": "DC2",
+    "year": 1995,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Rare",
+    "hp": 197,
+    "nm": 181,
+    "acc": 6.7,
+    "top": 230,
+    "kg": 1060,
+    "value": 52000,
+    "blurb": "A hand-ported VTEC engine that screams to 8,400 rpm and a limited-slip differential. Often called the best front-wheel-drive car ever built.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "jdm"
+    ],
+    "wiki": "Honda Integra Type R",
+    "reviewed": false,
+    "photoMatch": "DC2|Type R",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Honda%20Integra%20TYPE%20R%20(DC2%20%26%20DB8).jpg?width=800",
+    "photoCredit": "Tokumeigakarinoaoshima · CC BY-SA 3.0 · Wikimedia Commons"
+  },
+  {
+    "id": "renault-5-turbo",
+    "make": "Renault",
+    "model": "5 Turbo",
+    "gen": "",
+    "year": 1980,
+    "country": "France",
+    "cc": "FR",
+    "tier": "Rare",
+    "hp": 160,
+    "nm": 210,
+    "acc": 6.9,
+    "top": 200,
+    "kg": 970,
+    "value": 68000,
+    "blurb": "A supermini turned into a rear-drive, mid-engine rally homologation special with huge flared arches.",
+    "pools": [
+      "street",
+      "heritage"
+    ],
+    "tastes": [
+      "rally",
+      "classics"
+    ],
+    "wiki": "Renault 5 Turbo",
+    "reviewed": false,
+    "photoMatch": "5 Turbo|R5 Turbo",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Nationale%20oldtimerdag%20Zandvoort%202010%2C%201981%20RENAULT%205%20TURBO%2C%20JH-VZ-86%20pic2.JPG?width=800",
+    "photoCredit": "Alf van Beem · CC0 · Wikimedia Commons"
+  },
+  {
+    "id": "lotus-elise-s1",
+    "make": "Lotus",
+    "model": "Elise",
+    "gen": "S1",
+    "year": 1996,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Rare",
+    "hp": 118,
+    "nm": 165,
+    "acc": 5.8,
+    "top": 190,
+    "kg": 725,
+    "value": 38000,
+    "blurb": "A bonded aluminium tub weighing just 68 kg. It is quick because it is light, not because it is powerful.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Lotus Elise",
+    "reviewed": false,
+    "photoMatch": "Elise S1|Elise.*(199[6-9]|200[0-1])|S1",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lotus%20Elise%20S1%2C%20Pau%202015.jpg?width=800",
+    "photoCredit": "Handelsgeselschaft · CC BY-SA 4.0 · Wikimedia Commons"
+  },
+  {
+    "id": "nissan-silvia-s15",
+    "make": "Nissan",
+    "model": "Silvia Spec-R",
+    "gen": "S15",
+    "year": 1999,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Rare",
+    "hp": 247,
+    "nm": 275,
+    "acc": 6.1,
+    "top": 250,
+    "kg": 1240,
+    "value": 47000,
+    "blurb": "The last Silvia, with a turbocharged SR20DET and a six-speed gearbox. A drift-scene staple.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "jdm"
+    ],
+    "wiki": "Nissan Silvia",
+    "reviewed": false,
+    "photoMatch": "S15|Silvia",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Nissan_Silvia_S15_001.JPG?width=800",
+    "photoCredit": "Tennen-Gas · CC BY-SA 3.0 · Wikimedia Commons"
+  },
+  {
+    "id": "porsche-944-turbo",
+    "make": "Porsche",
+    "model": "944 Turbo",
+    "gen": "",
+    "year": 1985,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 220,
+    "nm": 330,
+    "acc": 6.3,
+    "top": 245,
+    "kg": 1280,
+    "value": 45000,
+    "blurb": "A front-engine, transaxle Porsche with near-perfect weight balance. The Turbo made it a proper performance car.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "classics",
+      "everyday"
+    ],
+    "wiki": "Porsche 944",
+    "reviewed": false,
+    "photoMatch": "944",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1986_944_Turbo.jpg?width=800",
+    "photoCredit": "Daniel J. Leivick · CC BY-SA 3.0 · Wikimedia Commons"
+  },
+  {
+    "id": "bmw-2002-turbo",
+    "make": "BMW",
+    "model": "2002 turbo",
+    "gen": "",
+    "year": 1973,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 170,
+    "nm": 240,
+    "acc": 6.9,
+    "top": 211,
+    "kg": 1035,
+    "value": 58000,
+    "blurb": "Europe’s first turbocharged production saloon, launched just as the oil crisis hit. The mirror-image “turbo” lettering on the front spoiler made it infamous.",
+    "pools": [
+      "heritage"
+    ],
+    "tastes": [
+      "classics"
+    ],
+    "wiki": "BMW 02 Series",
+    "reviewed": false,
+    "photoMatch": "2002 ?Turbo",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/BMW%202002%20Turbo%20(2008-06-28)%20ret.jpg?width=800",
+    "photoCredit": "Spurzem - Lothar Spurzem · CC BY-SA 2.0 de · Wikimedia Commons"
+  },
+  {
+    "id": "lancia-fulvia-hf",
+    "make": "Lancia",
+    "model": "Fulvia Coupé HF",
+    "gen": "1.6",
+    "year": 1969,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Rare",
+    "hp": 115,
+    "nm": 142,
+    "acc": 9.5,
+    "top": 180,
+    "kg": 925,
+    "value": 49000,
+    "blurb": "A narrow-angle V4 and front-wheel drive. It won the 1972 International Championship for Manufacturers.",
+    "pools": [
+      "heritage"
+    ],
+    "tastes": [
+      "rally",
+      "classics"
+    ],
+    "wiki": "Lancia Fulvia",
+    "reviewed": false,
+    "photoMatch": "Fulvia",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2006%20SAG%20-%20Lancia%20Fulvia%20Coup%C3%A9%20I%201967-01.JPG?width=800",
+    "photoCredit": "Semnoz · CC BY-SA 3.0 · Wikimedia Commons"
+  },
+  {
+    "id": "toyota-celica-st205",
+    "make": "Toyota",
+    "model": "Celica GT-Four",
+    "gen": "ST205",
+    "year": 1994,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Rare",
+    "hp": 255,
+    "nm": 304,
+    "acc": 5.9,
+    "top": 245,
+    "kg": 1470,
+    "value": 41000,
+    "blurb": "The road-going version of Toyota’s mid-90s World Rally Championship car, with all-wheel drive and a turbocharged 3S-GTE.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "rally",
+      "jdm"
+    ],
+    "wiki": "Toyota Celica GT-Four",
+    "reviewed": false,
+    "photoMatch": "ST205|GT-?Four",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Toyota%20Celica%20GT-Four%20ST205%20(WRC)%20at%20the%202025%20Shannons%20Adelaide%20Rally%20(028A4653).jpg?width=800",
+    "photoCredit": "Yu Chu Chin · CC BY 4.0 · Wikimedia Commons"
+  },
+  {
+    "id": "alpine-a110-1600s",
+    "make": "Alpine",
+    "model": "A110 1600S",
+    "gen": "",
+    "year": 1971,
+    "country": "France",
+    "cc": "FR",
+    "tier": "Rare",
+    "hp": 138,
+    "nm": 148,
+    "acc": 6.5,
+    "top": 210,
+    "kg": 720,
+    "value": 72000,
+    "blurb": "A fibreglass body, a rear-mounted Renault engine and a famously agile chassis. It won the first World Rally Championship in 1973.",
+    "pools": [
+      "heritage"
+    ],
+    "tastes": [
+      "rally",
+      "classics"
+    ],
+    "wiki": "Alpine A110",
+    "reviewed": false,
+    "photoMatch": "A ?110",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Renault_Alpine_A_110_(Sp).JPG?width=800",
+    "photoCredit": "Lothar Spurzem · CC BY-SA 2.0 de · Wikimedia Commons"
+  },
+  {
+    "id": "mitsubishi-evo-vi",
+    "make": "Mitsubishi",
+    "model": "Lancer Evolution VI",
+    "gen": "TME",
+    "year": 1999,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Epic",
+    "hp": 276,
+    "nm": 373,
+    "acc": 4.6,
+    "top": 250,
+    "kg": 1360,
+    "value": 96000,
+    "blurb": "The Tommi Mäkinen Edition celebrated four straight WRC drivers’ titles, with a quicker-spooling turbo and a red-and-white Ralliart look.",
+    "pools": [
+      "street",
+      "apex"
+    ],
+    "tastes": [
+      "jdm",
+      "rally"
+    ],
+    "wiki": "Mitsubishi Lancer Evolution",
+    "reviewed": false,
+    "photoMatch": "Evo(lution)?[ _-]?(VI|6)|TME",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2000%20Mitsubishi%20Lancer%20Evolution%20VI%20TME%20Rear.jpg?width=800",
+    "photoCredit": "MrWalkr · CC BY-SA 4.0 · Wikimedia Commons"
+  },
+  {
+    "id": "subaru-impreza-22b",
+    "make": "Subaru",
+    "model": "Impreza 22B STi",
+    "gen": "GC8",
+    "year": 1998,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Epic",
+    "hp": 276,
+    "nm": 363,
+    "acc": 5,
+    "top": 248,
+    "kg": 1270,
+    "value": 168000,
+    "blurb": "A 400-car run built to mark Subaru’s third WRC manufacturers’ title, with wide fenders copied from the rally car.",
+    "pools": [
+      "street",
+      "apex"
+    ],
+    "tastes": [
+      "jdm",
+      "rally"
+    ],
+    "wiki": "Subaru Impreza 22B",
+    "reviewed": false,
+    "photoMatch": "22B",
+    "photoQuery": "Subaru Impreza 22B STi",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1998%20Subaru%20Impreza%2022B%20STi%20Rear.jpg?width=800",
+    "photoCredit": "MrWalkr · CC BY-SA 4.0 · Wikimedia Commons"
+  },
+  {
+    "id": "porsche-930-turbo",
+    "make": "Porsche",
+    "model": "911 Turbo 3.0",
+    "gen": "930",
+    "year": 1975,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 260,
+    "nm": 343,
+    "acc": 5.5,
+    "top": 250,
+    "kg": 1195,
+    "value": 135000,
+    "blurb": "The first turbocharged 911, with a whale-tail spoiler and wide arches. The big lag is part of the legend.",
+    "pools": [
+      "heritage"
+    ],
+    "tastes": [
+      "classics",
+      "supercars"
+    ],
+    "wiki": "Porsche 930",
+    "reviewed": false,
+    "photoMatch": "930|Turbo",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Porsche%20930%20coupes%20IMG%205451.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
+  },
+  {
+    "id": "ferrari-308-gtb",
+    "make": "Ferrari",
+    "model": "308 GTB",
+    "gen": "",
+    "year": 1975,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 255,
+    "nm": 289,
+    "acc": 6.4,
+    "top": 250,
+    "kg": 1090,
+    "value": 128000,
+    "blurb": "A Pininfarina wedge with a mid-mounted V8. Early cars were made from fibreglass.",
+    "pools": [
+      "heritage"
+    ],
+    "tastes": [
+      "supercars",
+      "classics"
+    ],
+    "wiki": "Ferrari 308 GTB",
+    "reviewed": false,
+    "photoMatch": "308",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ferrari%20308GTB%20Lightweight%20(1976)%20-%2014453314104%20(cropped).jpg?width=800",
+    "photoCredit": "Original: Steve Glover from Bolton, Lancs., England / Deriva · CC BY 2.0 · Wikimedia Commons"
+  },
+  {
+    "id": "aston-martin-db5",
+    "make": "Aston Martin",
+    "model": "DB5",
+    "gen": "",
+    "year": 1963,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 282,
+    "nm": 390,
+    "acc": 7.1,
+    "top": 233,
+    "kg": 1502,
+    "value": 165000,
+    "blurb": "A 4.0 litre straight-six in an aluminium Superleggera body. Its role in Goldfinger made it the most famous car in cinema.",
+    "pools": [
+      "heritage"
+    ],
+    "tastes": [
+      "classics"
+    ],
+    "wiki": "Aston Martin DB5",
+    "reviewed": false,
+    "photoMatch": "DB5",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Aston_Martin_DB5_(Skyfall).jpg?width=800",
+    "photoCredit": "DeFacto · CC BY-SA 4.0 · Wikimedia Commons"
+  },
+  {
+    "id": "bmw-m1",
+    "make": "BMW",
+    "model": "M1",
+    "gen": "E26",
+    "year": 1978,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 277,
+    "nm": 330,
+    "acc": 5.5,
+    "top": 262,
+    "kg": 1300,
+    "value": 195000,
+    "blurb": "BMW’s only mid-engine production car, designed by Giugetto Giugiaro and built partly by Lamborghini. It starred in its own one-make race series.",
+    "pools": [
+      "heritage",
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "classics"
+    ],
+    "wiki": "BMW M1",
+    "reviewed": false,
+    "photoMatch": "M1",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1979%20BMW%20M1%20Procar.jpg?width=800",
+    "photoCredit": "Calreyn88 · CC BY-SA 4.0 · Wikimedia Commons"
+  },
+  {
+    "id": "audi-quattro",
+    "make": "Audi",
+    "model": "Quattro",
+    "gen": "",
+    "year": 1980,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 200,
+    "nm": 285,
+    "acc": 7.1,
+    "top": 220,
+    "kg": 1290,
+    "value": 92000,
+    "blurb": "A turbocharged five-cylinder with permanent four-wheel drive. It changed rallying for good.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "rally",
+      "classics"
+    ],
+    "wiki": "Audi Quattro",
+    "reviewed": false,
+    "photoMatch": "Quattro",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Audi%20Quattro%20vl%20black.jpg?width=800",
+    "photoCredit": "Unknown author · CC BY-SA 3.0 · Wikimedia Commons"
+  },
+  {
+    "id": "nissan-skyline-r32",
+    "make": "Nissan",
+    "model": "Skyline GT-R",
+    "gen": "R32",
+    "year": 1989,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Epic",
+    "hp": 276,
+    "nm": 358,
+    "acc": 5.2,
+    "top": 250,
+    "kg": 1430,
+    "value": 98000,
+    "blurb": "The car that revived the GT-R name. Twin turbos and ATTESA all-wheel drive made it nearly unbeatable in Group A racing.",
+    "pools": [
+      "street",
+      "apex"
+    ],
+    "tastes": [
+      "jdm"
+    ],
+    "wiki": "Nissan Skyline GT-R (R32)",
+    "reviewed": false,
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Nissan%20Skyline%20R32%20GT-R%20001.jpg?width=800",
+    "photoCredit": "Tennen-Gas · CC BY-SA 3.0 · Wikimedia Commons"
+  },
+  {
+    "id": "lamborghini-miura",
+    "make": "Lamborghini",
+    "model": "Miura P400 S",
+    "gen": "",
+    "year": 1968,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 370,
+    "nm": 369,
+    "acc": 5.5,
+    "top": 280,
+    "kg": 1293,
+    "value": 620000,
+    "blurb": "The first mid-engine V12 road car. Marcello Gandini’s body had eyelash grilles around the headlights and started the supercar template.",
+    "pools": [
+      "heritage",
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "classics"
+    ],
+    "wiki": "Lamborghini Miura",
+    "reviewed": false,
+    "photoMatch": "Miura",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lamborghini%20Miura%20P400%20S%20Classic-Days%202022%20DSC%200086.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
+  },
+  {
+    "id": "ferrari-250-gto",
+    "make": "Ferrari",
+    "model": "250 GTO",
+    "gen": "",
+    "year": 1962,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 296,
+    "nm": 294,
+    "acc": 6.1,
+    "top": 280,
+    "kg": 880,
+    "value": 1500000,
+    "blurb": "Only 36 were built. It is the most valuable car in the world on the auction block, and it also won races.",
+    "pools": [
+      "heritage"
+    ],
+    "tastes": [
+      "classics",
+      "supercars"
+    ],
+    "wiki": "Ferrari 250 GTO",
+    "reviewed": false,
+    "photoMatch": "250 ?GTO",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1962%20Ferrari%20250%20GTO%20SP25.jpg?width=800",
+    "photoCredit": "MrWalkr · CC BY-SA 4.0 · Wikimedia Commons"
+  },
+  {
+    "id": "jaguar-xj220",
+    "make": "Jaguar",
+    "model": "XJ220",
+    "gen": "",
+    "year": 1992,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Legendary",
+    "hp": 542,
+    "nm": 644,
+    "acc": 3.6,
+    "top": 341,
+    "kg": 1470,
+    "value": 410000,
+    "blurb": "Shown as a V12 all-wheel-drive concept and built as a twin-turbo V6. It was the fastest production car in the world for two years.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "concepts"
+    ],
+    "wiki": "Jaguar XJ220",
+    "reviewed": false,
+    "photoMatch": "XJ220",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/JaguarXJ220.jpg?width=800",
+    "photoCredit": "Brian Snelson · CC BY 2.0 · Wikimedia Commons"
+  },
+  {
+    "id": "bugatti-eb110",
+    "make": "Bugatti",
+    "model": "EB110 GT",
+    "gen": "",
+    "year": 1991,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 553,
+    "nm": 611,
+    "acc": 3.6,
+    "top": 342,
+    "kg": 1620,
+    "value": 505000,
+    "blurb": "A quad-turbo V12, all-wheel drive and a carbon-fibre chassis, launched on the 110th anniversary of Ettore Bugatti’s birth.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Bugatti EB110",
+    "reviewed": false,
+    "photoMatch": "EB ?110",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1993%20Bugatti%20EB110%20GT%20in%20Grigio%20Scuro%2C%20front%20left%20(Miller).jpg?width=800",
+    "photoCredit": "Mr.choppers · CC BY-SA 4.0 · Wikimedia Commons"
+  },
+  {
+    "id": "ferrari-enzo",
+    "make": "Ferrari",
+    "model": "Enzo",
+    "gen": "",
+    "year": 2002,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 651,
+    "nm": 657,
+    "acc": 3.4,
+    "top": 350,
+    "kg": 1255,
+    "value": 780000,
+    "blurb": "A Formula 1-derived carbon-fibre chassis and a 6.0 litre V12. Only 400 were built, and all were sold to selected customers.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Ferrari Enzo Ferrari",
+    "reviewed": false,
+    "photoMatch": "Enzo",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Orange%20Enzo%20Ferrari%20(7191948164).jpg?width=800",
+    "photoCredit": "Axion23 · CC BY 2.0 · Wikimedia Commons"
+  },
+  {
+    "id": "lexus-lfa",
+    "make": "Lexus",
+    "model": "LFA",
+    "gen": "",
+    "year": 2010,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Legendary",
+    "hp": 553,
+    "nm": 480,
+    "acc": 3.7,
+    "top": 325,
+    "kg": 1480,
+    "value": 590000,
+    "blurb": "A 4.8 litre V10 that revs from idle to redline in 0.6 seconds, so fast the analogue rev counter could not keep up.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "jdm",
+      "supercars"
+    ],
+    "wiki": "Lexus LFA",
+    "reviewed": false,
+    "photoMatch": "LFA",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lexus_LFA_001.JPG?width=800",
+    "photoCredit": "Tennen-Gas · CC BY-SA 3.0 · Wikimedia Commons"
+  },
+  {
+    "id": "porsche-carrera-gt",
+    "make": "Porsche",
+    "model": "Carrera GT",
+    "gen": "",
+    "year": 2003,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Legendary",
+    "hp": 603,
+    "nm": 607,
+    "acc": 3.5,
+    "top": 330,
+    "kg": 1380,
+    "value": 560000,
+    "blurb": "A V10 that began as an abandoned Le Mans engine, with a carbon-fibre monocoque and a ceramic clutch. It has no electronic stability control.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Porsche Carrera GT",
+    "reviewed": false,
+    "photoMatch": "Carrera GT",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Porsche_Carrera_GT_-_Goodwood_Breakfast_Club_(July_2008).jpg?width=800",
+    "photoCredit": "Brian Snelson from Hockley, Essex, England · CC BY 2.0 · Wikimedia Commons"
+  }
+]

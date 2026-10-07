@@ -161,7 +161,7 @@ function CarPanel({ item, animateRef, page }: { item: Item; animateRef?: { curre
           <span className="mk">{makeGen(c)}</span>
           <span ref={title} className="model">{c.model}</span>
         </div>
-        <div ref={photo}><Photo car={c} label="car photo · side profile" className="g-panel-photo" /></div>
+        <div ref={photo}><Photo car={c} label="car photo · side profile" className="g-panel-photo" />{c.photoCredit && <span className="photo-credit">Photo: {c.photoCredit}</span>}</div>
         <div ref={stats} className="split g-stats">
           {blocks.map(s => (
             <div className="stat" key={s.k}>

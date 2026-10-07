@@ -20,3 +20,4 @@ supabase/.temp
 !.vscode/extensions.json
 .idea
 .DS_Store
+data/review.html

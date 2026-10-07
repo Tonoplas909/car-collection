@@ -13,7 +13,8 @@
     "db:seed": "node scripts/gen-seed.ts",
     "db:start": "supabase start",
     "db:reset": "supabase db reset",
-    "functions:serve": "supabase functions serve"
+    "functions:serve": "supabase functions serve",
+    "cars:enrich": "node scripts/enrich-cars.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.3",

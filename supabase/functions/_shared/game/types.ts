@@ -34,6 +34,12 @@ export interface Car {
   pools: PackId[]
   tastes: TasteId[]
   photoUrl?: string
+  /** "Author · License · Wikimedia Commons" */
+  photoCredit?: string
+  /** Wikipedia article title, used by the enrichment script */
+  wiki?: string
+  /** Specs and blurb checked by a human */
+  reviewed?: boolean
 }
 
 /** A car in a player's garage. */

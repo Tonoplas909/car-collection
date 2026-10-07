@@ -274,7 +274,7 @@ function ListingPanel({ row, animateRef, now, onBuy, onOffer, onTrade, page }: {
           <span className="mk">{makeGen(row.car)}</span>
           <span ref={title} className="model" style={{ fontSize: page ? 36 : 40 }}>{row.car.model}</span>
         </div>
-        <div ref={photo}><Photo car={row.car} label="car photo · side profile" className="mk-photo" /></div>
+        <div ref={photo}><Photo car={row.car} label="car photo · side profile" className="mk-photo" />{row.car.photoCredit && <span className="photo-credit">Photo: {row.car.photoCredit}</span>}</div>
         <div ref={price} className="split mk-prices">
           <div><span className="label">Buy now</span><span className="mk-big tnum">{cr(row.price)}</span></div>
           <div><span className="label">vs. 30-day avg</span><span className="mk-big tnum" style={{ color: d > 0 ? 'var(--color-accent-700)' : 'var(--color-text)' }}>{deltaStr(d)}</span></div>
