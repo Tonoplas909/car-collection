@@ -1,0 +1,73 @@
+.g-head { display: flex; align-items: flex-end; gap: 16px; padding: 24px 24px 20px; border-bottom: 2px solid var(--color-divider); flex: none; }
+.g-count { font-weight: 800; font-size: 96px; line-height: .85; letter-spacing: -.04em; }
+.g-head-text { display: flex; flex-direction: column; gap: 2px; padding-bottom: 4px; font-size: 13px; }
+.g-head-title { font-weight: 800; font-size: 20px; }
+.g-head.mobile { padding: 12px 16px 16px; gap: 12px; border-top: 2px solid var(--color-divider); }
+.g-head.mobile .g-count { font-size: 72px; }
+.g-head.mobile .g-head-text { gap: 0; padding-bottom: 2px; font-size: 12px; }
+.g-head.mobile .g-head-title { font-size: 17px; }
+.g-brand { font-size: 18px; letter-spacing: .02em; line-height: 1; }
+.mshell .m-head:has(.g-brand) { border-bottom: 0; padding-bottom: 12px; align-items: center; }
+
+.g-sorts { display: flex; align-items: center; gap: 8px; padding: 10px 24px; border-bottom: 1px solid var(--color-divider); font-size: 13px; flex: none; }
+.g-sorts button {
+  border: 0; font-size: 13px; padding: 4px 8px; cursor: pointer; background: transparent; color: var(--color-neutral-700);
+  text-underline-offset: 4px; text-decoration-thickness: 2px;
+}
+.g-sorts button[aria-pressed='true'] { color: var(--color-text); font-weight: 800; text-decoration: underline; }
+.g-sorts.compact { gap: 2px; padding: 4px 12px; }
+.g-sorts.compact > span { padding-right: 4px; }
+.g-sorts.compact button { padding: 0 8px; min-height: 40px; }
+
+.g-tiers-m .tier-filter > button { padding: 8px; min-height: 52px; }
+.g-tiers-m .tf-label { font-size: 9px; letter-spacing: .06em; }
+.g-tiers-m .tf-n { font-size: 17px; }
+
+.g-scroll { overflow: auto; flex: 1; min-height: 0; padding: 20px 24px; }
+.g-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(176px, 1fr)); gap: 20px; }
+.g-grid.mobile { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+
+.g-card {
+  display: flex; flex-direction: column; background: var(--color-surface); border: 0; padding: 0; text-align: left;
+  outline: 2px solid transparent; outline-offset: 2px;
+}
+.g-card.selected { outline-color: var(--color-accent); }
+.g-card-bar { height: 6px; }
+.g-card-photo { aspect-ratio: 4 / 3; background: repeating-linear-gradient(135deg, var(--color-surface) 0 8px, var(--color-neutral-200) 8px 16px); }
+.g-card-body { padding: 10px 12px 12px; display: flex; flex-direction: column; }
+.g-card-kicker { display: flex; gap: 8px; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-700); }
+.g-card-kicker > :last-child { margin-left: auto; }
+.g-card-make { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.g-card-model { font-weight: 800; font-size: 16px; line-height: 1.2; }
+.g-card-meta { font-size: 12px; color: var(--color-neutral-700); padding-top: 4px; }
+.g-grid.mobile .g-card-bar { height: 5px; }
+.g-grid.mobile .g-card-body { padding: 8px 10px 10px; }
+.g-grid.mobile .g-card-kicker { font-size: 10px; letter-spacing: .06em; gap: 6px; }
+.g-grid.mobile .g-card-model { font-size: 14px; }
+.g-grid.mobile .g-card-meta { font-size: 11px; padding-top: 2px; }
+
+.g-panel { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.g-panel-scroll { display: flex; flex-direction: column; flex: 1; }
+.g-panel-head .mk { padding-top: 16px; }
+.g-panel-photo { aspect-ratio: 16 / 9; border-bottom: 2px solid var(--color-divider); background: repeating-linear-gradient(135deg, var(--color-surface) 0 8px, var(--color-neutral-200) 8px 16px); }
+.g-panel-photo > span { font-size: 11px; }
+.g-stats { grid-template-columns: 1fr 1fr; border-bottom: 2px solid var(--color-divider); flex: none; }
+.g-blurb { padding: 14px 24px 0; margin: 0; font-size: 14px; color: var(--color-neutral-800); }
+.g-actions { display: flex; gap: 8px; padding: 16px 24px 24px; flex: none; }
+.g-actions .btn { padding: 12px 14px; }
+
+/* 2b: full-screen car detail on phones */
+.g-panel.page { overflow: hidden; }
+.g-panel.page .g-panel-scroll { overflow: auto; min-height: 0; }
+.g-panel.page .red-head { padding: calc(12px + env(safe-area-inset-top)) 16px 20px; gap: 6px; }
+.g-panel.page .kicker { font-size: 11px; }
+.g-panel.page .mk { font-size: 14px; padding-top: 12px; }
+.g-panel.page .model { font-size: 36px; }
+.g-panel.page .g-panel-photo { aspect-ratio: 16 / 10; }
+.g-panel.page .stat .v { font-size: 26px; }
+.g-panel.page .stat .label { font-size: 10px; }
+.g-panel.page .meta3 { padding: 12px 16px; }
+.g-panel.page .g-blurb { padding: 14px 16px 16px; }
+.g-panel.page .g-actions { padding: 12px 16px calc(16px + env(safe-area-inset-bottom)); border-top: 2px solid var(--color-divider); }
+.g-panel.page .g-actions .btn { min-height: 48px; padding: 0 14px; }
+.g-back { color: var(--color-bg); width: 44px; height: 44px; margin-left: -10px; }

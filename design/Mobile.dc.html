@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="_ds/modernist-468c7b53-200e-4772-8c6d-9d95f4feda56/styles.css">
+<script src="_ds/modernist-468c7b53-200e-4772-8c6d-9d95f4feda56/_ds_bundle.js"></script>
+<script src="fx.js"></script>
+<style>body{margin:0;background:var(--color-neutral-300)} a{color:var(--color-accent)} a:hover{color:var(--color-accent-600)}</style>
+</helmet>
+<section style="padding:64px;display:flex;flex-direction:column;gap:32px">
+  <div style="display:flex;flex-direction:column;gap:4px;max-width:900px">
+    <h6 style="margin:0;color:var(--color-accent-700)">Turn 6</h6>
+    <h2 style="margin:0">Mobile: all screens</h2>
+    <p style="margin:0;color:var(--color-neutral-800)">Tab bars link between screens. Market and Leaderboard tabs, Race event and car choice work; Race live is playable (Start, then Shift up); Pack reveal flips on tap. 6g is the mobile landing page, 6h the pack reveal, 6i the results.</p>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start">
+
+    <div id="6a" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px"><span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">6a</span><span style="font-weight:600;font-size:14px">Packs</span></div>
+      <div style="width:390px;height:844px;background:var(--color-bg);display:flex;flex-direction:column;overflow:hidden;box-shadow:var(--shadow-md)">
+        <div style="padding:48px 16px 16px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid var(--color-divider)">
+          <span style="font-weight:800;font-size:64px;line-height:0.85;letter-spacing:-0.04em">Packs</span>
+          <span style="font-size:13px;font-weight:800;font-variant-numeric:tabular-nums;padding-bottom:4px">48,200 CR</span>
+        </div>
+        <div style="flex:1;min-height:0;overflow:auto;display:flex;flex-direction:column">
+          <sc-for list="{{ packs }}" as="p" hint-placeholder-count="3">
+            <div style="background:{{ p.bg }};color:{{ p.fg }};border-bottom:2px solid var(--color-divider);padding:16px;display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;flex:none">
+              <div style="aspect-ratio:3/4;background:repeating-linear-gradient(135deg,var(--color-surface) 0 8px,var(--color-neutral-300) 8px 16px);display:grid;place-items:center"><span style="font-family:ui-monospace,monospace;font-size:9px;color:var(--color-neutral-700)">pack art</span></div>
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;font-weight:800">{{ p.kind }}</span>
+                <span style="font-weight:800;font-size:28px;line-height:1">{{ p.name }}</span>
+                <span style="font-size:13px">{{ p.odds }}</span>
+                <span style="margin-top:auto;display:flex;align-items:center;gap:8px"><span style="font-weight:800;font-size:18px;font-variant-numeric:tabular-nums">{{ p.price }}</span><a href="#6h" style="margin-left:auto;font-weight:800;font-size:13px;padding:12px 16px;background:{{ p.btnBg }};color:{{ p.btnFg }};text-decoration:none">Open</a></span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);border-top:2px solid var(--color-divider);flex:none">
+          <sc-for list="{{ tabs0 }}" as="t" hint-placeholder-count="5"><a href="{{ t.href }}" style="text-decoration:none;text-align:center;padding:16px 0;font-size:12px;font-weight:{{ t.fw }};background:{{ t.bg }};color:{{ t.fg }}">{{ t.l }}</a></sc-for>
+        </div>
+      </div>
+    </div>
+
+    <div id="6b" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px"><span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">6b</span><span style="font-weight:600;font-size:14px">Market</span></div>
+      <div style="width:390px;height:844px;background:var(--color-bg);display:flex;flex-direction:column;overflow:hidden;box-shadow:var(--shadow-md)">
+        <div style="padding:48px 16px 12px;display:flex;flex-direction:column;gap:12px;border-bottom:2px solid var(--color-divider)">
+          <span style="font-weight:800;font-size:64px;line-height:0.85;letter-spacing:-0.04em">Market</span>
+          <div style="display:flex;border:2px solid var(--color-text)"><sc-for list="{{ mkTabs }}" as="m" hint-placeholder-count="3"><button onClick="{{ m.pick }}" style="flex:1;border:0;font:inherit;font-size:14px;padding:11px 0;cursor:pointer;background:{{ m.bg }};color:{{ m.fg }}">{{ m.l }}</button></sc-for></div>
+        </div>
+        <div style="flex:1;min-height:0;overflow:auto">
+          <sc-for list="{{ listings }}" as="l" hint-placeholder-count="7">
+            <div style="display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:12px;padding:12px 16px;border-bottom:1px solid var(--color-divider);align-items:center">
+              <div style="aspect-ratio:4/3;background:repeating-linear-gradient(135deg,var(--color-surface) 0 6px,var(--color-neutral-300) 6px 12px)"></div>
+              <div style="display:flex;flex-direction:column;min-width:0"><span style="font-size:10px;letter-spacing:0.08em;text-transform:uppercase;font-weight:800;color:{{ l.tc }}">{{ l.tier }}</span><span style="font-weight:800;font-size:15px;line-height:1.2">{{ l.model }} <span style="font-weight:400;color:var(--color-neutral-700)">{{ l.gen }}</span></span><span style="font-size:12px;color:var(--color-neutral-700)">{{ l.seller }}</span></div>
+              <div style="display:flex;flex-direction:column;align-items:flex-end"><span style="font-weight:800;font-size:15px;font-variant-numeric:tabular-nums">{{ l.price }}</span><span style="font-size:11px;color:{{ l.dc }}">{{ l.delta }}</span></div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);border-top:2px solid var(--color-divider);flex:none">
+          <sc-for list="{{ tabs3 }}" as="t" hint-placeholder-count="5"><a href="{{ t.href }}" style="text-decoration:none;text-align:center;padding:16px 0;font-size:12px;font-weight:{{ t.fw }};background:{{ t.bg }};color:{{ t.fg }}">{{ t.l }}</a></sc-for>
+        </div>
+      </div>
+    </div>
+
+    <div id="6c" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px"><span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">6c</span><span style="font-weight:600;font-size:14px">Leaderboard</span></div>
+      <div style="width:390px;height:844px;background:var(--color-bg);display:flex;flex-direction:column;overflow:hidden;box-shadow:var(--shadow-md)">
+        <div style="padding:48px 16px 0;display:flex;flex-direction:column;gap:12px">
+          <span style="font-weight:800;font-size:64px;line-height:0.85;letter-spacing:-0.04em">Ranks</span>
+          <div style="display:flex;border-bottom:2px solid var(--color-divider)">
+            <sc-for list="{{ lbTabs }}" as="t" hint-placeholder-count="3"><button onClick="{{ t.pick }}" style="border:0;background:transparent;font:inherit;cursor:pointer;padding:12px 0;margin-right:20px;font-size:14px;font-weight:{{ t.fw }};box-shadow:{{ t.line }}">{{ t.l }}</button></sc-for>
+          </div>
+        </div>
+        <div style="background:var(--color-accent);color:var(--color-bg);padding:14px 16px;display:flex;align-items:flex-end;gap:12px;flex:none">
+          <span style="font-weight:800;font-size:64px;line-height:0.85;letter-spacing:-0.05em">01</span>
+          <div style="display:flex;flex-direction:column;padding-bottom:2px"><span style="font-weight:800;font-size:18px">k.watanabe</span><span style="font-size:12px">JP · Porsche 959</span></div>
+          <span style="margin-left:auto;font-weight:800;font-size:18px;font-variant-numeric:tabular-nums">{{ lbTop }}</span>
+        </div>
+        <div style="flex:1;min-height:0;overflow:auto">
+          <sc-for list="{{ lbRows }}" as="r" hint-placeholder-count="8">
+            <div style="display:grid;grid-template-columns:36px minmax(0,1fr) auto;gap:8px;padding:11px 16px;border-bottom:1px solid var(--color-divider);align-items:center"><span style="font-weight:800;font-variant-numeric:tabular-nums">{{ r.rank }}</span><div style="display:flex;flex-direction:column"><span style="font-weight:600;font-size:14px">{{ r.name }}</span><span style="font-size:11px;color:var(--color-neutral-700)">{{ r.car }}</span></div><span style="font-weight:800;font-size:14px;font-variant-numeric:tabular-nums">{{ r.score }}</span></div>
+          </sc-for>
+        </div>
+        <div style="background:var(--color-text);color:var(--color-bg);padding:12px 16px;display:grid;grid-template-columns:36px minmax(0,1fr) auto;gap:8px;flex:none"><span style="font-weight:800">{{ lbMe.rank }}</span><span style="font-weight:800">You · J. Durand</span><span style="font-weight:800;font-variant-numeric:tabular-nums">{{ lbMe.score }}</span></div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);border-top:2px solid var(--color-divider);flex:none">
+          <sc-for list="{{ tabs4 }}" as="t" hint-placeholder-count="5"><a href="{{ t.href }}" style="text-decoration:none;text-align:center;padding:16px 0;font-size:12px;font-weight:{{ t.fw }};background:{{ t.bg }};color:{{ t.fg }}">{{ t.l }}</a></sc-for>
+        </div>
+      </div>
+    </div>
+
+    <div id="6d" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px"><span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">6d</span><span style="font-weight:600;font-size:14px">Profile</span></div>
+      <div style="width:390px;height:844px;background:var(--color-bg);display:flex;flex-direction:column;overflow:hidden;box-shadow:var(--shadow-md)">
+        <div style="flex:1;min-height:0;overflow:auto">
+          <div style="padding:48px 16px 16px;display:grid;grid-template-columns:72px minmax(0,1fr);gap:14px;align-items:end;border-bottom:2px solid var(--color-divider)">
+            <div style="aspect-ratio:1;background:repeating-linear-gradient(135deg,var(--color-surface) 0 8px,var(--color-neutral-300) 8px 16px)"></div>
+            <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Lyon, France</span><span style="font-weight:800;font-size:36px;line-height:0.95;letter-spacing:-0.03em">J. Durand</span></div>
+          </div>
+          <div style="padding:14px 16px;display:flex;align-items:center;gap:10px;border-bottom:2px solid var(--color-divider)"><span style="font-weight:800">Lv 23</span><div style="flex:1;height:8px;background:var(--color-neutral-300)"><div style="height:8px;width:64%;background:var(--color-accent)"></div></div><span style="font-size:12px;color:var(--color-neutral-700)">6,400 / 10,000</span></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--color-divider);border-bottom:2px solid var(--color-divider)">
+            <sc-for list="{{ stats }}" as="s" hint-placeholder-count="6"><div style="background:var(--color-bg);padding:12px 16px;display:flex;flex-direction:column;gap:2px"><span style="font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">{{ s.k }}</span><span style="font-weight:800;font-size:26px;line-height:1.05;font-variant-numeric:tabular-nums">{{ s.v }}</span></div></sc-for>
+          </div>
+          <div style="padding:16px;display:flex;flex-direction:column;gap:10px;border-bottom:2px solid var(--color-divider)">
+            <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Collection by tier</span>
+            <sc-for list="{{ tiers }}" as="t" hint-placeholder-count="4"><div style="display:flex;flex-direction:column;gap:4px"><div style="display:flex;font-size:13px"><span style="font-weight:600">{{ t.k }}</span><span style="margin-left:auto">{{ t.v }}</span></div><div style="height:6px;background:var(--color-neutral-300)"><div style="height:6px;width:{{ t.pct }};background:{{ t.bar }}"></div></div></div></sc-for>
+          </div>
+          <div style="padding:16px;display:flex;flex-direction:column">
+            <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700);padding-bottom:6px">Recent activity</span>
+            <sc-for list="{{ activity }}" as="a" hint-placeholder-count="4"><div style="padding:9px 0;border-top:1px solid var(--color-divider);font-size:13px"><b>{{ a.verb }}</b> {{ a.what }}</div></sc-for>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);border-top:2px solid var(--color-divider);flex:none">
+          <sc-for list="{{ tabs5 }}" as="t" hint-placeholder-count="5"><a href="{{ t.href }}" style="text-decoration:none;text-align:center;padding:16px 0;font-size:12px;font-weight:{{ t.fw }};background:{{ t.bg }};color:{{ t.fg }}">{{ t.l }}</a></sc-for>
+        </div>
+      </div>
+    </div>
+
+    <div id="6e" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px"><span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">6e</span><span style="font-weight:600;font-size:14px">Race setup</span></div>
+      <div style="width:390px;height:844px;background:var(--color-bg);display:flex;flex-direction:column;overflow:hidden;box-shadow:var(--shadow-md)">
+        <div style="padding:48px 16px 12px;border-bottom:2px solid var(--color-divider)"><span style="font-weight:800;font-size:64px;line-height:0.85;letter-spacing:-0.04em">Race</span></div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--color-divider);border-bottom:2px solid var(--color-divider);flex:none">
+          <sc-for list="{{ events }}" as="e" hint-placeholder-count="3"><div onClick="{{ e.pick }}" style="cursor:pointer;background:{{ e.bg }};color:{{ e.fg }};padding:12px;display:flex;flex-direction:column"><span style="font-size:10px;letter-spacing:0.08em;text-transform:uppercase">{{ e.kind }}</span><span style="font-weight:800;font-size:22px;line-height:1.1">{{ e.len }}</span></div></sc-for>
+        </div>
+        <div style="padding:12px 16px 6px;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Choose a car</div>
+        <div style="flex:1;min-height:0;overflow:auto;border-top:1px solid var(--color-divider)">
+          <sc-for list="{{ raceCars }}" as="c" hint-placeholder-count="5"><div onClick="{{ c.pick }}" style="cursor:pointer;display:grid;grid-template-columns:6px minmax(0,1fr) auto;gap:12px;align-items:center;border-bottom:1px solid var(--color-divider);background:{{ c.bg }};min-height:60px"><span style="align-self:stretch;background:{{ c.bar }}"></span><div style="display:flex;flex-direction:column"><span style="font-weight:800;font-size:15px">{{ c.model }} <span style="font-weight:400;color:var(--color-neutral-700)">{{ c.gen }}</span></span><span style="font-size:12px;color:var(--color-neutral-700)">{{ c.hp }} hp · {{ c.kg }} kg</span></div><span style="padding-right:16px;font-weight:800;font-size:13px">{{ c.pw }} hp/t</span></div></sc-for>
+        </div>
+        <div style="padding:12px 16px;border-top:2px solid var(--color-divider);display:flex;flex-direction:column;gap:8px;flex:none">
+          <div style="display:flex;font-size:13px"><span>Entry {{ evInfo.fee }}</span><span style="margin-left:auto">Win {{ evInfo.win }} · {{ evInfo.pts }} pts</span></div>
+          <a href="#6f" class="btn btn-primary" style="justify-content:flex-start;padding:16px;font-size:16px;color:var(--color-bg)">Find race</a>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);border-top:2px solid var(--color-divider);flex:none">
+          <sc-for list="{{ tabs2 }}" as="t" hint-placeholder-count="5"><a href="{{ t.href }}" style="text-decoration:none;text-align:center;padding:16px 0;font-size:12px;font-weight:{{ t.fw }};background:{{ t.bg }};color:{{ t.fg }}">{{ t.l }}</a></sc-for>
+        </div>
+      </div>
+    </div>
+
+    <div id="6f" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px"><span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">6f</span><span style="font-weight:600;font-size:14px">Race live</span></div>
+      <div style="width:390px;height:844px;background:var(--color-bg);display:flex;flex-direction:column;overflow:hidden;box-shadow:var(--shadow-md)">
+        <div style="padding:44px 16px 12px;display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:2px solid var(--color-divider)">
+          <div style="display:flex;flex-direction:column"><span style="font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Position</span><span style="font-weight:800;font-size:28px">{{ live.pos }}</span></div>
+          <div style="display:flex;flex-direction:column"><span style="font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Time</span><span style="font-weight:800;font-size:28px;font-variant-numeric:tabular-nums">{{ live.time }}</span></div>
+          <div style="display:flex;flex-direction:column"><span style="font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">To go</span><span style="font-weight:800;font-size:28px;font-variant-numeric:tabular-nums">{{ live.togo }}</span></div>
+        </div>
+        <div style="flex:1;min-height:0;display:flex;flex-direction:column">
+          <sc-for list="{{ lanes }}" as="l" hint-placeholder-count="4">
+            <div style="flex:1;border-bottom:1px solid var(--color-divider);position:relative;background:{{ l.bg }};margin-right:0">
+              <span style="position:absolute;left:16px;top:8px;font-size:11px;font-weight:800">{{ l.name }}</span>
+              <span style="position:absolute;right:0;top:0;bottom:0;width:4px;background:var(--color-accent)"></span>
+              <div style="position:absolute;top:50%;left:16px;right:20px;height:0"><div style="position:absolute;left:{{ l.p }};transform:translate(-{{ l.p }},-50%);display:flex"><span style="width:6px;height:30px;background:{{ l.bar }}"></span><span style="height:30px;padding:0 10px;display:flex;align-items:center;background:{{ l.cbg }};color:{{ l.cfg }};font-weight:800;font-size:12px;white-space:nowrap">{{ l.lab }}</span></div></div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--color-divider);flex:none">
+          <div style="padding:12px 16px;display:flex;flex-direction:column"><span style="font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Speed</span><span style="font-weight:800;font-size:64px;line-height:0.9;letter-spacing:-0.04em">{{ live.kmh }}</span><span style="font-size:12px;font-weight:600">km/h</span></div>
+          <div style="padding:12px 16px;border-left:2px solid var(--color-divider);display:flex;flex-direction:column"><span style="font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Gear</span><span style="font-weight:800;font-size:64px;line-height:0.9;letter-spacing:-0.04em">{{ live.gear }}</span><span style="font-size:12px;font-weight:600">of 6</span></div>
+        </div>
+        <div style="padding:0 16px 12px;display:flex;flex-direction:column;gap:6px;flex:none">
+          <div style="position:relative;height:36px;background:var(--color-neutral-200)"><span style="position:absolute;top:0;bottom:0;left:82%;width:15%;background:var(--color-neutral-400)"></span><span style="position:absolute;top:0;bottom:0;left:97%;right:0;background:var(--color-accent-300)"></span><span style="position:absolute;top:0;bottom:0;left:0;width:{{ live.rpm }};background:{{ live.rpmBg }}"></span></div>
+          <span style="font-size:11px;color:var(--color-neutral-700)">{{ live.msg }}</span>
+        </div>
+        <div style="padding:0 16px 24px;flex:none"><button onClick="{{ live.act }}" style="width:100%;border:0;font:inherit;cursor:pointer;display:flex;align-items:flex-end;padding:18px 16px;background:var(--color-accent);color:var(--color-bg);font-weight:800;font-size:32px;min-height:56px">{{ live.btn }}</button></div>
+      </div>
+    </div>
+
+    <div id="6g" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px"><span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">6g</span><span style="font-weight:600;font-size:14px">Landing</span></div>
+      <div style="width:390px;height:844px;background:var(--color-bg);overflow:auto;box-shadow:var(--shadow-md)">
+        <div style="display:flex;align-items:center;padding:44px 16px 12px;border-bottom:2px solid var(--color-divider)"><span style="font-weight:800;font-size:20px">MARQUE</span><a href="Onboarding.dc.html" style="margin-left:auto;font-size:13px;font-weight:800;color:var(--color-bg);background:var(--color-text);padding:10px 14px;text-decoration:none">Play free</a></div>
+        <div style="padding:32px 16px 24px;display:flex;flex-direction:column;gap:20px">
+          <span style="font-weight:800;font-size:52px;line-height:0.98;letter-spacing:-0.03em">214 real cars. One garage. <span style="color:var(--color-accent)">Fill it.</span></span>
+          <span style="font-size:15px;line-height:24px;color:var(--color-neutral-800)">A collection game for people who know an E30 from an E36. Open packs, race for rare models and trade with other players.</span>
+          <a href="Onboarding.dc.html" class="btn btn-primary" style="justify-content:flex-start;padding:16px;font-size:16px;color:var(--color-bg)">Open your free pack</a>
+        </div>
+        <div style="aspect-ratio:4/3;background:repeating-linear-gradient(135deg,var(--color-surface) 0 10px,var(--color-neutral-300) 10px 20px);display:grid;place-items:center"><span style="font-family:ui-monospace,monospace;font-size:10px;color:var(--color-neutral-700)">hero shot</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--color-divider);border-top:2px solid var(--color-divider);border-bottom:2px solid var(--color-divider)">
+          <sc-for list="{{ lpStats }}" as="s" hint-placeholder-count="4"><div style="background:var(--color-bg);padding:16px"><div style="font-weight:800;font-size:32px;line-height:1;color:var(--color-accent)">{{ s.v }}</div><div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700);padding-top:6px">{{ s.k }}</div></div></sc-for>
+        </div>
+        <sc-for list="{{ lpSteps }}" as="s" hint-placeholder-count="3"><div style="padding:20px 16px;border-bottom:2px solid var(--color-divider);display:flex;flex-direction:column;gap:6px"><span style="font-weight:800;font-size:13px">{{ s.n }}</span><span style="font-weight:800;font-size:24px">{{ s.t }}</span><span style="font-size:14px;line-height:22px;color:var(--color-neutral-800)">{{ s.d }}</span></div></sc-for>
+        <div style="background:var(--color-accent);color:var(--color-bg);padding:40px 16px;display:flex;flex-direction:column;gap:20px"><span style="font-weight:800;font-size:36px;line-height:1">Your first pack is free.</span><a href="Onboarding.dc.html" style="background:var(--color-bg);color:var(--color-accent-700);font-weight:800;padding:16px;text-decoration:none">Create your garage</a></div>
+      </div>
+    </div>
+
+    <div id="6h" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px"><span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">6h</span><span style="font-weight:600;font-size:14px">Pack reveal (tap the black cards)</span></div>
+      <div style="width:390px;height:844px;background:var(--color-bg);display:flex;flex-direction:column;overflow:hidden;box-shadow:var(--shadow-md)">
+        <div style="padding:48px 16px 14px;border-bottom:2px solid var(--color-divider);display:flex;align-items:flex-end"><span style="font-weight:800;font-size:44px;line-height:0.9;letter-spacing:-0.04em">Heritage pack</span><span style="margin-left:auto;font-size:13px;font-weight:800">{{ rv.count }} / 5</span></div>
+        <div style="flex:1;min-height:0;overflow:auto;display:flex;flex-direction:column">
+          <sc-for list="{{ rv.cards }}" as="c" hint-placeholder-count="5">
+            <div onClick="{{ c.pick }}" style="position:relative;overflow:hidden;flex:none;height:110px;border-bottom:2px solid var(--color-divider);cursor:pointer;display:grid;grid-template-columns:6px 110px minmax(0,1fr);gap:14px;align-items:center;background:{{ c.bg }};color:{{ c.fg }}">
+              <span style="align-self:stretch;background:{{ c.bar }}"></span>
+              <div style="height:80px;background:repeating-linear-gradient(135deg,var(--color-surface) 0 6px,var(--color-neutral-300) 6px 12px)"></div>
+              <div style="display:flex;flex-direction:column"><span style="font-size:10px;letter-spacing:0.08em;text-transform:uppercase;font-weight:800">{{ c.tier }}{{ c.isNew }}</span><span style="font-weight:800;font-size:20px;line-height:1.1">{{ c.model }}</span><span style="font-size:12px">{{ c.sub }}</span></div>
+              <div style="position:absolute;inset:0;background:var(--color-text);color:var(--color-bg);display:flex;align-items:center;padding:0 16px;font-weight:800;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;transform:translateY({{ c.cover }});transition:transform 600ms cubic-bezier(.76,0,.24,1)">Tap to reveal<span style="margin-left:auto;font-size:28px">{{ c.n }}</span></div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="padding:12px 16px 24px;border-top:2px solid var(--color-divider);display:flex;flex-direction:column;gap:8px;flex:none">
+          <button onClick="{{ rv.all }}" class="btn btn-secondary" style="justify-content:flex-start;padding:14px 16px;font-size:15px">Reveal all</button>
+          <a href="Garage.dc.html#2a" class="btn btn-primary" style="justify-content:flex-start;padding:14px 16px;font-size:15px;color:var(--color-bg)">Add to garage</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="6i" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px"><span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">6i</span><span style="font-weight:600;font-size:14px">Race results</span></div>
+      <div style="width:390px;height:844px;background:var(--color-bg);display:flex;flex-direction:column;overflow:hidden;box-shadow:var(--shadow-md)">
+        <div style="background:var(--color-accent);color:var(--color-bg);padding:48px 16px 20px;display:flex;align-items:flex-end;gap:14px"><span style="font-weight:800;font-size:120px;line-height:0.8;letter-spacing:-0.06em">P1</span><div style="display:flex;flex-direction:column;padding-bottom:6px"><span style="font-weight:800;font-size:26px;line-height:1">You won.</span><span style="font-size:12px">Sprint · 800 m · Suzuka East</span></div></div>
+        <sc-for list="{{ resRows }}" as="r" hint-placeholder-count="4"><div style="display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:8px;padding:12px 16px;border-bottom:1px solid var(--color-divider);align-items:center;background:{{ r.bg }}"><span style="font-weight:800;font-size:18px">{{ r.pos }}</span><div style="display:flex;flex-direction:column"><span style="font-weight:800;font-size:14px">{{ r.name }}</span><span style="font-size:11px;color:var(--color-neutral-700)">{{ r.car }}</span></div><div style="display:flex;flex-direction:column;align-items:flex-end"><span style="font-weight:800;font-variant-numeric:tabular-nums">{{ r.time }}</span><span style="font-size:11px">{{ r.gap }}</span></div></div></sc-for>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--color-divider);border-top:2px solid var(--color-divider);border-bottom:2px solid var(--color-divider);margin-top:auto">
+          <div style="background:var(--color-bg);padding:12px 16px"><div style="font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-neutral-700)">Points</div><div style="font-weight:800;font-size:22px">+120</div></div>
+          <div style="background:var(--color-bg);padding:12px 16px"><div style="font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-neutral-700)">Credits</div><div style="font-weight:800;font-size:22px">+2.5k</div></div>
+          <div style="background:var(--color-bg);padding:12px 16px"><div style="font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-neutral-700)">XP</div><div style="font-weight:800;font-size:22px">+200</div></div>
+        </div>
+        <div style="padding:12px 16px 24px;display:flex;flex-direction:column;gap:8px"><a href="#6e" class="btn btn-primary" style="justify-content:flex-start;padding:14px 16px;font-size:15px;color:var(--color-bg)">Race again · 500 CR</a><a href="Garage.dc.html#2a" class="btn btn-secondary" style="justify-content:flex-start;padding:14px 16px;font-size:15px">Back to garage</a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const HREF = ['Garage.dc.html#2a','#6a','#6e','#6b','#6c'];
+const mk = (arr, act) => arr.map((l,k) => ({l, href: k===4 && act==='P' ? '#6d' : HREF[k], fw:k===(act==='P'?4:act)?'800':'400', bg:k===(act==='P'?4:act)?'var(--color-text)':'transparent', fg:k===(act==='P'?4:act)?'var(--color-bg)':'var(--color-text)'}));
+const T5 = ['Garage','Packs','Race','Market','Ranks'];
+const TIER = {Common:'var(--color-neutral-600)',Rare:'var(--color-text)',Epic:'var(--color-accent-700)',Legendary:'var(--color-accent)'};
+const BAR = {Common:'var(--color-neutral-400)',Rare:'var(--color-text)',Epic:'var(--color-accent-400)',Legendary:'var(--color-accent)'};
+const EVS = [{id:'drag',kind:'Drag',len:402,fee:'300 CR',win:'1,500 CR',pts:'+80'},{id:'sprint',kind:'Sprint',len:800,fee:'500 CR',win:'2,500 CR',pts:'+120'},{id:'run',kind:'Highway',len:1600,fee:'1,000 CR',win:'6,000 CR',pts:'+220'}];
+const RC = [['Skyline GT-R V-Spec','R34','Epic',280,1560,250,5],['F40','','Legendary',478,1100,324,3],['911 Carrera RS 2.7','F-series','Legendary',210,975,245,4],['Supra RZ','A80','Epic',330,1490,250,3],['Golf GTI','Mk1','Common',110,810,182,4]];
+const LB = {
+  race:{top:'18,420',me:{rank:'142',score:'6,310'},rows:[['2','apex_hunter','McLaren F1','17,130'],['3','lmarchetti','Ferrari F40','15,930'],['4','bayside.r','Skyline GT-R R34','14,810'],['5','rallye.b','Lancia Delta','13,770'],['6','dtm.88','BMW M3 E30','12,810'],['7','2jz_only','Supra A80','11,910'],['8','m.okafor','McLaren F1','11,080']]},
+  value:{top:'8.64M',me:{rank:'388',score:'2.71M'},rows:[['2','apex_hunter','McLaren F1','7.78M'],['3','lmarchetti','Ferrari F40','7.00M'],['4','r.costa','Ferrari F40','6.30M'],['5','m.okafor','McLaren F1','5.67M'],['6','bayside.r','Skyline GT-R R34','5.10M'],['7','a.moreau','Mercedes 300 SL','4.59M'],['8','gandini_fan','Countach','4.13M']]},
+  cars:{top:'211',me:{rank:'1,204',score:'14'},rows:[['2','dtm.88','BMW M3 E30','204'],['3','fairlady','Datsun 240Z','197'],['4','touge.t','Honda NSX','190'],['5','bayside.r','Skyline GT-R R34','183'],['6','lmarchetti','Ferrari F40','177'],['7','apex_hunter','McLaren F1','171'],['8','rallye.b','Lancia Delta','165']]}
+};
+const MK = {Buy:[['Epic','Skyline GT-R V-Spec','R34','bayside.r','412,000','+3.2%',1],['Rare','M3','E30','dtm.88','96,000','−1.4%',0],['Legendary','911 Carrera RS 2.7','F-series','ducktail','1.2M','+0.8%',1],['Common','Golf GTI','Mk1','fairlady','8,400','−0.4%',0],['Epic','Supra RZ','A80','2jz_only','188,000','+5.1%',1],['Rare','RX-7','FD','rotary.k','72,500','+1.2%',1],['Legendary','F40','','r.costa','2.4M','−2.0%',0]],
+  Sell:[['Epic','Supra RZ','A80','Your listing','195,000','3 offers',1],['Rare','Ford Sierra RS Cosworth','','Your listing','39,000','Sold',0],['Common','Mini Cooper S','Mk1','Your listing','21,500','No offers',0]],
+  Swap:[['Epic','Skyline GT-R V-Spec','R34','wants a Rare + 40k','—','2 matches',1],['Legendary','Porsche 959','','wants an Epic','—','1 match',1],['Rare','Honda NSX','NA1','wants a Common + 60k','—','4 matches',1]]};
+const REV = [['Rare','Ford Sierra RS Cosworth','Ford · 1987 · 224 hp',0],['Epic','Datsun 240Z','Nissan · S30 · 1970',1],['Common','Mini Cooper S','Mini · Mk1 · 1964',0],['Legendary','Mercedes-Benz 300 SL','W198 · 1954 · 215 hp',1],['Rare','Honda NSX','NA1 · 1990 · 270 hp',1]];
+const OPP = [{n:'bayside.r',v:80,t:7.9},{n:'rallye.b',v:68,t:6.8},{n:'touge.t',v:76,t:9.0}];
+const od = (o,t) => o.v*(t - o.t*(1-Math.exp(-t/o.t)));
+class Component extends DCLogic {
+  state = { lb:'race', mk:'Buy', ev:'sprint', car:0, rev:[false,false,false,false,false], ph:'idle', t:0, d:0, v:0, g:1, rpm:0, boost:0 };
+  componentWillUnmount() { cancelAnimationFrame(this.raf); }
+  startRace = () => {
+    cancelAnimationFrame(this.raf); const k = this.s0 = {t:0,d:0,v:0,g:1,rpm:0,boost:0}; this.ph = 'race';
+    this.setState({ph:'race', ...k}); let last = performance.now();
+    const c = RC[this.state.car], len = EVS.find(e=>e.id===this.state.ev).len, vmax = c[5]/3.6, A = (3+18*c[3]/c[4])*1.6*(1+c[6]*0.02);
+    const loop = now => { const dt = Math.min(0.05,(now-last)/1000); last = now; const s = this.s0;
+      s.t += dt; s.rpm = Math.min(1, s.rpm + dt*(1.1/Math.pow(s.g,0.85)));
+      const a = A*(0.35+0.65*s.rpm)*(1/Math.pow(s.g,0.15))*Math.max(0,1-s.v/vmax)*(s.rpm>=1?0.3:1)*(s.boost>0?1.3:1);
+      s.v += a*dt; s.d += s.v*dt; s.boost = Math.max(0,s.boost-dt);
+      if (s.d >= len) { this.ph = 'done'; this.setState({ph:'done', ...s}); return; }
+      this.setState({...s}); this.raf = requestAnimationFrame(loop); };
+    this.raf = requestAnimationFrame(loop);
+  };
+  shift = () => { const s = this.s0; if (this.ph!=='race' || !s || s.g>=6) return; const q = s.rpm<0.82?0:s.rpm<0.97?1:2; s.g++; s.rpm = Math.max(0.3,s.rpm*0.55); s.boost = q===1?0.7:0; this.msg = ['Early shift','Perfect shift','Late shift'][q]; };
+  renderVals() {
+    const S = this.state, ev = EVS.find(e=>e.id===S.ev), lb = LB[S.lb];
+    const lbN = {race:'Race points',value:'Value',cars:'Cars'};
+    const seg = k => ({bg:k===S.mk?'var(--color-text)':'transparent', fg:k===S.mk?'var(--color-bg)':'var(--color-text)'});
+    const len = ev.len, mine = Math.min(100, S.d/len*100);
+    const lanesRaw = [{name:'You',p:mine,me:true},...OPP.map(o=>({name:o.n,p:Math.min(100,od(o,S.t)/len*100)}))];
+    const pos = [...lanesRaw].sort((a,b)=>b.p-a.p).findIndex(l=>l.me)+1;
+    const idle = S.ph==='idle', done = S.ph==='done';
+    const cnt = S.rev.filter(Boolean).length;
+    return {
+      tabs0: mk(T5,1), tabs2: mk(T5,2), tabs3: mk(T5,3), tabs4: mk(T5,4), tabs5: mk(['Garage','Packs','Race','Market','Profile'],'P'),
+      packs: [
+        {kind:'Everyday',name:'Street',odds:'Common 70% · Rare 25% · Epic 5%',price:'2,000 CR',bg:'var(--color-bg)',fg:'var(--color-text)',btnBg:'var(--color-text)',btnFg:'var(--color-bg)'},
+        {kind:'Classics',name:'Heritage',odds:'Rare 55% · Epic 35% · Legendary 10%',price:'8,000 CR',bg:'var(--color-bg)',fg:'var(--color-text)',btnBg:'var(--color-text)',btnFg:'var(--color-bg)'},
+        {kind:'Supercars',name:'Apex',odds:'Epic 60% · Legendary 40%',price:'25,000 CR',bg:'var(--color-accent)',fg:'var(--color-bg)',btnBg:'var(--color-bg)',btnFg:'var(--color-accent-700)'}],
+      mkTabs: ['Buy','Sell','Swap'].map(k=>({l:k,...seg(k),pick:()=>this.setState({mk:k})})),
+      listings: MK[S.mk].map(([tier,model,gen,seller,price,delta,up])=>({tier,model,gen,seller,price,delta,tc:TIER[tier],dc:up?'var(--color-accent-700)':'var(--color-neutral-700)'})),
+      lbTabs: Object.keys(lbN).map(k=>({l:lbN[k],fw:k===S.lb?'800':'400',line:k===S.lb?'inset 0 -3px 0 var(--color-accent)':'none',pick:()=>this.setState({lb:k})})),
+      lbRows: lb.rows.map(([rank,name,car,score])=>({rank,name,car,score})), lbTop: lb.top, lbMe: lb.me,
+      stats: [['Cars owned','14'],['Garage value','2.71M'],['Races won','87'],['Race points','6,310'],['Packs opened','61'],['Best lap','1:12.48']].map(([k,v])=>({k,v})),
+      tiers: [['Common',3,92],['Rare',3,64],['Epic',4,38],['Legendary',4,20]].map(([k,h,t])=>({k,v:h+' / '+t,pct:Math.round(h/t*100)+'%',bar:BAR[k]})),
+      activity: [{verb:'Won',what:'a sprint at Suzuka East'},{verb:'Pulled',what:'Mercedes 300 SL W198 from a Heritage pack'},{verb:'Sold',what:'Ford Sierra RS Cosworth for 39,000 CR'},{verb:'Reached',what:'level 23'}],
+      events: EVS.map(e=>({kind:e.kind,len:e.len.toLocaleString('en-US')+' m',bg:e.id===S.ev?'var(--color-text)':'var(--color-bg)',fg:e.id===S.ev?'var(--color-bg)':'var(--color-text)',pick:()=>{cancelAnimationFrame(this.raf);this.ph='idle';this.setState({ev:e.id,ph:'idle',d:0,t:0,v:0,g:1,rpm:0});}})),
+      evInfo: ev,
+      raceCars: RC.map(([model,gen,t,hp,kg],i)=>({model,gen,hp,kg,pw:Math.round(hp/kg*1000),bar:BAR[t],bg:i===S.car?'var(--color-surface)':'transparent',pick:()=>{cancelAnimationFrame(this.raf);this.ph='idle';this.setState({car:i,ph:'idle',d:0,t:0,v:0,g:1,rpm:0});}})),
+      lanes: lanesRaw.map(l=>({name:l.name,p:l.p+'%',lab:l.me?'YOU · '+Math.round(S.d)+' m':Math.round(l.p*len/100)+' m',bar:l.me?'var(--color-accent)':'var(--color-neutral-500)',bg:l.me?'var(--color-surface)':'transparent',cbg:l.me?'var(--color-text)':'var(--color-neutral-200)',cfg:l.me?'var(--color-bg)':'var(--color-text)'})),
+      live: {pos: idle?'—':done?pos+' / 4':pos+' / 4', time: S.t.toFixed(2)+' s', togo: Math.max(0,Math.round(len-S.d))+' m', kmh: String(Math.round(S.v*3.6)), gear: String(S.g),
+        rpm: Math.round(S.rpm*100)+'%', rpmBg: S.rpm>=0.97?'var(--color-accent)':S.rpm>=0.82?'var(--color-accent-600)':'var(--color-text)',
+        msg: idle?'Press Start, then shift in the marked window':done?'Finished · '+S.t.toFixed(2)+' s':(this.msg||'Shift in the marked window'),
+        btn: idle?'Start':done?'Race again':'Shift up', act: (idle||done)?this.startRace:this.shift},
+      lpStats:[{v:'214',k:'Licensed models'},{v:'1954–2024',k:'Years'},{v:'4',k:'Rarity tiers'},{v:'90 s',k:'Average race'}],
+      lpSteps:[{n:'01',t:'Open packs',d:'Five cars per pack, with published odds for every tier.'},{n:'02',t:'Race to win cars',d:'Short real-time races. Power, weight and upgrades all count.'},{n:'03',t:'Trade on the market',d:'Buy, sell or swap with other collectors.'}],
+      rv: {count:cnt, all:()=>this.setState({rev:[true,true,true,true,true]}),
+        cards: REV.map(([tier,model,sub,isNew],i)=>{ const on=S.rev[i], leg=tier==='Legendary';
+          return {tier,model,sub,n:String(i+1),isNew:isNew?' · New':'',cover:on?'-101%':'0%',bar:BAR[tier],bg:leg?'var(--color-accent)':'var(--color-bg)',fg:leg?'var(--color-bg)':'var(--color-text)',pick:()=>this.setState(s=>({rev:s.rev.map((x,k)=>k===i?true:x)}))}; })},
+      resRows:[['P1','You · J. Durand','Skyline GT-R V-Spec R34','19.84 s','—',1],['P2','rallye.b','Lancia Delta','20.31 s','+0.47',0],['P3','bayside.r','Supra A80','20.62 s','+0.78',0],['P4','touge.t','Honda NSX','21.40 s','+1.56',0]].map(([pos,name,car,time,gap,me])=>({pos,name,car,time,gap,bg:me?'var(--color-surface)':'transparent'}))
+    };
+  }
+}
+</script>
+</body>
+</html>

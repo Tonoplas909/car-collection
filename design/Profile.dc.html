@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="_ds/modernist-468c7b53-200e-4772-8c6d-9d95f4feda56/styles.css">
+<script src="_ds/modernist-468c7b53-200e-4772-8c6d-9d95f4feda56/_ds_bundle.js"></script>
+<script src="fx.js"></script>
+<style>body{margin:0;background:var(--color-neutral-300)} a{color:var(--color-accent)} a:hover{color:var(--color-accent-600)}</style>
+</helmet>
+<section style="padding:64px;display:flex;flex-direction:column;gap:32px">
+  <div style="display:flex;flex-direction:column;gap:4px;max-width:900px">
+    <h6 style="margin:0;color:var(--color-accent-700)">Turn 4</h6>
+    <h2 style="margin:0">Profile and stats</h2>
+    <p style="margin:0;color:var(--color-neutral-800)">The player's own profile: level, headline stats, collection progress by tier and by country, a three-car showcase and recent activity.</p>
+  </div>
+  <div id="4b" style="display:flex;flex-direction:column;gap:12px">
+    <div style="display:flex;align-items:center;gap:12px">
+      <span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">4b</span>
+      <span style="font-weight:600;font-size:14px">Profile</span>
+    </div>
+    <div style="width:1280px;height:880px;background:var(--color-bg);display:grid;grid-template-columns:200px minmax(0,1fr) 360px;overflow:hidden;box-shadow:var(--shadow-md)">
+      <nav style="border-right:2px solid var(--color-divider);display:flex;flex-direction:column;padding:24px 0">
+        <span style="font-weight:800;font-size:22px;letter-spacing:0.02em;padding:0 20px 24px">MARQUE</span>
+        <a href="Garage.dc.html" style="padding:10px 20px;font-size:15px;text-decoration:none;color:var(--color-text)">Garage</a>
+        <a href="Packs.dc.html" style="padding:10px 20px;font-size:15px;text-decoration:none;color:var(--color-text)">Packs</a>
+        <a href="#4b" style="padding:10px 20px;font-size:15px;text-decoration:none;color:var(--color-text)">Race</a>
+        <a href="Market.dc.html" style="padding:10px 20px;font-size:15px;text-decoration:none;color:var(--color-text)">Market</a>
+        <a href="Leaderboard.dc.html" style="padding:10px 20px;font-size:15px;text-decoration:none;color:var(--color-text)">Leaderboard</a>
+        <div style="margin-top:auto;border-top:2px solid var(--color-divider);padding:16px 20px;display:flex;flex-direction:column;gap:2px;background:var(--color-text);color:var(--color-bg);margin-bottom:-24px">
+          <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase">Credits</span>
+          <span style="font-weight:800;font-size:20px;font-variant-numeric:tabular-nums">48,200</span>
+          <span style="font-size:13px;padding-top:8px;font-weight:800">J. Durand · Lv 23</span>
+        </div>
+      </nav>
+      <div style="display:flex;flex-direction:column;min-height:0;overflow:auto">
+        <div style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;padding:24px;border-bottom:2px solid var(--color-divider);align-items:end">
+          <div style="aspect-ratio:1;background:repeating-linear-gradient(135deg,var(--color-surface) 0 8px,var(--color-neutral-300) 8px 16px);display:grid;place-items:center">
+            <span style="font-family:ui-monospace,monospace;font-size:10px;color:var(--color-neutral-700)">avatar</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <span style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Lyon, France · since March 2026</span>
+            <span style="font-weight:800;font-size:56px;line-height:0.9;letter-spacing:-0.03em">J. Durand</span>
+            <div style="display:flex;align-items:center;gap:12px;padding-top:8px">
+              <span style="font-weight:800;font-size:15px">Lv 23</span>
+              <div style="flex:1;height:8px;background:var(--color-neutral-300)"><div style="height:8px;width:64%;background:var(--color-accent)"></div></div>
+              <span style="font-size:13px;color:var(--color-neutral-700);font-variant-numeric:tabular-nums">6,400 / 10,000 XP</span>
+            </div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;background:var(--color-divider);border-bottom:2px solid var(--color-divider)">
+          <sc-for list="{{ stats }}" as="s" hint-placeholder-count="8">
+            <div style="background:var(--color-bg);padding:14px 16px;display:flex;flex-direction:column;gap:2px">
+              <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">{{ s.k }}</span>
+              <span style="font-weight:800;font-size:28px;line-height:1.05;font-variant-numeric:tabular-nums">{{ s.v }}</span>
+              <span style="font-size:12px;color:var(--color-neutral-700)">{{ s.sub }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--color-divider);flex:1">
+          <div style="background:var(--color-bg);padding:20px 24px;display:flex;flex-direction:column;gap:12px">
+            <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Collection by tier</span>
+            <sc-for list="{{ byTier }}" as="t" hint-placeholder-count="4">
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <div style="display:flex;font-size:14px"><span style="font-weight:600">{{ t.k }}</span><span style="margin-left:auto;font-variant-numeric:tabular-nums">{{ t.v }}</span></div>
+                <div style="height:8px;background:var(--color-neutral-300)"><div style="height:8px;width:{{ t.pct }};background:{{ t.bar }}"></div></div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="background:var(--color-bg);padding:20px 24px;display:flex;flex-direction:column;gap:12px">
+            <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Collection by country</span>
+            <sc-for list="{{ byCountry }}" as="t" hint-placeholder-count="5">
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <div style="display:flex;font-size:14px"><span style="font-weight:600">{{ t.k }}</span><span style="margin-left:auto;font-variant-numeric:tabular-nums">{{ t.v }}</span></div>
+                <div style="height:8px;background:var(--color-neutral-300)"><div style="height:8px;width:{{ t.pct }};background:var(--color-text)"></div></div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      <aside style="border-left:2px solid var(--color-divider);display:flex;flex-direction:column;min-height:0">
+        <div style="padding:20px 24px 12px;display:flex;align-items:baseline">
+          <span style="font-weight:800;font-size:20px">Showcase</span>
+          <a href="Garage.dc.html" style="margin-left:auto;font-size:13px">Edit</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:2px;background:var(--color-divider);border-top:2px solid var(--color-divider);border-bottom:2px solid var(--color-divider)">
+          <sc-for list="{{ showcase }}" as="c" hint-placeholder-count="3">
+            <div style="display:grid;grid-template-columns:112px minmax(0,1fr);gap:14px;background:{{ c.bg }};color:{{ c.fg }};padding:12px 24px">
+              <div style="aspect-ratio:4/3;background:repeating-linear-gradient(135deg,var(--color-surface) 0 8px,var(--color-neutral-300) 8px 16px);display:grid;place-items:center">
+                <span style="font-family:ui-monospace,monospace;font-size:9px;color:var(--color-neutral-700)">car photo</span>
+              </div>
+              <div style="display:flex;flex-direction:column;justify-content:center;gap:2px">
+                <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;font-weight:800">{{ c.tier }}</span>
+                <span style="font-weight:800;font-size:17px;line-height:1.15">{{ c.model }}</span>
+                <span style="font-size:12px">{{ c.makeGen }} · {{ c.year }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="padding:20px 24px 8px">
+          <span style="font-weight:800;font-size:20px">Recent activity</span>
+        </div>
+        <div style="overflow:auto;flex:1;min-height:0;padding:0 24px 16px">
+          <sc-for list="{{ activity }}" as="a" hint-placeholder-count="6">
+            <div style="display:grid;grid-template-columns:64px minmax(0,1fr);gap:8px;padding:9px 0;border-bottom:1px solid var(--color-divider);font-size:14px">
+              <span style="font-size:12px;color:var(--color-neutral-700);font-variant-numeric:tabular-nums">{{ a.t }}</span>
+              <span style="text-wrap:pretty"><b>{{ a.verb }}</b> {{ a.what }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const tier = (k, have, total, bar) => ({k, v:`${have} / ${total}`, pct: Math.round(have/total*100)+'%', bar});
+    const ctry = (k, have, total) => ({k, v:`${have} / ${total}`, pct: Math.round(have/total*100)+'%'});
+    return {
+      stats: [
+        {k:'Cars owned', v:'14', sub:'of 214 in the game'},
+        {k:'Garage value', v:'2.71M', sub:'CR · rank #388'},
+        {k:'Races won', v:'87', sub:'of 203 · 43% win rate'},
+        {k:'Race points', v:'6,310', sub:'Season 4 · rank #142'},
+        {k:'Packs opened', v:'61', sub:'4 Legendary pulls'},
+        {k:'Market trades', v:'19', sub:'+38,400 CR net'},
+        {k:'Best lap', v:'1:12.48', sub:'Nürburgring GP · F40'},
+        {k:'Login streak', v:'9 days', sub:'Best: 31 days'}
+      ],
+      byTier: [tier('Common',3,92,'var(--color-neutral-500)'),tier('Rare',3,64,'var(--color-text)'),tier('Epic',4,38,'var(--color-accent-400)'),tier('Legendary',4,20,'var(--color-accent)')],
+      byCountry: [ctry('Japan',6,58),ctry('Germany',3,46),ctry('Italy',3,41),ctry('United Kingdom',2,27),ctry('France',1,24),ctry('United States',0,18)],
+      showcase: [
+        {tier:'Legendary',model:'F1',makeGen:'McLaren',year:1992,bg:'var(--color-accent)',fg:'var(--color-bg)'},
+        {tier:'Epic',model:'Skyline GT-R V-Spec',makeGen:'Nissan · R34',year:1999,bg:'var(--color-bg)',fg:'var(--color-text)'},
+        {tier:'Legendary',model:'911 Carrera RS 2.7',makeGen:'Porsche · F-series',year:1973,bg:'var(--color-bg)',fg:'var(--color-text)'}
+      ],
+      activity: [
+        {t:'12 min',verb:'Won',what:'a sprint at Suzuka East in the Skyline GT-R R34'},
+        {t:'1 h',verb:'Pulled',what:'Mercedes-Benz 300 SL W198 from a Heritage pack'},
+        {t:'3 h',verb:'Upgraded',what:'Porsche 911 RS to Lv 4'},
+        {t:'Yesterday',verb:'Sold',what:'Ford Sierra RS Cosworth for 39,000 CR'},
+        {t:'Yesterday',verb:'Bought',what:'BMW M3 E30 from dtm.88'},
+        {t:'2 days',verb:'Reached',what:'level 23'},
+        {t:'3 days',verb:'Lost',what:'to rallye.b at Monte Carlo Stage 2'}
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

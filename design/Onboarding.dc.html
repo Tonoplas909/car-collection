@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="_ds/modernist-468c7b53-200e-4772-8c6d-9d95f4feda56/styles.css">
+<script src="_ds/modernist-468c7b53-200e-4772-8c6d-9d95f4feda56/_ds_bundle.js"></script>
+<script src="fx.js"></script>
+<style>body{margin:0;background:var(--color-neutral-300)} a{color:var(--color-accent)} a:hover{color:var(--color-accent-600)}</style>
+</helmet>
+<section style="padding:64px;display:flex;flex-direction:column;gap:32px">
+  <div style="display:flex;flex-direction:column;gap:4px;max-width:900px">
+    <h6 style="margin:0;color:var(--color-accent-700)">Turn 7</h6>
+    <h2 style="margin:0">Onboarding</h2>
+    <p style="margin:0;color:var(--color-neutral-800)">Create an account, choose what you like, open the first free pack. The second step's choices set the first pack's contents.</p>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:64px;align-items:flex-start">
+
+    <div id="7a" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px"><span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">7a</span><span style="font-weight:600;font-size:14px">Sign up</span></div>
+      <div style="width:1280px;height:760px;display:grid;grid-template-columns:minmax(0,1fr) 520px;background:var(--color-bg);overflow:hidden;box-shadow:var(--shadow-md)">
+        <div style="background:var(--color-accent);color:var(--color-bg);padding:40px;display:flex;flex-direction:column">
+          <span style="font-weight:800;font-size:22px">MARQUE</span>
+          <span style="margin-top:auto;font-weight:800;font-size:120px;line-height:0.88;letter-spacing:-0.04em">Your first pack is free.</span>
+        </div>
+        <form style="padding:56px 48px;display:flex;flex-direction:column;gap:20px">
+          <span style="font-weight:800;font-size:40px;line-height:1;letter-spacing:-0.02em">Create your garage</span>
+          <div class="field"><label for="u">Username</label><input id="u" class="input" placeholder="j.durand"></div>
+          <div class="field"><label for="e">Email</label><input id="e" class="input" type="email" placeholder="you@example.com"></div>
+          <div class="field"><label for="p">Password</label><input id="p" class="input" type="password" placeholder="At least 8 characters"></div>
+          <a href="#7b" class="btn btn-primary" style="justify-content:flex-start;padding:16px;font-size:16px;color:var(--color-bg)">Create account</a>
+          <span style="font-size:14px;color:var(--color-neutral-800)">Already collecting? <a href="Garage.dc.html">Log in</a></span>
+          <span style="margin-top:auto;font-size:12px;color:var(--color-neutral-700)">By continuing you accept the terms and the published pack odds.</span>
+        </form>
+      </div>
+    </div>
+
+    <div id="7b" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px"><span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">7b</span><span style="font-weight:600;font-size:14px">What do you collect? (select)</span></div>
+      <div style="width:1280px;height:760px;background:var(--color-bg);display:flex;flex-direction:column;overflow:hidden;box-shadow:var(--shadow-md)">
+        <div style="display:flex;align-items:center;padding:20px 40px;border-bottom:2px solid var(--color-divider)"><span style="font-weight:800;font-size:22px">MARQUE</span><span style="margin-left:auto;font-size:13px;color:var(--color-neutral-700)">Step 2 of 3</span></div>
+        <div style="padding:40px 40px 24px;display:flex;align-items:flex-end;gap:32px"><span style="font-weight:800;font-size:96px;line-height:0.85;letter-spacing:-0.04em">What do you love?</span><span style="font-size:15px;color:var(--color-neutral-800);padding-bottom:6px;max-width:34ch">Pick as many as you like. Your free pack leans toward them.</span></div>
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--color-divider);border-top:2px solid var(--color-divider);border-bottom:2px solid var(--color-divider);flex:1;min-height:0">
+          <sc-for list="{{ tastes }}" as="t" hint-placeholder-count="6">
+            <button onClick="{{ t.pick }}" style="border:0;font:inherit;text-align:left;cursor:pointer;padding:24px 28px;background:{{ t.bg }};color:{{ t.fg }};display:flex;flex-direction:column;justify-content:flex-end;gap:4px">
+              <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase">{{ t.state }}</span>
+              <span style="font-weight:800;font-size:36px;line-height:1">{{ t.name }}</span>
+              <span style="font-size:14px">{{ t.ex }}</span>
+            </button>
+          </sc-for>
+        </div>
+        <div style="display:flex;align-items:center;padding:16px 40px;gap:16px"><span style="font-size:14px;color:var(--color-neutral-800)">{{ count }} selected</span><a href="#7c" class="btn btn-primary" style="margin-left:auto;justify-content:flex-start;padding:14px 20px;min-width:240px;color:var(--color-bg)">Continue</a></div>
+      </div>
+    </div>
+
+    <div id="7c" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px"><span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">7c</span><span style="font-weight:600;font-size:14px">First pack (click the black box)</span></div>
+      <div style="width:1280px;height:760px;background:var(--color-bg);display:grid;grid-template-columns:minmax(0,1fr) 440px;overflow:hidden;box-shadow:var(--shadow-md)">
+        <div onClick="{{ open }}" style="position:relative;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;background:{{ cardBg }};color:{{ cardFg }}">
+          <div style="height:10px;background:var(--color-accent-700)"></div>
+          <div style="flex:1;background:repeating-linear-gradient(135deg,var(--color-surface) 0 12px,var(--color-neutral-300) 12px 24px);display:grid;place-items:center"><span style="font-family:ui-monospace,monospace;font-size:12px;color:var(--color-neutral-700)">car photo · 3/4 front</span></div>
+          <div style="padding:24px 32px;display:flex;flex-direction:column"><span style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:800">Legendary · New</span><span style="font-weight:800;font-size:56px;line-height:1">Porsche 911 Carrera RS 2.7</span><span style="font-size:15px">F-series · 1973 · 210 hp · 975 kg</span></div>
+          <div style="position:absolute;inset:0;background:var(--color-text);color:var(--color-bg);display:flex;flex-direction:column;justify-content:flex-end;padding:40px;transform:translateY({{ cover }});transition:transform 900ms cubic-bezier(.76,0,.24,1)">
+            <span style="font-weight:800;font-size:96px;line-height:0.88;letter-spacing:-0.04em">Click to open</span><span style="font-size:15px;padding-top:12px">Starter pack · 3 cars</span>
+          </div>
+        </div>
+        <div style="border-left:2px solid var(--color-divider);display:flex;flex-direction:column;padding:40px 32px;gap:16px">
+          <span style="font-size:13px;color:var(--color-neutral-700)">Step 3 of 3</span>
+          <span style="font-weight:800;font-size:44px;line-height:1">{{ headline }}</span>
+          <p style="margin:0;font-size:15px;line-height:24px;color:var(--color-neutral-800)">{{ body }}</p>
+          <div style="margin-top:auto;display:flex;flex-direction:column;gap:8px">
+            <a href="Garage.dc.html" class="btn btn-primary" style="justify-content:flex-start;padding:16px;color:var(--color-bg)">Go to my garage</a>
+            <a href="Packs.dc.html" class="btn btn-secondary" style="justify-content:flex-start;padding:16px">Visit the pack shop</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const T = [['Everyday heroes','Golf GTI, Mini Cooper, Civic Type R'],['JDM','Skyline, Supra, RX-7, NSX'],['Supercars','F40, Countach, McLaren F1'],['Classics','300 SL, 240Z, 911 RS'],['Rally','Delta Integrale, Escort Cosworth'],['Concepts','One-offs that never reached production']];
+class Component extends DCLogic {
+  state = { sel:[1,3], opened:false };
+  renderVals() {
+    const s = this.state;
+    return {
+      tastes: T.map(([name,ex],i)=>{ const on = s.sel.includes(i); return {name,ex,state:on?'Selected':'Select',bg:on?'var(--color-text)':'var(--color-bg)',fg:on?'var(--color-bg)':'var(--color-text)',pick:()=>this.setState(x=>({sel:x.sel.includes(i)?x.sel.filter(k=>k!==i):[...x.sel,i]}))}; }),
+      count: s.sel.length,
+      open: ()=>this.setState({opened:true}),
+      cover: s.opened?'-101%':'0%',
+      cardBg: 'var(--color-bg)', cardFg: 'var(--color-text)',
+      headline: s.opened ? 'Welcome to the club.' : 'Open your pack.',
+      body: s.opened ? 'The Porsche 911 Carrera RS 2.7 is now in your garage, along with two more cars. Rarer cars are one pack, one race or one trade away.' : 'Three cars chosen from the tastes you picked. Odds are the same as the shop.'
+    };
+  }
+}
+</script>
+</body>
+</html>

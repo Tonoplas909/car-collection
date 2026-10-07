@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="_ds/modernist-468c7b53-200e-4772-8c6d-9d95f4feda56/styles.css">
+<script src="_ds/modernist-468c7b53-200e-4772-8c6d-9d95f4feda56/_ds_bundle.js"></script>
+<script src="fx.js"></script>
+<style>body{margin:0;background:var(--color-neutral-300)} a{color:var(--color-accent)} a:hover{color:var(--color-accent-600)}</style>
+</helmet>
+<section style="padding:64px;display:flex;flex-direction:column;gap:32px">
+  <div style="display:flex;flex-direction:column;gap:4px;max-width:900px">
+    <h6 style="margin:0;color:var(--color-accent-700)">Turn 8</h6>
+    <h2 style="margin:0">Settings, top-up, upgrade, events, friends</h2>
+    <p style="margin:0;color:var(--color-neutral-800)">Five more desktop screens in the same shell. Top-up, upgrade and friends respond to clicks.</p>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:64px;align-items:flex-start">
+
+    <div id="8a" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px"><span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">8a</span><span style="font-weight:600;font-size:14px">Settings</span></div>
+      <div style="width:1280px;height:760px;background:var(--color-bg);display:grid;grid-template-columns:200px minmax(0,1fr);overflow:hidden;box-shadow:var(--shadow-md)">
+        <nav style="border-right:2px solid var(--color-divider);display:flex;flex-direction:column;padding:24px 0"><span style="font-weight:800;font-size:22px;padding:0 20px 24px">MARQUE</span>
+          <sc-for list="{{ nav }}" as="n" hint-placeholder-count="6"><a href="{{ n.href }}" style="padding:10px 20px;font-size:15px;text-decoration:none;color:var(--color-text)">{{ n.l }}</a></sc-for></nav>
+        <div style="display:grid;grid-template-columns:240px minmax(0,1fr);min-height:0">
+          <div style="border-right:2px solid var(--color-divider);padding:24px 0;display:flex;flex-direction:column"><span style="font-weight:800;font-size:40px;line-height:0.9;letter-spacing:-0.03em;padding:0 20px 20px">Settings</span>
+            <sc-for list="{{ setTabs }}" as="t" hint-placeholder-count="5"><div style="padding:10px 20px;font-size:15px;background:{{ t.bg }};color:{{ t.fg }};font-weight:{{ t.fw }}">{{ t.l }}</div></sc-for></div>
+          <div style="padding:32px 40px;display:flex;flex-direction:column;gap:20px;max-width:640px;overflow:auto">
+            <span style="font-weight:800;font-size:28px">Account</span>
+            <div class="field"><label>Username</label><input class="input" value="j.durand"></div>
+            <div class="field"><label>Email</label><input class="input" value="j.durand@example.com"></div>
+            <div class="field"><label>Region</label><input class="input" value="France"></div>
+            <div style="height:2px;background:var(--color-divider)"></div>
+            <span style="font-weight:800;font-size:28px">Preferences</span>
+            <sc-for list="{{ prefs }}" as="p" hint-placeholder-count="4"><div style="display:flex;align-items:center;gap:16px;padding:12px 0;border-bottom:1px solid var(--color-divider)"><div style="display:flex;flex-direction:column"><span style="font-weight:600">{{ p.k }}</span><span style="font-size:13px;color:var(--color-neutral-700)">{{ p.d }}</span></div><button onClick="{{ p.toggle }}" style="margin-left:auto;border:2px solid var(--color-text);background:{{ p.bg }};color:{{ p.fg }};font:inherit;font-size:13px;font-weight:800;padding:8px 14px;min-width:64px;cursor:pointer">{{ p.v }}</button></div></sc-for>
+            <div style="display:flex;gap:8px;padding-top:8px"><a href="#8a" class="btn btn-primary" style="padding:12px 20px;color:var(--color-bg)">Save changes</a><a href="Landing.dc.html" class="btn btn-secondary" style="padding:12px 20px">Log out</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="8b" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px"><span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">8b</span><span style="font-weight:600;font-size:14px">Credits top-up</span></div>
+      <div style="width:1280px;height:760px;background:var(--color-bg);display:grid;grid-template-columns:200px minmax(0,1fr) 400px;overflow:hidden;box-shadow:var(--shadow-md)">
+        <nav style="border-right:2px solid var(--color-divider);display:flex;flex-direction:column;padding:24px 0"><span style="font-weight:800;font-size:22px;padding:0 20px 24px">MARQUE</span>
+          <sc-for list="{{ nav }}" as="n" hint-placeholder-count="6"><a href="{{ n.href }}" style="padding:10px 20px;font-size:15px;text-decoration:none;color:var(--color-text)">{{ n.l }}</a></sc-for></nav>
+        <div style="display:flex;flex-direction:column;min-height:0"><div style="padding:24px;border-bottom:2px solid var(--color-divider)"><span style="font-weight:800;font-size:96px;line-height:0.85;letter-spacing:-0.04em">Credits</span></div>
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:var(--color-divider);flex:1">
+            <sc-for list="{{ bundles }}" as="b" hint-placeholder-count="4"><button onClick="{{ b.pick }}" style="border:0;font:inherit;text-align:left;cursor:pointer;padding:28px;background:{{ b.bg }};color:{{ b.fg }};display:flex;flex-direction:column;justify-content:flex-end;gap:4px"><span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase">{{ b.tag }}</span><span style="font-weight:800;font-size:56px;line-height:1;font-variant-numeric:tabular-nums">{{ b.cr }}</span><span style="font-size:14px">{{ b.sub }} · {{ b.price }}</span></button></sc-for>
+          </div></div>
+        <aside style="border-left:2px solid var(--color-divider);display:flex;flex-direction:column"><div style="background:var(--color-accent);color:var(--color-bg);padding:24px"><span style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:800">Order</span><div style="font-weight:800;font-size:44px;line-height:1;padding-top:12px">{{ sel.cr }} CR</div></div>
+          <div style="padding:20px 24px;display:flex;flex-direction:column;gap:10px;font-size:15px"><div style="display:flex"><span>Bundle</span><span style="margin-left:auto">{{ sel.price }}</span></div><div style="display:flex"><span>VAT 20%</span><span style="margin-left:auto">{{ sel.vat }}</span></div><div style="display:flex;font-weight:800;border-top:2px solid var(--color-divider);padding-top:10px"><span>Total</span><span style="margin-left:auto">{{ sel.total }}</span></div></div>
+          <div style="padding:0 24px;display:flex;flex-direction:column;gap:12px"><div class="field"><label>Card number</label><input class="input" placeholder="4242 4242 4242 4242"></div></div>
+          <div style="margin-top:auto;padding:24px"><a href="#8b" class="btn btn-primary" style="justify-content:flex-start;width:100%;padding:16px;color:var(--color-bg)">Pay {{ sel.total }}</a></div></aside>
+      </div>
+    </div>
+
+    <div id="8c" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px"><span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">8c</span><span style="font-weight:600;font-size:14px">Car upgrade</span></div>
+      <div style="width:1280px;height:760px;background:var(--color-bg);display:grid;grid-template-columns:200px minmax(0,1fr) 400px;overflow:hidden;box-shadow:var(--shadow-md)">
+        <nav style="border-right:2px solid var(--color-divider);display:flex;flex-direction:column;padding:24px 0"><span style="font-weight:800;font-size:22px;padding:0 20px 24px">MARQUE</span>
+          <sc-for list="{{ nav }}" as="n" hint-placeholder-count="6"><a href="{{ n.href }}" style="padding:10px 20px;font-size:15px;text-decoration:none;color:var(--color-text)">{{ n.l }}</a></sc-for></nav>
+        <div style="display:flex;flex-direction:column;min-height:0"><div style="background:var(--color-accent);color:var(--color-bg);padding:24px"><span style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:800">Legendary · Level {{ lvl }}</span><div style="font-weight:800;font-size:64px;line-height:0.95;letter-spacing:-0.03em;padding-top:8px">911 Carrera RS 2.7</div></div>
+          <div style="flex:1;background:repeating-linear-gradient(135deg,var(--color-surface) 0 12px,var(--color-neutral-300) 12px 24px);display:grid;place-items:center"><span style="font-family:ui-monospace,monospace;font-size:12px;color:var(--color-neutral-700)">car photo · side profile</span></div>
+          <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;background:var(--color-divider);border-top:2px solid var(--color-divider)"><sc-for list="{{ stats }}" as="s" hint-placeholder-count="4"><div style="background:var(--color-bg);padding:16px 20px"><div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">{{ s.k }}</div><div style="font-weight:800;font-size:32px;font-variant-numeric:tabular-nums">{{ s.v }}</div><div style="font-size:12px;color:var(--color-accent-700);min-height:16px">{{ s.d }}</div></div></sc-for></div></div>
+        <aside style="border-left:2px solid var(--color-divider);display:flex;flex-direction:column"><div style="padding:24px 24px 8px;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Parts</div>
+          <sc-for list="{{ parts }}" as="p" hint-placeholder-count="4"><div style="display:flex;align-items:center;gap:12px;padding:14px 24px;border-top:1px solid var(--color-divider)"><div style="display:flex;flex-direction:column"><span style="font-weight:800">{{ p.k }}</span><span style="font-size:12px;color:var(--color-neutral-700)">{{ p.d }}</span></div><span style="margin-left:auto;font-size:13px;font-weight:800">{{ p.cost }}</span></div></sc-for>
+          <div style="margin-top:auto;padding:24px;display:flex;flex-direction:column;gap:8px"><span style="font-size:13px;color:var(--color-neutral-700)">Level {{ lvl }} to {{ next }} · {{ cost }}</span><button onClick="{{ up }}" class="btn btn-primary" style="justify-content:flex-start;padding:16px;font-size:16px">{{ upLabel }}</button></div></aside>
+      </div>
+    </div>
+
+    <div id="8d" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px"><span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">8d</span><span style="font-weight:600;font-size:14px">Events calendar</span></div>
+      <div style="width:1280px;height:760px;background:var(--color-bg);display:grid;grid-template-columns:200px minmax(0,1fr);overflow:hidden;box-shadow:var(--shadow-md)">
+        <nav style="border-right:2px solid var(--color-divider);display:flex;flex-direction:column;padding:24px 0"><span style="font-weight:800;font-size:22px;padding:0 20px 24px">MARQUE</span>
+          <sc-for list="{{ nav }}" as="n" hint-placeholder-count="6"><a href="{{ n.href }}" style="padding:10px 20px;font-size:15px;text-decoration:none;color:var(--color-text)">{{ n.l }}</a></sc-for></nav>
+        <div style="display:flex;flex-direction:column;min-height:0"><div style="padding:24px;border-bottom:2px solid var(--color-divider);display:flex;align-items:flex-end"><span style="font-weight:800;font-size:96px;line-height:0.85;letter-spacing:-0.04em">Events</span><span style="margin-left:auto;font-size:13px;color:var(--color-neutral-700)">Season 4 · 12d 04h left</span></div>
+          <sc-for list="{{ events }}" as="e" hint-placeholder-count="5"><div style="display:grid;grid-template-columns:120px minmax(0,1fr) 220px 140px;gap:20px;align-items:center;padding:20px 24px;border-bottom:1px solid var(--color-divider);background:{{ e.bg }};color:{{ e.fg }}"><div style="display:flex;flex-direction:column"><span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase">{{ e.day }}</span><span style="font-weight:800;font-size:32px;line-height:1">{{ e.date }}</span></div><div style="display:flex;flex-direction:column"><span style="font-weight:800;font-size:24px;line-height:1.1">{{ e.name }}</span><span style="font-size:13px">{{ e.rule }}</span></div><div style="display:flex;flex-direction:column"><span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase">Prize</span><span style="font-weight:800">{{ e.prize }}</span></div><span style="font-weight:800;font-size:13px;padding:12px;border:2px solid currentColor;text-align:left">{{ e.cta }}</span></div></sc-for></div>
+      </div>
+    </div>
+
+    <div id="8e" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px"><span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">8e</span><span style="font-weight:600;font-size:14px">Friends</span></div>
+      <div style="width:1280px;height:760px;background:var(--color-bg);display:grid;grid-template-columns:200px minmax(0,1fr) 380px;overflow:hidden;box-shadow:var(--shadow-md)">
+        <nav style="border-right:2px solid var(--color-divider);display:flex;flex-direction:column;padding:24px 0"><span style="font-weight:800;font-size:22px;padding:0 20px 24px">MARQUE</span>
+          <sc-for list="{{ nav }}" as="n" hint-placeholder-count="6"><a href="{{ n.href }}" style="padding:10px 20px;font-size:15px;text-decoration:none;color:var(--color-text)">{{ n.l }}</a></sc-for></nav>
+        <div style="display:flex;flex-direction:column;min-height:0"><div style="padding:24px;border-bottom:2px solid var(--color-divider);display:flex;align-items:flex-end;gap:16px"><span style="font-weight:800;font-size:96px;line-height:0.85;letter-spacing:-0.04em">Friends</span><div class="field" style="margin-left:auto;width:260px"><input class="input" placeholder="Add by username"></div></div>
+          <sc-for list="{{ friends }}" as="f" hint-placeholder-count="6"><div onClick="{{ f.pick }}" style="cursor:pointer;display:grid;grid-template-columns:12px minmax(0,1fr) 140px 140px;gap:16px;align-items:center;padding:16px 24px;border-bottom:1px solid var(--color-divider);background:{{ f.bg }}"><span style="width:12px;height:12px;background:{{ f.dot }}"></span><div style="display:flex;flex-direction:column"><span style="font-weight:800;font-size:17px">{{ f.name }}</span><span style="font-size:12px;color:var(--color-neutral-700)">{{ f.status }}</span></div><span style="font-size:14px">{{ f.cars }} cars</span><span style="font-weight:800;font-variant-numeric:tabular-nums">{{ f.pts }} pts</span></div></sc-for></div>
+        <aside style="border-left:2px solid var(--color-divider);display:flex;flex-direction:column"><div style="background:var(--color-text);color:var(--color-bg);padding:24px"><span style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase">Selected</span><div style="font-weight:800;font-size:44px;line-height:1;padding-top:8px">{{ sf.name }}</div><div style="font-size:14px;padding-top:6px">{{ sf.status }}</div></div>
+          <div style="padding:20px 24px;display:flex;flex-direction:column;gap:8px"><span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Showcase</span><span style="font-weight:800;font-size:20px">{{ sf.car }}</span><span style="font-size:14px;color:var(--color-neutral-800)">{{ sf.cars }} cars · {{ sf.pts }} season points</span></div>
+          <div style="margin-top:auto;padding:24px;display:flex;flex-direction:column;gap:8px"><a href="Race.dc.html" class="btn btn-primary" style="justify-content:flex-start;padding:14px 16px;color:var(--color-bg)">Challenge to a race</a><a href="Market.dc.html" class="btn btn-secondary" style="justify-content:flex-start;padding:14px 16px">Propose a swap</a></div></aside>
+      </div>
+    </div>
+
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const NAV = [['Garage','Garage.dc.html'],['Packs','Packs.dc.html'],['Race','Race.dc.html'],['Market','Market.dc.html'],['Events','#8d'],['Friends','#8e'],['Settings','#8a']].map(([l,href])=>({l,href}));
+const BUNDLES = [['Starter','5,000','€4.99',4.99],['Garage','20,000','€17.99',17.99],['Collector','60,000','€44.99',44.99],['Dealer','150,000','€99.99',99.99]];
+const FR = [['dtm.88','Racing at Suzuka',1,'204','12,810'],['fairlady','Online',1,'197','10,300'],['touge.t','Last seen 2 h ago',0,'190','9,860'],['rallye.b','Online',1,'165','13,770'],['m.okafor','Last seen yesterday',0,'171','11,080'],['s.lindqvist','Online',1,'122','7,410']];
+class Component extends DCLogic {
+  state = { b:1, lvl:4, f:0, prefs:[true,false,true,true] };
+  renderVals() {
+    const S = this.state, b = BUNDLES[S.b], t = b[3]*1.2, f = FR[S.f];
+    const cost = [0,2000,5000,9000,15000,24000][S.lvl] || 24000, maxed = S.lvl >= 5;
+    const stat = (k,v,d) => ({k,v,d});
+    return {
+      nav: NAV,
+      setTabs: ['Account','Notifications','Privacy','Payments','Language'].map((l,i)=>({l,bg:i===0?'var(--color-text)':'transparent',fg:i===0?'var(--color-bg)':'var(--color-text)',fw:i===0?'800':'400'})),
+      prefs: [['Sound effects','Engine and pack sounds'],['Reduce motion','Skip reveal and sweep animations'],['Race notifications','When a friend challenges you'],['Show my garage value','On your public profile']].map(([k,d],i)=>({k,d,v:S.prefs[i]?'On':'Off',bg:S.prefs[i]?'var(--color-text)':'transparent',fg:S.prefs[i]?'var(--color-bg)':'var(--color-text)',toggle:()=>this.setState(x=>({prefs:x.prefs.map((p,k)=>k===i?!p:p)}))})),
+      bundles: BUNDLES.map(([n,cr,price],i)=>({cr,price,sub:n,tag:i===2?'Best value':'Bundle',bg:i===S.b?'var(--color-accent)':'var(--color-bg)',fg:i===S.b?'var(--color-bg)':'var(--color-text)',pick:()=>this.setState({b:i})})),
+      sel: {cr:b[1],price:b[2],vat:'€'+(b[3]*0.2).toFixed(2),total:'€'+t.toFixed(2)},
+      lvl: S.lvl, next: Math.min(5,S.lvl+1), cost: maxed?'Max level':cost.toLocaleString('en-US')+' CR',
+      upLabel: maxed?'Max level reached':'Upgrade for '+cost.toLocaleString('en-US')+' CR',
+      up: ()=>this.setState(x=>({lvl:Math.min(5,x.lvl+1)})),
+      stats: [stat('Power',(210+S.lvl*4)+' hp',maxed?'':'+4 hp next'),stat('0–100',(6.1-S.lvl*0.1).toFixed(1)+' s',maxed?'':'−0.1 s next'),stat('Top speed',(245+S.lvl*2)+' km/h',''),stat('Weight',(985-S.lvl*2)+' kg','')].map(s=>({...s,d:s.d})),
+      parts: [{k:'Engine tune',d:'+4 hp per level',cost:'Lv '+S.lvl},{k:'Gearbox',d:'Shorter ratios',cost:'Lv 3'},{k:'Tires',d:'Better launch',cost:'Lv 2'},{k:'Lightweight kit',d:'−2 kg per level',cost:'Lv '+S.lvl}],
+      events: [['Sat','12 Oct','Suzuka Sprint','800 m · JDM cars only','Apex pack','Enter · 500 CR',1],['Sun','13 Oct','Monte Carlo Rally','1,600 m · Rally class','10,000 CR','Enter · 1,000 CR',0],['Sat','19 Oct','Quarter Mile Night','402 m · Any car','Rare car','Enter · 300 CR',0],['Sun','20 Oct','Autobahn Run','1,600 m · Supercars','Legendary pack','Enter · 1,500 CR',0],['Sat','26 Oct','Classics Cup','800 m · Pre-1990','Heritage pack','Enter · 800 CR',0]].map(([day,date,name,rule,prize,cta,hot])=>({day,date,name,rule,prize,cta,bg:hot?'var(--color-accent)':'transparent',fg:hot?'var(--color-bg)':'var(--color-text)'})),
+      friends: FR.map(([name,status,on,cars,pts],i)=>({name,status,cars,pts,dot:on?'var(--color-accent)':'var(--color-neutral-400)',bg:i===S.f?'var(--color-surface)':'transparent',pick:()=>this.setState({f:i})})),
+      sf: {name:f[0],status:f[1],cars:f[3],pts:f[4],car:['Honda NSX NA1','Datsun 240Z S30','Toyota Supra A80','Lancia Delta Integrale','McLaren F1','BMW M3 E30'][S.f]}
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/modernist-468c7b53-200e-4772-8c6d-9d95f4feda56/styles.css">
+<script src="_ds/modernist-468c7b53-200e-4772-8c6d-9d95f4feda56/_ds_bundle.js"></script>
+<script src="fx.js"></script>
+<style>body{margin:0;text-wrap:pretty} a{color:var(--color-accent)} a:hover{color:var(--color-accent-600)}</style>
+</helmet>
+<div style="background:var(--color-bg);color:var(--color-text);min-height:100vh">
+  <nav style="position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--color-bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:flex;align-items:center;gap:24px;padding:14px clamp(20px,5vw,72px);border-bottom:2px solid var(--color-divider);flex-wrap:wrap">
+    <span style="font-weight:800;font-size:20px;letter-spacing:0.02em;margin-right:auto">MARQUE</span>
+    <a href="#how" style="color:var(--color-text);text-decoration:none;font-size:14px">How it works</a>
+    <a href="#cars" style="color:var(--color-text);text-decoration:none;font-size:14px">The cars</a>
+    <a href="Garage.dc.html" style="color:var(--color-text);text-decoration:none;font-size:14px">Log in</a>
+    <a href="Packs.dc.html" class="btn btn-primary" style="justify-content:flex-start">Play free</a>
+  </nav>
+
+  <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+    <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px;padding:clamp(56px,9vw,112px) 0 clamp(56px,7vw,84px);align-items:end">
+      <div style="display:flex;flex-direction:column;gap:28px">
+        <h1 style="margin:0 0 0 -0.05em;font-size:clamp(44px,6.4vw,88px);line-height:0.98;letter-spacing:-0.03em">
+          <span style="display:block;overflow:hidden;padding-bottom:0.06em;margin-bottom:-0.06em"><span data-anim="line" data-delay="0" style="display:block">214 real cars.</span></span>
+          <span style="display:block;overflow:hidden;padding-bottom:0.06em;margin-bottom:-0.06em"><span data-anim="line" data-delay="110" style="display:block">One garage.</span></span>
+          <span style="display:block;overflow:hidden;padding-bottom:0.06em;margin-bottom:-0.06em"><span data-anim="line" data-delay="220" style="display:block;color:var(--color-accent)">Fill it.</span></span>
+        </h1>
+        <p data-anim="up" data-delay="420" style="margin:0;font-size:17px;line-height:28px;max-width:52ch;color:var(--color-neutral-800)">MARQUE is a collection game for people who know an E30 from an E36. Open packs, race for rare models and trade with other players. Every car comes with its real specs, generation code and history.</p>
+        <div data-anim="up" data-delay="540" style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="Packs.dc.html" class="btn btn-primary" style="justify-content:flex-start;padding:14px 18px;min-width:220px;font-size:15px">Open your free pack</a>
+          <a href="#how" class="btn btn-secondary" style="justify-content:flex-start;padding:14px 18px;font-size:15px">See how it works</a>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="position:relative;overflow:hidden;aspect-ratio:4/3"><div data-anim="wipe" data-delay="250" style="position:absolute;inset:0;overflow:hidden"><div ref="{{ parallaxRef }}" style="position:absolute;inset:-8% 0;background:repeating-linear-gradient(135deg,var(--color-surface) 0 10px,var(--color-neutral-300) 10px 20px);display:grid;place-items:center">
+          <span style="font-family:ui-monospace,monospace;font-size:11px;color:var(--color-neutral-700)">hero shot · car in profile, black and white</span>
+        </div></div><div data-anim="sweep" data-delay="250" style="position:absolute;inset:0;background:var(--color-accent);transform-origin:right"></div></div>
+        <span data-anim="up" data-delay="900" style="font-size:11px;color:var(--color-neutral-700)">Porsche 911 Carrera RS 2.7 · F-series · 1973 · Legendary</span>
+      </div>
+    </section>
+
+    <div data-anim="rule" style="height:2px;background:var(--color-divider);transform-origin:left"></div>
+
+    <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:32px;padding:56px 0">
+      <div data-anim="up" data-delay="0" style="display:flex;flex-direction:column;gap:10px">
+        <span data-count="1" style="font-weight:800;font-size:clamp(36px,3.6vw,52px);line-height:1;color:var(--color-accent);font-variant-numeric:tabular-nums">214</span>
+        <span style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Licensed models</span>
+      </div>
+      <div data-anim="up" data-delay="90" style="display:flex;flex-direction:column;gap:10px">
+        <span data-count="1" style="font-weight:800;font-size:clamp(36px,3.6vw,52px);line-height:1;color:var(--color-accent);font-variant-numeric:tabular-nums">1954–2024</span>
+        <span style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Seventy years of cars</span>
+      </div>
+      <div data-anim="up" data-delay="180" style="display:flex;flex-direction:column;gap:10px">
+        <span data-count="1" style="font-weight:800;font-size:clamp(36px,3.6vw,52px);line-height:1;color:var(--color-accent);font-variant-numeric:tabular-nums">4</span>
+        <span style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Rarity tiers</span>
+      </div>
+      <div data-anim="up" data-delay="270" style="display:flex;flex-direction:column;gap:10px">
+        <span data-count="1" style="font-weight:800;font-size:clamp(36px,3.6vw,52px);line-height:1;color:var(--color-accent);font-variant-numeric:tabular-nums">90 s</span>
+        <span style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Average race</span>
+      </div>
+    </section>
+  </div>
+  <div style="overflow:hidden;border-top:2px solid var(--color-divider);background:var(--color-text);color:var(--color-bg);padding:18px 0;margin:0">
+    <div ref="{{ marqueeRef }}" style="display:flex;width:max-content;font-weight:800;font-size:clamp(22px,2.6vw,34px);letter-spacing:-0.01em"><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>Golf GTI Mk1</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>M3 E30</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>Skyline GT-R R34</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>F40</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>911 Carrera RS 2.7</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>Supra A80</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>NSX NA1</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>Countach LP400</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>RX-7 FD</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>2000GT</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>McLaren F1</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>240Z S30</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>300 SL W198</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>Delta HF Integrale</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>AE86</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>959</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>Golf GTI Mk1</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>M3 E30</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>Skyline GT-R R34</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>F40</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>911 Carrera RS 2.7</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>Supra A80</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>NSX NA1</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>Countach LP400</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>RX-7 FD</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>2000GT</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>McLaren F1</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>240Z S30</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>300 SL W198</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>Delta HF Integrale</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>AE86</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span><span style="display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap"><span>959</span><span style="width:12px;height:12px;background:var(--color-accent);flex:none"></span></span></div>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+
+    <section id="how" style="padding:72px 0 56px;display:flex;flex-direction:column">
+      <span data-anim="up" style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent-700);padding-bottom:16px">How it works</span>
+      <div data-anim="up" style="display:grid;grid-template-columns:minmax(48px,140px) minmax(0,1fr);gap:24px;padding:36px 0">
+        <span style="font-weight:800;font-size:15px">01</span>
+        <div style="display:flex;flex-wrap:wrap;gap:16px 56px">
+          <h2 style="margin:0;font-size:26px;line-height:1.15;flex:1 1 260px">Open packs</h2>
+          <p style="margin:0;font-size:15.5px;line-height:28px;color:var(--color-neutral-800);flex:2 1 320px;max-width:56ch">Five cars per pack, with published odds for every tier. Duplicates convert to credits, and a Legendary is guaranteed at least once every 20 packs.</p>
+        </div>
+      </div>
+      <div data-anim="up" style="display:grid;grid-template-columns:minmax(48px,140px) minmax(0,1fr);gap:24px;padding:36px 0;border-top:2px solid var(--color-divider)">
+        <span style="font-weight:800;font-size:15px">02</span>
+        <div style="display:flex;flex-wrap:wrap;gap:16px 56px">
+          <h2 style="margin:0;font-size:26px;line-height:1.15;flex:1 1 260px">Race to win cars</h2>
+          <p style="margin:0;font-size:15.5px;line-height:28px;color:var(--color-neutral-800);flex:2 1 320px;max-width:56ch">Short real-time races against other players. Power, torque, weight and upgrades all count. Winning earns season points, and event wins unlock cars you can't get from packs.</p>
+        </div>
+      </div>
+      <div data-anim="up" style="display:grid;grid-template-columns:minmax(48px,140px) minmax(0,1fr);gap:24px;padding:36px 0;border-top:2px solid var(--color-divider)">
+        <span style="font-weight:800;font-size:15px">03</span>
+        <div style="display:flex;flex-wrap:wrap;gap:16px 56px">
+          <h2 style="margin:0;font-size:26px;line-height:1.15;flex:1 1 260px">Trade on the market</h2>
+          <p style="margin:0;font-size:15.5px;line-height:28px;color:var(--color-neutral-800);flex:2 1 320px;max-width:56ch">Buy, sell or swap with other collectors. Each listing shows twelve weeks of sale prices, so you know whether that R34 is a deal.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="cars" style="padding:0 0 88px;display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px 48px;border-top:2px solid var(--color-divider);padding-top:56px">
+        <h2 data-anim="up" style="margin:0;font-size:clamp(30px,3.4vw,44px);line-height:1.05;flex:1 1 320px">From Golf GTI to McLaren F1</h2>
+        <p style="margin:0;font-size:15.5px;line-height:28px;color:var(--color-neutral-800);flex:1 1 320px;max-width:48ch">Everyday heroes, JDM icons, Italian supercars and concept cars, sorted into four tiers.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:20px">
+        <div data-anim="up" data-delay="0"><div style="display:flex;flex-direction:column;background:var(--color-surface);transition:transform 350ms cubic-bezier(.2,.8,.2,1), box-shadow 350ms;cursor:pointer" style-hover="transform:translateY(-8px);box-shadow:var(--shadow-lg)">
+          <div style="height:6px;background:var(--color-neutral-400)"></div>
+          <div style="aspect-ratio:4/3;background:repeating-linear-gradient(135deg,var(--color-surface) 0 8px,var(--color-neutral-300) 8px 16px);display:grid;place-items:center"><span style="font-family:ui-monospace,monospace;font-size:10px;color:var(--color-neutral-700)">car photo</span></div>
+          <div style="padding:12px 14px 14px;display:flex;flex-direction:column">
+            <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700);font-weight:600">Common</span>
+            <span style="font-weight:800;font-size:18px;line-height:1.2">Golf GTI <span style="font-weight:400;color:var(--color-neutral-700)">Mk1</span></span>
+            <span style="font-size:12px;color:var(--color-neutral-700)">Volkswagen · 1976 · 110 hp</span>
+          </div>
+        </div></div>
+        <div data-anim="up" data-delay="100"><div style="display:flex;flex-direction:column;background:var(--color-surface);transition:transform 350ms cubic-bezier(.2,.8,.2,1), box-shadow 350ms;cursor:pointer" style-hover="transform:translateY(-8px);box-shadow:var(--shadow-lg)">
+          <div style="height:6px;background:var(--color-text)"></div>
+          <div style="aspect-ratio:4/3;background:repeating-linear-gradient(135deg,var(--color-surface) 0 8px,var(--color-neutral-300) 8px 16px);display:grid;place-items:center"><span style="font-family:ui-monospace,monospace;font-size:10px;color:var(--color-neutral-700)">car photo</span></div>
+          <div style="padding:12px 14px 14px;display:flex;flex-direction:column">
+            <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text);font-weight:600">Rare</span>
+            <span style="font-weight:800;font-size:18px;line-height:1.2">M3 <span style="font-weight:400;color:var(--color-neutral-700)">E30</span></span>
+            <span style="font-size:12px;color:var(--color-neutral-700)">BMW · 1986 · 195 hp</span>
+          </div>
+        </div></div>
+        <div data-anim="up" data-delay="200"><div style="display:flex;flex-direction:column;background:var(--color-surface);transition:transform 350ms cubic-bezier(.2,.8,.2,1), box-shadow 350ms;cursor:pointer" style-hover="transform:translateY(-8px);box-shadow:var(--shadow-lg)">
+          <div style="height:6px;background:var(--color-accent-400)"></div>
+          <div style="aspect-ratio:4/3;background:repeating-linear-gradient(135deg,var(--color-surface) 0 8px,var(--color-neutral-300) 8px 16px);display:grid;place-items:center"><span style="font-family:ui-monospace,monospace;font-size:10px;color:var(--color-neutral-700)">car photo</span></div>
+          <div style="padding:12px 14px 14px;display:flex;flex-direction:column">
+            <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Epic</span>
+            <span style="font-weight:800;font-size:18px;line-height:1.2">Skyline GT-R V-Spec <span style="font-weight:400;color:var(--color-neutral-700)">R34</span></span>
+            <span style="font-size:12px;color:var(--color-neutral-700)">Nissan · 1999 · 280 hp</span>
+          </div>
+        </div></div>
+        <div data-anim="up" data-delay="300"><div style="display:flex;flex-direction:column;background:var(--color-accent);color:var(--color-bg);transition:transform 350ms cubic-bezier(.2,.8,.2,1), box-shadow 350ms;cursor:pointer" style-hover="transform:translateY(-8px);box-shadow:var(--shadow-lg)">
+          <div style="height:6px;background:var(--color-accent-700)"></div>
+          <div style="aspect-ratio:4/3;background:repeating-linear-gradient(135deg,var(--color-surface) 0 8px,var(--color-neutral-300) 8px 16px);display:grid;place-items:center"><span style="font-family:ui-monospace,monospace;font-size:10px;color:var(--color-neutral-700)">car photo</span></div>
+          <div style="padding:12px 14px 14px;display:flex;flex-direction:column">
+            <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;font-weight:800">Legendary</span>
+            <span style="font-weight:800;font-size:18px;line-height:1.2">F1</span>
+            <span style="font-size:12px">McLaren · 1992 · 627 hp</span>
+          </div>
+        </div></div>
+      </div>
+    </section>
+  </div>
+
+  <section style="background:var(--color-accent);color:var(--color-bg)">
+    <div style="max-width:1200px;margin:0 auto;padding:88px clamp(20px,5vw,72px);display:flex;flex-direction:column;gap:40px">
+      <h2 style="margin:0 0 0 -0.05em;font-size:clamp(36px,4.6vw,64px);line-height:1;letter-spacing:-0.02em">
+        <span style="display:block;overflow:hidden;padding-bottom:0.06em;margin-bottom:-0.06em"><span data-anim="line" data-delay="0" style="display:block">Your first pack is free.</span></span>
+        <span style="display:block;overflow:hidden;padding-bottom:0.06em;margin-bottom:-0.06em"><span data-anim="line" data-delay="120" style="display:block">Your first Legendary is up to you.</span></span>
+      </h2>
+      <div data-anim="up" data-delay="300" style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="Packs.dc.html" class="btn" style="justify-content:flex-start;padding:14px 18px;min-width:240px;font-size:15px;background:var(--color-bg);color:var(--color-accent-700)">Create your garage</a>
+        <a href="Garage.dc.html" class="btn" style="justify-content:flex-start;padding:14px 18px;font-size:15px;color:var(--color-bg);border:1px solid var(--color-bg)">Log in</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="max-width:1200px;margin:0 auto;padding:32px clamp(20px,5vw,72px);display:flex;flex-wrap:wrap;gap:12px 32px;font-size:13px;color:var(--color-neutral-700)">
+    <span style="font-weight:800;color:var(--color-text);margin-right:auto">MARQUE</span>
+    <a href="#how" style="color:inherit;text-decoration:none">How it works</a>
+    <a href="#cars" style="color:inherit;text-decoration:none">The cars</a>
+    <a href="#how" style="color:inherit;text-decoration:none">Pack odds</a>
+    <a href="#how" style="color:inherit;text-decoration:none">Terms</a>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  marqueeRef = React.createRef();
+  parallaxRef = React.createRef();
+  componentDidMount() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    const out = 'cubic-bezier(.2,.8,.2,1)', ease = 'cubic-bezier(.76,0,.24,1)';
+    const KF = {
+      line: [{transform:'translateY(105%)'},{transform:'none'}],
+      up: [{transform:'translateY(28px)',opacity:0},{transform:'none',opacity:1}],
+      rule: [{transform:'scaleX(0)'},{transform:'scaleX(1)'}],
+      wipe: [{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0 0 0)'}],
+      sweep: [{transform:'scaleX(1)', offset:0},{transform:'scaleX(1)', offset:0.45},{transform:'scaleX(0)'}]
+    };
+    const DUR = {line:900, up:700, rule:1100, wipe:900, sweep:1500};
+    const root = document;
+    const els = [...root.querySelectorAll('[data-anim]')];
+    this.anims = new Map();
+    els.forEach(el => {
+      const type = el.dataset.anim;
+      const a = el.animate(KF[type], {duration:DUR[type], delay:+(el.dataset.delay||0), easing: type==='sweep'||type==='wipe' ? ease : out, fill:'both'});
+      a.pause(); a.currentTime = 0;
+      const target = (type === 'line' || type === 'wipe' || type === 'sweep') ? el.parentElement : el;
+      this.anims.set(target, (this.anims.get(target) || []).concat(a));
+    });
+    this.io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (!e.isIntersecting || e.target.dataset.played) return;
+      e.target.dataset.played = '1';
+      (this.anims.get(e.target) || []).forEach(a => a.play());
+      e.target.querySelectorAll('[data-count]').forEach(n => this.countUp(n));
+      this.io.unobserve(e.target);
+    }), {threshold:0.15, rootMargin:'0px 0px -8% 0px'});
+    [...this.anims.keys()].forEach(t => this.io.observe(t));
+    this.check = () => {
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      for (const [t, list] of this.anims) {
+        if (t.dataset.played) continue;
+        const r = t.getBoundingClientRect();
+        if (r.bottom > 0 && r.top < vh * 0.92 && r.height > 0) {
+          t.dataset.played = '1';
+          list.forEach(a => a.play());
+          t.querySelectorAll('[data-count]').forEach(n => this.countUp(n));
+          this.io.unobserve(t);
+        }
+      }
+    };
+    requestAnimationFrame(this.check);
+    setTimeout(this.check, 300);
+    document.fonts && document.fonts.ready.then(this.check);
+    window.addEventListener('load', this.check);
+    window.addEventListener('scroll', this.check, {passive:true});
+    window.addEventListener('resize', this.check);
+    const m = this.marqueeRef.current;
+    if (m) {
+      this.mq = m.animate([{transform:'translateX(0)'},{transform:'translateX(-50%)'}], {duration:60000, iterations:Infinity});
+      m.parentElement.addEventListener('mouseenter', () => this.mq.updatePlaybackRate(0.25));
+      m.parentElement.addEventListener('mouseleave', () => this.mq.updatePlaybackRate(1));
+    }
+    this.onScroll = () => {
+      const p = this.parallaxRef.current; if (!p) return;
+      const y = Math.min(window.scrollY, 800);
+      p.style.transform = `translateY(${y * 0.06}px)`;
+    };
+    window.addEventListener('scroll', this.onScroll, {passive:true});
+  }
+  countUp(n) {
+    const src = n.dataset.src || n.textContent; n.dataset.src = src;
+    const nums = src.match(/\d+/g); if (!nums) return;
+    const t0 = performance.now(), dur = 1400;
+    const step = now => {
+      const k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      let i = 0;
+      n.textContent = src.replace(/\d+/g, d => { const v = +nums[i++]; const from = v > 1000 ? v - 70 : 0; return String(Math.round(from + (v - from) * e)); });
+      if (k < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  componentWillUnmount() {
+    this.io && this.io.disconnect();
+    this.mq && this.mq.cancel();
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('scroll', this.check);
+    window.removeEventListener('resize', this.check);
+    window.removeEventListener('load', this.check);
+  }
+  renderVals() {
+    return { marqueeRef: this.marqueeRef, parallaxRef: this.parallaxRef };
+  }
+}
+</script>
+</body>
+</html>

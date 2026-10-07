@@ -1,0 +1,53 @@
+.mk-head { display: flex; align-items: flex-end; gap: 16px; padding: 24px 24px 0; flex: none; }
+.mk-live { display: flex; flex-direction: column; gap: 2px; margin-left: auto; padding-bottom: 4px; }
+.mk-live > span:last-child { font-weight: 800; font-size: 20px; }
+.mk-tabs { display: flex; padding: 20px 24px 0; border-bottom: 2px solid var(--color-divider); flex: none; }
+.mk-tabs .utab { padding: 10px 16px 10px 0; margin-right: 16px; }
+
+.mk-scroll { overflow: auto; flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.mk-row { display: grid; grid-template-columns: 6px minmax(0, 1fr) 90px 70px 110px 80px; gap: 0 16px; padding: 0 24px 0 0; }
+.mk-th { border-bottom: 2px solid var(--color-divider); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-700); align-items: center; position: sticky; top: 0; background: var(--color-bg); z-index: 1; }
+.mk-th > * { padding: 10px 0; }
+.mk-th button { border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; letter-spacing: inherit; text-transform: inherit; font-size: inherit; }
+.mk-tr { border-bottom: 1px solid var(--color-divider); align-items: stretch; flex: none; }
+.mk-tr.sel { background: var(--color-surface); }
+.mk-car { display: flex; flex-direction: column; padding: 10px 0; min-width: 0; }
+.mk-model { font-weight: 800; font-size: 15px; line-height: 1.2; }
+.mk-sub { font-size: 12px; color: var(--color-neutral-700); }
+.mk-c { align-self: center; font-size: 13px; }
+.mk-price { text-align: right; font-weight: 800; font-size: 15px; }
+.mk-link { border: 0; background: transparent; padding: 0; color: var(--color-accent-700); cursor: pointer; font-size: 12px; text-decoration: underline; text-underline-offset: 3px; }
+.mk-offer { display: grid; grid-template-columns: 6px minmax(0, 1fr) auto; gap: 0 16px; align-items: center; padding: 0 24px 0 0; border-bottom: 1px solid var(--color-divider); flex: none; }
+.mk-offer > span:first-child { align-self: stretch; }
+
+.mk-panel { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.mk-panel-scroll { display: flex; flex-direction: column; }
+.mk-photo { aspect-ratio: 16 / 9; border-bottom: 2px solid var(--color-divider); background: repeating-linear-gradient(135deg, var(--color-surface) 0 8px, var(--color-neutral-200) 8px 16px); }
+.mk-prices { grid-template-columns: 1fr 1fr; border-bottom: 2px solid var(--color-divider); flex: none; }
+.mk-prices > div { padding: 12px 16px; display: flex; flex-direction: column; gap: 2px; }
+.mk-big { font-weight: 800; font-size: 28px; line-height: 1.05; }
+.mk-hist-wrap { padding: 16px 24px; display: flex; flex-direction: column; gap: 8px; flex: none; }
+.mk-hist { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 3px; align-items: end; height: 72px; border-bottom: 2px solid var(--color-divider); }
+.mk-hist > span { transform-origin: bottom; }
+.mk-actions { display: flex; flex-direction: column; gap: 8px; padding: 16px 24px 24px; margin-top: auto; flex: none; }
+.mk-actions-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.mk-info { padding: 20px 24px; font-size: 14px; color: var(--color-neutral-800); }
+
+.mk-panel.page { overflow: hidden; }
+.mk-panel.page .mk-panel-scroll { overflow: auto; flex: 1; min-height: 0; }
+.mk-panel.page .red-head { padding: calc(12px + env(safe-area-inset-top)) 16px 20px; }
+.mk-panel.page .mk-hist-wrap, .mk-panel.page .meta3 { padding-inline: 16px; }
+.mk-panel.page .mk-actions { border-top: 2px solid var(--color-divider); padding: 12px 16px calc(16px + env(safe-area-inset-bottom)); }
+
+.m-dlg-fields { display: grid; grid-template-columns: 2fr 1fr; gap: 12px; padding-bottom: 8px; }
+
+/* 6b mobile */
+.mk-seg { display: flex; }
+.mk-seg > button { flex: 1; font-size: 14px; padding: 11px 0; }
+.mm-row { display: grid; grid-template-columns: 72px minmax(0, 1fr) auto; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--color-divider); align-items: center; }
+.mm-thumb { aspect-ratio: 4 / 3; background: repeating-linear-gradient(135deg, var(--color-surface) 0 6px, var(--color-neutral-300) 6px 12px); }
+.mm-mid { display: flex; flex-direction: column; min-width: 0; }
+.mm-tier { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; font-weight: 800; }
+.mm-model { font-weight: 800; font-size: 15px; line-height: 1.2; }
+.mm-sub { font-size: 12px; color: var(--color-neutral-700); }
+.mm-right { display: flex; flex-direction: column; align-items: flex-end; }

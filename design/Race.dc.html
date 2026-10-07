@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="_ds/modernist-468c7b53-200e-4772-8c6d-9d95f4feda56/styles.css">
+<script src="_ds/modernist-468c7b53-200e-4772-8c6d-9d95f4feda56/_ds_bundle.js"></script>
+<script src="fx.js"></script>
+<style>body{margin:0;background:var(--color-neutral-300)} a{color:var(--color-accent)} a:hover{color:var(--color-accent-600)}</style>
+</helmet>
+<section style="padding:64px;display:flex;flex-direction:column;gap:32px">
+  <div style="display:flex;flex-direction:column;gap:4px;max-width:900px">
+    <h6 style="margin:0;color:var(--color-accent-700)">Turn 5</h6>
+    <h2 style="margin:0">Race: setup, live race, results</h2>
+    <p style="margin:0;color:var(--color-neutral-800)">A playable prototype. Choose an event and a car in <a href="#5a">5a</a>, then press Find race. In <a href="#5b">5b</a>, shift up with the button or the space bar when the rev bar reaches the marked window. A perfect shift gives a short boost. Results appear in <a href="#5c">5c</a>.</p>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:64px;align-items:flex-start">
+
+    <div id="5a" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">5a</span>
+        <span style="font-weight:600;font-size:14px">Race setup</span>
+      </div>
+      <div style="width:1280px;height:880px;background:var(--color-bg);display:grid;grid-template-columns:200px minmax(0,1fr) 380px;overflow:hidden;box-shadow:var(--shadow-md)">
+        <nav style="border-right:2px solid var(--color-divider);display:flex;flex-direction:column;padding:24px 0">
+          <span style="font-weight:800;font-size:22px;letter-spacing:0.02em;padding:0 20px 24px">MARQUE</span>
+          <a href="Garage.dc.html" style="padding:10px 20px;font-size:15px;text-decoration:none;color:var(--color-text)">Garage</a>
+          <a href="Packs.dc.html" style="padding:10px 20px;font-size:15px;text-decoration:none;color:var(--color-text)">Packs</a>
+          <a href="#5a" style="padding:10px 20px;font-weight:800;font-size:15px;text-decoration:none;color:var(--color-bg);background:var(--color-text)">Race</a>
+          <a href="Market.dc.html" style="padding:10px 20px;font-size:15px;text-decoration:none;color:var(--color-text)">Market</a>
+          <a href="Leaderboard.dc.html" style="padding:10px 20px;font-size:15px;text-decoration:none;color:var(--color-text)">Leaderboard</a>
+          <a href="Profile.dc.html" style="margin-top:auto;border-top:2px solid var(--color-divider);padding:16px 20px 0;display:flex;flex-direction:column;gap:2px;text-decoration:none;color:var(--color-text)">
+            <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Credits</span>
+            <span style="font-weight:800;font-size:20px;font-variant-numeric:tabular-nums">48,200</span>
+            <span style="font-size:13px;color:var(--color-neutral-700);padding-top:8px">J. Durand · Lv 23</span>
+          </a>
+        </nav>
+        <div style="display:flex;flex-direction:column;min-height:0">
+          <div style="display:flex;align-items:flex-end;gap:16px;padding:24px 24px 20px;border-bottom:2px solid var(--color-divider)">
+            <span style="font-weight:800;font-size:96px;line-height:0.85;letter-spacing:-0.04em">Race</span>
+            <span style="font-size:13px;color:var(--color-neutral-700);padding-bottom:6px;margin-left:auto">4 players · matched by garage level</span>
+          </div>
+          <div style="padding:16px 24px 8px;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">1 · Event</div>
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--color-divider);border-top:2px solid var(--color-divider);border-bottom:2px solid var(--color-divider)">
+            <sc-for list="{{ events }}" as="e" hint-placeholder-count="3">
+              <button onClick="{{ e.pick }}" style="position:relative;overflow:hidden;border:0;font:inherit;text-align:left;cursor:pointer;padding:16px 20px;background:{{ e.bg }};color:{{ e.fg }};display:flex;flex-direction:column;gap:2px">
+                <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase">{{ e.kind }}</span>
+                <span style="font-weight:800;font-size:32px;line-height:1.05;font-variant-numeric:tabular-nums">{{ e.lenStr }}</span>
+                <span style="font-size:13px">{{ e.place }}</span>
+              </button>
+            </sc-for>
+          </div>
+          <div style="padding:20px 24px 8px;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">2 · Car</div>
+          <div style="overflow:auto;flex:1;min-height:0;border-top:2px solid var(--color-divider)">
+            <sc-for list="{{ cars }}" as="c" hint-placeholder-count="5">
+              <div onClick="{{ c.pick }}" style="position:relative;overflow:hidden;display:grid;grid-template-columns:6px 96px minmax(0,1fr) 80px 80px 90px;gap:0 16px;align-items:center;padding:0 24px 0 0;border-bottom:1px solid var(--color-divider);cursor:pointer;background:{{ c.rowBg }};min-height:76px">
+                <span style="align-self:stretch;background:{{ c.bar }}"></span>
+                <div style="aspect-ratio:4/3;background:repeating-linear-gradient(135deg,var(--color-surface) 0 8px,var(--color-neutral-300) 8px 16px);display:grid;place-items:center"><span style="font-family:ui-monospace,monospace;font-size:9px;color:var(--color-neutral-700)">car</span></div>
+                <div style="display:flex;flex-direction:column">
+                  <span style="font-weight:800;font-size:16px;line-height:1.2">{{ c.model }}<span style="font-weight:400;color:var(--color-neutral-700);padding-left:6px">{{ c.gen }}</span></span>
+                  <span style="font-size:12px;color:var(--color-neutral-700)">{{ c.make }} · {{ c.tier }} · Lv {{ c.lvl }}</span>
+                </div>
+                <div style="display:flex;flex-direction:column"><span style="font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-neutral-700)">Power</span><span style="font-weight:800;font-variant-numeric:tabular-nums">{{ c.hp }} hp</span></div>
+                <div style="display:flex;flex-direction:column"><span style="font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-neutral-700)">Weight</span><span style="font-weight:800;font-variant-numeric:tabular-nums">{{ c.kg }} kg</span></div>
+                <div style="display:flex;flex-direction:column"><span style="font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-neutral-700)">hp / tonne</span><span style="font-weight:800;font-variant-numeric:tabular-nums">{{ c.pw }}</span></div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <aside style="border-left:2px solid var(--color-divider);display:flex;flex-direction:column;min-height:0">
+          <div ref="{{ pHdr }}" style="position:relative;overflow:hidden;background:var(--color-accent);color:var(--color-bg);padding:20px 24px 24px;display:flex;flex-direction:column;gap:8px">
+            <span style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:800">{{ ev.kind }} · {{ ev.lenStr }}</span>
+            <span style="font-size:15px;font-weight:600;padding-top:12px">{{ car.make }}</span>
+            <span ref="{{ pTitle }}" style="font-weight:800;font-size:40px;line-height:0.95;letter-spacing:-0.03em;text-wrap:balance">{{ car.model }}</span>
+          </div>
+          <div style="padding:16px 24px 8px;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Opponents</div>
+          <div ref="{{ pOpps }}" style="padding:0 24px;border-bottom:2px solid var(--color-divider)">
+            <sc-for list="{{ opps }}" as="o" hint-placeholder-count="3">
+              <div style="display:flex;gap:8px;padding:9px 0;border-top:1px solid var(--color-divider);font-size:14px">
+                <span style="font-weight:600">{{ o.name }}</span>
+                <span style="margin-left:auto;color:var(--color-neutral-700)">{{ o.car }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div ref="{{ pRew }}" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--color-divider);border-bottom:2px solid var(--color-divider)">
+            <div style="background:var(--color-bg);padding:12px 16px;display:flex;flex-direction:column"><span style="font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-neutral-700)">Entry</span><span style="font-weight:800;font-size:18px">{{ ev.fee }}</span></div>
+            <div style="background:var(--color-bg);padding:12px 16px;display:flex;flex-direction:column"><span style="font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-neutral-700)">Win</span><span style="font-weight:800;font-size:18px">{{ ev.win }}</span></div>
+            <div style="background:var(--color-bg);padding:12px 16px;display:flex;flex-direction:column"><span style="font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-neutral-700)">Points</span><span style="font-weight:800;font-size:18px">{{ ev.pts }}</span></div>
+          </div>
+          <p ref="{{ pNote }}" style="padding:16px 24px 0;margin:0;font-size:14px;color:var(--color-neutral-800);text-wrap:pretty">{{ ev.note }}</p>
+          <div style="padding:16px 24px 24px;margin-top:auto">
+            <button onClick="{{ findRace }}" class="btn btn-primary" style="justify-content:flex-start;width:100%;padding:16px 16px;font-size:16px">Find race</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <div id="5b" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">5b</span>
+        <span style="font-weight:600;font-size:14px">Live race (playable)</span>
+      </div>
+      <div style="width:1280px;height:880px;background:var(--color-bg);display:flex;flex-direction:column;overflow:hidden;box-shadow:var(--shadow-md)">
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 200px 200px 200px;border-bottom:2px solid var(--color-divider);flex:none">
+          <div style="padding:16px 24px;display:flex;flex-direction:column;gap:2px">
+            <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">{{ ev.kind }} · {{ ev.place }}</span>
+            <span style="font-weight:800;font-size:28px;line-height:1.1">{{ car.model }} <span style="font-weight:400;color:var(--color-neutral-700)">{{ car.gen }}</span></span>
+          </div>
+          <div style="border-left:2px solid var(--color-divider);padding:16px 20px;display:flex;flex-direction:column"><span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Position</span><span style="font-weight:800;font-size:32px;line-height:1.05;font-variant-numeric:tabular-nums">{{ hud.pos }}</span></div>
+          <div style="border-left:2px solid var(--color-divider);padding:16px 20px;display:flex;flex-direction:column"><span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Time</span><span style="font-weight:800;font-size:32px;line-height:1.05;font-variant-numeric:tabular-nums">{{ hud.time }}</span></div>
+          <div style="border-left:2px solid var(--color-divider);padding:16px 20px;display:flex;flex-direction:column"><span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">To go</span><span style="font-weight:800;font-size:32px;line-height:1.05;font-variant-numeric:tabular-nums">{{ hud.togo }}</span></div>
+        </div>
+        <div style="position:relative;flex:1;min-height:0;display:flex;flex-direction:column">
+          <sc-for list="{{ lanes }}" as="l" hint-placeholder-count="4">
+            <div style="flex:1;display:grid;grid-template-columns:220px minmax(0,1fr);border-bottom:1px solid var(--color-divider);background:{{ l.laneBg }}">
+              <div style="padding:0 20px;display:flex;flex-direction:column;justify-content:center;border-right:2px solid var(--color-divider)">
+                <span style="font-weight:800;font-size:15px">{{ l.name }}</span>
+                <span style="font-size:12px;color:var(--color-neutral-700)">{{ l.car }}</span>
+              </div>
+              <div style="position:relative;margin:0 32px 0 16px">
+                <sc-for list="{{ ticks }}" as="t" hint-placeholder-count="9">
+                  <span style="position:absolute;top:0;bottom:0;left:{{ t.left }};width:1px;background:var(--color-neutral-300)"></span>
+                </sc-for>
+                <span style="position:absolute;top:0;bottom:0;left:100%;width:4px;background:var(--color-accent)"></span>
+                <div style="position:absolute;top:50%;left:{{ l.left }};transform:translate({{ l.shift }},-50%);display:flex;align-items:center;gap:0">
+                  <span style="width:6px;height:36px;background:{{ l.bar }}"></span>
+                  <span style="height:36px;padding:0 12px;display:flex;align-items:center;background:{{ l.chipBg }};color:{{ l.chipFg }};font-weight:800;font-size:13px;white-space:nowrap;font-variant-numeric:tabular-nums">{{ l.label }}</span>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+          <sc-if value="{{ showOverlay }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;inset:0;background:color-mix(in srgb,var(--color-bg) 82%,transparent);display:flex;flex-direction:column;justify-content:center;padding:0 240px;gap:12px">
+              <span style="font-weight:800;font-size:160px;line-height:0.85;letter-spacing:-0.05em;color:{{ overlayFg }}">{{ overlayBig }}</span>
+              <span style="font-size:17px;color:var(--color-neutral-800)">{{ overlaySub }}</span>
+              <sc-if value="{{ showStart }}" hint-placeholder-val="{{ true }}">
+                <button onClick="{{ start }}" class="btn btn-primary" style="justify-content:flex-start;padding:14px 18px;font-size:16px;width:260px;margin-top:8px">{{ startLabel }}</button>
+              </sc-if>
+            </div>
+          </sc-if>
+        </div>
+        <div style="display:grid;grid-template-columns:240px 160px minmax(0,1fr) 300px;border-top:2px solid var(--color-divider);flex:none;height:196px">
+          <div style="padding:16px 24px;display:flex;flex-direction:column;gap:2px">
+            <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Speed</span>
+            <span style="font-weight:800;font-size:96px;line-height:0.9;letter-spacing:-0.04em;font-variant-numeric:tabular-nums">{{ hud.kmh }}</span>
+            <span style="font-size:13px;font-weight:600">km/h</span>
+          </div>
+          <div style="border-left:2px solid var(--color-divider);padding:16px 20px;display:flex;flex-direction:column;gap:2px">
+            <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Gear</span>
+            <span style="font-weight:800;font-size:96px;line-height:0.9;letter-spacing:-0.04em">{{ hud.gear }}</span>
+            <span style="font-size:13px;font-weight:600">of 6</span>
+          </div>
+          <div style="border-left:2px solid var(--color-divider);padding:16px 24px;display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">
+              <span>Revs</span>
+              <span style="margin-left:auto;font-weight:800;color:{{ hud.qFg }}">{{ hud.quality }}</span>
+            </div>
+            <div style="position:relative;height:48px;background:var(--color-neutral-200)">
+              <span style="position:absolute;top:0;bottom:0;left:82%;width:15%;background:var(--color-neutral-400)"></span>
+              <span style="position:absolute;top:0;bottom:0;left:97%;right:0;background:var(--color-accent-300)"></span>
+              <span style="position:absolute;top:0;bottom:0;left:0;width:{{ hud.rpmPct }};background:{{ hud.rpmBg }}"></span>
+            </div>
+            <div style="display:grid;grid-template-columns:82fr 15fr 3fr;font-size:11px;color:var(--color-neutral-700)">
+              <span>0</span><span>Shift window</span><span></span>
+            </div>
+          </div>
+          <div style="border-left:2px solid var(--color-divider);padding:16px 24px;display:flex;flex-direction:column;gap:10px">
+            <button onClick="{{ shift }}" class="btn btn-primary" style="flex:1;justify-content:flex-start;align-items:flex-end;padding:14px 16px;font-size:28px;flex-direction:row">Shift up</button>
+            <span style="font-size:12px;color:var(--color-neutral-700)">or press the space bar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="5c" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">5c</span>
+        <span style="font-weight:600;font-size:14px">Results</span>
+      </div>
+      <div style="width:1280px;height:880px;background:var(--color-bg);display:grid;grid-template-columns:minmax(0,1fr) 420px;overflow:hidden;box-shadow:var(--shadow-md)">
+        <div style="display:flex;flex-direction:column;min-height:0">
+          <div style="background:{{ res.heroBg }};color:{{ res.heroFg }};padding:32px 32px 28px;display:flex;align-items:flex-end;gap:24px;border-bottom:2px solid var(--color-divider)">
+            <span style="font-weight:800;font-size:200px;line-height:0.8;letter-spacing:-0.06em">{{ res.place }}</span>
+            <div style="display:flex;flex-direction:column;gap:4px;padding-bottom:10px">
+              <span style="font-weight:800;font-size:36px;line-height:1">{{ res.headline }}</span>
+              <span style="font-size:15px">{{ res.sub }}</span>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:72px minmax(0,1fr) 140px 120px;gap:0 16px;padding:10px 32px;border-bottom:2px solid var(--color-divider);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">
+            <span>Pos</span><span>Player</span><span style="text-align:right">Time</span><span style="text-align:right">Gap</span>
+          </div>
+          <sc-for list="{{ res.rows }}" as="r" hint-placeholder-count="4">
+            <div style="display:grid;grid-template-columns:72px minmax(0,1fr) 140px 120px;gap:0 16px;padding:14px 32px;border-bottom:1px solid var(--color-divider);align-items:center;background:{{ r.bg }};color:{{ r.fg }}">
+              <span style="font-weight:800;font-size:24px">{{ r.pos }}</span>
+              <div style="display:flex;flex-direction:column"><span style="font-weight:800;font-size:16px">{{ r.name }}</span><span style="font-size:12px">{{ r.car }}</span></div>
+              <span style="text-align:right;font-weight:800;font-size:18px;font-variant-numeric:tabular-nums">{{ r.time }}</span>
+              <span style="text-align:right;font-size:14px;font-variant-numeric:tabular-nums">{{ r.gap }}</span>
+            </div>
+          </sc-for>
+          <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;background:var(--color-divider);border-bottom:2px solid var(--color-divider);margin-top:auto">
+            <sc-for list="{{ res.stats }}" as="s" hint-placeholder-count="4">
+              <div style="background:var(--color-bg);padding:16px 20px;display:flex;flex-direction:column;gap:2px">
+                <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">{{ s.k }}</span>
+                <span style="font-weight:800;font-size:30px;line-height:1.05;font-variant-numeric:tabular-nums">{{ s.v }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <aside style="border-left:2px solid var(--color-divider);display:flex;flex-direction:column">
+          <div style="padding:24px 24px 8px;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Rewards</div>
+          <div style="padding:0 24px">
+            <sc-for list="{{ res.rewards }}" as="w" hint-placeholder-count="3">
+              <div style="display:flex;align-items:baseline;padding:14px 0;border-top:1px solid var(--color-divider)">
+                <span style="font-size:15px">{{ w.k }}</span>
+                <span style="margin-left:auto;font-weight:800;font-size:26px;font-variant-numeric:tabular-nums">{{ w.v }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="margin:16px 24px 0;padding:16px 0;border-top:2px solid var(--color-divider);display:flex;flex-direction:column;gap:8px">
+            <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Shifts</span>
+            <div style="display:flex;gap:4px">
+              <sc-for list="{{ res.shifts }}" as="x" hint-placeholder-count="5">
+                <span style="flex:1;padding:8px 8px;font-size:11px;font-weight:800;background:{{ x.bg }};color:{{ x.fg }}">{{ x.q }}</span>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;padding:16px 24px 24px;margin-top:auto">
+            <button onClick="{{ again }}" class="btn btn-primary" style="justify-content:flex-start;padding:14px 16px;font-size:15px">Race again · {{ ev.fee }}</button>
+            <a href="Garage.dc.html" class="btn btn-secondary" style="justify-content:flex-start;padding:14px 16px;font-size:15px">Back to garage</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const CARS = [
+  {id:'r34',make:'Nissan',model:'Skyline GT-R V-Spec',gen:'R34',tier:'Epic',lvl:5,hp:280,kg:1560,top:250},
+  {id:'f40',make:'Ferrari',model:'F40',gen:'',tier:'Legendary',lvl:3,hp:478,kg:1100,top:324},
+  {id:'911',make:'Porsche',model:'911 Carrera RS 2.7',gen:'F-series',tier:'Legendary',lvl:4,hp:210,kg:975,top:245},
+  {id:'a80',make:'Toyota',model:'Supra RZ',gen:'A80',tier:'Epic',lvl:3,hp:330,kg:1490,top:250},
+  {id:'gti',make:'Volkswagen',model:'Golf GTI',gen:'Mk1',tier:'Common',lvl:4,hp:110,kg:810,top:182}
+];
+const BAR = {Common:'var(--color-neutral-400)',Rare:'var(--color-text)',Epic:'var(--color-accent-400)',Legendary:'var(--color-accent)'};
+const EVENTS = [
+  {id:'sprint',kind:'Sprint',len:800,place:'Suzuka East straight',fee:'500 CR',win:'2,500 CR',pts:'+120',note:'Medium length. Gearing and shift timing matter about as much as raw power.'},
+  {id:'drag',kind:'Drag',len:402,place:'Quarter mile, Santa Pod',fee:'300 CR',win:'1,500 CR',pts:'+80',note:'Short and decided early. Light cars with strong low gears do well.'},
+  {id:'run',kind:'Highway run',len:1600,place:'Autobahn A9, closed section',fee:'1,000 CR',win:'6,000 CR',pts:'+220',note:'Long enough for top speed to decide it. Perfect shifts still help.'}
+];
+const OPPS = [
+  {name:'bayside.r',car:'Toyota Supra A80',vmax:72,tau:8.6,f:1.03},
+  {name:'rallye.b',car:'Lancia Delta Integrale',vmax:64,tau:7.4,f:1.012},
+  {name:'touge.t',car:'Honda NSX NA1',vmax:74,tau:9.4,f:1.055}
+];
+const physics = c => ({vmax:c.top/3.6, A:(3 + 18*c.hp/c.kg) * 1.6 * (1 + c.lvl*0.02)});
+const perfectTime = (c, len) => { const {vmax,A}=physics(c); let d=0,v=0,g=1,rpm=0,b=0,t=0; const dt=1/120;
+  while(d<len && t<300){ t+=dt; rpm=Math.min(1,rpm+dt*(1.1/Math.pow(g,0.85))); const a=A*(0.35+0.65*rpm)*(1/Math.pow(g,0.15))*Math.max(0,1-v/vmax)*(rpm>=1?0.3:1)*(b>0?1.3:1); v+=a*dt; d+=v*dt; b=Math.max(0,b-dt);
+    if(g<6 && rpm>=0.9){ g++; b=0.7; rpm=Math.max(0.3,rpm*0.55); } } return t; };
+const oppDist = (o,t) => t<=0 ? 0 : o.vmax*(t - o.tau*(1-Math.exp(-t/o.tau)));
+const oppFinish = (o,len) => { let lo=0, hi=200; for(let i=0;i<50;i++){const m=(lo+hi)/2; oppDist(o,m)<len?lo=m:hi=m;} return hi; };
+const fmtT = t => t.toFixed(2)+' s';
+
+class Component extends DCLogic {
+  state = { ev:'sprint', car:'r34', phase:'idle', t:0, count:3, d:0, v:0, gear:1, rpm:0, quality:'', shifts:[], boost:0, top:0, result:null };
+  componentDidMount() {
+    this.onKey = e => { if (e.code==='Space' && this.phase==='race') { e.preventDefault(); this.doShift(); } };
+    window.addEventListener('keydown', this.onKey);
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this.onKey); cancelAnimationFrame(this.raf); }
+  carObj() { return CARS.find(c=>c.id===this.state.car); }
+  evObj() { return EVENTS.find(e=>e.id===this.state.ev); }
+  oppK = [1,1,1];
+  pHdr = React.createRef(); pTitle = React.createRef(); pOpps = React.createRef(); pRew = React.createRef(); pNote = React.createRef();
+  reduced() { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+  sweep(el, delay = 0) {
+    if (!el || this.reduced()) return;
+    const slab = document.createElement('div');
+    slab.style.cssText = 'position:absolute;inset:0;background:var(--color-text);z-index:3;pointer-events:none';
+    el.appendChild(slab);
+    const a = slab.animate([{transform:'translateX(-101%)'},{transform:'translateX(0)', offset:0.45},{transform:'translateX(0)', offset:0.55},{transform:'translateX(101%)'}],
+      {duration:720, delay, easing:'cubic-bezier(.76,0,.24,1)', fill:'both'});
+    a.onfinish = () => slab.remove();
+  }
+  animatePanel(isCar) {
+    if (this.reduced()) return;
+    const out = 'cubic-bezier(.2,.8,.2,1)';
+    this.sweep(this.pHdr.current, 60);
+    const t = this.pTitle.current;
+    t && t.animate([{transform:'translateY(48px)',opacity:0},{transform:'none',opacity:1}], {duration:560, delay:380, easing:out, fill:'backwards'});
+    [...(this.pOpps.current?.children||[])].forEach((el,i) => el.animate([{transform:'translateX(24px)',opacity:0},{transform:'none',opacity:1}], {duration:420, delay:420+i*70, easing:out, fill:'backwards'}));
+    [...(this.pRew.current?.children||[])].forEach((el,i) => el.animate([{transform:'translateY(16px)',opacity:0},{transform:'none',opacity:1}], {duration:420, delay:500+i*70, easing:out, fill:'backwards'}));
+    const n = this.pNote.current;
+    n && n.animate([{opacity:0},{opacity:1}], {duration:400, delay:640, fill:'backwards'});
+  }
+  calibrate() {
+    const ev = this.evObj(), Tp = perfectTime(this.carObj(), ev.len);
+    this.oppK = OPPS.map(o => oppFinish(o, ev.len) / (Tp * o.f));
+  }
+  oppD(i, t) { return oppDist(OPPS[i], t * this.oppK[i]); }
+  startRace = () => {
+    cancelAnimationFrame(this.raf);
+    this.calibrate();
+    this.phase = 'count';
+    this.sim = {t:0, d:0, v:0, gear:1, rpm:0, shifts:[], boost:0, top:0};
+    this.setState({phase:'count', count:3, quality:'', ...this.sim});
+    this.last = performance.now(); this.cd = 3;
+    const loop = now => {
+      const dt = Math.min(0.05, (now - this.last)/1000); this.last = now;
+      if (this.phase==='count') {
+        this.cd -= dt;
+        if (this.cd <= 0) { this.phase = 'race'; this.setState({phase:'race', count:0}); }
+        else this.setState({count:Math.ceil(this.cd)});
+      } else if (this.phase==='race') this.step(dt);
+      if (this.phase==='count' || this.phase==='race') this.raf = requestAnimationFrame(loop);
+    };
+    this.raf = requestAnimationFrame(loop);
+  };
+  step(dt) {
+    const c = this.carObj(), ev = this.evObj(), s = this.sim;
+    const {vmax, A} = physics(c);
+    let {d, v, gear, rpm, boost, t, top} = s;
+    t += dt;
+    rpm = Math.min(1, rpm + dt*(1.1/Math.pow(gear,0.85)));
+    const limiter = rpm >= 1 ? 0.3 : 1;
+    const a = A*(0.35+0.65*rpm)*(1/Math.pow(gear,0.15))*Math.max(0,1-v/vmax)*limiter*(boost>0?1.3:1);
+    v += a*dt; d += v*dt; boost = Math.max(0, boost-dt); top = Math.max(top, v);
+    if (d >= ev.len) {
+      const over = (d-ev.len)/Math.max(v,1);
+      this.finish(t - over, top);
+      return;
+    }
+    Object.assign(this.sim, {d, v, rpm, boost, t, top});
+    this.setState({d, v, gear, rpm, boost, t, top});
+  }
+  doShift = () => {
+    const s = this.sim; if (this.phase!=='race' || !s || s.gear>=6) return;
+    const q = s.rpm < 0.82 ? 'Early' : s.rpm < 0.97 ? 'Perfect' : 'Late';
+    Object.assign(s, {gear:s.gear+1, rpm:Math.max(0.3, s.rpm*0.55), shifts:[...s.shifts,q], boost: q==='Perfect'?0.7:0});
+    this.setState({gear:s.gear, rpm:s.rpm, quality:q, shifts:s.shifts, boost:s.boost});
+  };
+  finish(time, top) {
+    const ev = this.evObj(), c = this.carObj();
+    const all = [{name:'You · J. Durand', car:c.make+' '+c.model+(c.gen?' '+c.gen:''), time, me:true},
+      ...OPPS.map((o,i)=>({name:o.name, car:o.car, time:oppFinish(o, ev.len)/this.oppK[i]}))].sort((a,b)=>a.time-b.time);
+    const place = all.findIndex(r=>r.me)+1;
+    this.phase = 'done';
+    this.setState({phase:'done', d:ev.len, t:time, result:{all, place, top, shifts:this.sim.shifts, ev:ev.id}});
+  }
+  renderVals() {
+    const s = this.state, c = this.carObj(), ev = this.evObj();
+    const ticks = Array.from({length:Math.floor(ev.len/100)-(ev.len%100?0:1)},(_,i)=>({left: ((i+1)*100/ev.len*100)+'%'}));
+    const tNow = s.phase==='race' || s.phase==='done' ? s.t : 0;
+    const lanesRaw = [
+      {name:'You', car:c.make+' '+c.model, d:s.d, me:true, bar:BAR[c.tier]},
+      ...OPPS.map((o,i)=>({name:o.name, car:o.car, d:Math.min(ev.len, this.oppD(i,tNow)), bar:'var(--color-neutral-500)'}))
+    ];
+    const order = [...lanesRaw].sort((a,b)=>b.d-a.d);
+    const lanes = lanesRaw.map(l => { const p = Math.min(100, l.d/ev.len*100);
+      return {...l, left:p+'%', shift:'-'+p+'%', label: l.me ? 'YOU · '+Math.round(l.d)+' m' : Math.round(l.d)+' m',
+        laneBg: l.me ? 'var(--color-surface)' : 'transparent',
+        chipBg: l.me ? 'var(--color-text)' : 'var(--color-neutral-200)', chipFg: l.me ? 'var(--color-bg)' : 'var(--color-text)'}; });
+    const myPos = order.findIndex(l=>l.me)+1;
+    const qFg = s.quality==='Perfect' ? 'var(--color-accent-700)' : 'var(--color-text)';
+    const r = s.result;
+    let res;
+    if (r) {
+      const best = r.all[0].time, evR = EVENTS.find(e=>e.id===r.ev), won = r.place===1;
+      res = {place:'P'+r.place, headline: won ? 'You won.' : r.place===2 ? 'So close.' : 'Not this time.',
+        sub: evR.kind+' · '+evR.len+' m · '+evR.place,
+        heroBg: won ? 'var(--color-accent)' : 'var(--color-text)', heroFg:'var(--color-bg)',
+        rows: r.all.map((x,i)=>({pos:'P'+(i+1), name:x.name, car:x.car, time:fmtT(x.time), gap: i? '+'+(x.time-best).toFixed(2) : '—',
+          bg: x.me ? 'var(--color-surface)' : 'transparent', fg:'var(--color-text)'})),
+        stats:[{k:'Your time',v:fmtT(r.all.find(x=>x.me).time)},{k:'Top speed',v:Math.round(r.top*3.6)+' km/h'},
+          {k:'Perfect shifts',v:r.shifts.filter(q=>q==='Perfect').length+' / '+r.shifts.length},{k:'Gear reached',v:String(r.shifts.length+1)}],
+        rewards:[{k:'Season points',v: won ? evR.pts : '+'+Math.round(parseInt(evR.pts)/(r.place+1))},{k:'Credits',v: won ? '+'+evR.win : '+0 CR'},{k:'XP',v:'+'+(240 - r.place*40)}],
+        shifts: (r.shifts.length ? r.shifts : ['—']).map(q=>({q, bg: q==='Perfect'?'var(--color-accent)':q==='Late'?'var(--color-text)':'var(--color-neutral-200)', fg: q==='Perfect'||q==='Late'?'var(--color-bg)':'var(--color-text)'}))};
+    } else {
+      res = {place:'P1', headline:'You won.', sub:'Sprint · 800 m · Suzuka East straight · sample result', heroBg:'var(--color-accent)', heroFg:'var(--color-bg)',
+        rows:[{pos:'P1',name:'You · J. Durand',car:'Nissan Skyline GT-R V-Spec R34',time:'19.84 s',gap:'—',bg:'var(--color-surface)',fg:'var(--color-text)'},
+          {pos:'P2',name:'rallye.b',car:'Lancia Delta Integrale',time:'20.31 s',gap:'+0.47',bg:'transparent',fg:'var(--color-text)'},
+          {pos:'P3',name:'bayside.r',car:'Toyota Supra A80',time:'20.62 s',gap:'+0.78',bg:'transparent',fg:'var(--color-text)'},
+          {pos:'P4',name:'touge.t',car:'Honda NSX NA1',time:'21.40 s',gap:'+1.56',bg:'transparent',fg:'var(--color-text)'}],
+        stats:[{k:'Your time',v:'19.84 s'},{k:'Top speed',v:'214 km/h'},{k:'Perfect shifts',v:'4 / 5'},{k:'Gear reached',v:'6'}],
+        rewards:[{k:'Season points',v:'+120'},{k:'Credits',v:'+2,500 CR'},{k:'XP',v:'+200'}],
+        shifts:['Perfect','Perfect','Early','Perfect','Perfect'].map(q=>({q, bg:q==='Perfect'?'var(--color-accent)':'var(--color-neutral-200)', fg:q==='Perfect'?'var(--color-bg)':'var(--color-text)'}))};
+    }
+    const overlay = s.phase==='idle' ? {big:'Ready', sub:'Three opponents found. Press start, then shift up in the window.', fg:'var(--color-text)', start:true, label:'Start race'}
+      : s.phase==='count' ? {big:String(s.count), sub:'Get ready', fg:'var(--color-text)', start:false}
+      : s.phase==='done' ? {big:'P'+r.place, sub: fmtT(r.all.find(x=>x.me).time)+' · results are in 5c', fg: r.place===1?'var(--color-accent)':'var(--color-text)', start:true, label:'Race again'}
+      : null;
+    return {
+      ev:{...ev, lenStr: ev.len.toLocaleString('en-US')+' m'}, car:c,
+      events: EVENTS.map(e=>({...e, lenStr:e.len.toLocaleString('en-US')+' m', bg:e.id===s.ev?'var(--color-text)':'var(--color-bg)', fg:e.id===s.ev?'var(--color-bg)':'var(--color-text)', pick:(evt)=>{ if (e.id===s.ev) return; this.sweep(evt.currentTarget); cancelAnimationFrame(this.raf); this.phase='idle'; this.setState({ev:e.id, phase:'idle', d:0, t:0, v:0, rpm:0, gear:1}, () => requestAnimationFrame(() => this.animatePanel(false))); }})),
+      cars: CARS.map(x=>({...x, bar:BAR[x.tier], pw:Math.round(x.hp/x.kg*1000), rowBg:x.id===s.car?'var(--color-surface)':'transparent', pick:(evt)=>{ if (x.id===s.car) return; this.sweep(evt.currentTarget); cancelAnimationFrame(this.raf); this.phase='idle'; this.setState({car:x.id, phase:'idle', d:0, t:0, v:0, rpm:0, gear:1}, () => requestAnimationFrame(() => this.animatePanel(true))); }})),
+      opps: OPPS,
+      pHdr:this.pHdr, pTitle:this.pTitle, pOpps:this.pOpps, pRew:this.pRew, pNote:this.pNote,
+      findRace: this.startRace, start: this.startRace, again: this.startRace, shift: this.doShift,
+      ticks, lanes,
+      hud: {pos: s.phase==='idle' ? '—' : myPos+' / 4', time: fmtT(tNow), togo: Math.max(0, Math.round(ev.len - s.d))+' m',
+        kmh: String(Math.round(s.v*3.6)), gear: String(s.gear), rpmPct: Math.round(s.rpm*100)+'%',
+        rpmBg: s.rpm>=0.97 ? 'var(--color-accent)' : s.rpm>=0.82 ? 'var(--color-accent-600)' : 'var(--color-text)',
+        quality: s.quality ? s.quality+' shift' : '', qFg},
+      showOverlay: !!overlay, overlayBig: overlay?.big, overlaySub: overlay?.sub, overlayFg: overlay?.fg, showStart: !!overlay?.start, startLabel: overlay?.label,
+      res
+    };
+  }
+}
+</script>
+</body>
+</html>

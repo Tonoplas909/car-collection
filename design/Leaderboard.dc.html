@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="_ds/modernist-468c7b53-200e-4772-8c6d-9d95f4feda56/styles.css">
+<script src="_ds/modernist-468c7b53-200e-4772-8c6d-9d95f4feda56/_ds_bundle.js"></script>
+<script src="fx.js"></script>
+<style>body{margin:0;background:var(--color-neutral-300)} a{color:var(--color-accent)} a:hover{color:var(--color-accent-600)}</style>
+</helmet>
+<section style="padding:64px;display:flex;flex-direction:column;gap:32px">
+  <div style="display:flex;flex-direction:column;gap:4px;max-width:900px">
+    <h6 style="margin:0;color:var(--color-accent-700)">Turn 4</h6>
+    <h2 style="margin:0">Leaderboard</h2>
+    <p style="margin:0;color:var(--color-neutral-800)">Three rankings: race points for the season, collection value and garage size. Switch between them with the tabs and the region control. Your own row stays pinned at the bottom.</p>
+  </div>
+  <div id="4a" style="display:flex;flex-direction:column;gap:12px">
+    <div style="display:flex;align-items:center;gap:12px">
+      <span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">4a</span>
+      <span style="font-weight:600;font-size:14px">Leaderboard</span>
+    </div>
+    <div style="width:1280px;height:880px;background:var(--color-bg);display:grid;grid-template-columns:200px minmax(0,1fr) 320px;overflow:hidden;box-shadow:var(--shadow-md)">
+      <nav style="border-right:2px solid var(--color-divider);display:flex;flex-direction:column;padding:24px 0">
+        <span style="font-weight:800;font-size:22px;letter-spacing:0.02em;padding:0 20px 24px">MARQUE</span>
+        <a href="Garage.dc.html" style="padding:10px 20px;font-size:15px;text-decoration:none;color:var(--color-text)">Garage</a>
+        <a href="Packs.dc.html" style="padding:10px 20px;font-size:15px;text-decoration:none;color:var(--color-text)">Packs</a>
+        <a href="#4a" style="padding:10px 20px;font-size:15px;text-decoration:none;color:var(--color-text)">Race</a>
+        <a href="Market.dc.html" style="padding:10px 20px;font-size:15px;text-decoration:none;color:var(--color-text)">Market</a>
+        <a href="#4a" style="padding:10px 20px;font-weight:800;font-size:15px;text-decoration:none;color:var(--color-bg);background:var(--color-text)">Leaderboard</a>
+        <a href="Profile.dc.html" style="margin-top:auto;border-top:2px solid var(--color-divider);padding:16px 20px 0;display:flex;flex-direction:column;gap:2px;text-decoration:none;color:var(--color-text)">
+          <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Credits</span>
+          <span style="font-weight:800;font-size:20px;font-variant-numeric:tabular-nums">48,200</span>
+          <span style="font-size:13px;color:var(--color-neutral-700);padding-top:8px">J. Durand · Lv 23</span>
+        </a>
+      </nav>
+      <div style="display:flex;flex-direction:column;min-height:0">
+        <div style="display:flex;align-items:flex-end;gap:16px;padding:24px 24px 0">
+          <span style="font-weight:800;font-size:96px;line-height:0.85;letter-spacing:-0.04em">Ranks</span>
+          <div class="seg" style="margin-left:auto;margin-bottom:4px">
+            <sc-for list="{{ scopes }}" as="s" hint-placeholder-count="3">
+              <button onClick="{{ s.pick }}" style="border:0;border-left:{{ s.sep }};font:inherit;font-size:13px;padding:7px 12px;cursor:pointer;background:{{ s.bg }};color:{{ s.fg }}">{{ s.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display:flex;padding:20px 24px 0;border-bottom:2px solid var(--color-divider)">
+          <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="3">
+            <button onClick="{{ t.pick }}" style="border:0;font:inherit;font-size:15px;padding:10px 0;margin-right:32px;cursor:pointer;background:transparent;color:var(--color-text);font-weight:{{ t.fw }};box-shadow:{{ t.line }}">{{ t.label }}</button>
+          </sc-for>
+        </div>
+        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2px;background:var(--color-divider);border-bottom:2px solid var(--color-divider);flex:none">
+          <sc-for list="{{ podium }}" as="p" hint-placeholder-count="3">
+            <div style="background:{{ p.bg }};color:{{ p.fg }};padding:16px 20px 18px;display:flex;flex-direction:column;gap:4px">
+              <span style="font-weight:800;font-size:56px;line-height:0.9;letter-spacing:-0.04em">{{ p.rank }}</span>
+              <span style="font-weight:800;font-size:18px;padding-top:10px">{{ p.name }}</span>
+              <span style="font-size:13px">{{ p.sub }}</span>
+              <span style="font-weight:800;font-size:22px;font-variant-numeric:tabular-nums;padding-top:6px">{{ p.score }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:grid;grid-template-columns:56px minmax(0,1fr) 140px 120px;gap:0 16px;padding:8px 24px;border-bottom:2px solid var(--color-divider);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700);flex:none">
+          <span>Rank</span><span>Player</span><span>Best car</span><span style="text-align:right">{{ metricLabel }}</span>
+        </div>
+        <div style="overflow:auto;flex:1;min-height:0">
+          <sc-for list="{{ rows }}" as="r" hint-placeholder-count="10">
+            <div style="display:grid;grid-template-columns:56px minmax(0,1fr) 140px 120px;gap:0 16px;padding:9px 24px;border-bottom:1px solid var(--color-divider);align-items:center;font-size:14px">
+              <span style="font-weight:800;font-variant-numeric:tabular-nums">{{ r.rank }}</span>
+              <span style="display:flex;gap:8px;align-items:baseline"><span style="font-weight:600">{{ r.name }}</span><span style="font-size:12px;color:var(--color-neutral-700)">{{ r.cc }}</span></span>
+              <span style="font-size:13px;color:var(--color-neutral-800);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ r.car }}</span>
+              <span style="text-align:right;font-weight:800;font-variant-numeric:tabular-nums">{{ r.score }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:grid;grid-template-columns:56px minmax(0,1fr) 140px 120px;gap:0 16px;padding:12px 24px;border-top:2px solid var(--color-divider);align-items:center;font-size:14px;background:var(--color-text);color:var(--color-bg);flex:none">
+          <span style="font-weight:800;font-variant-numeric:tabular-nums">{{ me.rank }}</span>
+          <span style="font-weight:800">You · J. Durand</span>
+          <span style="font-size:13px">{{ me.car }}</span>
+          <span style="text-align:right;font-weight:800;font-variant-numeric:tabular-nums">{{ me.score }}</span>
+        </div>
+      </div>
+      <aside style="border-left:2px solid var(--color-divider);display:flex;flex-direction:column">
+        <div style="padding:24px;border-bottom:2px solid var(--color-divider);display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Your rank · {{ scopeLabel }}</span>
+          <span style="font-weight:800;font-size:72px;line-height:0.9;letter-spacing:-0.04em;font-variant-numeric:tabular-nums">{{ me.rank }}</span>
+          <span style="font-size:14px;color:var(--color-neutral-800)">{{ me.pct }}</span>
+        </div>
+        <div style="padding:24px;border-bottom:2px solid var(--color-divider);display:flex;flex-direction:column;gap:10px">
+          <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Next rank up</span>
+          <span style="font-weight:800;font-size:20px;line-height:1.15">{{ me.gap }}</span>
+          <div style="height:8px;background:var(--color-neutral-300)"><div style="height:8px;width:{{ me.prog }};background:var(--color-accent)"></div></div>
+        </div>
+        <div style="padding:24px;border-bottom:2px solid var(--color-divider);display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Season 4 ends in</span>
+          <span style="font-weight:800;font-size:32px;line-height:1.05;font-variant-numeric:tabular-nums">12d 04h</span>
+        </div>
+        <div style="padding:24px;display:flex;flex-direction:column;gap:8px">
+          <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Season rewards</span>
+          <sc-for list="{{ rewards }}" as="w" hint-placeholder-count="4">
+            <div style="display:flex;font-size:14px;padding:6px 0;border-bottom:1px solid var(--color-divider);gap:8px">
+              <span style="font-weight:600">{{ w.k }}</span>
+              <span style="margin-left:auto;text-align:right">{{ w.v }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const P = [
+  ['k.watanabe','JP','Porsche 959'],['apex_hunter','DE','McLaren F1'],['lmarchetti','IT','Ferrari F40'],
+  ['bayside.r','JP','Skyline GT-R R34'],['rallye.b','FR','Lancia Delta Integrale'],['dtm.88','DE','BMW M3 E30'],
+  ['2jz_only','US','Toyota Supra A80'],['m.okafor','GB','McLaren F1'],['fairlady','JP','Datsun 240Z S30'],
+  ['s.lindqvist','SE','Porsche 911 RS F-series'],['touge.t','JP','Honda NSX NA1'],['cossie','GB','Ford Sierra RS Cosworth'],
+  ['a.moreau','FR','Mercedes 300 SL W198'],['gandini_fan','IT','Lamborghini Countach'],['monte64','MC','Mini Cooper S Mk1'],
+  ['r.costa','BR','Ferrari F40'],['ducktail','US','Porsche 911 RS F-series'],['rotary.k','JP','Mazda RX-7 FD']
+];
+const METRICS = {
+  race:{label:'Race points', unit:'pts', top:18420, step:0.93, me:{rank:'#142', score:'6,310 pts', car:'Skyline GT-R R34', gap:'85 pts to pass #141', prog:'72%'}},
+  value:{label:'Garage value', unit:'CR', top:8640000, step:0.9, me:{rank:'#388', score:'2,709,700 CR', car:'McLaren F1', gap:'14,300 CR to pass #387', prog:'41%'}},
+  size:{label:'Cars owned', unit:'cars', top:211, step:0.965, me:{rank:'#1,204', score:'14 cars', car:'—', gap:'1 car to pass #1,203', prog:'90%'}}
+};
+const SCOPES = {global:{label:'Global',mult:1,pct:'Top 3% of 4,812 active players'},friends:{label:'Friends',mult:0.08,pct:'4th of 23 friends'},region:{label:'France',mult:0.15,pct:'Top 6% in France'}};
+const fmt = n => Math.round(n).toLocaleString('en-US');
+
+class Component extends DCLogic {
+  state = { metric:'race', scope:'global' };
+  renderVals() {
+    const m = METRICS[this.state.metric], sc = SCOPES[this.state.scope];
+    const order = this.state.metric==='value' ? [1,2,0,7,12,3,15,4,5,6,8,9,10,11,13,14,16,17] : this.state.metric==='size' ? [5,0,8,10,3,2,1,4,6,7,9,11,12,13,14,15,16,17] : [...P.keys()];
+    const list = order.map((pi,i) => ({name:P[pi][0], cc:P[pi][1], car:P[pi][2], score: fmt(m.top*Math.pow(m.step,i)) + ' ' + m.unit, rank:String(i+1)}));
+    let me = {...m.me};
+    if (this.state.scope==='friends') me = {...me, rank:'#4', gap: me.gap.replace(/#[\d,]+/, '#3')};
+    if (this.state.scope==='region') me = {...me, rank: this.state.metric==='race' ? '#19' : this.state.metric==='value' ? '#47' : '#162', gap: me.gap.replace(/#[\d,]+/, 'the next player')};
+    return {
+      metricLabel: m.label, scopeLabel: sc.label, me: {...me, pct: sc.pct},
+      podium: list.slice(0,3).map((p,i) => ({...p, rank: String(i+1).padStart(2,'0'), sub: p.cc+' · '+p.car,
+        bg: i===0 ? 'var(--color-accent)' : 'var(--color-bg)', fg: i===0 ? 'var(--color-bg)' : 'var(--color-text)'})),
+      rows: list.slice(3),
+      tabs: Object.entries(METRICS).map(([k,v]) => ({label:v.label, fw: k===this.state.metric?'800':'400', line: k===this.state.metric?'inset 0 -3px 0 var(--color-accent)':'none', pick:()=>this.setState({metric:k})})),
+      scopes: Object.entries(SCOPES).map(([k,v],i) => ({label:v.label, sep: i?'1px solid var(--color-divider)':'0', bg: k===this.state.scope?'var(--color-text)':'transparent', fg: k===this.state.scope?'var(--color-bg)':'var(--color-text)', pick:()=>this.setState({scope:k})})),
+      rewards: [{k:'Top 10',v:'Legendary pack + title'},{k:'Top 1%',v:'Apex pack'},{k:'Top 5%',v:'2 Heritage packs'},{k:'Top 25%',v:'10,000 CR'}]
+    };
+  }
+}
+</script>
+</body>
+</html>

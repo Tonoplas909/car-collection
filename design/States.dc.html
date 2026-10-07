@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="_ds/modernist-468c7b53-200e-4772-8c6d-9d95f4feda56/styles.css">
+<script src="_ds/modernist-468c7b53-200e-4772-8c6d-9d95f4feda56/_ds_bundle.js"></script>
+<script src="fx.js"></script>
+<style>body{margin:0;background:var(--color-neutral-300)} a{color:var(--color-accent)} a:hover{color:var(--color-accent-600)}</style>
+</helmet>
+<section style="padding:64px;display:flex;flex-direction:column;gap:32px">
+  <div style="display:flex;flex-direction:column;gap:4px;max-width:900px">
+    <h6 style="margin:0;color:var(--color-accent-700)">Turn 9</h6>
+    <h2 style="margin:0">Empty and error states, confirmation dialogs</h2>
+    <p style="margin:0;color:var(--color-neutral-800)">Four states and four dialogs, each shown inside a 640 × 420 window of its screen. Click "Buy", "Sell" and "Swap" below to switch the dialog in <a href="#9e">9e</a>.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(2,640px);gap:48px 64px;align-items:flex-start">
+
+    <sc-for list="{{ states }}" as="s" hint-placeholder-count="4">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:12px"><span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">{{ s.id }}</span><span style="font-weight:600;font-size:14px">{{ s.label }}</span></div>
+        <div style="width:640px;height:420px;background:var(--color-bg);box-shadow:var(--shadow-md);display:flex;flex-direction:column;overflow:hidden">
+          <div style="display:flex;align-items:center;padding:12px 24px;border-bottom:2px solid var(--color-divider)"><span style="font-weight:800">MARQUE</span><span style="margin-left:auto;font-size:13px;color:var(--color-neutral-700)">{{ s.where }}</span></div>
+          <div style="flex:1;display:grid;grid-template-columns:200px minmax(0,1fr);min-height:0">
+            <div style="background:{{ s.bg }};color:{{ s.fg }};display:flex;align-items:flex-end;padding:20px"><span style="font-weight:800;font-size:96px;line-height:0.8;letter-spacing:-0.06em">{{ s.glyph }}</span></div>
+            <div style="padding:28px;display:flex;flex-direction:column;gap:10px;justify-content:flex-end">
+              <span style="font-weight:800;font-size:34px;line-height:1">{{ s.title }}</span>
+              <span style="font-size:15px;line-height:23px;color:var(--color-neutral-800)">{{ s.text }}</span>
+              <div style="display:flex;gap:8px;padding-top:8px"><span style="font-weight:800;font-size:14px;padding:12px 18px;background:var(--color-text);color:var(--color-bg)">{{ s.cta }}</span><span style="font-weight:800;font-size:14px;padding:12px 18px;border:2px solid var(--color-text)">{{ s.alt }}</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </sc-for>
+
+    <div id="9e" style="grid-column:1 / span 2;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px"><span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">9e</span><span style="font-weight:600;font-size:14px">Dialogs</span>
+        <div style="display:flex;border:2px solid var(--color-text);margin-left:auto"><sc-for list="{{ dTabs }}" as="t" hint-placeholder-count="3"><button onClick="{{ t.pick }}" style="border:0;font:inherit;font-size:13px;padding:8px 16px;cursor:pointer;background:{{ t.bg }};color:{{ t.fg }}">{{ t.l }}</button></sc-for></div></div>
+      <div style="height:560px;position:relative;background:var(--color-bg);box-shadow:var(--shadow-md);overflow:hidden">
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,var(--color-surface) 0 12px,var(--color-neutral-300) 12px 24px);opacity:0.6"></div>
+        <div style="position:absolute;inset:0;background:color-mix(in srgb,var(--color-text) 60%,transparent)"></div>
+        <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:520px;background:var(--color-bg);box-shadow:var(--shadow-lg);display:flex;flex-direction:column">
+          <div style="background:var(--color-accent);color:var(--color-bg);padding:20px 28px"><span style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:800">{{ dlg.kind }}</span><div style="font-weight:800;font-size:40px;line-height:1;padding-top:8px">{{ dlg.title }}</div></div>
+          <div style="padding:20px 28px;display:flex;flex-direction:column">
+            <sc-for list="{{ dlg.rows }}" as="r" hint-placeholder-count="4"><div style="display:flex;padding:10px 0;border-bottom:1px solid var(--color-divider);font-size:15px"><span>{{ r.k }}</span><span style="margin-left:auto;font-weight:800;font-variant-numeric:tabular-nums">{{ r.v }}</span></div></sc-for>
+            <span style="font-size:13px;color:var(--color-neutral-700);padding-top:12px">{{ dlg.note }}</span>
+          </div>
+          <div style="display:flex;gap:8px;padding:0 28px 24px"><span style="flex:1;font-weight:800;padding:14px 16px;background:var(--color-text);color:var(--color-bg)">{{ dlg.ok }}</span><span style="font-weight:800;padding:14px 20px;border:2px solid var(--color-text)">Cancel</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const D = {
+  Buy:{kind:'Confirm purchase',title:'Buy Skyline GT-R V-Spec R34?',rows:[['Seller','bayside.r'],['Price','412,000 CR'],['Market fee','0 CR'],['Balance after','−363,800 CR']],note:'Your balance is too low. Top up 20,000 credits to continue.',ok:'Top up credits'},
+  Sell:{kind:'Confirm listing',title:'List Supra RZ A80 for 195,000 CR?',rows:[['Last sale','188,000 CR'],['Your price','195,000 CR'],['Market fee 5%','9,750 CR'],['You receive','185,250 CR']],note:'The car leaves your garage while it is listed. You can cancel any time.',ok:'List car'},
+  Swap:{kind:'Confirm swap',title:'Swap Honda NSX NA1 for Datsun 240Z S30?',rows:[['You give','Honda NSX NA1 · Rare'],['You get','Datsun 240Z S30 · Epic'],['Added credits','+40,000 CR'],['Partner','fairlady']],note:'Both players must accept. The offer expires in 24 hours.',ok:'Send offer'}
+};
+class Component extends DCLogic {
+  state = { d:'Buy' };
+  renderVals() {
+    const S = this.state, d = D[S.d];
+    return {
+      states: [
+        {id:'9a',label:'Empty garage',where:'Garage',glyph:'0',bg:'var(--color-text)',fg:'var(--color-bg)',title:'No cars yet.',text:'Open your free pack or win one in a race to start your collection.',cta:'Open a pack',alt:'Race'},
+        {id:'9b',label:'No listings',where:'Market · Buy',glyph:'—',bg:'var(--color-neutral-300)',fg:'var(--color-text)',title:'Nothing matches.',text:'No player is selling a Legendary JDM car under 100,000 CR right now.',cta:'Clear filters',alt:'Set an alert'},
+        {id:'9c',label:'Race search timed out',where:'Race',glyph:'!',bg:'var(--color-accent)',fg:'var(--color-bg)',title:'No opponents found.',text:'We looked for 30 seconds. Try again, or race against ghost times.',cta:'Search again',alt:'Ghost race'},
+        {id:'9d',label:'Low credits',where:'Packs',glyph:'CR',bg:'var(--color-accent)',fg:'var(--color-bg)',title:'You need 8,000 CR.',text:'The Heritage pack costs 8,000 credits. You have 3,200. Win races or top up.',cta:'Top up credits',alt:'Go racing'}
+      ],
+      dTabs: ['Buy','Sell','Swap'].map(k=>({l:k,bg:k===S.d?'var(--color-text)':'transparent',fg:k===S.d?'var(--color-bg)':'var(--color-text)',pick:()=>this.setState({d:k})})),
+      dlg: {...d, rows:d.rows.map(([k,v])=>({k,v}))}
+    };
+  }
+}
+</script>
+</body>
+</html>

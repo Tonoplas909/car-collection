@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="_ds/modernist-468c7b53-200e-4772-8c6d-9d95f4feda56/styles.css">
+<script src="_ds/modernist-468c7b53-200e-4772-8c6d-9d95f4feda56/_ds_bundle.js"></script>
+<script src="fx.js"></script>
+<style>body{margin:0;background:var(--color-neutral-300)} a{color:var(--color-accent)} a:hover{color:var(--color-accent-600)}</style>
+</helmet>
+<section style="padding:64px;display:flex;flex-direction:column;gap:32px">
+  <div style="display:flex;flex-direction:column;gap:4px;max-width:900px">
+    <h6 style="margin:0;color:var(--color-accent-700)">Turn 3</h6>
+    <h2 style="margin:0">Packs: shop and reveal</h2>
+    <p style="margin:0;color:var(--color-neutral-800)">Built on the 1b shell. Click a pack's Open button in <a href="#3a">3a</a> to load it into <a href="#3b">3b</a>, then click the cards to reveal them. The rarest card always comes last.</p>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:64px;align-items:flex-start">
+
+    <div id="3a" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">3a</span>
+        <span style="font-weight:600;font-size:14px">Pack shop</span>
+      </div>
+      <div style="width:1280px;height:880px;background:var(--color-bg);display:grid;grid-template-columns:200px minmax(0,1fr) 320px;overflow:hidden;box-shadow:var(--shadow-md)">
+        <nav style="border-right:2px solid var(--color-divider);display:flex;flex-direction:column;padding:24px 0">
+          <span style="font-weight:800;font-size:22px;letter-spacing:0.02em;padding:0 20px 24px">MARQUE</span>
+          <a href="Garage.dc.html" style="padding:10px 20px;font-size:15px;text-decoration:none;color:var(--color-text)">Garage</a>
+          <a href="#3a" style="padding:10px 20px;font-weight:800;font-size:15px;text-decoration:none;color:var(--color-bg);background:var(--color-text)">Packs</a>
+          <a href="#3a" style="padding:10px 20px;font-size:15px;text-decoration:none;color:var(--color-text)">Race</a>
+          <a href="Market.dc.html" style="padding:10px 20px;font-size:15px;text-decoration:none;color:var(--color-text)">Market</a>
+          <a href="#3a" style="padding:10px 20px;font-size:15px;text-decoration:none;color:var(--color-text)">Leaderboard</a>
+          <div style="margin-top:auto;border-top:2px solid var(--color-divider);padding:16px 20px 0;display:flex;flex-direction:column;gap:2px">
+            <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Credits</span>
+            <span style="font-weight:800;font-size:20px;font-variant-numeric:tabular-nums">48,200</span>
+            <span style="font-size:13px;color:var(--color-neutral-700);padding-top:8px">J. Durand · Lv 23</span>
+          </div>
+        </nav>
+        <div style="display:flex;flex-direction:column;min-height:0">
+          <div style="display:flex;align-items:flex-end;gap:16px;padding:24px 24px 20px;border-bottom:2px solid var(--color-divider)">
+            <span style="font-weight:800;font-size:96px;line-height:0.85;letter-spacing:-0.04em">Packs</span>
+            <span style="font-size:13px;color:var(--color-neutral-700);padding-bottom:6px;margin-left:auto">5 cars per pack · duplicates convert to credits</span>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--color-divider);flex:1;min-height:0;border-bottom:2px solid var(--color-divider)">
+            <sc-for list="{{ packs }}" as="p" hint-placeholder-count="3">
+              <div style="background:{{ p.bg }};color:{{ p.fg }};display:flex;flex-direction:column;padding:20px;gap:14px">
+                <div style="display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:0.08em;text-transform:uppercase">
+                  <span style="font-weight:800">{{ p.kicker }}</span>
+                  <span style="margin-left:auto">{{ p.guarantee }}</span>
+                </div>
+                <div style="flex:1;min-height:0;background:repeating-linear-gradient(135deg,var(--color-surface) 0 8px,var(--color-neutral-300) 8px 16px);display:grid;place-items:center">
+                  <span style="font-family:ui-monospace,monospace;font-size:10px;color:var(--color-neutral-700)">pack artwork</span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:2px">
+                  <span style="font-weight:800;font-size:28px;line-height:1">{{ p.name }}</span>
+                  <span style="font-size:13px;text-wrap:pretty">{{ p.desc }}</span>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid {{ p.rule }};padding-top:8px">
+                  <sc-for list="{{ p.odds }}" as="o" hint-placeholder-count="4">
+                    <div style="display:flex;flex-direction:column">
+                      <span style="font-size:10px;letter-spacing:0.06em;text-transform:uppercase">{{ o.k }}</span>
+                      <span style="font-weight:800;font-size:17px;font-variant-numeric:tabular-nums">{{ o.v }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+                <button onClick="{{ p.open }}" class="btn" style="justify-content:flex-start;padding:12px 14px;background:{{ p.btnBg }};color:{{ p.btnFg }}">Open · {{ p.price }}</button>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <aside style="border-left:2px solid var(--color-divider);display:flex;flex-direction:column">
+          <div style="padding:24px;border-bottom:2px solid var(--color-divider);display:flex;flex-direction:column;gap:6px">
+            <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Free daily pack</span>
+            <span style="font-weight:800;font-size:40px;line-height:1;font-variant-numeric:tabular-nums">06:42:18</span>
+            <span style="font-size:13px;color:var(--color-neutral-700)">One Street pack every 24 hours.</span>
+          </div>
+          <div style="padding:24px;border-bottom:2px solid var(--color-divider);display:flex;flex-direction:column;gap:10px">
+            <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Legendary guarantee</span>
+            <span style="font-weight:800;font-size:20px;line-height:1.15">Guaranteed Legendary in 7 packs</span>
+            <div style="display:grid;grid-template-columns:repeat(20,minmax(0,1fr));gap:2px">
+              <sc-for list="{{ pity }}" as="x" hint-placeholder-count="20">
+                <span style="height:14px;background:{{ x.bg }}"></span>
+              </sc-for>
+            </div>
+            <span style="font-size:13px;color:var(--color-neutral-700)">13 of 20 packs opened since your last Legendary.</span>
+          </div>
+          <div style="padding:24px;display:flex;flex-direction:column;gap:8px">
+            <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Duplicate values</span>
+            <sc-for list="{{ dupes }}" as="d" hint-placeholder-count="4">
+              <div style="display:flex;font-size:14px;padding:6px 0;border-bottom:1px solid var(--color-divider)">
+                <span>{{ d.k }}</span>
+                <span style="margin-left:auto;font-weight:600;font-variant-numeric:tabular-nums">+{{ d.v }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <div id="3b" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:4px 10px">3b</span>
+        <span style="font-weight:600;font-size:14px">Reveal: click each card</span>
+      </div>
+      <div style="width:1280px;height:880px;background:var(--color-bg);display:flex;flex-direction:column;overflow:hidden;box-shadow:var(--shadow-md)">
+        <div style="display:flex;align-items:center;gap:16px;padding:16px 24px;border-bottom:2px solid var(--color-divider)">
+          <span style="font-weight:800;font-size:18px;letter-spacing:0.02em">MARQUE</span>
+          <span style="width:2px;align-self:stretch;background:var(--color-divider)"></span>
+          <span style="font-size:14px">Opening <b>{{ cur.name }}</b> pack</span>
+          <span style="margin-left:auto;font-size:14px;font-variant-numeric:tabular-nums;color:var(--color-neutral-700)">{{ revealedCount }} / 5 revealed</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;background:var(--color-divider);flex:1;min-height:0;border-bottom:2px solid var(--color-divider)">
+          <sc-for list="{{ pulls }}" as="c" hint-placeholder-count="5">
+            <div onClick="{{ c.flip }}" style="background:var(--color-bg);display:flex;flex-direction:column;padding:24px 16px;cursor:pointer">
+              <div style="flex:1;position:relative;overflow:hidden">
+                <div style="position:absolute;inset:0;z-index:1;background:repeating-linear-gradient(180deg,var(--color-text) 0 22px,var(--color-neutral-900) 22px 24px);color:var(--color-bg);display:flex;flex-direction:column;padding:16px;gap:8px;transform:{{ c.coverTf }};transition:transform 800ms cubic-bezier(.76,0,.24,1) {{ c.coverDelay }}">
+                  <div style="height:6px;background:{{ c.bar }};margin:-16px -16px 0"></div>
+                  <span style="font-weight:800;font-size:64px;line-height:1;letter-spacing:-0.04em;font-variant-numeric:tabular-nums;padding-top:8px">{{ c.n }}</span>
+                  <span style="margin-top:auto;font-size:13px">Click to reveal</span>
+                  <div style="height:6px;background:{{ c.bar }};margin:0 -16px -16px"></div>
+                </div>
+                <div style="position:absolute;inset:0;background:{{ c.bg }};color:{{ c.fg }};display:flex;flex-direction:column;opacity:{{ c.faceOp }};transform:{{ c.faceTf }};transition:opacity 450ms ease {{ c.faceDelay }}, transform 600ms cubic-bezier(.2,.8,.2,1) {{ c.faceDelay }}">
+                  <div style="height:6px;background:{{ c.bar }}"></div>
+                  <div style="padding:12px 14px 0;display:flex;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;font-weight:800">
+                    <span>{{ c.tier }}</span>
+                    <span style="margin-left:auto;padding:2px 6px;background:{{ c.badgeBg }};color:{{ c.badgeFg }}">{{ c.status }}</span>
+                  </div>
+                  <div style="margin:12px 14px;flex:1;min-height:0;background:repeating-linear-gradient(135deg,var(--color-bg) 0 8px,var(--color-neutral-300) 8px 16px);display:grid;place-items:center">
+                    <span style="font-family:ui-monospace,monospace;font-size:10px;color:var(--color-neutral-700)">car photo</span>
+                  </div>
+                  <div style="padding:0 14px;display:flex;flex-direction:column;gap:2px">
+                    <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase">{{ c.makeGen }}</span>
+                    <span style="font-weight:800;font-size:22px;line-height:1.1">{{ c.model }}</span>
+                  </div>
+                  <div style="margin:12px 14px 14px;border-top:1px solid {{ c.rule }};padding-top:8px;display:grid;grid-template-columns:1fr 1fr;font-size:13px;font-variant-numeric:tabular-nums">
+                    <span>{{ c.year }} · {{ c.hp }} hp</span>
+                    <span style="text-align:right;font-weight:600">{{ c.note }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;align-items:center;gap:32px;padding:20px 24px">
+          <sc-if value="{{ allDone }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;gap:32px">
+              <div style="display:flex;flex-direction:column"><span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">New to garage</span><span style="font-weight:800;font-size:28px;line-height:1.1">{{ newCount }}</span></div>
+              <div style="display:flex;flex-direction:column"><span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Duplicates</span><span style="font-weight:800;font-size:28px;line-height:1.1">{{ dupCount }}</span></div>
+              <div style="display:flex;flex-direction:column"><span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-neutral-700)">Credits back</span><span style="font-weight:800;font-size:28px;line-height:1.1;font-variant-numeric:tabular-nums">+{{ dupCredits }}</span></div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ notDone }}" hint-placeholder-val="{{ true }}">
+            <span style="font-size:14px;color:var(--color-neutral-700)">The tier colour on each card back shows its rarity before you flip it.</span>
+          </sc-if>
+          <div style="display:flex;gap:8px;margin-left:auto">
+            <sc-if value="{{ notDone }}" hint-placeholder-val="{{ true }}">
+              <button onClick="{{ revealAll }}" class="btn btn-primary" style="justify-content:flex-start;padding:12px 16px;min-width:180px">Reveal all</button>
+            </sc-if>
+            <sc-if value="{{ allDone }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;gap:8px">
+                <button onClick="{{ again }}" class="btn btn-secondary" style="justify-content:flex-start;padding:12px 16px">Open another · {{ cur.price }}</button>
+                <a href="Garage.dc.html" class="btn btn-primary" style="justify-content:flex-start;padding:12px 16px;min-width:180px">Go to garage</a>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const TIER = {
+  Common:{bar:'var(--color-neutral-400)',dup:300},
+  Rare:{bar:'var(--color-neutral-800)',dup:1200},
+  Epic:{bar:'var(--color-accent-400)',dup:4000},
+  Legendary:{bar:'var(--color-accent)',dup:15000}
+};
+const PACKS = [
+  {id:'street',name:'Street',kicker:'Everyday',guarantee:'1 Rare+',price:'2,000 CR',desc:'Hot hatches, tuner cars and daily drivers.',odds:['72%','22%','5%','1%'],
+   pulls:[
+     {make:'Renault',model:'Clio Williams',gen:'',year:1993,hp:150,tier:'Common',dup:false},
+     {make:'Volkswagen',model:'Golf GTI',gen:'Mk1',year:1976,hp:110,tier:'Common',dup:true},
+     {make:'Toyota',model:'Sprinter Trueno',gen:'AE86',year:1983,hp:130,tier:'Common',dup:false},
+     {make:'Peugeot',model:'205 GTI 1.9',gen:'',year:1986,hp:130,tier:'Common',dup:true},
+     {make:'Ford',model:'Sierra RS Cosworth',gen:'',year:1986,hp:204,tier:'Rare',dup:false}]},
+  {id:'heritage',name:'Heritage',kicker:'Classics',guarantee:'1 Epic+',price:'8,000 CR',desc:'Pre-1980 icons from Europe and Japan.',odds:['48%','34%','14%','4%'],
+   pulls:[
+     {make:'Mini',model:'Cooper S',gen:'Mk1',year:1964,hp:76,tier:'Common',dup:true},
+     {make:'Volkswagen',model:'Golf GTI',gen:'Mk1',year:1976,hp:110,tier:'Common',dup:true},
+     {make:'Datsun',model:'240Z',gen:'S30',year:1969,hp:151,tier:'Rare',dup:false},
+     {make:'Alfa Romeo',model:'Giulia Sprint GTA',gen:'Tipo 105',year:1965,hp:115,tier:'Rare',dup:true},
+     {make:'Mercedes-Benz',model:'300 SL Gullwing',gen:'W198',year:1954,hp:215,tier:'Legendary',dup:false}]},
+  {id:'apex',name:'Apex',kicker:'Supercars',guarantee:'2 Epic+',price:'25,000 CR',desc:'Homologation specials and flagship supercars.',odds:['0%','45%','43%','12%'],
+   pulls:[
+     {make:'Mazda',model:'RX-7',gen:'FD',year:1992,hp:255,tier:'Rare',dup:true},
+     {make:'BMW',model:'M3',gen:'E30',year:1986,hp:195,tier:'Rare',dup:true},
+     {make:'Toyota',model:'Supra RZ',gen:'A80',year:1993,hp:330,tier:'Epic',dup:true},
+     {make:'Lancia',model:'Delta HF Integrale Evo',gen:'',year:1991,hp:210,tier:'Epic',dup:false},
+     {make:'Porsche',model:'959',gen:'',year:1986,hp:450,tier:'Legendary',dup:false}]}
+];
+const fmt = n => n.toLocaleString('en-US');
+
+class Component extends DCLogic {
+  state = { pack:'heritage', open:[true,true,false,false,false] };
+  renderVals() {
+    const cur = PACKS.find(p=>p.id===this.state.pack);
+    const open = this.state.open, stag = this.state.stag || [];
+    const pulls = cur.pulls.map((c,i) => {
+      const t = TIER[c.tier], leg = c.tier==='Legendary';
+      return {...c, n:String(i+1).padStart(2,'0'), bar:t.bar, makeGen: c.gen ? c.make+' · '+c.gen : c.make,
+        coverTf: open[i] ? 'translateY(-101%)' : 'translateY(0)',
+        coverDelay: open[i] ? (stag[i]||0)+'ms' : '0ms',
+        faceOp: open[i] ? 1 : 0, faceTf: open[i] ? 'translateY(0)' : 'translateY(32px)',
+        faceDelay: open[i] ? ((stag[i]||0)+350)+'ms' : '0ms',
+        bg: leg ? 'var(--color-accent)' : 'var(--color-surface)', fg: leg ? 'var(--color-bg)' : 'var(--color-text)',
+        rule: leg ? 'var(--color-accent-300)' : 'var(--color-divider)',
+        status: c.dup ? 'Duplicate' : 'New',
+        badgeBg: c.dup ? 'transparent' : (leg ? 'var(--color-bg)' : 'var(--color-text)'),
+        badgeFg: c.dup ? 'inherit' : (leg ? 'var(--color-accent-700)' : 'var(--color-bg)'),
+        note: c.dup ? '+'+fmt(t.dup)+' CR' : 'Added',
+        flip: () => this.setState(s => { const o=[...s.open]; o[i]=true; return {open:o, stag:[]}; })};
+    });
+    const done = open.every(Boolean);
+    const dups = cur.pulls.filter(c=>c.dup);
+    return {
+      cur, pulls,
+      revealedCount: open.filter(Boolean).length,
+      allDone: done, notDone: !done,
+      newCount: cur.pulls.length - dups.length, dupCount: dups.length,
+      dupCredits: fmt(dups.reduce((a,c)=>a+TIER[c.tier].dup,0)) + ' CR',
+      revealAll: () => this.setState(s => { let k = 0; const st = s.open.map(o => o ? 0 : (k++)*260); return {open:[true,true,true,true,true], stag:st}; }),
+      again: () => this.setState({open:[false,false,false,false,false], stag:[]}),
+      packs: PACKS.map(p => {
+        const hero = p.id==='apex';
+        return {...p,
+          bg: hero ? 'var(--color-accent)' : 'var(--color-bg)', fg: hero ? 'var(--color-bg)' : 'var(--color-text)',
+          rule: hero ? 'var(--color-accent-300)' : 'var(--color-divider)',
+          btnBg: hero ? 'var(--color-bg)' : 'var(--color-accent)', btnFg: hero ? 'var(--color-accent-700)' : 'var(--color-bg)',
+          odds: ['Common','Rare','Epic','Legend'].map((k,i)=>({k, v:p.odds[i]})),
+          open: () => this.setState({pack:p.id, open:[false,false,false,false,false]})};
+      }),
+      pity: Array.from({length:20},(_,i)=>({bg: i<13 ? 'var(--color-text)' : 'var(--color-neutral-300)'})),
+      dupes: Object.entries(TIER).map(([k,t])=>({k, v:fmt(t.dup)+' CR'}))
+    };
+  }
+}
+</script>
+</body>
+</html>

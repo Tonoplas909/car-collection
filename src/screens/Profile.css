@@ -1,0 +1,26 @@
+.pf-head { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 20px; padding: 24px; border-bottom: 2px solid var(--color-divider); align-items: end; flex: none; }
+.pf-avatar { aspect-ratio: 1; }
+.pf-name { font-weight: 800; font-size: 56px; line-height: .9; letter-spacing: -.03em; }
+.pf-xp { display: flex; align-items: center; gap: 12px; padding-top: 8px; }
+.pf-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 2px solid var(--color-divider); flex: none; }
+.pf-stats > div { padding: 14px 16px; display: flex; flex-direction: column; gap: 2px; }
+.pf-stat-v { font-weight: 800; font-size: 28px; line-height: 1.05; }
+.pf-coll { grid-template-columns: 1fr 1fr; flex: 1; }
+.pf-coll > div { padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+.pf-side-head { padding: 20px 24px 12px; display: flex; align-items: baseline; }
+.pf-showcase { border-top: 2px solid var(--color-divider); border-bottom: 2px solid var(--color-divider); grid-template-columns: 1fr; flex: none; }
+.split > .pf-show { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 14px; padding: 12px 24px; text-decoration: none; color: var(--color-text); }
+.split > .pf-show.red { background: var(--color-accent); color: var(--color-bg); }
+.pf-show:hover { color: inherit; }
+.pf-show-photo { aspect-ratio: 4 / 3; }
+.pf-show-photo > span { font-size: 9px; }
+.pf-activity { overflow: auto; flex: 1; min-height: 0; padding: 0 24px 16px; }
+.pf-act { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 8px; padding: 9px 0; border-bottom: 1px solid var(--color-divider); font-size: 14px; }
+
+/* 6d mobile */
+.pfm-head { padding: calc(24px + env(safe-area-inset-top)) 16px 16px; display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 14px; align-items: end; border-bottom: 2px solid var(--color-divider); }
+.pfm-xp { padding: 14px 16px; display: flex; align-items: center; gap: 10px; border-bottom: 2px solid var(--color-divider); }
+.pfm-stats { grid-template-columns: 1fr 1fr; border-bottom: 2px solid var(--color-divider); }
+.pfm-stats > div { padding: 12px 16px; display: flex; flex-direction: column; gap: 2px; }
+.pfm-block { padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.pfm-act { padding: 9px 0; border-top: 1px solid var(--color-divider); font-size: 13px; }
