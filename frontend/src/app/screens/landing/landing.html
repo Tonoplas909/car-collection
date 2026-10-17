@@ -1,0 +1,116 @@
+@let login = store.signedIn() ? '/garage' : '/login';
+<div class="lp" #root>
+  <nav class="lp-nav">
+    <span class="lp-brand">MARQUE</span>
+    <a href="#how" class="lp-navlink">How it works</a>
+    <a href="#cars" class="lp-navlink">The cars</a>
+    <a [routerLink]="login" class="lp-navlink lp-login">{{ store.signedIn() ? 'My garage' : 'Log in' }}</a>
+    <a routerLink="/signup" class="btn btn-primary">Play free</a>
+  </nav>
+
+  <div class="lp-wrap">
+    <section class="lp-hero">
+      <div style="display: flex; flex-direction: column; gap: 28px">
+        <h1 class="lp-h1">
+          <span class="lp-mask"><span data-anim="line" data-delay="0">{{ count }} real cars.</span></span>
+          <span class="lp-mask"><span data-anim="line" data-delay="110">One garage.</span></span>
+          <span class="lp-mask"><span data-anim="line" data-delay="220" style="color: var(--color-accent)">Fill it.</span></span>
+        </h1>
+        <p data-anim="up" data-delay="420" class="lp-lede">MARQUE is a collection game for people who know an E30 from an E36. Open packs, race for rare models and trade with other players. Every car comes with its real specs, generation code and history.</p>
+        <div data-anim="up" data-delay="540" style="display: flex; gap: 12px; flex-wrap: wrap">
+          <a routerLink="/signup" class="btn btn-primary lp-cta" style="min-width: 220px">Open your free pack</a>
+          <a href="#how" class="btn btn-secondary lp-cta">See how it works</a>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <div class="lp-shot">
+          <div data-anim="wipe" data-delay="250" style="position: absolute; inset: 0; overflow: hidden">
+            <div #parallax class="photo" style="position: absolute; inset: -8% 0; background: repeating-linear-gradient(135deg,var(--color-surface) 0 10px,var(--color-neutral-300) 10px 20px)">
+              <span style="font-size: 11px">hero shot · car in profile, black and white</span>
+            </div>
+          </div>
+          <div data-anim="sweep" data-delay="250" class="lp-sweep"></div>
+        </div>
+        <span data-anim="up" data-delay="900" style="font-size: 11px; color: var(--color-neutral-700)">{{ heroLabel }}</span>
+      </div>
+    </section>
+
+    <div data-anim="rule" class="lp-rule"></div>
+
+    <section class="lp-stats">
+      @for (s of stats; track s[1]; let i = $index) {
+        <div data-anim="up" [attr.data-delay]="i * 90" style="display: flex; flex-direction: column; gap: 10px">
+          <span data-count="1" class="lp-stat tnum">{{ s[0] }}</span>
+          <span class="lp-stat-k">{{ s[1] }}</span>
+        </div>
+      }
+    </section>
+  </div>
+
+  <div class="lp-ticker">
+    <div #marquee class="lp-ticker-row">
+      @for (t of ticker; track $index) {
+        <span class="lp-tick"><span>{{ t }}</span><span class="lp-dot"></span></span>
+      }
+    </div>
+  </div>
+
+  <div class="lp-wrap">
+    <section id="how" class="lp-how">
+      <span data-anim="up" class="lp-kicker">How it works</span>
+      @for (s of steps; track s[0]; let i = $index) {
+        <div data-anim="up" class="lp-step" [class.rule-t]="i > 0">
+          <span style="font-weight: 800; font-size: 15px">{{ s[0] }}</span>
+          <div class="lp-step-body">
+            <h2>{{ s[1] }}</h2>
+            <p>{{ s[2] }}</p>
+          </div>
+        </div>
+      }
+    </section>
+
+    <section id="cars" class="lp-cars">
+      <div class="lp-cars-head">
+        <h2 data-anim="up">From Golf GTI to McLaren F1</h2>
+        <p>Everyday heroes, JDM icons, Italian supercars and concept cars, sorted into four tiers.</p>
+      </div>
+      <div class="lp-cards">
+        @for (c of tierCards; track c.id; let i = $index) {
+          @let leg = c.tier === 'Legendary';
+          <div data-anim="up" [attr.data-delay]="i * 100">
+            <div class="lp-car" [class.leg]="leg">
+              <div style="height: 6px" [style.background]="tierBar(c)"></div>
+              <app-photo [car]="c" style="aspect-ratio: 4 / 3" />
+              <div class="lp-car-body">
+                <span style="font-size: 11px; letter-spacing: .08em; text-transform: uppercase" [style.color]="tierFg(c)" [style.font-weight]="leg ? 800 : 600">{{ c.tier }}</span>
+                <span style="font-weight: 800; font-size: 18px; line-height: 1.2">{{ c.model }}@if (c.gen) {<span [class.gen]="!leg" style="font-weight: 400; padding-left: 6px">{{ c.gen }}</span>}</span>
+                <span style="font-size: 12px" [style.color]="leg ? 'inherit' : 'var(--color-neutral-700)'">{{ c.make }} · {{ c.year }} · {{ c.hp }} hp</span>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </section>
+  </div>
+
+  <section class="lp-close">
+    <div class="lp-wrap lp-close-inner">
+      <h2 class="lp-close-h">
+        <span class="lp-mask"><span data-anim="line" data-delay="0">Your first pack is free.</span></span>
+        <span class="lp-mask"><span data-anim="line" data-delay="120">Your first Legendary is up to you.</span></span>
+      </h2>
+      <div data-anim="up" data-delay="300" style="display: flex; gap: 12px; flex-wrap: wrap">
+        <a routerLink="/signup" class="btn lp-cta lp-cta-light" style="min-width: 240px">Create your garage</a>
+        <a [routerLink]="login" class="btn lp-cta lp-cta-ghost">Log in</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="lp-wrap lp-foot">
+    <span style="font-weight: 800; color: var(--color-text); margin-right: auto">MARQUE</span>
+    <a href="#how">How it works</a>
+    <a href="#cars">The cars</a>
+    <a routerLink="/packs">Pack odds</a>
+    <a href="#how">Terms</a>
+  </footer>
+</div>

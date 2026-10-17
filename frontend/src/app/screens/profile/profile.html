@@ -1,0 +1,95 @@
+<ng-template #bars let-items>
+  @for (t of $any(items); track t.k) {
+    <div style="display: flex; flex-direction: column; gap: 4px">
+      <div style="display: flex; font-size: 14px"><span style="font-weight: 600">{{ t.k }}</span><span class="tnum" style="margin-left: auto">{{ t.have }} / {{ t.total }}</span></div>
+      <div class="track"><span [style.width.%]="pct(t.have, t.total)" [style.background]="t.bar"></span></div>
+    </div>
+  }
+</ng-template>
+
+@if (vp.mobile()) {
+  <div class="mscroll">
+    <div class="pfm-head">
+      <app-photo label="" class="pf-avatar" />
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <span class="label">{{ place() }}</span>
+        <span style="font-weight: 800; font-size: 36px; line-height: 0.95; letter-spacing: -0.03em">{{ u().username }}</span>
+      </div>
+    </div>
+    <div class="pfm-xp">
+      <span style="font-weight: 800">Lv {{ u().level }}</span>
+      <div class="track" style="flex: 1"><span [style.width.%]="xpPct()"></span></div>
+      <span class="muted tnum" style="font-size: 12px">{{ num(u().xp) }} / {{ num(xpPerLevel) }}</span>
+    </div>
+    <div class="split pfm-stats">
+      @for (s of mobileStats(); track s.k) {
+        <div><span class="label-sm" style="letter-spacing: .08em">{{ s.k }}</span><span class="tnum" style="font-weight: 800; font-size: 26px; line-height: 1.05">{{ s.v }}</span></div>
+      }
+    </div>
+    <div class="pfm-block rule-b"><span class="label">Collection by tier</span><ng-container *ngTemplateOutlet="bars; context: { $implicit: byTier() }" /></div>
+    <div class="pfm-block" style="gap: 0">
+      <span class="label" style="padding-bottom: 6px">Recent activity</span>
+      @for (a of snap().activity.slice(0, 8); track $index) { <div class="pfm-act"><b>{{ a.verb }}</b> {{ a.what }}</div> }
+    </div>
+    <div class="pfm-block" style="padding-top: 0">
+      <a routerLink="/settings" class="btn btn-secondary btn-md">Settings</a>
+      <a routerLink="/friends" class="btn btn-secondary btn-md">Friends</a>
+      <a routerLink="/events" class="btn btn-secondary btn-md">Events</a>
+    </div>
+  </div>
+} @else {
+  <main class="shell-main scroll">
+    <div class="pf-head">
+      <app-photo label="avatar" class="pf-avatar" />
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <span class="label" style="font-size: 12px">{{ place() }} · since {{ since() }}</span>
+        <span class="pf-name">{{ u().username }}</span>
+        <div class="pf-xp">
+          <span style="font-weight: 800; font-size: 15px">Lv {{ u().level }}</span>
+          <div class="track" style="flex: 1"><span [style.width.%]="xpPct()"></span></div>
+          <span class="muted tnum" style="font-size: 13px">{{ num(u().xp) }} / {{ num(xpPerLevel) }} XP</span>
+        </div>
+      </div>
+    </div>
+    <div class="split pf-stats">
+      @for (s of stats(); track s.k) {
+        <div><span class="label">{{ s.k }}</span><span class="pf-stat-v tnum">{{ s.v }}</span><span class="muted" style="font-size: 12px">{{ s.sub }}</span></div>
+      }
+    </div>
+    <div class="split pf-coll">
+      <div><span class="label">Collection by tier</span><ng-container *ngTemplateOutlet="bars; context: { $implicit: byTier() }" /></div>
+      <div><span class="label">Collection by country</span><ng-container *ngTemplateOutlet="bars; context: { $implicit: countries() }" /></div>
+    </div>
+  </main>
+  <aside class="shell-aside" style="--aside: 360px">
+    <div class="pf-side-head">
+      <span style="font-weight: 800; font-size: 20px">Showcase</span>
+      <a routerLink="/garage" style="margin-left: auto; font-size: 13px">Edit</a>
+    </div>
+    <div class="split pf-showcase">
+      @for (c of showcase(); track c.id; let i = $index) {
+        <a [routerLink]="'/garage/' + c.id" class="pf-show clickable" [class.red]="i === 0 && c.tier === 'Legendary'">
+          <app-photo [car]="c" class="pf-show-photo" />
+          <div style="display: flex; flex-direction: column; justify-content: center; gap: 2px">
+            <span style="font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 800">{{ c.tier }}</span>
+            <span style="font-weight: 800; font-size: 17px; line-height: 1.15">{{ c.model }}</span>
+            <span style="font-size: 12px">{{ makeGen(c) }} · {{ c.year }}</span>
+          </div>
+        </a>
+      } @empty {
+        <p class="muted" style="padding: 12px 24px; margin: 0">Your best cars appear here.</p>
+      }
+    </div>
+    <div style="padding: 20px 24px 8px"><span style="font-weight: 800; font-size: 20px">Recent activity</span></div>
+    <div class="pf-activity">
+      @for (a of snap().activity.slice(0, 20); track $index; let i = $index) {
+        <div class="pf-act list-row" [style.--i]="i">
+          <span class="muted tnum" style="font-size: 12px">{{ ago(a.at) }}</span>
+          <span><b>{{ a.verb }}</b> {{ a.what }}</span>
+        </div>
+      } @empty {
+        <p class="muted">Nothing yet. Open a pack or enter a race.</p>
+      }
+    </div>
+  </aside>
+}

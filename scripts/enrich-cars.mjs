@@ -1,4 +1,4 @@
-// Enriches supabase/functions/_shared/game/cars.json from open sources:
+// Enriches shared/game/cars.json from open sources:
 //   - Wikipedia (REST summary): confirms the article exists and finds its lead image
 //   - Wikimedia Commons: image license and author (only free licenses are accepted)
 //   - Wikidata: production year and country, compared with the draft (differences are reported, never applied)
@@ -17,7 +17,7 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
-const file = join(root, 'supabase/functions/_shared/game/cars.json')
+const file = join(root, 'shared/game/cars.json')
 const cars = JSON.parse(readFileSync(file, 'utf8'))
 const args = process.argv.slice(2)
 const force = args.includes('--force')

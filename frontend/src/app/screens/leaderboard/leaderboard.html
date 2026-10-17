@@ -1,0 +1,105 @@
+@if (vp.mobile()) {
+  <div class="lbm-head">
+    <span class="m-title">Ranks</span>
+    <div class="lbm-tabs">
+      @for (m of metrics; track m) {
+        <button class="utab" [attr.aria-selected]="metric() === m" (click)="metric.set(m)">{{ M[m].short }}</button>
+      }
+    </div>
+  </div>
+  @if (board()?.rows?.[0]; as top) {
+    <div class="lbm-top">
+      <span class="lbm-top-rank">01</span>
+      <div style="display: flex; flex-direction: column; padding-bottom: 2px">
+        <span style="font-weight: 800; font-size: 18px">{{ top.name }}</span>
+        <span style="font-size: 12px">{{ top.cc }} · {{ top.car }}</span>
+      </div>
+      <span class="tnum" style="margin-left: auto; font-weight: 800; font-size: 18px">{{ short(top.score) }}</span>
+    </div>
+  }
+  <div class="mscroll">
+    @for (r of board()?.rows?.slice(1) ?? []; track metric() + r.name; let i = $index) {
+      <div class="lbm-row list-row" [style.--i]="i">
+        <span class="tnum" style="font-weight: 800">{{ r.rank }}</span>
+        <div style="display: flex; flex-direction: column"><span style="font-weight: 600; font-size: 14px">{{ r.name }}</span><span class="muted" style="font-size: 11px">{{ r.car }}</span></div>
+        <span class="tnum" style="font-weight: 800; font-size: 14px">{{ short(r.score) }}</span>
+      </div>
+    }
+  </div>
+  @if (board(); as b) {
+    <a routerLink="/profile" class="lbm-row lbm-me" aria-label="Your profile">
+      <span style="font-weight: 800">{{ num(b.me.rank) }}</span>
+      <span style="font-weight: 800">You · {{ snap().user.username }} ›</span>
+      <span class="tnum" style="font-weight: 800">{{ short(b.me.score) }}</span>
+    </a>
+  }
+} @else {
+  @let rows = board()?.rows ?? [];
+  @let me = board()?.me;
+  <main class="shell-main">
+    <div class="lb-head">
+      <span class="page-title">Ranks</span>
+      <div class="bseg" style="margin-left: auto; margin-bottom: 4px">
+        @for (s of scopes; track s) {
+          <button [attr.aria-pressed]="scope() === s" (click)="scope.set(s)">{{ scopeLabel(s) }}</button>
+        }
+      </div>
+    </div>
+    <div class="lb-tabs" role="tablist">
+      @for (m of metrics; track m) {
+        <button role="tab" class="utab" [attr.aria-selected]="metric() === m" (click)="metric.set(m)">{{ M[m].label }}</button>
+      }
+    </div>
+    <div class="split lb-podium">
+      @for (p of rows.slice(0, 3); track p.name; let i = $index) {
+        <div [class.first]="i === 0">
+          <span class="lb-rank">{{ pad2(i + 1) }}</span>
+          <span class="lb-name">{{ p.name }}</span>
+          <span style="font-size: 13px">{{ p.cc }} · {{ p.car }}</span>
+          <span class="lb-score tnum">{{ score(p.score) }}</span>
+        </div>
+      }
+    </div>
+    <div class="lb-row lb-th"><span>Rank</span><span>Player</span><span>Best car</span><span style="text-align: right">{{ M[metric()].label }}</span></div>
+    <div class="lb-list">
+      @for (r of rows.slice(3); track metric() + scope() + r.name; let i = $index) {
+        <div class="lb-row lb-tr list-row" [style.--i]="i">
+          <span class="tnum" style="font-weight: 800">{{ r.rank }}</span>
+          <span style="display: flex; gap: 8px; align-items: baseline"><span style="font-weight: 600">{{ r.name }}</span><span class="muted" style="font-size: 12px">{{ r.cc }}</span></span>
+          <span class="lb-car">{{ r.car }}</span>
+          <span class="tnum" style="text-align: right; font-weight: 800">{{ score(r.score) }}</span>
+        </div>
+      }
+    </div>
+    @if (me) {
+      <div class="lb-row lb-me">
+        <span class="tnum" style="font-weight: 800">#{{ num(me.rank) }}</span>
+        <span style="font-weight: 800">You · {{ snap().user.username }}</span>
+        <span style="font-size: 13px">{{ me.car }}</span>
+        <span class="tnum" style="text-align: right; font-weight: 800">{{ score(me.score) }}</span>
+      </div>
+    }
+  </main>
+  <aside class="shell-aside" style="--aside: 320px">
+    <div class="lb-side rule-b">
+      <span class="label">Your rank · {{ scopeLabel(scope()) }}</span>
+      <span class="lb-myrank tnum">#{{ me ? num(me.rank) : '—' }}</span>
+      <span style="font-size: 14px; color: var(--color-neutral-800)">{{ me?.percentile }}</span>
+    </div>
+    <div class="lb-side rule-b" style="gap: 10px">
+      <span class="label">Next rank up</span>
+      <span style="font-weight: 800; font-size: 20px; line-height: 1.15">{{ nextUp() }}</span>
+      <div class="track"><span [style.width.%]="(me?.progress ?? 0) * 100"></span></div>
+    </div>
+    <div class="lb-side rule-b">
+      <span class="label">Season {{ snap().season }} ends in</span>
+      <span class="tnum" style="font-weight: 800; font-size: 32px; line-height: 1.05">{{ remaining(snap().seasonEndsAt - now()) }}</span>
+    </div>
+    <div class="lb-side" style="gap: 8px">
+      <span class="label">Season rewards</span>
+      @for (w of rewards; track w[0]) {
+        <div class="lb-reward hair-b"><span style="font-weight: 600">{{ w[0] }}</span><span style="margin-left: auto; text-align: right">{{ w[1] }}</span></div>
+      }
+    </div>
+  </aside>
+}

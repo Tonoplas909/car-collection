@@ -1,0 +1,41 @@
+<ng-template #formTpl>
+  <form class="st-form" (submit)="save($event)">
+    <span class="st-h">Account</span>
+    <div class="field"><label for="st-u">Username</label><input id="st-u" class="input" [value]="form().username" (input)="set('username', $event)" /></div>
+    <div class="field"><label for="st-e">Email</label><input id="st-e" class="input" type="email" [value]="form().email" (input)="set('email', $event)" /></div>
+    <div class="field"><label for="st-r">Region</label><input id="st-r" class="input" [value]="form().region" (input)="set('region', $event)" /></div>
+    <div style="height: 2px; background: var(--color-divider)"></div>
+    <span class="st-h">Preferences</span>
+    <div>
+      @for (p of prefList; track p[0]) {
+        <div class="st-pref">
+          <div style="display: flex; flex-direction: column"><span style="font-weight: 600">{{ p[1] }}</span><span class="muted" style="font-size: 13px">{{ p[2] }}</span></div>
+          <button type="button" role="switch" [attr.aria-checked]="prefs()[p[0]]" class="st-toggle" [class.on]="prefs()[p[0]]" (click)="toggle(p[0])">
+            {{ prefs()[p[0]] ? 'On' : 'Off' }}
+          </button>
+        </div>
+      }
+    </div>
+    <div style="display: flex; gap: 8px; padding-top: 8px; align-items: center; flex-wrap: wrap">
+      <button class="btn btn-primary" style="padding: 12px 20px" [disabled]="status() === 'saving' || !dirty()">{{ status() === 'saving' ? 'Saving…' : 'Save changes' }}</button>
+      <button type="button" class="btn btn-secondary" style="padding: 12px 20px" (click)="logout()">Log out</button>
+      @if (status() === 'saved' && !dirty()) { <span class="muted" style="font-size: 13px">Saved.</span> }
+      @if (status() === 'error') { <span class="err">{{ error() }}</span> }
+    </div>
+  </form>
+</ng-template>
+
+@if (vp.mobile()) {
+  <app-mobile-head title="Settings" />
+  <div class="mscroll"><ng-container *ngTemplateOutlet="formTpl" /></div>
+} @else {
+  <main class="shell-main">
+    <div class="st-grid">
+      <div class="st-tabs">
+        <span class="st-title">Settings</span>
+        @for (t of tabs; track t; let i = $index) { <div class="st-tab" [class.on]="i === 0">{{ t }}</div> }
+      </div>
+      <div style="overflow: auto"><ng-container *ngTemplateOutlet="formTpl" /></div>
+    </div>
+  </main>
+}

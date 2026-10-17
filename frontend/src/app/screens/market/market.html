@@ -1,0 +1,221 @@
+@if (vp.mobile()) {
+  @if (listingId()) {
+    @if (detail(); as row) {
+      <app-listing-panel [row]="row" [now]="now()" [page]="true"
+        (buy)="open({ kind: 'buy', row })" (offer)="open({ kind: 'offer', row })" (trade)="open({ kind: 'trade', row })" />
+    } @else {
+      <app-mobile-head title="Market" />
+      <app-empty-state glyph="—" tone="grey" title="Listing ended." text="This car has been sold or the listing expired." [cta]="{ label: 'Back to market', to: '/market' }" />
+    }
+  } @else {
+    <div class="m-head" style="flex-direction: column; align-items: stretch; gap: 12px; padding-bottom: 12px">
+      <span class="m-title">Market</span>
+      <div class="bseg heavy mk-seg">
+        @for (k of ['Buy', 'Sell', 'Swap']; track k) {
+          <button [attr.aria-pressed]="seg() === k" (click)="seg.set($any(k))">{{ k }}</button>
+        }
+      </div>
+    </div>
+    <div class="mscroll">
+      @if (seg() === 'Buy') {
+        @for (r of mobileBuy(); track r.id; let i = $index) {
+          <div class="mm-row clickable list-row" [style.--i]="i" (click)="nav.now('/market/' + r.id)">
+            <app-photo [car]="r.car" label="" class="mm-thumb" />
+            <div class="mm-mid">
+              <span class="mm-tier" [style.color]="TIER_FG[r.car.tier]">{{ r.car.tier }}</span>
+              <span class="mm-model">{{ r.car.model }}@if (r.car.gen) {<span class="gen">{{ r.car.gen }}</span>}</span>
+              <span class="mm-sub">{{ r.seller }}</span>
+            </div>
+            <div class="mm-right">
+              <span class="tnum" style="font-weight: 800; font-size: 15px">{{ compact(r.price) }}</span>
+              <span style="font-size: 11px" [style.color]="delta(r) > 0 ? 'var(--color-accent-700)' : 'var(--color-neutral-700)'">{{ deltaStr(delta(r)) }}</span>
+            </div>
+          </div>
+        }
+      } @else if (seg() === 'Sell') {
+        @for (r of mineRows(); track r.id) {
+          <div class="mm-row">
+            <app-photo [car]="r.car" label="" class="mm-thumb" />
+            <div class="mm-mid">
+              <span class="mm-tier" [style.color]="TIER_FG[r.car.tier]">{{ r.car.tier }}</span>
+              <span class="mm-model">{{ r.car.model }}@if (r.car.gen) {<span class="gen">{{ r.car.gen }}</span>}</span>
+              <span class="mm-sub">Your listing · ends in {{ remaining(r.endsAt - now()) }}</span>
+            </div>
+            <div class="mm-right">
+              <span class="tnum" style="font-weight: 800; font-size: 15px">{{ compact(r.price) }}</span>
+              <button class="mk-link" (click)="cancel(r.id)">Cancel</button>
+            </div>
+          </div>
+        }
+        <div class="label" style="padding: 16px 16px 6px">List a car</div>
+        @for (x of sellable(); track x.carId) {
+          <div class="mm-row clickable" (click)="sell(x.car)">
+            <app-photo [car]="x.car" label="" class="mm-thumb" />
+            <div class="mm-mid">
+              <span class="mm-tier" [style.color]="TIER_FG[x.car.tier]">{{ x.car.tier }}</span>
+              <span class="mm-model">{{ x.car.model }}@if (x.car.gen) {<span class="gen">{{ x.car.gen }}</span>}</span>
+              <span class="mm-sub">Value {{ cr(x.car.value) }}</span>
+            </div>
+            <div class="mm-right"><span style="font-weight: 800; font-size: 13px">List</span></div>
+          </div>
+        }
+      } @else {
+        @for (o of snap().offers; track o.id) {
+          @let a = cars[o.give];
+          @let b = cars[o.get];
+          <div class="mm-row" [class.clickable]="o.incoming" (click)="o.incoming && swap(o)">
+            <app-photo [car]="b" label="" class="mm-thumb" />
+            <div class="mm-mid">
+              <span class="mm-tier" [style.color]="TIER_FG[b.tier]">{{ b.tier }}</span>
+              <span class="mm-model">{{ b.model }}@if (b.gen) {<span class="gen">{{ b.gen }}</span>}</span>
+              <span class="mm-sub">{{ o.incoming ? o.from + ' wants your ' + label(a) : 'Offered to ' + o.to }}</span>
+            </div>
+            <div class="mm-right">
+              <span class="tnum" style="font-weight: 800; font-size: 15px">{{ o.credits ? '+' + compact(o.credits) : '—' }}</span>
+              <span style="font-size: 11px; color: var(--color-accent-700)">{{ remaining(o.expiresAt - now()) }}</span>
+            </div>
+          </div>
+        } @empty {
+          <p class="muted" style="padding: 16px">No swap offers right now.</p>
+        }
+      }
+    </div>
+  }
+} @else {
+  <main class="shell-main">
+    <div class="mk-head">
+      <span class="page-title">Market</span>
+      <div class="mk-live">
+        <span class="label">Live listings</span>
+        <span class="tnum">{{ num(live()) }}</span>
+      </div>
+    </div>
+    <div class="mk-tabs" role="tablist">
+      @for (t of tabs; track t[0]) {
+        <button role="tab" class="utab" [attr.aria-selected]="tab() === t[0]" (click)="setTab(t[0])">
+          {{ t[1] }}{{ t[0] === 'offers' && incoming() ? ' · ' + incoming() : '' }}
+        </button>
+      }
+    </div>
+
+    @switch (tab()) {
+      @case ('buy') {
+        <app-tier-filter [value]="filter()" (changed)="filter.set($event)" />
+        <div class="mk-scroll">
+          <div class="mk-row mk-th">
+            <span></span>
+            <button (click)="sort.set('name')">Car</button>
+            <span>Tier</span>
+            <span>Upgrade</span>
+            <button style="text-align: right" (click)="toggleSort()">Price {{ sort() === 'priceDesc' ? '↓' : sort() === 'priceAsc' ? '↑' : '' }}</button>
+            <span style="text-align: right">Ends</span>
+          </div>
+          @for (r of buyRows(); track r.id; let i = $index) {
+            @let ends = r.endsAt - now();
+            <div class="mk-row mk-tr clickable list-row" [class.sel]="r.id === current()?.id" [style.--i]="i" (click)="pick(r)">
+              <span [style.background]="TIER_BAR[r.car.tier]"></span>
+              <div class="mk-car">
+                <span class="mk-model">{{ r.car.model }}@if (r.car.gen) {<span class="gen">{{ r.car.gen }}</span>}</span>
+                <span class="mk-sub">{{ r.car.make }} · {{ r.car.year }} · sold by {{ r.seller }}</span>
+              </div>
+              <span class="mk-c" [style.color]="TIER_FG[r.car.tier]" style="font-weight: 600">{{ r.car.tier }}</span>
+              <span class="mk-c tnum">Lv {{ r.level }}</span>
+              <span class="mk-c mk-price tnum">{{ cr(r.price) }}</span>
+              <span class="mk-c tnum" style="text-align: right" [style.color]="ends < 3600000 ? 'var(--color-accent-700)' : 'var(--color-neutral-700)'">{{ remaining(ends) }}</span>
+            </div>
+          } @empty {
+            <app-empty-state glyph="—" tone="grey" title="Nothing matches." [text]="'No player is selling a ' + filter() + ' car right now.'"
+              [cta]="{ label: 'Clear filters' }" (ctaClick)="filter.set('All')" />
+          }
+        </div>
+      }
+      @case ('sell') {
+        @if (sellable().length) {
+          <div class="mk-scroll">
+            <div class="mk-row mk-th"><span></span><span>Car</span><span>Tier</span><span>Upgrade</span><span style="text-align: right">Value</span><span></span></div>
+            @for (x of sellable(); track x.carId; let i = $index) {
+              <div class="mk-row mk-tr list-row" [style.--i]="i">
+                <span [style.background]="TIER_BAR[x.car.tier]"></span>
+                <div class="mk-car"><span class="mk-model">{{ x.car.model }}@if (x.car.gen) {<span class="gen">{{ x.car.gen }}</span>}</span><span class="mk-sub">{{ x.car.make }} · {{ x.car.year }}</span></div>
+                <span class="mk-c" [style.color]="TIER_FG[x.car.tier]" style="font-weight: 600">{{ x.car.tier }}</span>
+                <span class="mk-c tnum">Lv {{ x.level }}</span>
+                <span class="mk-c mk-price tnum">{{ cr(x.car.value) }}</span>
+                <span class="mk-c" style="text-align: right"><button class="btn btn-ghost" (click)="sell(x.car)">List</button></span>
+              </div>
+            }
+          </div>
+        } @else {
+          <app-empty-state glyph="0" title="Nothing to sell." text="Cars you own appear here, ready to list." [cta]="{ label: 'Open a pack', to: '/packs' }" />
+        }
+      }
+      @case ('mine') {
+        @if (mineRows().length) {
+          <div class="mk-scroll">
+            <div class="mk-row mk-th"><span></span><span>Car</span><span>Tier</span><span>You get</span><span style="text-align: right">Price</span><span style="text-align: right">Ends</span></div>
+            @for (r of mineRows(); track r.id; let i = $index) {
+              <div class="mk-row mk-tr list-row" [style.--i]="i">
+                <span [style.background]="TIER_BAR[r.car.tier]"></span>
+                <div class="mk-car">
+                  <span class="mk-model">{{ r.car.model }}@if (r.car.gen) {<span class="gen">{{ r.car.gen }}</span>}</span>
+                  <span class="mk-sub">Lv {{ r.level }} · <button class="mk-link" [disabled]="cancelling(r.id)" (click)="cancel(r.id)">Cancel listing</button></span>
+                </div>
+                <span class="mk-c" [style.color]="TIER_FG[r.car.tier]" style="font-weight: 600">{{ r.car.tier }}</span>
+                <span class="mk-c tnum">{{ compact(r.price - marketFee(r.price)) }}</span>
+                <span class="mk-c mk-price tnum">{{ cr(r.price) }}</span>
+                <span class="mk-c tnum muted" style="text-align: right">{{ remaining(r.endsAt - now()) }}</span>
+              </div>
+            }
+          </div>
+        } @else {
+          <app-empty-state glyph="—" tone="grey" title="No listings yet." text="List a car from the Sell tab or from its garage panel." [cta]="{ label: 'Go to garage', to: '/garage' }" />
+        }
+      }
+      @case ('offers') {
+        @if (snap().offers.length) {
+          <div class="mk-scroll">
+            @for (o of snap().offers; track o.id; let i = $index) {
+              @let a = cars[o.give];
+              @let b = cars[o.get];
+              <div class="mk-offer list-row" [style.--i]="i">
+                <span [style.background]="TIER_BAR[b.tier]"></span>
+                <div class="mk-car">
+                  <span class="mk-model">{{ o.incoming ? o.from + ' offers ' + label(b) : 'You offered ' + label(a) }}</span>
+                  <span class="mk-sub">{{ o.incoming ? 'for your ' + label(a) : 'to ' + o.to + ' for the ' + label(b) }}{{ o.credits ? ' · +' + cr(o.credits) : '' }} · expires in {{ remaining(o.expiresAt - now()) }}</span>
+                </div>
+                @if (o.incoming) {
+                  <div style="display: flex; gap: 8px">
+                    <button class="btn btn-primary btn-md" (click)="swap(o)">Review</button>
+                    <button class="btn btn-secondary btn-md" (click)="decline(o)">Decline</button>
+                  </div>
+                } @else {
+                  <span class="muted" style="font-size: 13px">Waiting for {{ o.to }}</span>
+                }
+              </div>
+            }
+          </div>
+        } @else {
+          <app-empty-state glyph="—" tone="grey" title="No offers." text="Swap offers you send or receive show up here for 24 hours." [cta]="{ label: 'Browse listings', to: '/market' }" />
+        }
+      }
+    }
+  </main>
+  <aside class="shell-aside" style="--aside: 400px">
+    @if (tab() === 'buy' && current(); as row) {
+      <app-listing-panel [row]="row" [now]="now()"
+        (buy)="open({ kind: 'buy', row })" (offer)="open({ kind: 'offer', row })" (trade)="open({ kind: 'trade', row })" />
+    } @else {
+      <div class="red-head">
+        <span class="kicker" style="font-weight: 800">How selling works</span>
+        <span class="model" style="padding-top: 12px; font-size: 40px">5% fee on sale</span>
+      </div>
+      <div class="mk-info">
+        <p>A listed car leaves your garage until it sells or you cancel. Listings run for three days.</p>
+        <p>Swap offers need both players to accept and expire after 24 hours.</p>
+        <p>Each listing shows twelve weeks of sale prices, so you can price against the 30-day average.</p>
+      </div>
+    }
+  </aside>
+}
+@if (dialog()) {
+  <app-market-dialogs [state]="dialog()" (closed)="dialog.set(null)" />
+}

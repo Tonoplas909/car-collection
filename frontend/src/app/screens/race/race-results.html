@@ -1,0 +1,79 @@
+@if (r && ev) {
+  @if (vp.mobile()) {
+    <div class="mshell">
+      <div class="rs-hero-m" [style.background]="heroBg" style="color: var(--color-bg)">
+        <span class="rs-place-m">P{{ r.place }}</span>
+        <div style="display: flex; flex-direction: column; padding-bottom: 6px">
+          <span style="font-weight: 800; font-size: 26px; line-height: 1">{{ headline }}</span>
+          <span style="font-size: 12px">{{ ev.kind }} · {{ lenStr }} · {{ ev.place }}</span>
+        </div>
+      </div>
+      <div class="mscroll">
+        @for (row of r.rows; track row.name; let i = $index) {
+          <div class="rs-row-m list-row" [style.--i]="i" [style.background]="row.me ? 'var(--color-surface)' : 'transparent'">
+            <span style="font-weight: 800; font-size: 18px">P{{ i + 1 }}</span>
+            <div style="display: flex; flex-direction: column"><span style="font-weight: 800; font-size: 14px">{{ row.name }}</span><span class="muted" style="font-size: 11px">{{ row.car }}</span></div>
+            <div style="display: flex; flex-direction: column; align-items: flex-end"><span class="tnum" style="font-weight: 800">{{ seconds(row.time) }}</span><span style="font-size: 11px">{{ gap(i, row.time) }}</span></div>
+          </div>
+        }
+      </div>
+      <div class="split rs-rew-m">
+        <div><span class="label-sm">Points</span><span>+{{ r.rewards.points }}</span></div>
+        <div><span class="label-sm">Credits</span><span>+{{ creditsShort() }}</span></div>
+        <div><span class="label-sm">XP</span><span>+{{ r.rewards.xp }}</span></div>
+      </div>
+      <div class="m-actions" style="border-top: 0">
+        @if (error()) { <span class="err">{{ error() }}</span> }
+        <button class="btn btn-primary btn-md" (click)="again()" [disabled]="busy()">{{ busy() ? 'Entering…' : 'Race again · ' + cr(ev.fee) }}</button>
+        <a routerLink="/garage" class="btn btn-secondary btn-md">Back to garage</a>
+      </div>
+    </div>
+  } @else {
+    <div class="rs-screen">
+      <div class="rs-main">
+        <div class="rs-hero" [style.background]="heroBg" style="color: var(--color-bg)">
+          <span class="rs-place">P{{ r.place }}</span>
+          <div style="display: flex; flex-direction: column; gap: 4px; padding-bottom: 10px">
+            <span style="font-weight: 800; font-size: 36px; line-height: 1">{{ headline }}</span>
+            <span style="font-size: 15px">{{ ev.kind }} · {{ lenStr }} · {{ ev.place }}</span>
+          </div>
+        </div>
+        <div class="rs-grid rs-th"><span>Pos</span><span>Player</span><span style="text-align: right">Time</span><span style="text-align: right">Gap</span></div>
+        @for (row of r.rows; track row.name; let i = $index) {
+          <div class="rs-grid rs-tr list-row" [style.--i]="i" [style.background]="row.me ? 'var(--color-surface)' : 'transparent'">
+            <span style="font-weight: 800; font-size: 24px">P{{ i + 1 }}</span>
+            <div style="display: flex; flex-direction: column"><span style="font-weight: 800; font-size: 16px">{{ row.name }}</span><span style="font-size: 12px">{{ row.car }}</span></div>
+            <span class="tnum" style="text-align: right; font-weight: 800; font-size: 18px">{{ seconds(row.time) }}</span>
+            <span class="tnum" style="text-align: right; font-size: 14px">{{ gap(i, row.time) }}</span>
+          </div>
+        }
+        <div class="split rs-stats">
+          <div><span class="label">Your time</span><span class="tnum">{{ seconds(r.time) }}</span></div>
+          <div><span class="label">Top speed</span><span class="tnum">{{ round(r.top * 3.6) }} km/h</span></div>
+          <div><span class="label">Perfect shifts</span><span class="tnum">{{ perfect }} / {{ r.shifts.length }}</span></div>
+          <div><span class="label">Gear reached</span><span class="tnum">{{ r.shifts.length + 1 }}</span></div>
+        </div>
+      </div>
+      <aside class="rs-aside">
+        <div class="label" style="padding: 24px 24px 8px">Rewards</div>
+        <div style="padding: 0 24px">
+          @for (w of rewards; track w[0]) {
+            <div class="rs-reward"><span style="font-size: 15px">{{ w[0] }}</span><span class="tnum">{{ w[1] }}</span></div>
+          }
+        </div>
+        <div class="rs-shifts">
+          <span class="label">Shifts</span>
+          <div style="display: flex; gap: 4px">
+            @for (q of shiftsList; track $index) { <span class="rs-shift" [style]="shiftStyle(q)">{{ q }}</span> }
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px; padding: 16px 24px 24px; margin-top: auto">
+          @if (error()) { <span class="err">{{ error() }}</span> }
+          <button class="btn btn-primary rs-btn" (click)="again()" [disabled]="busy()">{{ busy() ? 'Entering…' : 'Race again · ' + cr(ev.fee) }}</button>
+          <a routerLink="/race" class="btn btn-secondary rs-btn">Change car or event</a>
+          <a routerLink="/garage" class="btn btn-secondary rs-btn">Back to garage</a>
+        </div>
+      </aside>
+    </div>
+  }
+}

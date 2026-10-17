@@ -1,28 +1,25 @@
 # MARQUE
 
-Car collection game. `README.md` is the product/design spec; `design/` holds the HTML design references (read-only).
+Car collection game. `SPEC.md` is the product/design spec; `design/` holds the HTML design references (read-only). `README.md` (French) explains how to run the project; `API.md` is the HTTP contract.
 
 ## Stack
-- Vite + React 19 + TypeScript, React Router 7, Lucide icons. Plain CSS: `src/styles/ds.css` is the design system copied as-is from `design/ds/styles.css` (do not edit); app-level styles in `src/styles/app.css`, one CSS file per screen.
-- The car catalog is `supabase/functions/_shared/game/cars.json` (edit it there; `reviewed: false` means specs/blurb are drafts; `photoMatch` / `photoQuery` steer photo search). Game rules (packs, race physics, economy) live in `supabase/functions/_shared/game/` and are shared by the web app (`@game` alias) and the Edge Functions. Imports there use explicit `.ts` extensions and no browser/Deno APIs.
-- Backend: Supabase. Schema, RLS and all mutations are Postgres functions in `supabase/migrations/`; pack rolls and race scoring are Edge Functions (`supabase/functions/packs`, `races`). `supabase/seed.sql` is generated from the TS data.
-- `src/api/` defines `GameApi`. `supabase.ts` is used when `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` are set (`.env.local`), otherwise `mock.ts` runs the same rules on localStorage.
+- `frontend/`: Angular 22, standalone components, Signals, `inject()`, native `@if`/`@for`, HttpClient. No UI library: `src/styles/ds.css` is the design system copied as-is from `design/ds/styles.css` (do not edit); app-level styles in `src/styles/app.css`, one global CSS file per screen (`src/styles/<screen>.css`), Angular glue in `src/styles/angular.css`. Components keep the React-era class names, so screens render `<main class="shell-main">` / `<aside class="shell-aside">` straight into the shell grid (host class `screen` = `display: contents`).
+- `backend/`: Express 5 + Mongoose + JWT (bcryptjs), TypeScript run with `tsx`. Without `MONGODB_URI` it starts an embedded MongoDB (mongodb-memory-server, data in `backend/data/db`). Demo data is seeded into an empty database (`src/seed/`).
+- `shared/game/`: game rules (packs, race physics, economy) and the catalog `cars.json` (edit it there; `reviewed: false` means specs/blurb are drafts; `photoMatch` / `photoQuery` steer photo search). Used by the backend (relative imports) and the frontend (`@game` path alias). Imports there use explicit `.ts` extensions and no browser/Node APIs. `shared/api.ts` (`@api` alias) types the HTTP contract.
+- Every mutation returns the full `Snapshot`; the Angular `Store` (`frontend/src/app/core/store.ts`) replaces it and screens derive with `computed()`.
 
-## Commands
-- `npm run dev` — dev server (mock backend unless `.env.local` is set)
-- `npm run build` — type-check + production build
-- `npm test` — unit tests for the shared game rules (Vitest)
-- `npm run test:db` — runs the migration + seed on PGlite and exercises every SQL function (no Docker needed)
-- `npm run lint` — oxlint
-- `npm run cars:add` — appends the draft car rows in `scripts/add-cars.mjs` to `cars.json` (skips existing ids). New cars start `reviewed: false`
-- `npm run cars:enrich` — fills photos (free-license Wikimedia Commons only, with credits) into `cars.json`, checks year/country against Wikidata and writes `data/review.html` (git-ignored contact sheet). Options: `--force`, or car ids to limit it
-- `npm run db:seed` — regenerate `supabase/catalog.sql` (cars + race events, idempotent: safe to run on the live database) and `supabase/seed.sql` (for local resets) after changing the catalog
-- `npm run db:start` / `npm run db:reset` / `npm run functions:serve` — local Supabase stack (needs Docker)
+## Commands (repo root)
+- `npm run install:all` — install root, backend and frontend
+- `npm run dev` — backend (3000) + `ng serve` (4200, proxies `/api`)
+- `npm test` — shared rules (Vitest) + backend API tests (node:test on a throwaway embedded MongoDB)
+- `npm run test:web` — Angular unit tests; `npm run build` — production build
+- `npm run seed:reset` — wipe the database and reload demo data
+- `npm run cars:add` / `npm run cars:enrich` — catalog tools (see scripts)
 
-Node comes from nvm-windows (`C:\nvm4w\nodejs`).
+Node must be ≥ 22.22.3 or ≥ 24.15 (Angular CLI 22). Node comes from nvm-windows (`C:\nvm4w\nodejs`) on the author's machine.
 
 ## Conventions
-- Layout: desktop shell = rail nav (200px) | main | aside (`Main` / `Aside` in `src/components/Shell.tsx`); phones (<768px) render the 390px designs with a bottom tab bar. Screens branch on `useIsMobile()`.
-- Motion helpers are in `src/lib/motion.ts`; everything respects `prefers-reduced-motion` and the Reduce motion setting.
-- Server errors use `code|message[|needed]` and map to `GameError` on the client.
-- Constants duplicated in SQL (market fee 5%, upgrade costs, duplicate credits, XP per level) are marked "keep in sync" in the migration.
+- Layout: desktop shell = rail nav (200px) | main | aside (`frontend/src/app/shell.ts`); phones (<768px) render the 390px designs with a bottom tab bar. Screens branch on `Viewport.mobile()`.
+- Motion helpers are in `frontend/src/app/core/motion.ts`; global effects (page wipe on links, button sweep, magnetic buttons) in `global-fx.ts`. Everything respects `prefers-reduced-motion` and the Reduce motion setting. Programmatic navigation goes through `Nav.go()` to keep the wipe.
+- Server errors are `{ error: { code, message, needed? } }` (`backend/src/errors.ts`) and map to `GameError` in `authInterceptor`.
+- If an API route changes, update `API.md` and `shared/api.ts` in the same change.

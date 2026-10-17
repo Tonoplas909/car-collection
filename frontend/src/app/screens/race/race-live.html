@@ -1,0 +1,101 @@
+<ng-template #revBar let-height="height">
+  <div class="lv-rev" [style.height.px]="height">
+    <span [style.left.%]="W.start * 100" [style.width.%]="(W.perfect - W.start) * 100" style="background: var(--color-neutral-400)"></span>
+    <span [style.left.%]="W.perfect * 100" style="right: 0; background: var(--color-accent-300)"></span>
+    <span style="left: 0" [style.width.%]="round(view().rpm * 100)" [style.background]="rpmBg()"></span>
+  </div>
+</ng-template>
+
+@if (entry && car && ev) {
+  @if (vp.mobile()) {
+    <div class="mshell">
+      <div class="lv-hud-m">
+        <div class="lv-hud"><span class="label">Position</span><span class="lv-hud-v tnum">{{ hud().pos }}</span></div>
+        <div class="lv-hud"><span class="label">Time</span><span class="lv-hud-v tnum">{{ hud().time }}</span></div>
+        <div class="lv-hud"><span class="label">To go</span><span class="lv-hud-v tnum">{{ hud().togo }}</span></div>
+      </div>
+      <div class="lv-lanes-m">
+        @for (l of lanes(); track l.name) {
+          <div class="lv-lane-m" [class.me]="l.me">
+            <span class="lv-lane-name">{{ l.name }}</span>
+            <span class="lv-finish"></span>
+            <div class="lv-track-m">
+              <div class="lv-chip" [style.left.%]="l.p" [style.transform]="'translate(-' + l.p + '%, -50%)'">
+                <span style="width: 6px; height: 30px" [style.background]="l.me ? 'var(--color-accent)' : l.bar"></span>
+                <span class="lv-chip-label" style="height: 30px; font-size: 12px">{{ l.me ? 'YOU · ' + round(l.d) + ' m' : round(l.d) + ' m' }}</span>
+              </div>
+            </div>
+          </div>
+        }
+        @if (overlay(); as o) {
+          @if (phase() !== 'idle' && phase() !== 'done') {
+            <div class="lv-overlay-m"><span [style.color]="o.fg">{{ o.big }}</span></div>
+          }
+        }
+      </div>
+      <div class="lv-gauges-m">
+        <div><span class="label-sm">Speed</span><span class="lv-big-m tnum">{{ round(view().v * 3.6) }}</span><span class="lv-unit">km/h</span></div>
+        <div><span class="label-sm">Gear</span><span class="lv-big-m">{{ view().gear }}</span><span class="lv-unit">of {{ GEARS }}</span></div>
+      </div>
+      <div style="padding: 0 16px 12px; display: flex; flex-direction: column; gap: 6px; flex: none">
+        <ng-container *ngTemplateOutlet="revBar; context: { height: 36 }" />
+        <span class="muted" style="font-size: 11px">
+          {{ phase() === 'idle' ? 'Press Start, then shift in the marked window' : phase() === 'done' ? overlay()?.sub : view().quality ? view().quality + ' shift' : 'Shift in the marked window' }}
+        </span>
+      </div>
+      <div style="padding: 0 16px calc(16px + env(safe-area-inset-bottom)); flex: none">
+        <button class="lv-shift-m" (click)="mobileBtn().act()" [disabled]="phase() === 'count' || phase() === 'submitting'">{{ mobileBtn().label }}</button>
+      </div>
+    </div>
+  } @else {
+    <div class="lv-screen">
+      <div class="lv-top">
+        <div style="padding: 16px 24px; display: flex; flex-direction: column; gap: 2px">
+          <span class="label">{{ ev.kind }} · {{ ev.place }}</span>
+          <span style="font-weight: 800; font-size: 28px; line-height: 1.1">{{ car.model }}@if (car.gen) {<span class="gen">{{ car.gen }}</span>}</span>
+        </div>
+        <div class="lv-hud"><span class="label">Position</span><span class="lv-hud-v tnum">{{ hud().pos }}</span></div>
+        <div class="lv-hud"><span class="label">Time</span><span class="lv-hud-v tnum">{{ hud().time }}</span></div>
+        <div class="lv-hud"><span class="label">To go</span><span class="lv-hud-v tnum">{{ hud().togo }}</span></div>
+      </div>
+      <div class="lv-lanes">
+        @for (l of lanes(); track l.name) {
+          <div class="lv-lane" [class.me]="l.me">
+            <div class="lv-who"><span style="font-weight: 800; font-size: 15px">{{ l.name }}</span><span class="muted" style="font-size: 12px">{{ l.car }}</span></div>
+            <div class="lv-track">
+              @for (t of ticks; track t) { <span class="lv-tick" [style.left.%]="t"></span> }
+              <span class="lv-line"></span>
+              <div class="lv-chip" [style.left.%]="l.p" [style.transform]="'translate(-' + l.p + '%, -50%)'">
+                <span style="width: 6px; height: 36px" [style.background]="l.bar"></span>
+                <span class="lv-chip-label tnum">{{ l.me ? 'YOU · ' + round(l.d) + ' m' : round(l.d) + ' m' }}</span>
+              </div>
+            </div>
+          </div>
+        }
+        @if (overlay(); as o) {
+          <div class="lv-overlay">
+            <span class="lv-overlay-big" [style.color]="o.fg">{{ o.big }}</span>
+            <span style="font-size: 17px; color: var(--color-neutral-800)">{{ o.sub }}</span>
+            @if (o.btn) { <button class="btn btn-primary lv-start" (click)="o.act!()">{{ o.btn }}</button> }
+          </div>
+        }
+      </div>
+      <div class="lv-bottom">
+        <div class="lv-gauge"><span class="label">Speed</span><span class="lv-big tnum">{{ round(view().v * 3.6) }}</span><span class="lv-unit">km/h</span></div>
+        <div class="lv-gauge"><span class="label">Gear</span><span class="lv-big">{{ view().gear }}</span><span class="lv-unit">of {{ GEARS }}</span></div>
+        <div class="lv-gauge" style="gap: 12px">
+          <div class="label" style="display: flex">
+            <span>Revs</span>
+            <span style="margin-left: auto; font-weight: 800" [style.color]="view().quality === 'Perfect' ? 'var(--color-accent-700)' : 'var(--color-text)'">{{ view().quality ? view().quality + ' shift' : '' }}</span>
+          </div>
+          <ng-container *ngTemplateOutlet="revBar; context: { height: 48 }" />
+          <div class="lv-rev-legend"><span>0</span><span>Shift window</span><span></span></div>
+        </div>
+        <div class="lv-gauge" style="gap: 10px">
+          <button class="btn btn-primary lv-shift" (click)="shift()" [disabled]="phase() !== 'race' || view().gear >= GEARS">Shift up</button>
+          <span class="muted" style="font-size: 12px">or press the space bar</span>
+        </div>
+      </div>
+    </div>
+  }
+}

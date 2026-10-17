@@ -1,0 +1,55 @@
+@if (owned() && car()) {
+  @let c = car();
+  <ng-template #head>
+    <div class="up-head">
+      <span style="font-size: 12px; letter-spacing: .08em; text-transform: uppercase; font-weight: 800">{{ c.tier }} · Level {{ lvl() }}</span>
+      <div class="up-model">{{ c.model }}</div>
+      <span style="font-size: 14px">{{ c.make }}{{ c.gen ? ' · ' + c.gen : '' }} · {{ c.year }}</span>
+    </div>
+  </ng-template>
+  <ng-template #statGrid>
+    <div class="split up-stats">
+      @for (s of stats(); track s.k) {
+        <div>
+          <div class="label">{{ s.k }}</div>
+          <div class="tnum up-stat-v">{{ s.v }}</div>
+          <div style="font-size: 12px; color: var(--color-accent-700); min-height: 16px">{{ s.d }}</div>
+        </div>
+      }
+    </div>
+  </ng-template>
+  <ng-template #side>
+    <div class="label" style="padding: 24px 24px 8px">Parts</div>
+    @for (p of parts(); track p.k) {
+      <div class="up-part">
+        <div style="display: flex; flex-direction: column"><span style="font-weight: 800">{{ p.k }}</span><span class="muted" style="font-size: 12px">{{ p.d }}</span></div>
+        <span style="margin-left: auto; font-size: 13px; font-weight: 800">Lv {{ p.lv }}</span>
+      </div>
+    }
+    <div class="up-pips">
+      @for (i of levels; track i) { <span [style.background]="i < lvl() ? 'var(--color-accent)' : 'var(--color-neutral-300)'"></span> }
+    </div>
+    <div style="margin-top: auto; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+      <span class="muted" style="font-size: 13px">{{ maxed() ? 'Level ' + maxLevel + ' · fully upgraded' : 'Level ' + lvl() + ' to ' + (lvl() + 1) + ' · ' + cr(cost()!) + ' · balance ' + cr(store.credits()) }}</span>
+      @if (error()) { <span class="err">{{ error() }}</span> }
+      <button class="btn btn-primary btn-lg" (click)="up()" [disabled]="maxed() || busy()">{{ busy() ? 'Upgrading…' : label() }}</button>
+      <a [routerLink]="'/garage/' + carId()" class="btn btn-secondary btn-md">Back to garage</a>
+    </div>
+  </ng-template>
+
+  @if (vp.mobile()) {
+    <div class="mscroll" style="display: flex; flex-direction: column">
+      <ng-container *ngTemplateOutlet="head" />
+      <app-photo [car]="c" label="car photo · side profile" style="aspect-ratio: 16 / 10" />
+      <ng-container *ngTemplateOutlet="statGrid" />
+      <ng-container *ngTemplateOutlet="side" />
+    </div>
+  } @else {
+    <main class="shell-main">
+      <ng-container *ngTemplateOutlet="head" />
+      <app-photo [car]="c" label="car photo · side profile" class="up-photo" />
+      <ng-container *ngTemplateOutlet="statGrid" />
+    </main>
+    <aside class="shell-aside" style="--aside: 400px"><ng-container *ngTemplateOutlet="side" /></aside>
+  }
+}

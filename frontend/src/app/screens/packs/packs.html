@@ -1,0 +1,90 @@
+@if (vp.mobile()) {
+  <app-mobile-head title="Packs" />
+  <div class="mscroll">
+    @for (p of packs; track p.id) {
+      <div class="pm-pack" [class.hero]="p.id === 'apex'">
+        <app-photo label="pack art" class="pm-art" />
+        <div class="pm-body">
+          <span class="pm-kind">{{ p.kicker }}</span>
+          <span class="pm-name">{{ p.name }}</span>
+          <span style="font-size: 13px">{{ mobileOdds(p.odds) }}</span>
+          <span class="pm-foot">
+            <span class="pm-price tnum">{{ cr(p.price) }}</span>
+            <button class="pm-open" (click)="op.open(p.id)" [disabled]="!!op.busy()">{{ op.busy() === p.id ? '…' : 'Open' }}</button>
+          </span>
+        </div>
+      </div>
+    }
+    <div class="pm-free">
+      <div style="display: flex; flex-direction: column">
+        <span class="label">Free daily pack</span>
+        <span class="pm-timer tnum">{{ freeReady() ? 'Ready' : clock(snap().freePackAt - now()) }}</span>
+      </div>
+      @if (freeReady()) { <button class="pm-open dark" (click)="op.open('free')" [disabled]="!!op.busy()">Open</button> }
+    </div>
+    <div class="pm-free" style="border-bottom: 0">
+      <span class="label">Legendary in {{ pityLeft() }} packs</span>
+      <span class="tnum" style="font-weight: 800">{{ snap().stats.pity }} / {{ pityLimit }}</span>
+    </div>
+    @if (op.error()) { <p class="err" style="padding: 0 16px">{{ op.error() }}</p> }
+  </div>
+} @else {
+  <main class="shell-main">
+    <div class="page-head">
+      <span class="page-title">Packs</span>
+      <span class="meta">5 cars per pack · duplicates convert to credits</span>
+    </div>
+    <div class="split p-shop">
+      @for (p of packs; track p.id) {
+        <div class="p-pack" [class.hero]="p.id === 'apex'">
+          <div class="p-pack-kicker">
+            <span style="font-weight: 800">{{ p.kicker }}</span>
+            <span style="margin-left: auto">{{ p.guarantee.count }} {{ p.guarantee.tier }}+</span>
+          </div>
+          <app-photo label="pack artwork" class="p-pack-art" />
+          <div class="p-pack-name">
+            <span>{{ p.name }}</span>
+            <span class="p-pack-desc">{{ p.desc }}</span>
+          </div>
+          <div class="p-odds">
+            @for (o of p.odds; track $index) {
+              <div><span class="p-odds-k">{{ oddsLabels[$index] }}</span><span class="p-odds-v tnum">{{ pct(o) }}</span></div>
+            }
+          </div>
+          <button class="btn p-open" (click)="op.open(p.id)" [disabled]="!!op.busy()">
+            {{ op.busy() === p.id ? 'Opening…' : 'Open · ' + cr(p.price) }}
+          </button>
+        </div>
+      }
+    </div>
+    @if (op.error()) { <p class="err" style="padding: 8px 24px">{{ op.error() }}</p> }
+  </main>
+  <aside class="shell-aside" style="--aside: 320px">
+    <div class="p-side rule-b">
+      <span class="label">Free daily pack</span>
+      @if (freeReady()) {
+        <button class="btn btn-primary btn-md" (click)="op.open('free')" [disabled]="op.busy() === 'free'">{{ op.busy() === 'free' ? 'Opening…' : 'Open free Street pack' }}</button>
+      } @else {
+        <span class="p-timer tnum">{{ clock(snap().freePackAt - now()) }}</span>
+      }
+      <span class="muted" style="font-size: 13px">One Street pack every 24 hours.</span>
+    </div>
+    <div class="p-side rule-b" style="gap: 10px">
+      <span class="label">Legendary guarantee</span>
+      <span class="p-pity-title">Guaranteed Legendary in {{ pityLeft() }} pack{{ pityLeft() === 1 ? '' : 's' }}</span>
+      <div class="p-pity">
+        @for (i of pitySlots; track i) {
+          <span [style.background]="i < snap().stats.pity ? 'var(--color-text)' : 'var(--color-neutral-300)'"></span>
+        }
+      </div>
+      <span class="muted" style="font-size: 13px">{{ snap().stats.pity }} of {{ pityLimit }} packs opened since your last Legendary.</span>
+    </div>
+    <div class="p-side">
+      <span class="label">Duplicate values</span>
+      @for (t of tiers; track t) {
+        <div class="p-dupe hair-b"><span>{{ t }}</span><span class="tnum">+{{ cr(dupes[t]) }}</span></div>
+      }
+    </div>
+  </aside>
+}
+<app-low-credits />

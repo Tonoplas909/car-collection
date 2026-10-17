@@ -8,7 +8,7 @@ import { readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const file = join(dirname(fileURLToPath(import.meta.url)), '../supabase/functions/_shared/game/cars.json')
+const file = join(dirname(fileURLToPath(import.meta.url)), '../shared/game/cars.json')
 const COUNTRY = { IT: 'Italy', DE: 'Germany', GB: 'United Kingdom', JP: 'Japan', FR: 'France', US: 'United States', SE: 'Sweden', RU: 'Russia', CZ: 'Czechia' }
 const TIER = { C: 'Common', R: 'Rare', E: 'Epic', L: 'Legendary' }
 const POOL = { s: 'street', h: 'heritage', a: 'apex' }

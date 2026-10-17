@@ -1,0 +1,71 @@
+<ng-template #header let-count="count" let-total="total" let-mobile="mobile">
+  <div class="g-head" [class.mobile]="mobile">
+    <span class="g-count tnum">{{ pad3(count) }}</span>
+    <div class="g-head-text">
+      <span class="g-head-title">Cars in garage</span>
+      <span class="muted">{{ cr(total) }} total value</span>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #sorter let-compact="compact">
+  <div class="g-sorts" [class.compact]="compact">
+    <span class="muted">{{ compact ? 'Sort' : 'Sort by' }}</span>
+    @for (s of sorts; track s[0]) {
+      <button [attr.aria-pressed]="sort() === s[0]" (click)="sort.set(s[0])">{{ s[1] }}</button>
+    }
+  </div>
+</ng-template>
+
+<ng-template #empty>
+  <app-empty-state glyph="0" title="No cars yet." text="Open your free pack or win one in a race to start your collection."
+    [cta]="{ label: 'Open a pack', to: '/packs' }" [alt]="{ label: 'Race', to: '/race' }" />
+</ng-template>
+
+@if (vp.mobile()) {
+  @if (carId()) {
+    @if (detail(); as d) {
+      <app-car-panel [item]="d" [page]="true" />
+    } @else {
+      <app-empty-state glyph="?" tone="grey" title="Not in your garage." text="This car is not in your collection." [cta]="{ label: 'Back to garage', to: '/garage' }" />
+    }
+  } @else {
+    <app-mobile-head><span title class="g-brand">MARQUE</span></app-mobile-head>
+    <ng-container *ngTemplateOutlet="header; context: { count: items().length, total: total(), mobile: true }" />
+    @if (items().length) {
+      <div class="g-tiers-m"><app-tier-filter [value]="filter()" [counts]="counts()" [short]="true" (changed)="filter.set($event)" /></div>
+      <ng-container *ngTemplateOutlet="sorter; context: { compact: true }" />
+      <div class="mscroll" style="padding: 12px 16px">
+        <div class="g-grid mobile">
+          @for (i of list(); track i.carId) {
+            <app-car-card [item]="i" [compact]="true" (picked)="nav.now('/garage/' + i.carId)" />
+          }
+        </div>
+      </div>
+    } @else {
+      <ng-container *ngTemplateOutlet="empty" />
+    }
+  }
+} @else {
+  <main class="shell-main">
+    <ng-container *ngTemplateOutlet="header; context: { count: items().length, total: total() }" />
+    @if (items().length) {
+      <app-tier-filter [value]="filter()" [counts]="counts()" (changed)="filter.set($event)" />
+      <ng-container *ngTemplateOutlet="sorter; context: { compact: false }" />
+      <div class="g-scroll">
+        <div class="g-grid">
+          @for (i of list(); track i.carId) {
+            <app-car-card [item]="i" [selected]="i.carId === current()?.carId" (picked)="pick(i)" />
+          }
+        </div>
+      </div>
+    } @else {
+      <ng-container *ngTemplateOutlet="empty" />
+    }
+  </main>
+  @if (items().length) {
+    <aside class="shell-aside" style="--aside: 440px">
+      @if (current(); as c) { <app-car-panel [item]="c" /> }
+    </aside>
+  }
+}

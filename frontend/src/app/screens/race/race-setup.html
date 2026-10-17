@@ -1,0 +1,113 @@
+<ng-template #noCars>
+  <app-empty-state glyph="0" title="No cars yet." text="You need a car to race. Open your free pack first." [cta]="{ label: 'Open a pack', to: '/packs' }" />
+</ng-template>
+<ng-template #timeout>
+  <app-empty-state glyph="!" tone="red" title="No opponents found." text="We looked for 30 seconds. Try again when you are back online."
+    [cta]="{ label: 'Search again' }" (ctaClick)="fr.retry()" [alt]="{ label: 'Back to garage', to: '/garage' }" />
+</ng-template>
+
+@if (vp.mobile()) {
+  <app-mobile-head title="Race" />
+  @if (!current()) {
+    <ng-container *ngTemplateOutlet="noCars" />
+  } @else if (fr.phase() === 'timeout') {
+    <ng-container *ngTemplateOutlet="timeout" />
+  } @else {
+    <div class="split rc-events-m">
+      @for (e of events; track e.id) {
+        <button class="rc-event" [class.on]="e.id === ev().id" (click)="pickEvent(e.id, $event)">
+          <span class="label-sm" style="color: inherit">{{ e.id === 'run' ? 'Highway' : e.kind }}</span>
+          <span style="font-weight: 800; font-size: 22px; line-height: 1.1">{{ lenStr(e.len) }}</span>
+        </button>
+      }
+    </div>
+    <div class="label" style="padding: 12px 16px 6px">Choose a car</div>
+    <div class="mscroll" style="border-top: 1px solid var(--color-divider)">
+      @for (x of cars(); track x.carId) {
+        <div class="rc-car-m clickable" [class.on]="x.carId === current()!.carId" (click)="pickCar(x.carId, $event)">
+          <span style="align-self: stretch" [style.background]="TIER_BAR[x.car.tier]"></span>
+          <div style="display: flex; flex-direction: column">
+            <span style="font-weight: 800; font-size: 15px">{{ x.car.model }}@if (x.car.gen) {<span class="gen">{{ x.car.gen }}</span>}</span>
+            <span class="muted" style="font-size: 12px">{{ x.car.hp }} hp · {{ num(x.car.kg) }} kg · Lv {{ x.level }}</span>
+          </div>
+          <span style="padding-right: 16px; font-weight: 800; font-size: 13px">{{ hpt(x.car.hp, x.car.kg) }} hp/t</span>
+        </div>
+      }
+    </div>
+    <div class="m-actions" style="padding-top: 12px; padding-bottom: 12px">
+      <div style="display: flex; font-size: 13px"><span>Entry {{ cr(ev().fee) }}</span><span style="margin-left: auto">Win {{ cr(ev().win) }} · +{{ ev().points }} pts</span></div>
+      @if (fr.error()) { <span class="err">{{ fr.error() }}</span> }
+      <button class="btn btn-primary btn-lg" (click)="fr.find()" [disabled]="fr.phase() === 'searching'">{{ fr.phase() === 'searching' ? 'Searching…' : 'Find race' }}</button>
+    </div>
+  }
+} @else {
+  @if (!current() || fr.phase() === 'timeout') {
+    <main class="shell-main">
+      <div class="page-head"><span class="page-title">Race</span></div>
+      <ng-container *ngTemplateOutlet="current() ? timeout : noCars" />
+    </main>
+  } @else {
+    @let car = current()!.car;
+    <main class="shell-main">
+      <div class="page-head">
+        <span class="page-title">Race</span>
+        <span class="meta">4 players · matched by garage level</span>
+      </div>
+      <div class="rc-step">1 · Event</div>
+      <div class="split rc-events">
+        @for (e of events; track e.id) {
+          <button class="rc-event" [class.on]="e.id === ev().id" (click)="pickEvent(e.id, $event)">
+            <span class="label" style="color: inherit">{{ e.kind }}</span>
+            <span class="rc-len tnum">{{ lenStr(e.len) }}</span>
+            <span style="font-size: 13px">{{ e.place }}</span>
+          </button>
+        }
+      </div>
+      <div class="rc-step" style="padding-top: 20px">2 · Car</div>
+      <div class="rc-cars">
+        @for (x of cars(); track x.carId; let i = $index) {
+          <div class="rc-car clickable list-row" [class.on]="x.carId === current()!.carId" [style.--i]="i" (click)="pickCar(x.carId, $event)">
+            <span style="align-self: stretch" [style.background]="TIER_BAR[x.car.tier]"></span>
+            <app-photo [car]="x.car" label="car" class="rc-thumb" />
+            <div style="display: flex; flex-direction: column">
+              <span style="font-weight: 800; font-size: 16px; line-height: 1.2">{{ x.car.model }}@if (x.car.gen) {<span class="gen">{{ x.car.gen }}</span>}</span>
+              <span class="muted" style="font-size: 12px">{{ x.car.make }} · {{ x.car.tier }} · Lv {{ x.level }}</span>
+            </div>
+            <div style="display: flex; flex-direction: column"><span class="label-sm">Power</span><span class="tnum" style="font-weight: 800">{{ x.car.hp }} hp</span></div>
+            <div style="display: flex; flex-direction: column"><span class="label-sm">Weight</span><span class="tnum" style="font-weight: 800">{{ num(x.car.kg) }} kg</span></div>
+            <div style="display: flex; flex-direction: column"><span class="label-sm">hp / tonne</span><span class="tnum" style="font-weight: 800">{{ hpt(x.car.hp, x.car.kg) }}</span></div>
+          </div>
+        }
+      </div>
+    </main>
+    <aside class="shell-aside" style="--aside: 380px">
+      <div #hdr class="red-head">
+        <span class="kicker" style="font-weight: 800">{{ ev().kind }} · {{ lenStr(ev().len) }}</span>
+        <span class="mk">{{ car.make }}</span>
+        <span #title class="model" style="font-size: 40px">{{ car.model }}</span>
+      </div>
+      <div class="label" style="padding: 16px 24px 8px">Opponents</div>
+      <div #opps class="rc-opps">
+        @for (o of opponents; track o.name) {
+          <div><span style="font-weight: 600">{{ o.name }}</span><span class="muted" style="margin-left: auto">{{ o.car }}</span></div>
+        }
+      </div>
+      <div #rewards class="split rc-rewards">
+        <div><span class="label-sm">Entry</span><span>{{ cr(ev().fee) }}</span></div>
+        <div><span class="label-sm">Win</span><span>{{ cr(ev().win) }}</span></div>
+        <div><span class="label-sm">Points</span><span>+{{ ev().points }}</span></div>
+      </div>
+      <p #note class="rc-note">{{ ev().note }}</p>
+      <div style="padding: 16px 24px 24px; margin-top: auto; display: flex; flex-direction: column; gap: 8px">
+        @if (fr.error()) { <span class="err">{{ fr.error() }}</span> }
+        <button class="btn btn-primary rc-find" (click)="fr.find()" [disabled]="fr.phase() === 'searching'">
+          {{ fr.phase() === 'searching' ? 'Searching for opponents…' : 'Find race' }}
+        </button>
+      </div>
+    </aside>
+  }
+}
+@if (fr.short(); as s) {
+  <app-confirm-dialog kind="Low credits" [title]="'You need ' + cr(s.fee) + '.'" [rows]="shortRows()"
+    note="Win a cheaper event, sell a car or top up to enter." okLabel="Top up credits" (ok)="fr.topUp()" (cancel)="fr.short.set(null)" />
+}

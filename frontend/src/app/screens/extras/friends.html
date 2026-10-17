@@ -1,0 +1,58 @@
+<ng-template #addForm>
+  <form (submit)="add($event)" class="fr-add">
+    <input class="input" placeholder="Add by username" aria-label="Add a friend by username" [value]="name()" (input)="name.set(val($event))" />
+    @if (error()) { <span class="err">{{ error() }}</span> }
+  </form>
+</ng-template>
+<ng-template #rowsTpl>
+  @for (x of friends(); track x.name; let i = $index) {
+    <div class="fr-row clickable list-row" [class.on]="i === sel()" [style.--i]="i" (click)="sel.set(i)">
+      <span style="width: 12px; height: 12px" [style.background]="x.online ? 'var(--color-accent)' : 'var(--color-neutral-400)'"></span>
+      <div style="display: flex; flex-direction: column"><span style="font-weight: 800; font-size: 17px">{{ x.name }}</span><span class="muted" style="font-size: 12px">{{ x.status }}</span></div>
+      <span class="fr-cars" style="font-size: 14px">{{ num(x.cars) }} cars</span>
+      <span class="tnum" style="font-weight: 800">{{ num(x.points) }} pts</span>
+    </div>
+  } @empty {
+    <p class="muted" style="padding: 24px">No friends yet. Add someone by username.</p>
+  }
+</ng-template>
+
+@if (vp.mobile()) {
+  <app-mobile-head title="Friends" [custom]="true"><span></span></app-mobile-head>
+  <div style="padding: 12px 16px; border-bottom: 2px solid var(--color-divider)"><ng-container *ngTemplateOutlet="addForm" /></div>
+  <div class="mscroll"><ng-container *ngTemplateOutlet="rowsTpl" /></div>
+  @if (f(); as fr) {
+    <div class="m-actions">
+      <button class="btn btn-primary btn-md" (click)="nav.go('/race')">Challenge {{ fr.name }} to a race</button>
+      <button class="btn btn-secondary btn-md" (click)="nav.go('/market')">Propose a swap</button>
+    </div>
+  }
+} @else {
+  <main class="shell-main">
+    <div class="page-head">
+      <span class="page-title">Friends</span>
+      <div style="margin-left: auto; width: 260px; padding-bottom: 4px"><ng-container *ngTemplateOutlet="addForm" /></div>
+    </div>
+    <div style="overflow: auto; flex: 1"><ng-container *ngTemplateOutlet="rowsTpl" /></div>
+  </main>
+  <aside class="shell-aside" style="--aside: 380px">
+    @if (f(); as fr) {
+      <div class="fr-sel">
+        <span style="font-size: 12px; letter-spacing: .08em; text-transform: uppercase">Selected</span>
+        <div style="font-weight: 800; font-size: 44px; line-height: 1; padding-top: 8px; overflow-wrap: anywhere">{{ fr.name }}</div>
+        <div style="font-size: 14px; padding-top: 6px">{{ fr.status }}</div>
+      </div>
+      <div style="padding: 20px 24px; display: flex; flex-direction: column; gap: 8px">
+        <span class="label">Showcase</span>
+        <span style="font-weight: 800; font-size: 20px">{{ fr.showcase }}</span>
+        <span style="font-size: 14px; color: var(--color-neutral-800)">{{ num(fr.cars) }} cars · {{ num(fr.points) }} season points</span>
+      </div>
+      <div style="margin-top: auto; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+        <button class="btn btn-primary" style="padding: 14px 16px" (click)="nav.go('/race')">Challenge to a race</button>
+        <button class="btn btn-secondary" style="padding: 14px 16px" (click)="nav.go('/market')">Propose a swap</button>
+      </div>
+    } @else {
+      <div class="fr-sel"><span style="font-weight: 800; font-size: 32px">No one selected</span></div>
+    }
+  </aside>
+}

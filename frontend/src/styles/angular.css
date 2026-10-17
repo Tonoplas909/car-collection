@@ -1,0 +1,7 @@
+/* Angular glue: keeps the DOM structure the design CSS expects. */
+
+/* <router-outlet> is an empty marker element; it must not take a grid or flex slot. */
+router-outlet { display: none; }
+
+/* Routed screens render their <main> / <aside> straight into the shell grid (rail | main | aside). */
+.screen { display: contents; }

@@ -1,0 +1,51 @@
+<ng-template #bundleGrid>
+  <div class="split cr-bundles">
+    @for (x of bundles; track x.id; let i = $index) {
+      <button class="cr-bundle" [class.on]="i === sel()" (click)="sel.set(i)" [attr.aria-pressed]="i === sel()">
+        <span class="label" style="color: inherit">{{ x.bestValue ? 'Best value' : 'Bundle' }}</span>
+        <span class="cr-amount tnum">{{ num(x.credits) }}</span>
+        <span style="font-size: 14px">{{ x.name }} · {{ euro(x.priceCents) }}</span>
+      </button>
+    }
+  </div>
+</ng-template>
+
+<ng-template #orderTpl>
+  <div class="cr-order-head">
+    <span style="font-size: 12px; letter-spacing: .08em; text-transform: uppercase; font-weight: 800">Order</span>
+    <div class="tnum" style="font-weight: 800; font-size: 44px; line-height: 1; padding-top: 12px">{{ num(b().credits) }} CR</div>
+  </div>
+  <div class="cr-lines">
+    <div><span>Bundle</span><span>{{ euro(b().priceCents) }}</span></div>
+    <div><span>VAT 20%</span><span>{{ euro(vat()) }}</span></div>
+    <div class="total"><span>Total</span><span>{{ euro(b().priceCents + vat()) }}</span></div>
+    <div class="muted" style="font-size: 13px"><span>Balance after</span><span>{{ cr(store.credits() + b().credits) }}</span></div>
+  </div>
+  <div style="padding: 0 24px">
+    <p class="muted" style="font-size: 13px; margin: 0">Card payment goes through the payment provider’s secure form. This local build adds credits without charging.</p>
+    @if (error()) { <p class="err" style="margin: 8px 0 0">{{ error() }}</p> }
+  </div>
+  <div style="margin-top: auto; padding: 24px">
+    <button class="btn btn-primary btn-lg" style="width: 100%" (click)="pay()" [disabled]="busy()">{{ busy() ? 'Processing…' : 'Pay ' + euro(b().priceCents + vat()) }}</button>
+  </div>
+</ng-template>
+
+@if (vp.mobile()) {
+  <app-mobile-head title="Credits" />
+  <div class="mscroll">
+    <ng-container *ngTemplateOutlet="bundleGrid" />
+    <ng-container *ngTemplateOutlet="orderTpl" />
+  </div>
+} @else {
+  <main class="shell-main">
+    <div class="page-head" style="align-items: flex-end">
+      <span class="page-title">Credits</span>
+      <span class="meta tnum">Balance {{ cr(store.credits()) }}</span>
+    </div>
+    <ng-container *ngTemplateOutlet="bundleGrid" />
+  </main>
+  <aside class="shell-aside" style="--aside: 400px"><ng-container *ngTemplateOutlet="orderTpl" /></aside>
+}
+@if (done() !== null) {
+  <app-confirm-dialog kind="Top-up complete" [title]="'+' + cr(done()!)" [rows]="doneRows()" okLabel="Visit the pack shop" (ok)="toShop()" (cancel)="done.set(null)" />
+}

@@ -11,9 +11,11 @@ dist-ssr
 .env.*
 !.env.example
 
-# Supabase local
-supabase/.branches
-supabase/.temp
+# Embedded MongoDB data (backend)
+backend/data/
+
+# Angular
+.angular/
 
 # Editor directories and files
 .vscode/*

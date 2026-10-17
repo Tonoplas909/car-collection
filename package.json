@@ -1,39 +1,24 @@
 {
   "name": "marque",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "oxlint",
-    "test": "vitest run",
-    "preview": "vite preview",
-    "test:db": "node scripts/test-db.mjs",
-    "db:seed": "node scripts/gen-seed.ts",
-    "db:start": "supabase start",
-    "db:reset": "supabase db reset",
-    "functions:serve": "supabase functions serve",
+    "install:all": "npm install && npm --prefix backend install && npm --prefix frontend install",
+    "dev": "concurrently -n api,web -c red,gray \"npm --prefix backend run dev\" \"npm --prefix frontend start\"",
+    "dev:api": "npm --prefix backend run dev",
+    "dev:web": "npm --prefix frontend start",
+    "build": "npm --prefix frontend run build",
+    "test": "vitest run && npm --prefix backend test",
+    "test:rules": "vitest run",
+    "test:api": "npm --prefix backend test",
+    "test:web": "npm --prefix frontend test -- --watch=false",
+    "seed:reset": "npm --prefix backend run seed:reset",
     "cars:enrich": "node scripts/enrich-cars.mjs",
     "cars:add": "node scripts/add-cars.mjs"
   },
-  "dependencies": {
-    "@supabase/supabase-js": "^2.117.3",
-    "lucide-react": "^1.52.0",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8",
-    "react-router-dom": "^7.18.4"
-  },
   "devDependencies": {
-    "@electric-sql/pglite": "^0.5.8",
-    "@types/node": "^24.13.3",
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.7",
-    "@vitejs/plugin-react": "^6.1.1",
-    "oxlint": "^1.81.0",
-    "supabase": "^2.120.0",
-    "typescript": "~6.0.2",
-    "vite": "^8.3.0",
-    "vitest": "^5.0.3"
+    "concurrently": "^9.2.1",
+    "vitest": "^4.0.8"
   }
 }
