@@ -2,7 +2,7 @@ import { useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from '
 import { ChevronLeft } from 'lucide-react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { CARS_BY_ID, TIER_RANK, carLabel, makeGen, marketFee, type Car, type Tier } from '@game'
-import type { Listing, SwapOffer } from '../api'
+import { topUpEnabled, type Listing, type SwapOffer } from '../api'
 import { Aside, Main, MobileHead } from '../components/Shell'
 import { ConfirmDialog, EmptyState, ModelName, Photo, TIER_BAR, TIER_FG, TierFilter } from '../components/ui'
 import { compact, cr, num, remaining } from '../lib/format'
@@ -79,9 +79,9 @@ function MarketDialogs({ state, onClose }: { state: DialogState; onClose: () => 
     return (
       <ConfirmDialog kind="Confirm purchase" title={`Buy ${carLabel(row.car)}?`}
         rows={[['Seller', row.seller], ['Price', cr(row.price)], ['Market fee', '0 CR'], ['Balance after', `${after < 0 ? '−' : ''}${cr(Math.abs(after))}`]]}
-        note={short ? `Your balance is too low. Top up ${num(Math.ceil(-after / 1000) * 1000)} credits to continue.` : note('The car arrives in your garage at its current upgrade level.')}
-        ok={short ? 'Top up credits' : 'Buy car'} busy={busy} onCancel={onClose}
-        onOk={() => (short ? (onClose(), navigate('/credits')) : run(() => actions.buyListing(row.id)))} />
+        note={short ? (topUpEnabled ? `Your balance is too low. Top up ${num(Math.ceil(-after / 1000) * 1000)} credits to continue.` : `Your balance is too low. You are ${cr(-after)} short: win races or sell a car.`) : note('The car arrives in your garage at its current upgrade level.')}
+        ok={short ? (topUpEnabled ? 'Top up credits' : 'Close') : 'Buy car'} busy={busy} onCancel={onClose}
+        onOk={() => (short ? (onClose(), topUpEnabled && navigate('/credits')) : run(() => actions.buyListing(row.id)))} />
     )
   }
 

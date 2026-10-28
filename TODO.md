@@ -2,7 +2,7 @@
 
 - [x] **Relire le catalogue** : 201 fiches relues (specs et textes de mémoire, arbitrages faits avec le propriétaire du projet). Les photos restent à contrôler à l'œil dans `data/review.html` (`npm run cars:enrich`).
 - [x] **Photo manquante** : Fiesta ST Mk6 ajoutée (Calreyn88, CC BY-SA 4.0). Les 201 voitures ont une photo ; vérifier les crédits Commons.
-- [ ] **Paiements** : `topUp` dans `src/api/supabase.ts` lève `not_configured`. Brancher un fournisseur (checkout + webhook qui crédite le compte) ou retirer l'écran de recharge.
+- [~] **Paiements** : écran « Credits » masqué sur le backend Supabase (`topUpEnabled` dans `src/api/index.ts`, route `/credits` redirigée vers `/packs`, boutons « Top up » remplacés par « Close »). La recharge reste active dans la démo locale (mock). Reste à brancher un fournisseur (checkout + webhook idempotent qui crédite le compte) puis passer `topUpEnabled` à `true`.
 - [ ] **Déployer Supabase** : migrations, `supabase/catalog.sql`, fonctions `packs` et `races`, `.env.local` (`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`), hébergement du front.
 - [ ] **Vérification de bout en bout** : `npm test`, `npm run test:db`, `npm run lint`, `npm run build`, puis essai sur un vrai Supabase (pas seulement le mock localStorage).
 - [ ] **Finir le cahier des charges** : règle de pitié (Légendaire garanti tous les 20 packs), récompenses de saison du classement, défis entre amis. À confirmer dans le code.

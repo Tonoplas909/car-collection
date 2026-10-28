@@ -10,3 +10,5 @@ const key = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined
 /** Supabase when configured (.env.local), otherwise the local mock backend. */
 export const api: GameApi = url && key ? createSupabaseApi(url, key) : mockApi
 export const backend: 'supabase' | 'mock' = url && key ? 'supabase' : 'mock'
+/** Credit top-ups need a payment provider on the real backend; only the local demo can add credits for now. */
+export const topUpEnabled = backend === 'mock'

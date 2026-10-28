@@ -4,7 +4,7 @@ import {
   CARS_BY_ID, DT, GEARS, OPPONENTS, RACE_EVENTS, RACE_EVENTS_BY_ID, RaceSim, SHIFT_WINDOW, TIER_RANK, calibrateOpponents,
   type Car, type RaceEvent, type ShiftQuality,
 } from '@game'
-import { GameError, type RaceResult } from '../api'
+import { GameError, topUpEnabled, type RaceResult } from '../api'
 import { Aside, Main, MobileHead } from '../components/Shell'
 import { ConfirmDialog, EmptyState, ModelName, Photo, TIER_BAR } from '../components/ui'
 import { cr, num, seconds } from '../lib/format'
@@ -38,8 +38,8 @@ function useFindRace() {
   }
   const dialog = short && (
     <ConfirmDialog kind="Low credits" title={`You need ${cr(short.fee)}.`} rows={[['Entry fee', cr(short.fee)]]}
-      note="Win a cheaper event, sell a car or top up to enter." ok="Top up credits"
-      onOk={() => { setShort(null); navigate('/credits') }} onCancel={() => setShort(null)} />
+      note={topUpEnabled ? 'Win a cheaper event, sell a car or top up to enter.' : 'Win a cheaper event or sell a car to enter.'} ok={topUpEnabled ? 'Top up credits' : 'Close'}
+      onOk={() => { setShort(null); if (topUpEnabled) navigate('/credits') }} onCancel={() => setShort(null)} />
   )
   return { find, phase, setPhase, dialog, error }
 }

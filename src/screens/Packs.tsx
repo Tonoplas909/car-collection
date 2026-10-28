@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import { CARS_BY_ID, DUPLICATE_CREDITS, PACKS, PACKS_BY_ID, PITY_LIMIT, TIERS, makeGen, type PackDef, type PackId } from '@game'
-import { GameError } from '../api'
+import { GameError, topUpEnabled } from '../api'
 import { Aside, Main, MobileHead } from '../components/Shell'
 import { ConfirmDialog, Photo, TIER_BAR } from '../components/ui'
 import { clock, cr, num, pad2 } from '../lib/format'
@@ -40,8 +40,8 @@ function useOpenPack() {
   const dialog = short && (
     <ConfirmDialog kind="Low credits" title={`You need ${cr(short.pack.price)}.`}
       rows={[['Pack', `${short.pack.name} · ${cr(short.pack.price)}`], ['Your balance', cr(short.have)], ['Missing', cr(short.pack.price - short.have)]]}
-      note={`The ${short.pack.name} pack costs ${num(short.pack.price)} credits. Win races or top up.`}
-      ok="Top up credits" onOk={() => { setShort(null); navigate('/credits') }} onCancel={() => setShort(null)} />
+      note={`The ${short.pack.name} pack costs ${num(short.pack.price)} credits. Win races${topUpEnabled ? ' or top up' : ''}.`}
+      ok={topUpEnabled ? 'Top up credits' : 'Close'} onOk={() => { setShort(null); if (topUpEnabled) navigate('/credits') }} onCancel={() => setShort(null)} />
   )
   return { open, busy, dialog, error }
 }

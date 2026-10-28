@@ -1,7 +1,7 @@
 import { useState, type CSSProperties, type FormEvent } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { CARS_BY_ID, CREDIT_BUNDLES, MAX_LEVEL, RACE_EVENTS_BY_ID, UPGRADE_DELTA, VAT, upgradeCost, upgradedStats } from '@game'
-import { backend, type Settings } from '../api'
+import { backend, topUpEnabled, type Settings } from '../api'
 import { Aside, Main, MobileHead } from '../components/Shell'
 import { ConfirmDialog, Photo } from '../components/ui'
 import { cr, euro, num, remaining } from '../lib/format'
@@ -161,7 +161,7 @@ export function UpgradePage() {
   const now = upgradedStats(car, lvl)
   const short = cost !== null && snap.user.credits < cost
   const up = async () => {
-    if (short) { navigate('/credits'); return }
+    if (short) { if (topUpEnabled) navigate('/credits'); return }
     setBusy(true); setError('')
     try { await actions.upgradeCar(carId) } catch (e) { setError((e as Error).message) } finally { setBusy(false) }
   }
@@ -177,7 +177,7 @@ export function UpgradePage() {
     { k: 'Tires', d: 'Better launch', lv: Math.min(lvl, 2) },
     { k: 'Lightweight kit', d: `−${Math.abs(UPGRADE_DELTA.kg)} kg per level`, lv: lvl },
   ]
-  const label = maxed ? 'Max level reached' : short ? `Top up to upgrade · ${cr(cost!)}` : `Upgrade for ${cr(cost!)}`
+  const label = maxed ? 'Max level reached' : short ? (topUpEnabled ? `Top up to upgrade · ${cr(cost!)}` : `Need ${cr(cost!)} to upgrade`) : `Upgrade for ${cr(cost!)}`
   const head = (
     <div className="up-head">
       <span style={{ fontSize: 12, letterSpacing: '.08em', textTransform: 'uppercase', fontWeight: 800 }}>{car.tier} · Level {lvl}</span>
@@ -211,7 +211,7 @@ export function UpgradePage() {
       <div style={{ marginTop: 'auto', padding: 24, display: 'flex', flexDirection: 'column', gap: 8 }}>
         <span className="muted" style={{ fontSize: 13 }}>{maxed ? `Level ${MAX_LEVEL} · fully upgraded` : `Level ${lvl} to ${lvl + 1} · ${cr(cost!)} · balance ${cr(snap.user.credits)}`}</span>
         {error && <span className="err">{error}</span>}
-        <button className="btn btn-primary btn-lg" onClick={up} disabled={maxed || busy}>{busy ? 'Upgrading…' : label}</button>
+        <button className="btn btn-primary btn-lg" onClick={up} disabled={maxed || busy || (short && !topUpEnabled)}>{busy ? 'Upgrading…' : label}</button>
         <Link to={`/garage/${carId}`} className="btn btn-secondary btn-md">Back to garage</Link>
       </div>
     </>

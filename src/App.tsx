@@ -10,6 +10,7 @@ import { FirstPackPage, LoginPage, SignUpPage, TastesPage } from './screens/Onbo
 import { PackRevealPage, PacksPage } from './screens/Packs'
 import { ProfilePage } from './screens/Profile'
 import { RaceLivePage, RaceResultsPage, RaceSetupPage } from './screens/Race'
+import { topUpEnabled } from './api'
 import { useApp } from './state/store'
 
 export function App() {
@@ -35,7 +36,7 @@ export function App() {
           <Route path="/leaderboard" element={<LeaderboardPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/settings" element={<SettingsPage />} />
-          <Route path="/credits" element={<CreditsPage />} />
+          <Route path="/credits" element={topUpEnabled ? <CreditsPage /> : <Navigate to="/packs" replace />} />
           <Route path="/upgrade/:carId" element={<UpgradePage />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/friends" element={<FriendsPage />} />
