@@ -1,6 +1,6 @@
 # MARQUE — reste à faire
 
-- [ ] **Relire le catalogue** : 173 voitures sur 201 ont `reviewed: false` (specs et blurb en brouillon). Aide : `npm run cars:enrich` puis `data/review.html`.
+- [~] **Relire le catalogue** : relecture des specs et textes faite de mémoire (sans sources) : 190 voitures sur 201 passées en `reviewed: true`, 3 corrections. Restent 11 fiches en brouillon (voir plus bas). Les photos ne sont pas vérifiées : à regarder dans `data/review.html` (`npm run cars:enrich`).
 - [ ] **Photo manquante** : 200 voitures sur 201 ont une photo. Retrouver la dernière (`photoMatch` / `photoQuery`) et vérifier les crédits Commons.
 - [ ] **Paiements** : `topUp` dans `src/api/supabase.ts` lève `not_configured`. Brancher un fournisseur (checkout + webhook qui crédite le compte) ou retirer l'écran de recharge.
 - [ ] **Déployer Supabase** : migrations, `supabase/catalog.sql`, fonctions `packs` et `races`, `.env.local` (`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`), hébergement du front.
