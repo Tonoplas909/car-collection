@@ -1,7 +1,7 @@
 # MARQUE — reste à faire
 
-- [~] **Relire le catalogue** : relecture des specs et textes faite de mémoire (sans sources) : 190 voitures sur 201 passées en `reviewed: true`, 3 corrections. Restent 11 fiches en brouillon (voir plus bas). Les photos ne sont pas vérifiées : à regarder dans `data/review.html` (`npm run cars:enrich`).
-- [ ] **Photo manquante** : 200 voitures sur 201 ont une photo. Retrouver la dernière (`photoMatch` / `photoQuery`) et vérifier les crédits Commons.
+- [x] **Relire le catalogue** : 201 fiches relues (specs et textes de mémoire, arbitrages faits avec le propriétaire du projet). Les photos restent à contrôler à l'œil dans `data/review.html` (`npm run cars:enrich`).
+- [x] **Photo manquante** : Fiesta ST Mk6 ajoutée (Calreyn88, CC BY-SA 4.0). Les 201 voitures ont une photo ; vérifier les crédits Commons.
 - [ ] **Paiements** : `topUp` dans `src/api/supabase.ts` lève `not_configured`. Brancher un fournisseur (checkout + webhook qui crédite le compte) ou retirer l'écran de recharge.
 - [ ] **Déployer Supabase** : migrations, `supabase/catalog.sql`, fonctions `packs` et `races`, `.env.local` (`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`), hébergement du front.
 - [ ] **Vérification de bout en bout** : `npm test`, `npm run test:db`, `npm run lint`, `npm run build`, puis essai sur un vrai Supabase (pas seulement le mock localStorage).

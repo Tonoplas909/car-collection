@@ -803,8 +803,8 @@
     "model": "Fiesta XR2",
     "gen": "Mk1",
     "year": 1981,
-    "country": "Germany",
-    "cc": "DE",
+    "country": "United Kingdom",
+    "cc": "GB",
     "tier": "Common",
     "hp": 84,
     "nm": 128,
@@ -820,7 +820,7 @@
       "everyday"
     ],
     "wiki": "Ford Fiesta XR2",
-    "reviewed": false,
+    "reviewed": true,
     "photoMatch": "XR2",
     "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1983%20Ford%20Fiesta%20XR2%20BS%20O24.jpg?width=800",
     "photoCredit": "MrWalkr · CC BY-SA 4.0 · Wikimedia Commons"
@@ -1662,7 +1662,7 @@
       "supercars"
     ],
     "wiki": "Porsche Carrera GT",
-    "reviewed": false,
+    "reviewed": true,
     "photoMatch": "Carrera GT",
     "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Porsche_Carrera_GT_-_Goodwood_Breakfast_Club_(July_2008).jpg?width=800",
     "photoCredit": "Brian Snelson from Hockley, Essex, England · CC BY 2.0 · Wikimedia Commons"
@@ -1676,11 +1676,11 @@
     "country": "France",
     "cc": "FR",
     "tier": "Common",
-    "hp": 29,
-    "nm": 53,
-    "acc": 40,
-    "top": 115,
-    "kg": 560,
+    "hp": 9,
+    "nm": 24,
+    "acc": 60,
+    "top": 65,
+    "kg": 510,
     "value": 6500,
     "blurb": "A rugged, soft-sprung farm-and-town car designed to carry eggs across a ploughed field without breaking them.",
     "pools": [
@@ -1691,7 +1691,7 @@
       "classics"
     ],
     "wiki": "Citroën 2CV",
-    "reviewed": false,
+    "reviewed": true,
     "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris%20-%20Bonhams%202013%20-%20Citro%C3%ABn%202CV%20A%20-%201950%20-%20002.jpg?width=800",
     "photoCredit": "Thesupermat · CC BY-SA 3.0 · Wikimedia Commons"
   },
@@ -1732,11 +1732,11 @@
     "country": "Italy",
     "cc": "IT",
     "tier": "Common",
-    "hp": 18,
-    "nm": 30,
-    "acc": 45,
-    "top": 95,
-    "kg": 500,
+    "hp": 13,
+    "nm": 28,
+    "acc": 60,
+    "top": 85,
+    "kg": 470,
     "value": 7500,
     "blurb": "A tiny rear-engine city car that put postwar Italy on wheels.",
     "pools": [
@@ -1747,7 +1747,7 @@
       "classics"
     ],
     "wiki": "Fiat 500",
-    "reviewed": false,
+    "reviewed": true,
     "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1970_Fiat_500_L_--_2011_DC_1.jpg?width=800",
     "photoCredit": "IFCAR · Public domain · Wikimedia Commons"
   },
@@ -1900,17 +1900,17 @@
     "make": "Vauxhall",
     "model": "Nova GTE",
     "gen": "",
-    "year": 1983,
+    "year": 1988,
     "country": "United Kingdom",
     "cc": "GB",
     "tier": "Common",
-    "hp": 100,
-    "nm": 128,
-    "acc": 9,
-    "top": 185,
-    "kg": 780,
+    "hp": 99,
+    "nm": 135,
+    "acc": 9.5,
+    "top": 163,
+    "kg": 834,
     "value": 6500,
-    "blurb": "A light supermini with a 1.3 litre engine and sporty trim, popular with young drivers in the 80s.",
+    "blurb": "A light supermini with a 1.6 litre engine and sporty trim, popular with young drivers in the late 80s.",
     "pools": [
       "street"
     ],
@@ -1918,7 +1918,7 @@
       "everyday"
     ],
     "wiki": "Vauxhall Nova",
-    "reviewed": false,
+    "reviewed": true,
     "photoMatch": "Nova",
     "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1989%20Vauxhall%20Nova%20GTE%20(15643768649).jpg?width=800",
     "photoCredit": "Kieran White from Manchester, England · CC BY 2.0 · Wikimedia Commons"
@@ -2526,9 +2526,11 @@
       "everyday"
     ],
     "wiki": "Ford Fiesta ST",
-    "reviewed": false,
+    "reviewed": true,
     "photoMatch": "Mk ?6|ST150|Fiesta ST.*(2005|2006|2007|2008)|JH1",
-    "photoQuery": "Ford Fiesta ST 2005 2006 2007 Mk6"
+    "photoQuery": "Ford Fiesta ST 2005 2006 2007 Mk6",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2006_Ford_Fiesta_ST.jpg?width=800",
+    "photoCredit": "Calreyn88 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "opel-manta-gte",
@@ -2626,11 +2628,11 @@
     "country": "Sweden",
     "cc": "SE",
     "tier": "Common",
-    "hp": 55,
-    "nm": 100,
-    "acc": 22,
-    "top": 135,
-    "kg": 820,
+    "hp": 38,
+    "nm": 70,
+    "acc": 30,
+    "top": 120,
+    "kg": 810,
     "value": 7500,
     "blurb": "A front-drive oddity that won rallies under Erik Carlsson.",
     "pools": [
@@ -2641,7 +2643,7 @@
       "rally"
     ],
     "wiki": "Saab 96",
-    "reviewed": false,
+    "reviewed": true,
     "photoMatch": "96",
     "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/SAAB%2096%20(25825262244).jpg?width=800",
     "photoCredit": "Andrew Bone from Weymouth, England · CC BY 2.0 · Wikimedia Commons"
@@ -2845,7 +2847,7 @@
       "classics"
     ],
     "wiki": "Honda S800",
-    "reviewed": false,
+    "reviewed": true,
     "photoMatch": "S800|S600",
     "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1966%20Honda%20S800.jpg?width=800",
     "photoCredit": "TTTNIS · CC0 · Wikimedia Commons"
@@ -3660,17 +3662,17 @@
   {
     "id": "citroen-ds",
     "make": "Citroën",
-    "model": "DS 21",
+    "model": "DS 19",
     "gen": "",
     "year": 1955,
     "country": "France",
     "cc": "FR",
     "tier": "Rare",
-    "hp": 109,
-    "nm": 169,
-    "acc": 14,
-    "top": 175,
-    "kg": 1250,
+    "hp": 74,
+    "nm": 140,
+    "acc": 22,
+    "top": 140,
+    "kg": 1215,
     "value": 40000,
     "blurb": "A hydropneumatic suspension, front disc brakes and a shape from the future.",
     "pools": [
@@ -3681,7 +3683,7 @@
       "classics"
     ],
     "wiki": "Citroën DS",
-    "reviewed": false,
+    "reviewed": true,
     "photoMatch": "DS",
     "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Citro%C3%ABn%20DS%2021%2027%20Quai%20Anatole%20France%20license%20plate%20blanked%202012-06-02%20cropped.jpg?width=800",
     "photoCredit": "Slaunger · CC BY-SA 3.0 · Wikimedia Commons"
@@ -3842,7 +3844,7 @@
     "year": 1967,
     "country": "Japan",
     "cc": "JP",
-    "tier": "Rare",
+    "tier": "Epic",
     "hp": 110,
     "nm": 130,
     "acc": 10,
@@ -3859,7 +3861,7 @@
       "concepts"
     ],
     "wiki": "Mazda Cosmo",
-    "reviewed": false,
+    "reviewed": true,
     "photoMatch": "Cosmo",
     "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1968_Mazda_Cosmo-Sport_01.jpg?width=800",
     "photoCredit": "Mytho88 · CC BY-SA 3.0 · Wikimedia Commons"
@@ -4293,7 +4295,7 @@
       "classics"
     ],
     "wiki": "Ferrari 328",
-    "reviewed": false,
+    "reviewed": true,
     "photoMatch": "328",
     "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ferrari_328_GTS_-_Flickr_-_Alexandre_Pr%C3%A9vot_(4)_(cropped).jpg?width=800",
     "photoCredit": "Alexandre Prévot from Nancy, France · CC BY-SA 2.0 · Wikimedia Commons"
