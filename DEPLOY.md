@@ -1,0 +1,47 @@
+# Déploiement (Supabase + GitHub Pages)
+
+Le front est publié sur GitHub Pages par `.github/workflows/deploy.yml` à chaque push sur `main`. Sans les variables `VITE_SUPABASE_*`, il tourne sur le backend de démo (localStorage). Les étapes ci-dessous branchent le vrai backend.
+
+Prérequis : un compte Supabase et Node (les commandes passent par `npx supabase`, rien à installer).
+
+## 1. Créer le projet Supabase
+supabase.com → New project. Région proche des joueurs (Paris ou Frankfurt). Notez le **project ref** (l'identifiant dans l'URL du dashboard) et le mot de passe de la base.
+
+## 2. Appliquer le schéma
+```bash
+npx supabase login
+npx supabase link --project-ref <project-ref>
+npx supabase db push
+```
+`db push` applique les migrations de `supabase/migrations/` (schéma, RLS, fonctions SQL).
+
+## 3. Charger le catalogue
+Dans le dashboard : SQL Editor, collez le contenu de `supabase/catalog.sql` et lancez-le (201 voitures + événements de course, idempotent).
+
+N'utilisez **pas** `supabase/seed.sql` en production : il contient en plus des annonces de démonstration.
+
+## 4. Déployer les Edge Functions
+```bash
+npx supabase functions deploy packs
+npx supabase functions deploy races
+```
+`SUPABASE_URL`, `SUPABASE_ANON_KEY` et `SUPABASE_SERVICE_ROLE_KEY` sont fournis automatiquement aux fonctions, il n'y a pas de secret à ajouter.
+
+## 5. Réglages Auth
+Dashboard → Authentication :
+- URL Configuration : Site URL = `https://tonoplas909.github.io/car-collection/`, et ajoutez la même URL (avec `**`) dans les Redirect URLs.
+- Providers → Email : décidez si la confirmation par e-mail est obligatoire.
+- (Plus tard) Providers → Discord, voir `TODO.md`.
+
+## 6. Brancher le front
+Dashboard → Project Settings → API : copiez l'URL du projet et la clé `anon`.
+
+Sur GitHub : Settings → Pages → Source = **GitHub Actions**. Puis Settings → Secrets and variables → Actions → onglet **Variables** : créez `VITE_SUPABASE_URL` et `VITE_SUPABASE_ANON_KEY`. La clé anon est publique par conception (la sécurité repose sur les règles RLS) ; ne mettez jamais la clé `service_role` dans le front.
+
+Relancez le workflow (Actions → Deploy to GitHub Pages → Run workflow).
+
+## 7. Vérifier
+Sur le site publié : créer un compte, ouvrir le pack gratuit, lancer une course, mettre une voiture en vente avec un second compte et l'acheter.
+
+## En local contre le vrai projet
+Copiez `.env.example` en `.env.local` et renseignez les deux variables ; `npm run dev` utilise alors Supabase au lieu du mock.
