@@ -8,8 +8,9 @@
 - [ ] **Finir le cahier des charges** : règle de pitié (Légendaire garanti tous les 20 packs), récompenses de saison du classement, défis entre amis. À confirmer dans le code.
 - [ ] **Nom et licences** : « MARQUE » est provisoire ; noms et images de voitures réelles demandent des droits.
 - [ ] **Liaison par compte Discord**
-  - Auth : activer le fournisseur Discord dans Supabase Auth (client ID/secret, URL de redirection) ; bouton « Se connecter avec Discord » dans `src/screens/Onboarding.tsx`.
+  - Décidé : Discord sert à la fois à créer un compte (connexion) et à lier un compte existant.
+  - Création : activer le fournisseur Discord dans Supabase Auth (client ID/secret, URL de redirection) ; bouton « Continuer avec Discord » dans `src/screens/Onboarding.tsx` (crée le compte s'il n'existe pas).
   - Liaison : `linkIdentity` pour un compte existant ; bloc « Compte lié » dans les réglages (`src/screens/Extras.tsx`) avec pseudo Discord et bouton pour délier.
   - Mock : simuler la liaison dans `src/api/mock.ts` pour que le mode sans `.env.local` continue de marcher.
   - Amis (facultatif) : proposer d'ajouter les amis Discord qui jouent aussi.
-  - À trancher : Discord sert-il aussi à créer un compte, ou seulement à lier un compte existant ?
+  - Cas limite : si l'e-mail Discord correspond déjà à un compte, lier l'identité plutôt que créer un doublon.
