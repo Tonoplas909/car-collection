@@ -28,9 +28,9 @@ const FREE = /^(CC0|CC BY(-SA)?( \d(\.\d)?)?|Public domain|PD|GFDL|Attribution)/
 const sleep = ms => new Promise(r => setTimeout(r, ms))
 
 async function getJson(url) {
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 6; i++) {
     const r = await fetch(url, { headers: UA })
-    if (r.status === 429) { await sleep(2000 * (i + 1)); continue }
+    if (r.status === 429) { await sleep(4000 * (i + 1)); continue }
     if (!r.ok) return null
     return r.json()
   }
@@ -108,11 +108,12 @@ for (const car of cars) {
   const row = { id: car.id, notes: [] }
   report.push(row)
   if (!car.wiki) { row.notes.push('no wiki title in cars.json'); continue }
-  const w = await wikipedia(car.wiki)
-  if (w.error) { row.notes.push(`wikipedia: ${w.error} (${car.wiki})`); continue }
+  let w = await wikipedia(car.wiki)
+  // A missing article only costs the lead image and the Wikidata checks: the Commons search below still runs.
+  if (w.error) { row.notes.push(`wikipedia: ${w.error} (${car.wiki})`); w = {} }
   row.wiki = w.url
 
-  const d = await wikidata(w.qid)
+  const d = w.qid ? await wikidata(w.qid) : {}
 
   if (force || !car.photoUrl) {
     // Wikipedia's lead image first, then the image Wikidata lists, then a Commons search.
@@ -133,11 +134,12 @@ for (const car of cars) {
       car.photoUrl = `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(found.name)}?width=800`
       car.photoCredit = `${found.author} · ${found.license} · Wikimedia Commons`
       changed++
+      writeFileSync(file, JSON.stringify(cars, null, 2) + '\n') // keep progress if a later request fails
     } else row.notes.push(`photo: ${lastError}`)
   }
   if (d.year && Math.abs(d.year - car.year) > 2) row.notes.push(`year: draft ${car.year}, Wikidata ${d.year}`)
   if (d.country && d.country !== car.country && !(d.country.includes('Germany') && car.country === 'Germany')) row.notes.push(`country: draft ${car.country}, Wikidata ${d.country}`)
-  await sleep(150)
+  await sleep(400)
 }
 
 writeFileSync(file, JSON.stringify(cars, null, 2) + '\n')
@@ -153,7 +155,7 @@ ${r?.notes.length ? `<ul>${r.notes.map(n => `<li>${esc(n)}</li>`).join('')}</ul>
 mkdirSync(join(root, 'data'), { recursive: true })
 writeFileSync(join(root, 'data/review.html'), `<!doctype html><meta charset="utf-8"><title>Car catalog review</title>
 <style>body{font:14px system-ui;margin:24px;max-width:1000px}table{border-collapse:collapse}td{vertical-align:top;padding:12px;border-bottom:1px solid #ccc}
-img{width:300px;height:200px;object-fit:cover;filter:grayscale(1);display:block}small{display:block;max-width:300px;color:#666}tr.ok{background:#f4f4f4}li{color:#b00}</style>
+img{width:300px;height:200px;object-fit:cover;display:block}small{display:block;max-width:300px;color:#666}tr.ok{background:#f4f4f4}li{color:#b00}</style>
 <h1>Car catalog review (${cars.length} cars)</h1><table>${rows}</table>`)
 
 const flagged = report.filter(r => r.notes.length)

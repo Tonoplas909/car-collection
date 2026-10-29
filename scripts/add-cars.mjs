@@ -7,9 +7,10 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { ROWS_NEW } from './cars-new.mjs'
 
 const file = join(dirname(fileURLToPath(import.meta.url)), '../supabase/functions/_shared/game/cars.json')
-const COUNTRY = { IT: 'Italy', DE: 'Germany', GB: 'United Kingdom', JP: 'Japan', FR: 'France', US: 'United States', SE: 'Sweden', RU: 'Russia', CZ: 'Czechia' }
+const COUNTRY = { IT: 'Italy', DE: 'Germany', GB: 'United Kingdom', JP: 'Japan', FR: 'France', US: 'United States', SE: 'Sweden', RU: 'Russia', CZ: 'Czechia', ES: 'Spain', KR: 'South Korea', HR: 'Croatia', CN: 'China' }
 const TIER = { C: 'Common', R: 'Rare', E: 'Epic', L: 'Legendary' }
 const POOL = { s: 'street', h: 'heritage', a: 'apex' }
 const TASTE = { e: 'everyday', j: 'jdm', p: 'supercars', c: 'classics', r: 'rally', x: 'concepts' }
@@ -164,6 +165,7 @@ const ROWS = [
   ['bmw-507', 'BMW', '507', '', 1956, 'DE', 'L', 150, 235, 11.0, 220, 1330, 950000, 'h', 'c', 'BMW 507', 'A V8 roadster styled by Albrecht von Goertz. Elvis owned one, and BMW lost money on every sale.', '507'],
 ]
 
+ROWS.push(...ROWS_NEW)
 const cars = JSON.parse(readFileSync(file, 'utf8'))
 const have = new Set(cars.map(c => c.id))
 let added = 0

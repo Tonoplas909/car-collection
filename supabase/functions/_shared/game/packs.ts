@@ -18,11 +18,11 @@ export const CARDS_PER_PACK = 5
 export const PITY_LIMIT = 20
 
 export const PACKS: PackDef[] = [
-  { id: 'street', name: 'Street', kicker: 'Everyday', desc: 'Hot hatches, tuner cars and daily drivers.', price: 2000,
+  { id: 'street', name: 'Street', kicker: 'Everyday', desc: 'Hot hatches, tuner cars, modern performance and daily drivers.', price: 2000,
     odds: [0.72, 0.22, 0.05, 0.01], guarantee: { count: 1, tier: 'Rare' } },
-  { id: 'heritage', name: 'Heritage', kicker: 'Classics', desc: 'Pre-1980 icons from Europe and Japan.', price: 8000,
+  { id: 'heritage', name: 'Heritage', kicker: 'Classics', desc: 'Pre-1990 icons from Europe, Japan and America.', price: 8000,
     odds: [0.48, 0.34, 0.14, 0.04], guarantee: { count: 1, tier: 'Epic' } },
-  { id: 'apex', name: 'Apex', kicker: 'Supercars', desc: 'Homologation specials and flagship supercars.', price: 25000,
+  { id: 'apex', name: 'Apex', kicker: 'Supercars', desc: 'Supercars, hypercars and flagship specials.', price: 25000,
     odds: [0, 0.45, 0.43, 0.12], guarantee: { count: 2, tier: 'Epic' } },
 ]
 

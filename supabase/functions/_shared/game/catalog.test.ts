@@ -4,8 +4,8 @@ import { PACKS } from './packs.ts'
 import { TIERS } from './types.ts'
 
 describe('catalog', () => {
-  it('has 200+ cars with unique ids', () => {
-    expect(CATALOG.length).toBeGreaterThanOrEqual(200)
+  it('has 400+ cars with unique ids', () => {
+    expect(CATALOG.length).toBeGreaterThanOrEqual(400)
     expect(new Set(CATALOG.map(c => c.id)).size).toBe(CATALOG.length)
   })
 
@@ -31,6 +31,12 @@ describe('catalog', () => {
         expect(n, `${pack.id} ${TIERS[i]}`).toBeGreaterThanOrEqual(3)
       })
     }
+  })
+
+  it('spans the decades, including plenty of modern cars', () => {
+    expect(CATALOG.filter(c => c.year >= 2010).length).toBeGreaterThanOrEqual(100)
+    expect(CATALOG.filter(c => c.year >= 2020).length).toBeGreaterThanOrEqual(30)
+    expect(CATALOG.filter(c => c.year < 1980).length).toBeGreaterThanOrEqual(80)
   })
 
   it('only uses attributed free-license photos from Wikimedia Commons', () => {
