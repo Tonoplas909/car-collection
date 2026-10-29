@@ -7,6 +7,7 @@ import {
 } from '@game'
 import { GameError, topUpEnabled, type RaceResult } from '../api'
 import { Aside, Main, MobileHead } from '../components/Shell'
+import { ApproachStrip, RaceMap } from '../components/RaceMap'
 import { ConfirmDialog, EmptyState, ModelName, Photo, TIER_BAR } from '../components/ui'
 import { cr, num, seconds } from '../lib/format'
 import { useIsMobile, useWipeNavigate } from '../lib/hooks'
@@ -135,6 +136,7 @@ function RaceSetupDesktop() {
           <span className="mk">{car.make}</span>
           <span ref={title} className="model" style={{ fontSize: 40 }}>{car.model}</span>
         </div>
+        <div className="rc-map"><RaceMap track={TRACKS[ev.id]} size="sm" /></div>
         <div className="label" style={{ padding: '16px 24px 8px' }}>What counts</div>
         <div ref={opps} className="rc-opps">
           {TRACKS[ev.id].focus.map(f => (
@@ -311,17 +313,40 @@ function LiveRace({ raceId, car, level, ev }: { raceId: string; car: Car; level:
     ...traces.map(o => ({ name: o.name, car: o.car, d: o.distanceAt(tNow), me: false, bar: 'var(--color-neutral-500)' })),
   ]
   const pos = [...lanes].sort((a, b) => b.d - a.d).findIndex(l => l.me) + 1
-  const ticks = Array.from({ length: Math.ceil(ev.len / 100) - 1 }, (_, i) => ((i + 1) * 100) / ev.len * 100)
   const gear = Math.min(6, 1 + Math.floor((view.v / sim.notes.vmax) * 6))
   const hud = { pos: phase === 'idle' || phase === 'count' ? '—' : `${result?.place ?? pos} / 4`, time: seconds(tNow), sector: `${view.sector + 1} / ${track.sectors.length}` }
 
   const here = track.sectors[view.sector]
-  const nextIdx = track.sectors.findIndex((s, i) => i > view.sector && isCorner(s))
-  const hint = phase !== 'race' ? ''
-    : view.slide > 0 ? 'Sliding: you carried too much speed into the corner.'
-    : isCorner(here) ? `${SECTOR_NAME[here.kind]} · target ${kmh(here.vRef! * sim.notes.G)} km/h`
-    : nextIdx >= 0 ? `Next: ${SECTOR_NAME[track.sectors[nextIdx].kind]} in ${Math.max(0, Math.round(starts[nextIdx] - view.d))} m · target ${kmh(track.sectors[nextIdx].vRef! * sim.notes.G)} km/h · you ${kmh(view.v)} km/h`
-    : 'Last straight. Use any nitro you have left.'
+  const nextIdx = track.sectors.findIndex((x, i) => i > view.sector && isCorner(x))
+  const next = nextIdx >= 0 ? track.sectors[nextIdx] : null
+  const approach = {
+    label: next ? SECTOR_NAME[next.kind] : '',
+    dist: phase === 'race' && next && !isCorner(here) ? starts[nextIdx] - view.d : null,
+    target: next ? next.vRef! * sim.notes.G : 0,
+    v: view.v,
+    note: phase !== 'race' ? ' '
+      : view.slide > 0 ? 'Sliding: you carried too much speed into the corner.'
+      : isCorner(here) ? `${SECTOR_NAME[here.kind]} · target ${kmh(here.vRef! * sim.notes.G)} km/h`
+      : nextIdx >= 0 ? `${SECTOR_NAME[next!.kind]} ahead`
+      : 'Last straight. Use any nitro you have left.',
+  }
+  const stage = (
+    <>
+      <div className="lv-map"><RaceMap track={track} dots={lanes.map(l => ({ id: l.name, d: l.d, me: l.me }))} /></div>
+      <div className="lv-standings">
+        {[...lanes].sort((x, y) => y.d - x.d).map((l, i) => {
+          const me = lanes[0].d
+          return (
+            <div key={l.name} className={`lv-stand${l.me ? ' me' : ''}`}>
+              <span className="lv-stand-pos">P{i + 1}</span>
+              <span className="lv-stand-who"><b>{l.me ? 'You' : l.name}</b><span className="muted">{l.car}</span></span>
+              <span className="lv-stand-gap tnum">{l.me ? '' : `${l.d >= me ? '+' : '−'}${Math.abs(Math.round(l.d - me))} m`}</span>
+            </div>
+          )
+        })}
+      </div>
+    </>
+  )
 
   const overlay = phase === 'idle' ? { big: 'Ready', sub: 'Hold Brake (space) before corners and let go at the right speed. Tap Nitro (N) on exits.', fg: 'var(--color-text)', btn: 'Start race' }
     : phase === 'count' ? { big: String(count), sub: 'Get ready', fg: 'var(--color-text)' }
@@ -353,30 +378,16 @@ function LiveRace({ raceId, car, level, ev }: { raceId: string; car: Car; level:
           <Hud k="Position" v={hud.pos} /><Hud k="Time" v={hud.time} /><Hud k="Sector" v={hud.sector} />
         </div>
         <div className="lv-lanes-m">
-          {lanes.map(l => {
-            const p = Math.min(100, (l.d / ev.len) * 100)
-            return (
-              <div key={l.name} className={`lv-lane-m${l.me ? ' me' : ''}`}>
-                <span className="lv-lane-name">{l.name}</span>
-                <span className="lv-finish" />
-                <div className="lv-track-m">
-                  <div className="lv-chip" style={{ left: `${p}%`, transform: `translate(-${p}%, -50%)` }}>
-                    <span style={{ width: 6, height: 30, background: l.me ? 'var(--color-accent)' : l.bar }} />
-                    <span className="lv-chip-label" style={{ height: 30, fontSize: 12 }}>{l.me ? `YOU · ${Math.round(l.d)} m` : `${Math.round(l.d)} m`}</span>
-                  </div>
-                </div>
-              </div>
-            )
-          })}
+          {stage}
           {overlay && phase !== 'idle' && phase !== 'done' && <div className="lv-overlay-m"><span style={{ color: overlay.fg }}>{overlay.big}</span></div>}
         </div>
         <div className="lv-gauges-m">
           <div><span className="label-sm">Speed</span><span className="lv-big-m tnum">{kmh(view.v)}</span><span className="lv-unit">km/h</span></div>
           <div><span className="label-sm">Gear</span><span className="lv-big-m">{gear}</span><span className="lv-unit">{view.nitroT > 0 ? 'nitro on' : `nitro ${view.nitroLeft} / ${NITRO.charges}`}</span></div>
         </div>
-        <div style={{ padding: '8px 16px 12px', flex: 'none' }}>
-          <span className="muted" style={{ fontSize: 12 }}>{phase === 'idle' || phase === 'done' ? overlay?.sub : hint}</span>
-        </div>
+        {phase === 'idle' || phase === 'done'
+          ? <div style={{ padding: '8px 16px 12px', flex: 'none' }}><span className="muted" style={{ fontSize: 12 }}>{overlay?.sub}</span></div>
+          : <ApproachStrip {...approach} />}
         <div style={{ padding: '0 16px calc(16px + env(safe-area-inset-bottom))', flex: 'none' }}>
           {playing ? controls('lv-controls-m')
             : <button className="lv-shift-m" onClick={onOverlay} disabled={!overlay?.btn}>{overlay?.btn ?? overlay?.big}</button>}
@@ -395,22 +406,7 @@ function LiveRace({ raceId, car, level, ev }: { raceId: string; car: Car; level:
         <Hud k="Position" v={hud.pos} /><Hud k="Time" v={hud.time} /><Hud k="Sector" v={hud.sector} />
       </div>
       <div className="lv-lanes">
-        {lanes.map(l => {
-          const p = Math.min(100, (l.d / ev.len) * 100)
-          return (
-            <div key={l.name} className={`lv-lane${l.me ? ' me' : ''}`}>
-              <div className="lv-who"><span style={{ fontWeight: 800, fontSize: 15 }}>{l.name}</span><span className="muted" style={{ fontSize: 12 }}>{l.car}</span></div>
-              <div className="lv-track">
-                {ticks.map(t => <span key={t} className="lv-tick" style={{ left: `${t}%` }} />)}
-                <span className="lv-line" />
-                <div className="lv-chip" style={{ left: `${p}%`, transform: `translate(-${p}%, -50%)` }}>
-                  <span style={{ width: 6, height: 36, background: l.bar }} />
-                  <span className="lv-chip-label tnum">{l.me ? `YOU · ${Math.round(l.d)} m` : `${Math.round(l.d)} m`}</span>
-                </div>
-              </div>
-            </div>
-          )
-        })}
+        {stage}
         {overlay && (
           <div className="lv-overlay">
             <span className="lv-overlay-big" style={{ color: overlay.fg }}>{overlay.big}</span>
@@ -419,7 +415,7 @@ function LiveRace({ raceId, car, level, ev }: { raceId: string; car: Car; level:
           </div>
         )}
       </div>
-      <div className="lv-hint" data-slide={view.slide > 0}>{hint || ' '}</div>
+      <ApproachStrip {...approach} />
       <div className="lv-bottom">
         <div className="lv-gauge"><span className="label">Speed</span><span className="lv-big tnum">{kmh(view.v)}</span><span className="lv-unit">km/h</span></div>
         <div className="lv-gauge"><span className="label">Gear</span><span className="lv-big">{gear}</span><span className="lv-unit">automatic</span></div>
