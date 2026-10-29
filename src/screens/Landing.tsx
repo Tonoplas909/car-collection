@@ -148,13 +148,13 @@ export function LandingPage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
             <div className="lp-shot">
               <div data-anim="wipe" data-delay="250" style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
-                <div ref={parallax} className="photo" style={{ position: 'absolute', inset: '-8% 0', background: 'repeating-linear-gradient(135deg,var(--color-surface) 0 10px,var(--color-neutral-300) 10px 20px)' }}>
-                  <span style={{ fontSize: 11 }}>hero shot · car in profile, black and white</span>
+                <div ref={parallax} className="photo" style={{ position: 'absolute', inset: '-8% 0' }}>
+                  {hero.photoUrl && <img src={hero.photoUrl} alt={`${hero.make} ${hero.model}`} className="grayscale" />}
                 </div>
               </div>
               <div data-anim="sweep" data-delay="250" className="lp-sweep" />
             </div>
-            <span data-anim="up" data-delay="900" style={{ fontSize: 11, color: 'var(--color-neutral-700)' }}>{hero.make} {carLabel(hero)} · {hero.year} · {hero.tier}</span>
+            <span data-anim="up" data-delay="900" style={{ fontSize: 11, color: 'var(--color-neutral-700)' }}>{hero.make} {carLabel(hero)} · {hero.year} · {hero.tier}{hero.photoCredit ? ` · Photo: ${hero.photoCredit}` : ''}</span>
           </div>
         </section>
 
