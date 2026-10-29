@@ -2,8 +2,12 @@
 .st-grid { display: grid; grid-template-columns: 240px minmax(0, 1fr); min-height: 0; flex: 1; }
 .st-tabs { border-right: 2px solid var(--color-divider); padding: 24px 0; display: flex; flex-direction: column; }
 .st-title { font-weight: 800; font-size: 40px; line-height: .9; letter-spacing: -.03em; padding: 0 20px 20px; }
-.st-tab { padding: 10px 20px; font-size: 15px; }
+.st-tab { padding: 10px 20px; font-size: 15px; border: 0; background: transparent; text-align: left; cursor: pointer; color: var(--color-text); }
+.st-tab:hover:not(.on) { background: var(--color-surface); }
 .st-tab.on { background: var(--color-text); color: var(--color-bg); font-weight: 800; }
+.st-note { margin: 0; font-size: 13px; line-height: 20px; }
+.st-tabs-m { display: flex; overflow-x: auto; border-bottom: 2px solid var(--color-divider); flex: none; scrollbar-width: none; }
+.st-tabs-m .st-tab { flex: none; padding: 12px 16px; white-space: nowrap; font-size: 14px; }
 .st-form { padding: 32px 40px; display: flex; flex-direction: column; gap: 20px; max-width: 640px; }
 .st-h { font-weight: 800; font-size: 28px; }
 .st-pref { display: flex; align-items: center; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--color-divider); }

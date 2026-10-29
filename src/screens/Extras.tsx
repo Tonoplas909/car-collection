@@ -1,5 +1,5 @@
-import { useEffect, useState, type CSSProperties, type FormEvent } from 'react'
-import { Link, Navigate, useParams } from 'react-router-dom'
+import { useEffect, useState, type CSSProperties, type FormEvent, type ReactNode } from 'react'
+import { Link, Navigate, useParams, useSearchParams } from 'react-router-dom'
 import { CARS_BY_ID, CREDIT_BUNDLES, MAX_LEVEL, RACE_EVENTS_BY_ID, UPGRADE_DELTA, VAT, upgradeCost, upgradedStats } from '@game'
 import { api, backend, topUpEnabled, type DiscordLink, type Settings } from '../api'
 import { Aside, Main, MobileHead } from '../components/Shell'
@@ -11,13 +11,17 @@ import './Extras.css'
 
 /* ── 8a Settings ────────────────────────────────────────────────────── */
 
-const PREFS: [keyof Settings, string, string][] = [
+type PrefRow = [keyof Settings, string, string]
+const PREFS: PrefRow[] = [
   ['sound', 'Sound effects', 'Engine and pack sounds'],
   ['reduceMotion', 'Reduce motion', 'Skip reveal and sweep animations'],
-  ['notifications', 'Race notifications', 'When a friend challenges you'],
-  ['showGarageValue', 'Show my garage value', 'On your public profile'],
 ]
-const SETTING_TABS = ['Account', 'Notifications', 'Privacy', 'Payments', 'Language']
+const NOTIFICATION_PREFS: PrefRow[] = [['notifications', 'Race notifications', 'When a friend challenges you']]
+const PRIVACY_PREFS: PrefRow[] = [['showGarageValue', 'Show my garage value', 'On your public profile']]
+const SETTING_TABS = [
+  ['account', 'Account'], ['notifications', 'Notifications'], ['privacy', 'Privacy'], ['payments', 'Payments'], ['language', 'Language'],
+] as const
+type SettingTab = (typeof SETTING_TABS)[number][0]
 
 /** Discord account linked to the player: connect it to log in with Discord, or disconnect it. */
 function LinkedAccounts() {
@@ -57,6 +61,9 @@ export function SettingsPage() {
   const snap = useSnapshot()
   const navigate = useWipeNavigate()
   const mobile = useIsMobile()
+  const [params, setParams] = useSearchParams()
+  const tab: SettingTab = SETTING_TABS.find(([id]) => id === params.get('tab'))?.[0] ?? 'account'
+  const pickTab = (id: SettingTab) => setParams(id === 'account' ? {} : { tab: id }, { replace: true })
   const [f, setF] = useState({ username: snap.user.username, email: snap.user.email, region: snap.user.region })
   const [prefs, setPrefs] = useState<Settings>(snap.user.settings)
   const [status, setStatus] = useState<'idle' | 'saving' | 'saved' | string>('idle')
@@ -68,26 +75,78 @@ export function SettingsPage() {
   const logout = async () => { await actions.signOut(); navigate('/') }
   const dirty = f.username !== snap.user.username || f.email !== snap.user.email || f.region !== snap.user.region || JSON.stringify(prefs) !== JSON.stringify(snap.user.settings)
 
+  const toggles = (rows: PrefRow[]) => (
+    <div>
+      {rows.map(([k, label, desc]) => (
+        <div key={k} className="st-pref">
+          <div style={{ display: 'flex', flexDirection: 'column' }}><span style={{ fontWeight: 600 }}>{label}</span><span className="muted" style={{ fontSize: 13 }}>{desc}</span></div>
+          <button type="button" role="switch" aria-checked={prefs[k]} aria-label={label} className={`st-toggle${prefs[k] ? ' on' : ''}`} onClick={() => setPrefs({ ...prefs, [k]: !prefs[k] })}>
+            {prefs[k] ? 'On' : 'Off'}
+          </button>
+        </div>
+      ))}
+    </div>
+  )
+  const rule = <div style={{ height: 2, background: 'var(--color-divider)' }} />
+
+  const panels: Record<SettingTab, ReactNode> = {
+    account: (
+      <>
+        <span className="st-h">Account</span>
+        <div className="field"><label htmlFor="st-u">Username</label><input id="st-u" className="input" value={f.username} onChange={e => setF({ ...f, username: e.target.value })} /></div>
+        <div className="field"><label htmlFor="st-e">Email</label><input id="st-e" className="input" type="email" value={f.email} onChange={e => setF({ ...f, email: e.target.value })} /></div>
+        <div className="field"><label htmlFor="st-r">Region</label><input id="st-r" className="input" value={f.region} onChange={e => setF({ ...f, region: e.target.value })} /></div>
+        {rule}
+        <LinkedAccounts />
+        {rule}
+        <span className="st-h">Preferences</span>
+        {toggles(PREFS)}
+      </>
+    ),
+    notifications: (
+      <>
+        <span className="st-h">Notifications</span>
+        {toggles(NOTIFICATION_PREFS)}
+        <p className="muted st-note">Notifications appear inside the game. Nothing is sent by email.</p>
+      </>
+    ),
+    privacy: (
+      <>
+        <span className="st-h">Privacy</span>
+        {toggles(PRIVACY_PREFS)}
+        <p className="muted st-note">Other players can always see your username, level, region and showcase on the leaderboard and on the market.</p>
+      </>
+    ),
+    payments: (
+      <>
+        <span className="st-h">Payments</span>
+        <div className="st-pref">
+          <div style={{ display: 'flex', flexDirection: 'column' }}><span style={{ fontWeight: 600 }}>Credits balance</span><span className="muted" style={{ fontSize: 13 }}>Win races, sell cars or duplicate cards to earn more</span></div>
+          <span className="tnum" style={{ marginLeft: 'auto', fontWeight: 800, fontSize: 20 }}>{cr(snap.user.credits)}</span>
+        </div>
+        {topUpEnabled
+          ? <Link to="/credits" className="btn btn-secondary" style={{ alignSelf: 'flex-start', padding: '12px 20px' }}>Buy credits</Link>
+          : <p className="muted st-note">Buying credits is not available yet: payments are not connected. Credits come from races, sales and duplicates.</p>}
+      </>
+    ),
+    language: (
+      <>
+        <span className="st-h">Language</span>
+        <div className="st-pref">
+          <div style={{ display: 'flex', flexDirection: 'column' }}><span style={{ fontWeight: 600 }}>English</span><span className="muted" style={{ fontSize: 13 }}>Current language</span></div>
+          <span className="st-toggle on" style={{ cursor: 'default' }}>Selected</span>
+        </div>
+        <div className="st-pref">
+          <div style={{ display: 'flex', flexDirection: 'column' }}><span style={{ fontWeight: 600 }}>Français</span><span className="muted" style={{ fontSize: 13 }}>Not available yet</span></div>
+          <span className="st-toggle" style={{ cursor: 'default', opacity: .5 }}>Soon</span>
+        </div>
+      </>
+    ),
+  }
+
   const form = (
     <form className="st-form" onSubmit={save}>
-      <span className="st-h">Account</span>
-      <div className="field"><label htmlFor="st-u">Username</label><input id="st-u" className="input" value={f.username} onChange={e => setF({ ...f, username: e.target.value })} /></div>
-      <div className="field"><label htmlFor="st-e">Email</label><input id="st-e" className="input" type="email" value={f.email} onChange={e => setF({ ...f, email: e.target.value })} /></div>
-      <div className="field"><label htmlFor="st-r">Region</label><input id="st-r" className="input" value={f.region} onChange={e => setF({ ...f, region: e.target.value })} /></div>
-      <div style={{ height: 2, background: 'var(--color-divider)' }} />
-      <LinkedAccounts />
-      <div style={{ height: 2, background: 'var(--color-divider)' }} />
-      <span className="st-h">Preferences</span>
-      <div>
-        {PREFS.map(([k, label, desc]) => (
-          <div key={k} className="st-pref">
-            <div style={{ display: 'flex', flexDirection: 'column' }}><span style={{ fontWeight: 600 }}>{label}</span><span className="muted" style={{ fontSize: 13 }}>{desc}</span></div>
-            <button type="button" role="switch" aria-checked={prefs[k]} className={`st-toggle${prefs[k] ? ' on' : ''}`} onClick={() => setPrefs({ ...prefs, [k]: !prefs[k] })}>
-              {prefs[k] ? 'On' : 'Off'}
-            </button>
-          </div>
-        ))}
-      </div>
+      {panels[tab]}
       <div style={{ display: 'flex', gap: 8, paddingTop: 8, alignItems: 'center', flexWrap: 'wrap' }}>
         <button className="btn btn-primary" style={{ padding: '12px 20px' }} disabled={status === 'saving' || !dirty}>{status === 'saving' ? 'Saving…' : 'Save changes'}</button>
         <button type="button" className="btn btn-secondary" style={{ padding: '12px 20px' }} onClick={logout}>Log out</button>
@@ -96,14 +155,25 @@ export function SettingsPage() {
       </div>
     </form>
   )
+  const tabButtons = SETTING_TABS.map(([id, label]) => (
+    <button key={id} type="button" role="tab" aria-selected={tab === id} className={`st-tab${tab === id ? ' on' : ''}`} onClick={() => pickTab(id)}>{label}</button>
+  ))
 
-  if (mobile) return <><MobileHead title="Settings" /><div className="mscroll">{form}</div></>
+  if (mobile) {
+    return (
+      <>
+        <MobileHead title="Settings" />
+        <div className="st-tabs-m" role="tablist" aria-label="Settings sections">{tabButtons}</div>
+        <div className="mscroll">{form}</div>
+      </>
+    )
+  }
   return (
     <Main>
       <div className="st-grid">
-        <div className="st-tabs">
+        <div className="st-tabs" role="tablist" aria-label="Settings sections" aria-orientation="vertical">
           <span className="st-title">Settings</span>
-          {SETTING_TABS.map((t, i) => <div key={t} className={`st-tab${i === 0 ? ' on' : ''}`}>{t}</div>)}
+          {tabButtons}
         </div>
         <div style={{ overflow: 'auto' }}>{form}</div>
       </div>
