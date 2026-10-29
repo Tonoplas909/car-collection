@@ -12,7 +12,7 @@ The files in `design/` are **design references created in HTML**: prototypes sho
 **High-fidelity.** Colors, type, spacing, borders and motion are final. Recreate pixel-accurately with design tokens. Exceptions: all car photos, pack art, avatars and the hero shot are **striped placeholders** (`repeating-linear-gradient(135deg, surface 0 8px, neutral-300 8px 16px)`) awaiting real images; all names, prices, odds and stats are sample data.
 
 ## Design system: Modernist
-Flat, architectural. Archivo only. Zero corner radius. Strong 2px dividers (`var(--color-divider)`). Labels flush left, never centered inside buttons. Accent red used sparingly, as the one field color for heroes/headers. Photos print black and white (`.grayscale`). `design/ds/styles.css` is the source of truth for tokens and the `.btn`, `.input`, `.seg`, `.card`, `.table`, `.dialog` classes; copy it as-is.
+Flat, architectural. Archivo only. Zero corner radius. Strong 2px dividers (`var(--color-divider)`). Labels flush left, never centered inside buttons. Accent red used sparingly, as the one field color for heroes/headers. Photos are shown in colour (the design handoff had them black and white via `.grayscale`; dropped by product decision). `design/ds/styles.css` is the source of truth for tokens and the `.btn`, `.input`, `.seg`, `.card`, `.table`, `.dialog` classes; copy it as-is.
 
 ## Design Tokens
 - **Colors**: bg `#f3f2f2`; surface `#eae9e9`; text `#201e1d`; accent `#ec3013` (hover/pressed `accent-600`, text-size accent `accent-700`); divider `rgba(32,30,29,.4)`; neutrals 200 `#eae7e7`, 300 `#d7d3d3`, 400 `#bab6b6`, 500 `#9b9797`, 600 `#7d7979`, 700 `#605d5d`, 800 `#444141`, 900 `#2d2b2b`.
@@ -66,7 +66,7 @@ All files are in `design/`.
 Auth (sign-up, login), `GET /cars` catalog, `GET /me/garage`, `POST /packs/:type/open`, `GET/POST /market/listings`, `POST /market/listings/:id/buy`, `POST /races` (server simulates and returns the result), `GET /leaderboards?metric=&scope=`, `GET /me/profile`, `POST /cars/:id/upgrade`, `GET /events`, friends endpoints, credit purchase through a payment provider (the prototype shows a card field only as a mockup).
 
 ## Assets
-No external images. Car photos, pack art, avatar and hero are placeholders to replace; photos should be black and white (grayscale filter) or processed to match. Licensed car imagery and names require licensing. Font: Archivo (Google Fonts). Icons: Lucide.
+No external images. Car photos, pack art, avatar and hero are placeholders to replace; photos are shown in colour. Licensed car imagery and names require licensing. Font: Archivo (Google Fonts). Icons: Lucide.
 
 ## Files
 `design/`: Garage, Packs, Market, Leaderboard, Profile, Race, Landing, Mobile, Onboarding, Extras, States (`.dc.html`), `fx.js` (global motion), `ds/styles.css` (tokens + components). Open any `.dc.html` from the original project to see it live; the bundled copies expect the project's `_ds/` runtime to render, so use them for reading markup, colors and logic.

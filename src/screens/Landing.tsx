@@ -149,7 +149,7 @@ export function LandingPage() {
             <div className="lp-shot">
               <div data-anim="wipe" data-delay="250" style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
                 <div ref={parallax} className="photo" style={{ position: 'absolute', inset: '-8% 0' }}>
-                  {hero.photoUrl && <img src={hero.photoUrl} alt={`${hero.make} ${hero.model}`} className="grayscale" />}
+                  {hero.photoUrl && <img src={hero.photoUrl} alt={`${hero.make} ${hero.model}`} />}
                 </div>
               </div>
               <div data-anim="sweep" data-delay="250" className="lp-sweep" />

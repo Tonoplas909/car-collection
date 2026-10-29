@@ -9,7 +9,7 @@ export { TIER_BAR, TIER_FG }
 export function Photo({ car, label = 'car photo', className = '', style }: { car?: Car; label?: string; className?: string; style?: CSSProperties }) {
   return (
     <div className={`photo ${className}`} style={style}>
-      {car?.photoUrl ? <img src={car.photoUrl} alt={`${car.make} ${car.model}`} className="grayscale" /> : <span>{label}</span>}
+      {car?.photoUrl ? <img src={car.photoUrl} alt={`${car.make} ${car.model}`} /> : <span>{label}</span>}
     </div>
   )
 }
