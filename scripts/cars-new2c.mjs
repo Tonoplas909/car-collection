@@ -24,7 +24,6 @@ export const ROWS_2C = [
   ['ferrari-296-speciale', 'Ferrari', '296 Speciale', '', 2025, 'IT', 'L', 868, 842, 2.8, 330, 1410, 650000, 'a', 'p', 'Ferrari 296 GTB', 'A lightened, more powerful 296 GTB with active aero.', '296'],
   ['ferrari-f80', 'Ferrari', 'F80', '', 2025, 'IT', 'L', 1184, 850, 2.15, 350, 1525, 3000000, 'a', 'px', 'Ferrari F80', 'A 799-car flagship with a twin-turbo V6 hybrid and active aero.', 'F80'],
   ['ferrari-amalfi', 'Ferrari', 'Amalfi', '', 2024, 'IT', 'E', 631, 760, 3.3, 320, 1550, 260000, 's', 'ep', 'Ferrari Amalfi', 'A twin-turbo V8 coupé that replaces the Roma.', 'Amalfi'],
-  ['ferrari-california-t-handling-speciale', 'Ferrari', 'California T HS', '', 2016, 'IT', 'E', 552, 755, 3.6, 316, 1730, 110000, 's', 'ep', 'Ferrari California', 'A California T with a sharper suspension and steering.', 'California'],
 
   // ── Lamborghini ──
   ['lamborghini-huracan-lp580-2', 'Lamborghini', 'Huracán LP 580-2', '', 2016, 'IT', 'E', 572, 540, 3.4, 320, 1389, 150000, 'a', 'p', 'Lamborghini Huracán', 'A rear-wheel-drive Huracán with a lower price and a looser tail.', 'Hurac'],

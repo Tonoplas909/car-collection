@@ -44,7 +44,6 @@ export const ROWS_2B = [
   ['mercedes-glc63-s-coupe', 'Mercedes-Benz', 'GLC 63 S Coupé', 'C253', 2017, 'DE', 'E', 503, 700, 3.8, 250, 1900, 70000, 's', 'e', 'Mercedes-Benz GLC-Class', 'A V8 coupé SUV with a sloping roof.', 'GLC'],
   ['mercedes-eqs-amg-53', 'Mercedes-Benz', 'AMG EQS 53', 'V297', 2022, 'DE', 'E', 649, 950, 3.8, 250, 2600, 84000, 's', 'ex', 'Mercedes-Benz EQS', 'An electric luxury saloon with a huge Hyperscreen.', 'EQS'],
   ['mercedes-maybach-s680', 'Mercedes-Benz', 'Maybach S 680', 'Z223', 2021, 'DE', 'E', 612, 900, 4.5, 250, 2300, 190000, 's', 'e', 'Mercedes-Maybach S-Class', 'A V12 super-luxury limousine.', 'Maybach'],
-  ['mercedes-amg-gt-black-series-2020-coupe', 'Mercedes-Benz', 'AMG GT Black Series Coupe', 'C190', 2021, 'DE', 'L', 720, 800, 3.2, 325, 1630, 420000, 'a', 'p', 'Mercedes-AMG GT', 'A flat-plane-crank V8 and active aero, built as a tribute to the track.', 'Black Series'],
 
   // ── Audi ──
   ['audi-s3-8y', 'Audi', 'S3', '8Y', 2020, 'DE', 'R', 306, 400, 4.8, 250, 1495, 34000, 's', 'e', 'Audi A3 (8Y)', 'A 2.0 litre turbo all-wheel-drive hot hatch.', 'S3|8Y'],
@@ -82,7 +81,7 @@ export const ROWS_2B = [
   ['porsche-panamera-turbo-s-972', 'Porsche', 'Panamera Turbo S E-Hybrid', '972', 2024, 'DE', 'E', 630, 900, 3.1, 315, 2100, 130000, 's', 'ex', 'Porsche Panamera', 'A plug-in hybrid with active suspension and a 4.0 litre V8.', 'Panamera'],
   ['porsche-taycan-4s', 'Porsche', 'Taycan 4S', '', 2019, 'DE', 'R', 571, 650, 4.0, 250, 2220, 78000, 's', 'ex', 'Porsche Taycan', 'An electric four-door with 571 hp.', 'Taycan'],
   ['porsche-taycan-turbo-gt', 'Porsche', 'Taycan Turbo GT', '', 2024, 'DE', 'E', 1019, 1340, 2.2, 305, 2220, 260000, 'a', 'px', 'Porsche Taycan', 'A 1,019 hp Taycan that lapped the Nürburgring faster than any electric car at the time.', 'Turbo GT'],
-  ['porsche-cayenne-turbo-gt-rival', 'Porsche', 'Cayenne Coupé Turbo S E-Hybrid', '', 2023, 'DE', 'E', 670, 900, 3.8, 295, 2400, 110000, 's', 'e', 'Porsche Cayenne', 'A sloping-roof plug-in hybrid with 670 hp.', 'Cayenne'],
+  ['porsche-cayenne-coupe-turbo-s-e-hybrid', 'Porsche', 'Cayenne Coupé Turbo S E-Hybrid', '', 2023, 'DE', 'E', 670, 900, 3.8, 295, 2400, 110000, 's', 'e', 'Porsche Cayenne', 'A sloping-roof plug-in hybrid with 670 hp.', 'Cayenne'],
 
   // ── Jaguar / Land Rover ──
   ['jaguar-f-type-svr', 'Jaguar', 'F-Type SVR', 'X152', 2016, 'GB', 'E', 567, 700, 3.5, 322, 1720, 96000, 'a', 'p', 'Jaguar F-Type', 'A supercharged V8 coupé with an active exhaust and all-wheel drive.', 'SVR'],
