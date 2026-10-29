@@ -33,7 +33,7 @@ Un circuit est une liste de secteurs. Chaque secteur a un type (`straight`, `swe
 Trois valeurs dérivées des specs existantes, sans nouvelle donnée dans le catalogue :
 - **Accélération** `A` : formule actuelle `(3 + 18·hp/kg) · 1,6 · (1 + 0,02·niveau)`.
 - **Vitesse de pointe** `vmax` : `top / 3,6`.
-- **Tenue de route** `G` : de l'ordre de 0,75 à 1,2. Elle grandit quand la voiture est légère (`kg`) et quand elle est récente (pneus). Elle gagne 0,01 par niveau d'amélioration.
+- **Tenue de route** `G` : de 0,75 à 1,4. Elle grandit quand la voiture est légère (`kg`) et quand elle est récente (pneus). Elle gagne 0,01 par niveau d'amélioration.
 
 Le freinage `B` (m/s²) vaut `8 + 4·G`. Les constantes vivent dans une table unique pour pouvoir être réglées ; les tests fixent seulement l'ordre des résultats.
 
@@ -43,6 +43,7 @@ Pas fixe `DT = 1/120 s`, comme aujourd'hui. À chaque pas :
 2. Sans frein : `v += A · (1 − v/vmax) · DT`. Pendant un nitro : `A ×1,5`, `vmax ×1,04`.
 3. Frein maintenu : plus d'accélération, `v −= B · DT`.
 4. Dans un virage de vitesse cible `vc = vRef · G` : si `v > vc`, la voiture glisse, `v −= 6 · (v − vc) · DT` ; l'accélération est plafonnée à `vc`.
+   Au-dessus de 1,05 × la vitesse du virage à l'entrée, la voiture part en glissade : sa vitesse tombe à `vc · max(0,2 ; 1 − 2,5 · (r − 1,05))` et elle ne peut plus accélérer pendant 1,5 s par 0,5 d'excès (6 s au plus). Sans cette règle, freiner tard serait gratuit, parce que le frottement ci-dessus absorbe l'excès en une fraction de seconde.
 5. La distance avance de `v · DT`. La course finit à la ligne, avec interpolation du temps comme aujourd'hui.
 
 La boîte de vitesses est automatique ; l'écran garde une jauge de régime et un rapport affichés, calculés à partir de `v / vmax` (affichage seulement, sans effet sur la physique).

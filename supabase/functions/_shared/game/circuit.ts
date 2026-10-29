@@ -2,17 +2,25 @@
 // with `replayCircuit` from the brake and nitro steps the player submitted. Fixed step, no randomness.
 import { DT, type RaceCarSpec } from './race.ts'
 import { isCorner, trackLength, sectorStarts, type Track } from './tracks.ts'
-import type { Car } from './types.ts'
+import type { Car, Rng } from './types.ts'
 
 /** Every balance constant of the race model, in one place. */
 export const TUNING = {
   accelBase: 3, accelPower: 18, accelScale: 1.6, accelLevel: 0.02,
   /** Grip: lighter and more recent cars corner faster. */
-  gripBase: 0.75, gripLight: 0.35, gripRecent: 0.1, gripLevel: 0.01, gripMin: 0.75, gripMax: 1.25,
+  gripBase: 0.75, gripLight: 0.5, gripRecent: 0.1, gripLevel: 0.01, gripMin: 0.75, gripMax: 1.4,
   lightFromKg: 1900, lightSpanKg: 1500, recentFromYear: 1950, recentSpanYears: 75,
   brakeBase: 8, brakeGrip: 4,
   /** 1/s: how fast speed carried into a corner is scrubbed off */
   scrub: 6,
+  /**
+   * Entering a corner above 1.05 × its speed (r) is a slide: speed drops to vc · max(slideFloor, 1 − slide · (r − 1.05))
+   * and the car cannot accelerate for `slideSeconds` per `slideSpan` of excess, at most `slideMaxSeconds`. Without
+   * it, braking late would be free.
+   */
+  slide: 2.5, slideFloor: 0.2, slideSeconds: 1.5, slideSpan: 0.5, slideMaxSeconds: 6,
+  /** Autopilot: aims at this share of the corner speed (inside the Perfect window), off by up to `skill · aiError` */
+  aiTarget: 1.045, aiError: 4,
   gravity: 9.81,
 }
 
@@ -73,6 +81,8 @@ export interface CircuitState {
   nitroLeft: number
   /** Seconds of boost remaining */
   nitroT: number
+  /** Seconds left in a slide (no acceleration) */
+  slide: number
   top: number
   corners: CornerQuality[]
   /** Duration of each completed sector, seconds */
@@ -95,7 +105,7 @@ export class CircuitSim {
     this.length = trackLength(track)
     this.starts = sectorStarts(track)
     this.s = {
-      step: 0, t: 0, d: 0, v: 0, sector: 0, braking: false, nitroLeft: NITRO.charges, nitroT: 0, top: 0,
+      step: 0, t: 0, d: 0, v: 0, sector: 0, braking: false, nitroLeft: NITRO.charges, nitroT: 0, slide: 0, top: 0,
       corners: [], splits: [], finished: false, finishTime: 0,
     }
     this.enter(0)
@@ -103,7 +113,18 @@ export class CircuitSim {
 
   private enter(i: number) {
     const sec = this.track.sectors[i]
-    if (isCorner(sec)) this.s.corners.push(cornerQuality(this.s.v / (sec.vRef! * this.notes.G)))
+    if (!isCorner(sec)) return
+    const vc = sec.vRef! * this.notes.G
+    const r = this.s.v / vc
+    const joined = i > 0 && isCorner(this.track.sectors[i - 1])
+    const q = cornerQuality(r)
+    // Corners that follow each other leave no room to speed up, so entering slowly is not a mistake there.
+    this.s.corners.push(joined && q === 'Early' ? 'Perfect' : q)
+    if (r > 1.05) {
+      const x = r - 1.05
+      this.s.v = vc * Math.max(TUNING.slideFloor, 1 - TUNING.slide * x)
+      this.s.slide = Math.min(TUNING.slideMaxSeconds, (TUNING.slideSeconds * x) / TUNING.slideSpan)
+    }
   }
 
   step() {
@@ -118,13 +139,14 @@ export class CircuitSim {
     const vc = isCorner(sec) ? sec.vRef! * G : Infinity
     if (s.braking) {
       s.v -= B * DT
-    } else {
+    } else if (s.slide <= 0) {
       const a = A * (boosted ? NITRO.accel : 1) * Math.max(0, 1 - s.v / (vmax * (boosted ? NITRO.vmax : 1))) - TUNING.gravity * (sec.grade ?? 0)
       s.v = Math.min(s.v + a * DT, Math.max(s.v, vc))
     }
     if (s.v > vc) s.v -= TUNING.scrub * (s.v - vc) * DT
     s.v = Math.max(0, s.v)
     s.nitroT = Math.max(0, s.nitroT - DT)
+    s.slide = Math.max(0, s.slide - DT)
     s.d += s.v * DT
     s.top = Math.max(s.top, s.v)
 
@@ -156,13 +178,14 @@ export class CircuitSim {
 }
 
 /** Re-run a race from the steps at which the player braked and fired nitro (server-side verification). */
-export function replayCircuit(spec: RaceCarSpec, track: Track, inputs: RaceInputs): CircuitState {
+export function replayCircuit(spec: RaceCarSpec, track: Track, inputs: RaceInputs, onStep?: (s: CircuitState) => void): CircuitState {
   const sim = new CircuitSim(spec, track)
   let b = 0, n = 0
   while (!sim.s.finished && sim.s.step < MAX_STEPS) {
     while (b < inputs.brake.length && inputs.brake[b] <= sim.s.step) sim.setBrake(b++ % 2 === 0)
     while (n < inputs.nitro.length && inputs.nitro[n] <= sim.s.step) { n++; sim.useNitro() }
     sim.step()
+    onStep?.(sim.s)
   }
   return sim.s
 }
@@ -208,4 +231,29 @@ export class RaceInputRecorder {
   releaseAll() {
     this.release()
   }
+}
+
+/**
+ * Autopilot: the opponents' driver and the ideal line for tests and tuning. Per corner it picks a target
+ * entry speed off by up to `skill` (a fraction), brakes to reach it, and fires nitro on long sections.
+ */
+export function autoDrive(spec: RaceCarSpec, track: Track, rng: Rng, skill: number): RaceInputs {
+  const sim = new CircuitSim(spec, track)
+  const rec = new RaceInputRecorder(sim)
+  const starts = sectorStarts(track)
+  const { sectors } = track
+  const { G, B } = sim.notes
+  const entry = sectors.map(s => (isCorner(s) ? s.vRef! * G * TUNING.aiTarget * (1 + (rng() * 2 - 1) * skill * TUNING.aiError) : 0))
+  let boosted = -1
+  while (!sim.s.finished && sim.s.step < MAX_STEPS) {
+    const { sector, v, d } = sim.s
+    let j = sector + 1
+    while (j < sectors.length && !isCorner(sectors[j])) j++
+    if (j < sectors.length && v > entry[j] && starts[j] - d <= (v * v - entry[j] * entry[j]) / (2 * B)) rec.press()
+    else rec.release()
+    if (!isCorner(sectors[sector]) && sectors[sector].len >= 150 && boosted !== sector) { boosted = sector; rec.nitro() }
+    sim.step()
+  }
+  rec.releaseAll()
+  return rec.inputs
 }

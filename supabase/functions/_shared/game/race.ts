@@ -1,7 +1,9 @@
 // Race model from the design handoff. The client renders the race with `RaceSim`; the server
 // re-runs the same fixed-step simulation from the submitted shift steps to produce the result.
 
-export type RaceEventId = 'drag' | 'sprint' | 'run'
+import { TRACKS, trackLength, type TrackId } from './tracks.ts'
+
+export type RaceEventId = TrackId
 
 export interface RaceEvent {
   id: RaceEventId
@@ -15,11 +17,13 @@ export interface RaceEvent {
 }
 
 export const RACE_EVENTS: RaceEvent[] = [
-  { id: 'sprint', kind: 'Sprint', len: 800, place: 'Suzuka East straight', fee: 500, win: 2500, points: 120,
+  { id: 'sprint', kind: 'Sprint', len: trackLength(TRACKS.sprint), place: 'Suzuka East straight', fee: 500, win: 2500, points: 120,
     note: 'Medium length. Gearing and shift timing matter about as much as raw power.' },
-  { id: 'drag', kind: 'Drag', len: 402, place: 'Quarter mile, Santa Pod', fee: 300, win: 1500, points: 80,
+  { id: 'drag', kind: 'Drag', len: trackLength(TRACKS.drag), place: 'Quarter mile, Santa Pod', fee: 300, win: 1500, points: 80,
     note: 'Short and decided early. Light cars with strong low gears do well.' },
-  { id: 'run', kind: 'Highway run', len: 1600, place: 'Autobahn A9, closed section', fee: 1000, win: 6000, points: 220,
+  { id: 'touge', kind: 'Touge', len: trackLength(TRACKS.touge), place: 'Mount Haruna pass', fee: 700, win: 3800, points: 160,
+    note: 'Tight and uphill. Grip and braking beat horsepower.' },
+  { id: 'run', kind: 'Highway run', len: trackLength(TRACKS.run), place: 'Autobahn A9, closed section', fee: 1000, win: 6000, points: 220,
     note: 'Long enough for top speed to decide it. Perfect shifts still help.' },
 ]
 export const RACE_EVENTS_BY_ID = Object.fromEntries(RACE_EVENTS.map(e => [e.id, e])) as Record<RaceEventId, RaceEvent>

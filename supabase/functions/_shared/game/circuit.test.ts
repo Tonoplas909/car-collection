@@ -30,7 +30,7 @@ describe('car notes', () => {
       for (const level of [0, 5]) {
         const n = carNotes(raceSpec(car, level))
         expect(n.G).toBeGreaterThanOrEqual(0.75)
-        expect(n.G).toBeLessThanOrEqual(1.25)
+        expect(n.G).toBeLessThanOrEqual(1.4)
         expect(n.B).toBeGreaterThan(8)
         expect(n.A).toBeGreaterThan(0)
       }

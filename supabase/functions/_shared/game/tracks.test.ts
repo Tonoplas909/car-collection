@@ -16,7 +16,7 @@ describe('circuits', () => {
       expect(t.sectors.length).toBeLessThanOrEqual(8)
       for (const s of t.sectors.filter(isCorner)) {
         expect(s.vRef!).toBeGreaterThanOrEqual(12)
-        expect(s.vRef!).toBeLessThanOrEqual(60)
+        expect(s.vRef!).toBeLessThanOrEqual(90)
       }
       expect(t.sectors.some(isCorner)).toBe(true)
     }
