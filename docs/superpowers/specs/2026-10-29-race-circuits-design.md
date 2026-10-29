@@ -27,7 +27,7 @@ Remplacer la course actuelle (ligne droite, 5 appuis sur espace pour passer les 
 ## Règles de course
 
 ### Circuit
-Un circuit est une liste de secteurs. Chaque secteur a un type (`straight`, `sweeper`, `chicane`, `hairpin`, `climb`), une longueur en mètres et un angle de virage en degrés (0 sur une ligne droite). Les secteurs de virage ont une vitesse cible de référence `vRef` (m/s). Le circuit est une donnée dans `supabase/functions/_shared/game/tracks.ts`, un par épreuve.
+Un circuit est une liste de secteurs. Chaque secteur a un type (`straight`, `sweeper`, `chicane`, `hairpin`, `climb`), une longueur en mètres et un angle de virage en degrés (0 sur une ligne droite). Les secteurs de virage ont une vitesse cible de référence `vRef` (m/s). Un secteur peut avoir une pente `grade` (0,06 = 6 %, typique d'un `climb`) qui retire `9,81 · grade` m/s² à l'accélération. Chaque circuit déclare aussi les notes qu'il valorise (`focus`), affichées sur l'écran de préparation. Le circuit est une donnée dans `supabase/functions/_shared/game/tracks.ts`, un par épreuve.
 
 ### Notes d'une voiture
 Trois valeurs dérivées des specs existantes, sans nouvelle donnée dans le catalogue :
