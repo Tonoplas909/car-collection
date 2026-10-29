@@ -17,14 +17,14 @@ export interface RaceEvent {
 }
 
 export const RACE_EVENTS: RaceEvent[] = [
-  { id: 'sprint', kind: 'Sprint', len: trackLength(TRACKS.sprint), place: 'Suzuka East straight', fee: 500, win: 2500, points: 120,
-    note: 'Medium length. Gearing and shift timing matter about as much as raw power.' },
-  { id: 'drag', kind: 'Drag', len: trackLength(TRACKS.drag), place: 'Quarter mile, Santa Pod', fee: 300, win: 1500, points: 80,
-    note: 'Short and decided early. Light cars with strong low gears do well.' },
+  { id: 'sprint', kind: 'Circuit', len: trackLength(TRACKS.sprint), place: 'Suzuka East', fee: 500, win: 2500, points: 120,
+    note: 'A bit of everything: two fast bends, a chicane and a hairpin. The all-rounder wins.' },
+  { id: 'drag', kind: 'Drag', len: trackLength(TRACKS.drag), place: 'Santa Pod, launch loop', fee: 300, win: 1500, points: 80,
+    note: 'Short straights between hard stops. Power-to-weight and late braking decide it.' },
   { id: 'touge', kind: 'Touge', len: trackLength(TRACKS.touge), place: 'Mount Haruna pass', fee: 700, win: 3800, points: 160,
     note: 'Tight and uphill. Grip and braking beat horsepower.' },
   { id: 'run', kind: 'Highway run', len: trackLength(TRACKS.run), place: 'Autobahn A9, closed section', fee: 1000, win: 6000, points: 220,
-    note: 'Long enough for top speed to decide it. Perfect shifts still help.' },
+    note: 'Long straights and flat-out bends, with one chicane to brake for. Top speed decides it.' },
 ]
 export const RACE_EVENTS_BY_ID = Object.fromEntries(RACE_EVENTS.map(e => [e.id, e])) as Record<RaceEventId, RaceEvent>
 

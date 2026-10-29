@@ -47,11 +47,11 @@ function nextSaturday(now: number) {
 export function seedEvents(now: number): CalendarEvent[] {
   const sat = nextSaturday(now)
   return [
-    { id: 'e1', date: sat, name: 'Suzuka Sprint', rule: '800 m · JDM cars only', prize: 'Apex pack', eventId: 'sprint', fee: 500, featured: true },
-    { id: 'e2', date: sat + DAY, name: 'Monte Carlo Rally', rule: '1,600 m · Rally class', prize: '10,000 CR', eventId: 'run', fee: 1000, featured: false },
-    { id: 'e3', date: sat + 7 * DAY, name: 'Quarter Mile Night', rule: '402 m · Any car', prize: 'Rare car', eventId: 'drag', fee: 300, featured: false },
-    { id: 'e4', date: sat + 8 * DAY, name: 'Autobahn Run', rule: '1,600 m · Supercars', prize: 'Legendary pack', eventId: 'run', fee: 1000, featured: false },
-    { id: 'e5', date: sat + 14 * DAY, name: 'Classics Cup', rule: '800 m · Pre-1990', prize: 'Heritage pack', eventId: 'sprint', fee: 500, featured: false },
+    { id: 'e1', date: sat, name: 'Suzuka Sprint', rule: 'Circuit · JDM cars only', prize: 'Apex pack', eventId: 'sprint', fee: 500, featured: true },
+    { id: 'e2', date: sat + DAY, name: 'Monte Carlo Rally', rule: 'Highway · Rally class', prize: '10,000 CR', eventId: 'run', fee: 1000, featured: false },
+    { id: 'e3', date: sat + 7 * DAY, name: 'Quarter Mile Night', rule: 'Drag · Any car', prize: 'Rare car', eventId: 'drag', fee: 300, featured: false },
+    { id: 'e4', date: sat + 8 * DAY, name: 'Autobahn Run', rule: 'Highway · Supercars', prize: 'Legendary pack', eventId: 'run', fee: 1000, featured: false },
+    { id: 'e5', date: sat + 14 * DAY, name: 'Classics Cup', rule: 'Circuit · Pre-1990', prize: 'Heritage pack', eventId: 'sprint', fee: 500, featured: false },
   ]
 }
 

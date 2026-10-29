@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import {
-  CARS_BY_ID, DT, GEARS, OPPONENTS, RACE_EVENTS, RACE_EVENTS_BY_ID, RaceSim, SHIFT_WINDOW, TIER_RANK, calibrateOpponents,
-  type Car, type RaceEvent, type ShiftQuality,
+  CARS_BY_ID, CircuitSim, DT, MAX_RACE_SECONDS, NITRO, RACE_EVENTS, RACE_EVENTS_BY_ID, RaceInputRecorder, TIER_RANK, TRACKS,
+  carNotes, isCorner, opponentTraces, raceSpec, sectorStarts,
+  type Car, type CornerQuality, type Focus, type RaceEvent,
 } from '@game'
 import { GameError, topUpEnabled, type RaceResult } from '../api'
 import { Aside, Main, MobileHead } from '../components/Shell'
@@ -14,6 +15,14 @@ import { actions, getState, useApp, useSnapshot } from '../state/store'
 import './Race.css'
 
 const lenStr = (e: RaceEvent) => `${num(e.len)} m`
+const gripOf = (car: Car, level: number) => Math.round(carNotes(raceSpec(car, level)).G * 100)
+const FOCUS: Record<Focus, [string, string]> = {
+  accel: ['Acceleration', 'Power-to-weight'],
+  grip: ['Grip and braking', 'Light, recent cars'],
+  top: ['Top speed', 'Long straights'],
+}
+const SECTOR_NAME = { straight: 'Straight', sweeper: 'Fast bend', chicane: 'Chicane', hairpin: 'Hairpin', climb: 'Climb' } as const
+const kmh = (v: number) => Math.round(v * 3.6)
 
 /** Enter the selected race (charges the entry fee) and go to the live screen. */
 function useFindRace() {
@@ -88,7 +97,7 @@ function RaceSetupDesktop() {
       <Main>
         <div className="page-head">
           <span className="page-title">Race</span>
-          <span className="meta">4 players · matched by garage level</span>
+          <span className="meta">4 players · matched by rarity</span>
         </div>
         <div className="rc-step">1 · Event</div>
         <div className="split rc-events">
@@ -115,6 +124,7 @@ function RaceSetupDesktop() {
               <Spec k="Power" v={`${x.car.hp} hp`} />
               <Spec k="Weight" v={`${num(x.car.kg)} kg`} />
               <Spec k="hp / tonne" v={String(Math.round((x.car.hp / x.car.kg) * 1000))} />
+              <Spec k="Grip" v={String(gripOf(x.car, x.level))} />
             </div>
           ))}
         </div>
@@ -125,10 +135,10 @@ function RaceSetupDesktop() {
           <span className="mk">{car.make}</span>
           <span ref={title} className="model" style={{ fontSize: 40 }}>{car.model}</span>
         </div>
-        <div className="label" style={{ padding: '16px 24px 8px' }}>Opponents</div>
+        <div className="label" style={{ padding: '16px 24px 8px' }}>What counts</div>
         <div ref={opps} className="rc-opps">
-          {OPPONENTS.map(o => (
-            <div key={o.name}><span style={{ fontWeight: 600 }}>{o.name}</span><span className="muted" style={{ marginLeft: 'auto' }}>{o.car}</span></div>
+          {TRACKS[ev.id].focus.map(f => (
+            <div key={f}><span style={{ fontWeight: 600 }}>{FOCUS[f][0]}</span><span className="muted" style={{ marginLeft: 'auto' }}>{FOCUS[f][1]}</span></div>
           ))}
         </div>
         <div ref={rew} className="split rc-rewards">
@@ -176,7 +186,7 @@ function RaceSetupMobile() {
             <span style={{ alignSelf: 'stretch', background: TIER_BAR[x.car.tier] }} />
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span style={{ fontWeight: 800, fontSize: 15 }}><ModelName car={x.car} /></span>
-              <span className="muted" style={{ fontSize: 12 }}>{x.car.hp} hp · {num(x.car.kg)} kg · Lv {x.level}</span>
+              <span className="muted" style={{ fontSize: 12 }}>{x.car.hp} hp · {num(x.car.kg)} kg · grip {gripOf(x.car, x.level)} · Lv {x.level}</span>
             </div>
             <span style={{ paddingRight: 16, fontWeight: 800, fontSize: 13 }}>{Math.round((x.car.hp / x.car.kg) * 1000)} hp/t</span>
           </div>
@@ -197,8 +207,11 @@ function RaceSetupMobile() {
 type Phase = 'idle' | 'count' | 'race' | 'submitting' | 'done'
 
 interface View {
-  t: number; d: number; v: number; gear: number; rpm: number; quality: ShiftQuality | null
+  t: number; d: number; v: number; sector: number; braking: boolean; nitroLeft: number; nitroT: number; slide: number
 }
+
+const isBrakeKey = (code: string) => code === 'Space' || code === 'ArrowDown'
+const isNitroKey = (code: string) => code === 'KeyN' || code === 'ArrowUp'
 
 export function RaceLivePage() {
   const current = useApp(s => s.raceEntry)
@@ -207,20 +220,25 @@ export function RaceLivePage() {
   const [entry] = useState(current)
   if (!entry || !snap) return <Navigate to="/race" replace />
   const owned = snap.garage.find(g => g.carId === entry.carId)
-  return <LiveRace key={entry.raceId} car={CARS_BY_ID[entry.carId]} level={owned?.level ?? 0} ev={RACE_EVENTS_BY_ID[entry.eventId]} opponents={entry.opponents} />
+  return <LiveRace key={entry.raceId} raceId={entry.raceId} car={CARS_BY_ID[entry.carId]} level={owned?.level ?? 0} ev={RACE_EVENTS_BY_ID[entry.eventId]} />
 }
 
-function LiveRace({ car, level, ev, opponents }: { car: Car; level: number; ev: RaceEvent; opponents: { name: string; car: string }[] }) {
+function LiveRace({ raceId, car, level, ev }: { raceId: string; car: Car; level: number; ev: RaceEvent }) {
   const mobile = useIsMobile()
   const navigate = useWipeNavigate()
-  const spec = useMemo(() => ({ hp: car.hp, kg: car.kg, top: car.top, level, year: car.year }), [car, level])
-  const opps = useMemo(() => calibrateOpponents(spec, ev.len).map((o, i) => ({ ...o, name: opponents[i]?.name ?? o.name, car: opponents[i]?.car ?? o.car })), [spec, ev.len, opponents])
-  const sim = useRef(new RaceSim(spec, ev.len))
-  const shifts = useRef<number[]>([])
+  const track = TRACKS[ev.id]
+  const [sim] = useState(() => new CircuitSim(raceSpec(car, level), track))
+  const [rec] = useState(() => new RaceInputRecorder(sim))
+  const traces = useMemo(() => opponentTraces(raceId, car, ev.id), [raceId, car, ev.id])
+  const starts = useMemo(() => sectorStarts(track), [track])
   const phaseRef = useRef<Phase>('idle')
   const [phase, setPhase] = useState<Phase>('idle')
   const [count, setCount] = useState(3)
-  const [view, setView] = useState<View>({ t: 0, d: 0, v: 0, gear: 1, rpm: 0, quality: null })
+  const read = useCallback((): View => {
+    const s = sim.s
+    return { t: s.t, d: Math.min(ev.len, s.d), v: s.v, sector: s.sector, braking: s.braking, nitroLeft: s.nitroLeft, nitroT: s.nitroT, slide: s.slide }
+  }, [sim, ev.len])
+  const [view, setView] = useState<View>(read)
   const [result, setResult] = useState<RaceResult | null>(null)
   const [error, setError] = useState('')
   const raf = useRef(0)
@@ -230,19 +248,20 @@ function LiveRace({ car, level, ev, opponents }: { car: Car; level: number; ev: 
   const finish = useCallback(async () => {
     go('submitting')
     try {
-      const r = await actions.finishRace(shifts.current)
+      const r = await actions.finishRace(rec.inputs)
       setResult(r)
       go('done')
     } catch (e) {
       setError((e as Error).message)
       go('done')
     }
-  }, [])
+  }, [rec])
 
   const start = useCallback(() => {
     cancelAnimationFrame(raf.current)
     go('count')
     let last = performance.now(), cd = 3, acc = 0
+    const over = () => sim.s.finished || sim.s.t >= MAX_RACE_SECONDS
     const loop = (now: number) => {
       const dt = Math.min(0.05, (now - last) / 1000)
       last = now
@@ -252,57 +271,86 @@ function LiveRace({ car, level, ev, opponents }: { car: Car; level: number; ev: 
         else setCount(Math.ceil(cd))
       } else if (phaseRef.current === 'race') {
         acc += dt
-        const s = sim.current
-        while (acc >= DT && !s.s.finished) { s.step(); acc -= DT }
-        setView(v => ({ ...v, t: s.s.t, d: Math.min(ev.len, s.s.d), v: s.s.v, gear: s.s.gear, rpm: s.s.rpm }))
-        if (s.s.finished) { void finish(); return }
+        while (acc >= DT && !over()) { sim.step(); acc -= DT }
+        setView(read())
+        if (over()) { rec.releaseAll(); void finish(); return }
       }
       if (phaseRef.current === 'count' || phaseRef.current === 'race') raf.current = requestAnimationFrame(loop)
     }
     raf.current = requestAnimationFrame(loop)
-  }, [ev.len, finish])
+  }, [sim, rec, read, finish])
 
-  const shift = useCallback(() => {
-    if (phaseRef.current !== 'race') return
-    const s = sim.current
-    const step = s.s.step
-    const q = s.shift()
-    if (!q) return
-    shifts.current.push(step)
-    setView(v => ({ ...v, gear: s.s.gear, rpm: s.s.rpm, quality: q }))
-  }, [])
+  const press = useCallback(() => { if (phaseRef.current === 'race') { rec.press(); setView(read()) } }, [rec, read])
+  const release = useCallback(() => { rec.releaseAll(); setView(read()) }, [rec, read])
+  const nitro = useCallback(() => { if (phaseRef.current === 'race') { rec.nitro(); setView(read()) } }, [rec, read])
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.code === 'Space' && phaseRef.current === 'race') { e.preventDefault(); shift() } }
-    window.addEventListener('keydown', onKey)
-    return () => { window.removeEventListener('keydown', onKey); cancelAnimationFrame(raf.current) }
-  }, [shift])
+    const down = (e: KeyboardEvent) => {
+      if (!isBrakeKey(e.code) && !isNitroKey(e.code)) return
+      e.preventDefault()
+      if (e.repeat) return
+      if (isBrakeKey(e.code)) press()
+      else nitro()
+    }
+    const up = (e: KeyboardEvent) => { if (isBrakeKey(e.code)) release() }
+    window.addEventListener('keydown', down)
+    window.addEventListener('keyup', up)
+    window.addEventListener('blur', release)
+    return () => {
+      window.removeEventListener('keydown', down)
+      window.removeEventListener('keyup', up)
+      window.removeEventListener('blur', release)
+      cancelAnimationFrame(raf.current)
+    }
+  }, [press, release, nitro])
 
   const racing = phase === 'race' || phase === 'submitting' || phase === 'done'
   const tNow = racing ? view.t : 0
   const lanes = [
     { name: 'You', car: `${car.make} ${car.model}`, d: view.d, me: true, bar: TIER_BAR[car.tier] },
-    ...opps.map(o => ({ name: o.name, car: o.car, d: o.distanceAt(tNow), me: false, bar: 'var(--color-neutral-500)' })),
+    ...traces.map(o => ({ name: o.name, car: o.car, d: o.distanceAt(tNow), me: false, bar: 'var(--color-neutral-500)' })),
   ]
   const pos = [...lanes].sort((a, b) => b.d - a.d).findIndex(l => l.me) + 1
   const ticks = Array.from({ length: Math.ceil(ev.len / 100) - 1 }, (_, i) => ((i + 1) * 100) / ev.len * 100)
-  const rpmBg = view.rpm >= SHIFT_WINDOW.perfect ? 'var(--color-accent)' : view.rpm >= SHIFT_WINDOW.start ? 'var(--color-accent-600)' : 'var(--color-text)'
-  const hud = { pos: phase === 'idle' || phase === 'count' ? '—' : `${result?.place ?? pos} / 4`, time: seconds(tNow), togo: `${Math.max(0, Math.round(ev.len - view.d))} m` }
+  const gear = Math.min(6, 1 + Math.floor((view.v / sim.notes.vmax) * 6))
+  const hud = { pos: phase === 'idle' || phase === 'count' ? '—' : `${result?.place ?? pos} / 4`, time: seconds(tNow), sector: `${view.sector + 1} / ${track.sectors.length}` }
 
-  const overlay = phase === 'idle' ? { big: 'Ready', sub: 'Three opponents found. Press start, then shift up in the window.', fg: 'var(--color-text)', btn: 'Start race', act: start }
+  const here = track.sectors[view.sector]
+  const nextIdx = track.sectors.findIndex((s, i) => i > view.sector && isCorner(s))
+  const hint = phase !== 'race' ? ''
+    : view.slide > 0 ? 'Sliding: you carried too much speed into the corner.'
+    : isCorner(here) ? `${SECTOR_NAME[here.kind]} · target ${kmh(here.vRef! * sim.notes.G)} km/h`
+    : nextIdx >= 0 ? `Next: ${SECTOR_NAME[track.sectors[nextIdx].kind]} in ${Math.max(0, Math.round(starts[nextIdx] - view.d))} m · target ${kmh(track.sectors[nextIdx].vRef! * sim.notes.G)} km/h · you ${kmh(view.v)} km/h`
+    : 'Last straight. Use any nitro you have left.'
+
+  const overlay = phase === 'idle' ? { big: 'Ready', sub: 'Hold Brake (space) before corners and let go at the right speed. Tap Nitro (N) on exits.', fg: 'var(--color-text)', btn: 'Start race' }
     : phase === 'count' ? { big: String(count), sub: 'Get ready', fg: 'var(--color-text)' }
     : phase === 'submitting' ? { big: '…', sub: 'Checking times', fg: 'var(--color-text)' }
     : phase === 'done' ? (result
-      ? { big: `P${result.place}`, sub: `${seconds(result.time)} · ${result.place === 1 ? 'you won' : 'race over'}`, fg: result.place === 1 ? 'var(--color-accent)' : 'var(--color-text)', btn: 'See results', act: () => navigate('/race/results') }
-      : { big: '!', sub: error || 'The result could not be saved.', fg: 'var(--color-accent)', btn: 'Back to race setup', act: () => navigate('/race') })
+      ? { big: `P${result.place}`, sub: `${seconds(result.time)} · ${result.place === 1 ? 'you won' : 'race over'}`, fg: result.place === 1 ? 'var(--color-accent)' : 'var(--color-text)', btn: 'See results' }
+      : { big: '!', sub: error || 'The result could not be saved.', fg: 'var(--color-accent)', btn: 'Back to race setup' })
     : null
+  const onOverlay = () => {
+    if (phase === 'idle') start()
+    else if (phase === 'done') navigate(result ? '/race/results' : '/race')
+  }
+
+  const controls = (cls: string) => (
+    <div className={cls}>
+      <button className="lv-brake" data-braking={view.braking} disabled={phase !== 'race'}
+        onPointerDown={e => { e.preventDefault(); press() }} onPointerUp={release} onPointerCancel={release} onPointerLeave={release}
+        onContextMenu={e => e.preventDefault()}>Brake</button>
+      <button className="lv-nitro" disabled={phase !== 'race' || view.nitroLeft === 0 || view.nitroT > 0}
+        onPointerDown={e => { e.preventDefault(); nitro() }} onContextMenu={e => e.preventDefault()}>Nitro · {view.nitroLeft}</button>
+    </div>
+  )
 
   if (mobile) {
-    const btn = phase === 'race' ? { label: 'Shift up', act: shift } : overlay?.btn ? { label: overlay.btn, act: overlay.act! } : { label: overlay?.big ?? '', act: () => {} }
+    const playing = phase === 'race' || phase === 'count'
     return (
       <div className="mshell">
         <div className="lv-hud-m">
-          <Hud k="Position" v={hud.pos} /><Hud k="Time" v={hud.time} /><Hud k="To go" v={hud.togo} />
+          <Hud k="Position" v={hud.pos} /><Hud k="Time" v={hud.time} /><Hud k="Sector" v={hud.sector} />
         </div>
         <div className="lv-lanes-m">
           {lanes.map(l => {
@@ -323,17 +371,15 @@ function LiveRace({ car, level, ev, opponents }: { car: Car; level: number; ev: 
           {overlay && phase !== 'idle' && phase !== 'done' && <div className="lv-overlay-m"><span style={{ color: overlay.fg }}>{overlay.big}</span></div>}
         </div>
         <div className="lv-gauges-m">
-          <div><span className="label-sm">Speed</span><span className="lv-big-m tnum">{Math.round(view.v * 3.6)}</span><span className="lv-unit">km/h</span></div>
-          <div><span className="label-sm">Gear</span><span className="lv-big-m">{view.gear}</span><span className="lv-unit">of {GEARS}</span></div>
+          <div><span className="label-sm">Speed</span><span className="lv-big-m tnum">{kmh(view.v)}</span><span className="lv-unit">km/h</span></div>
+          <div><span className="label-sm">Gear</span><span className="lv-big-m">{gear}</span><span className="lv-unit">{view.nitroT > 0 ? 'nitro on' : `nitro ${view.nitroLeft} / ${NITRO.charges}`}</span></div>
         </div>
-        <div style={{ padding: '0 16px 12px', display: 'flex', flexDirection: 'column', gap: 6, flex: 'none' }}>
-          <RevBar rpm={view.rpm} bg={rpmBg} height={36} />
-          <span className="muted" style={{ fontSize: 11 }}>
-            {phase === 'idle' ? 'Press Start, then shift in the marked window' : phase === 'done' ? overlay?.sub : view.quality ? `${view.quality} shift` : 'Shift in the marked window'}
-          </span>
+        <div style={{ padding: '8px 16px 12px', flex: 'none' }}>
+          <span className="muted" style={{ fontSize: 12 }}>{phase === 'idle' || phase === 'done' ? overlay?.sub : hint}</span>
         </div>
         <div style={{ padding: '0 16px calc(16px + env(safe-area-inset-bottom))', flex: 'none' }}>
-          <button className="lv-shift-m" onClick={btn.act} disabled={phase === 'count' || phase === 'submitting'}>{btn.label}</button>
+          {playing ? controls('lv-controls-m')
+            : <button className="lv-shift-m" onClick={onOverlay} disabled={!overlay?.btn}>{overlay?.btn ?? overlay?.big}</button>}
         </div>
       </div>
     )
@@ -346,7 +392,7 @@ function LiveRace({ car, level, ev, opponents }: { car: Car; level: number; ev: 
           <span className="label">{ev.kind} · {ev.place}</span>
           <span style={{ fontWeight: 800, fontSize: 28, lineHeight: 1.1 }}><ModelName car={car} /></span>
         </div>
-        <Hud k="Position" v={hud.pos} /><Hud k="Time" v={hud.time} /><Hud k="To go" v={hud.togo} />
+        <Hud k="Position" v={hud.pos} /><Hud k="Time" v={hud.time} /><Hud k="Sector" v={hud.sector} />
       </div>
       <div className="lv-lanes">
         {lanes.map(l => {
@@ -369,24 +415,27 @@ function LiveRace({ car, level, ev, opponents }: { car: Car; level: number; ev: 
           <div className="lv-overlay">
             <span className="lv-overlay-big" style={{ color: overlay.fg }}>{overlay.big}</span>
             <span style={{ fontSize: 17, color: 'var(--color-neutral-800)' }}>{overlay.sub}</span>
-            {overlay.btn && <button className="btn btn-primary lv-start" onClick={overlay.act}>{overlay.btn}</button>}
+            {overlay.btn && <button className="btn btn-primary lv-start" onClick={onOverlay}>{overlay.btn}</button>}
           </div>
         )}
       </div>
+      <div className="lv-hint" data-slide={view.slide > 0}>{hint || ' '}</div>
       <div className="lv-bottom">
-        <div className="lv-gauge"><span className="label">Speed</span><span className="lv-big tnum">{Math.round(view.v * 3.6)}</span><span className="lv-unit">km/h</span></div>
-        <div className="lv-gauge"><span className="label">Gear</span><span className="lv-big">{view.gear}</span><span className="lv-unit">of {GEARS}</span></div>
+        <div className="lv-gauge"><span className="label">Speed</span><span className="lv-big tnum">{kmh(view.v)}</span><span className="lv-unit">km/h</span></div>
+        <div className="lv-gauge"><span className="label">Gear</span><span className="lv-big">{gear}</span><span className="lv-unit">automatic</span></div>
         <div className="lv-gauge" style={{ gap: 12 }}>
           <div className="label" style={{ display: 'flex' }}>
-            <span>Revs</span>
-            <span style={{ marginLeft: 'auto', fontWeight: 800, color: view.quality === 'Perfect' ? 'var(--color-accent-700)' : 'var(--color-text)' }}>{view.quality ? `${view.quality} shift` : ''}</span>
+            <span>Nitro</span>
+            <span style={{ marginLeft: 'auto', fontWeight: 800, color: view.nitroT > 0 ? 'var(--color-accent-700)' : 'var(--color-text)' }}>{view.nitroT > 0 ? 'Boosting' : `${view.nitroLeft} / ${NITRO.charges}`}</span>
           </div>
-          <RevBar rpm={view.rpm} bg={rpmBg} height={48} />
-          <div className="lv-rev-legend"><span>0</span><span>Shift window</span><span /></div>
+          <div className="lv-rev" style={{ height: 48 }}>
+            <span style={{ left: 0, width: `${(view.nitroT / NITRO.seconds) * 100}%`, background: 'var(--color-accent)' }} />
+          </div>
+          <div className="lv-rev-legend"><span>{view.braking ? 'Braking' : ' '}</span></div>
         </div>
         <div className="lv-gauge" style={{ gap: 10 }}>
-          <button className="btn btn-primary lv-shift" onClick={shift} disabled={phase !== 'race' || view.gear >= GEARS}>Shift up</button>
-          <span className="muted" style={{ fontSize: 12 }}>or press the space bar</span>
+          {controls('lv-controls')}
+          <span className="muted" style={{ fontSize: 12 }}>Brake: hold space · Nitro: N</span>
         </div>
       </div>
     </div>
@@ -395,16 +444,6 @@ function LiveRace({ car, level, ev, opponents }: { car: Car; level: number; ev: 
 
 function Hud({ k, v }: { k: string; v: string }) {
   return <div className="lv-hud"><span className="label">{k}</span><span className="lv-hud-v tnum">{v}</span></div>
-}
-
-function RevBar({ rpm, bg, height }: { rpm: number; bg: string; height: number }) {
-  return (
-    <div className="lv-rev" style={{ height }}>
-      <span style={{ left: `${SHIFT_WINDOW.start * 100}%`, width: `${(SHIFT_WINDOW.perfect - SHIFT_WINDOW.start) * 100}%`, background: 'var(--color-neutral-400)' }} />
-      <span style={{ left: `${SHIFT_WINDOW.perfect * 100}%`, right: 0, background: 'var(--color-accent-300)' }} />
-      <span style={{ left: 0, width: `${Math.round(rpm * 100)}%`, background: bg }} />
-    </div>
-  )
 }
 
 /* ── Results (5c, 6i) ───────────────────────────────────────────────── */
@@ -420,7 +459,8 @@ export function RaceResultsPage() {
   const won = result.place === 1
   const best = result.rows[0].time
   const headline = won ? 'You won.' : result.place === 2 ? 'So close.' : 'Not this time.'
-  const shiftsList: ShiftQuality[] | ['—'] = result.shifts.length ? result.shifts : ['—']
+  const cornersList: (CornerQuality | '—')[] = result.corners.length ? result.corners : ['—']
+  const perfect = result.corners.filter(q => q === 'Perfect').length
   const again = async () => {
     setBusy(true); setError('')
     try { actions.setRace({ eventId: result.eventId, carId: result.carId }); await actions.enterRace(); navigate('/race/live') }
@@ -484,8 +524,8 @@ export function RaceResultsPage() {
         <div className="split rs-stats">
           <div><span className="label">Your time</span><span className="tnum">{seconds(result.time)}</span></div>
           <div><span className="label">Top speed</span><span className="tnum">{Math.round(result.top * 3.6)} km/h</span></div>
-          <div><span className="label">Perfect shifts</span><span className="tnum">{result.shifts.filter(q => q === 'Perfect').length} / {result.shifts.length}</span></div>
-          <div><span className="label">Gear reached</span><span className="tnum">{result.shifts.length + 1}</span></div>
+          <div><span className="label">Perfect corners</span><span className="tnum">{perfect} / {result.corners.length}</span></div>
+          <div><span className="label">Nitro used</span><span className="tnum">{result.nitroUsed} / {NITRO.charges}</span></div>
         </div>
       </div>
       <aside className="rs-aside">
@@ -496,13 +536,19 @@ export function RaceResultsPage() {
           ))}
         </div>
         <div className="rs-shifts">
-          <span className="label">Shifts</span>
+          <span className="label">Corners</span>
           <div style={{ display: 'flex', gap: 4 }}>
-            {shiftsList.map((q, i) => {
+            {cornersList.map((q, i) => {
               const style = q === 'Perfect' ? { background: 'var(--color-accent)', color: 'var(--color-bg)' } : q === 'Late' ? { background: 'var(--color-text)', color: 'var(--color-bg)' } : { background: 'var(--color-neutral-200)', color: 'var(--color-text)' }
               return <span key={i} className="rs-shift" style={style}>{q}</span>
             })}
           </div>
+        </div>
+        <div className="rs-shifts">
+          <span className="label">Sector times</span>
+          {result.splits.map((t, i) => (
+            <div key={i} className="rs-reward" style={{ padding: '6px 0' }}><span style={{ fontSize: 14 }}>Sector {i + 1}</span><span className="tnum" style={{ fontSize: 16 }}>{seconds(t)}</span></div>
+          ))}
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8, padding: '16px 24px 24px', marginTop: 'auto' }}>
           {error && <span className="err">{error}</span>}

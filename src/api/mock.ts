@@ -1,6 +1,6 @@
 import {
-  CREDIT_BUNDLES, DUPLICATE_CREDITS, MAX_LEVEL, OPPONENTS, PACKS_BY_ID, RACE_EVENTS_BY_ID, SWAP_TTL_MS, XP_PER_LEVEL,
-  carLabel, getCar, rollPack, rollStarterPack, scoreRace, upgradeCost,
+  CREDIT_BUNDLES, DUPLICATE_CREDITS, MAX_LEVEL, PACKS_BY_ID, RACE_EVENTS_BY_ID, SWAP_TTL_MS, XP_PER_LEVEL,
+  carLabel, getCar, rollPack, rollStarterPack, scoreCircuitRace, upgradeCost,
   type OwnedCar, type PackId, type PackRoll, type RaceEventId,
 } from '@game'
 import { DEMO_EMAIL, LB_PLAYERS, demoSnapshot, newPlayerSnapshot } from './seed'
@@ -326,20 +326,21 @@ export const mockApi: GameApi = {
       spend(s, ev.fee)
       const raceId = id('r')
       db.races[raceId] = { eventId, carId, level: owned.level }
-      return { raceId, eventId, carId, opponents: OPPONENTS.map(o => ({ name: o.name, car: o.car })) }
+      return { raceId, eventId, carId }
     })
     return { snapshot: r.snapshot, entry: r.value }
   },
 
-  async finishRace(raceId, shiftSteps) {
+  async finishRace(raceId, inputs) {
     await tick()
     const r = mutate((s, db) => {
       const race = db.races[raceId]
       if (!race) throw new GameError('not_found', 'This race has already been scored.')
       delete db.races[raceId]
       const ev = RACE_EVENTS_BY_ID[race.eventId], car = getCar(race.carId)
-      const spec = { hp: car.hp, kg: car.kg, top: car.top, level: race.level, year: car.year }
-      const { rows, place, time, top, shifts, rewards } = scoreRace(spec, ev, shiftSteps, { name: `You · ${s.user.username}`, car: `${car.make} ${carLabel(car)}` })
+      const { rows, place, time, top, corners, splits, nitroUsed, rewards } = scoreCircuitRace({
+        raceId, car, level: race.level, eventId: race.eventId, inputs, player: { name: `You · ${s.user.username}` },
+      })
       s.user.credits += rewards.credits
       addXp(s, rewards.xp)
       s.stats.racesRun++
@@ -348,7 +349,7 @@ export const mockApi: GameApi = {
       s.activity.unshift(place === 1
         ? { at: Date.now(), verb: 'Won', what: `a ${ev.kind.toLowerCase()} at ${ev.place} in the ${carLabel(car)}` }
         : { at: Date.now(), verb: `Finished P${place}`, what: `in a ${ev.kind.toLowerCase()} at ${ev.place}` })
-      return { raceId, eventId: race.eventId, carId: race.carId, rows, place, time, top, shifts, rewards } satisfies RaceResult
+      return { raceId, eventId: race.eventId, carId: race.carId, rows, place, time, top, corners, splits, nitroUsed, rewards } satisfies RaceResult
     })
     return { snapshot: r.snapshot, result: r.value }
   },

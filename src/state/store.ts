@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from 'react'
-import type { PackId, RaceEventId, TasteId } from '@game'
+import type { PackId, RaceEventId, RaceInputs, TasteId } from '@game'
 import { api, type PackOpening, type RaceEntry, type RaceResult, type Settings, type Snapshot } from '../api'
 
 export interface AppState {
@@ -125,10 +125,10 @@ export const actions = {
     setState({ snapshot, raceEntry: entry, raceResult: null })
     return entry
   },
-  async finishRace(shiftSteps: number[]) {
+  async finishRace(inputs: RaceInputs) {
     const entry = state.raceEntry
     if (!entry) throw new Error('No race in progress')
-    const { snapshot, result } = await api.finishRace(entry.raceId, shiftSteps)
+    const { snapshot, result } = await api.finishRace(entry.raceId, inputs)
     setState({ snapshot, raceResult: result, raceEntry: null })
     return result
   },

@@ -117,7 +117,7 @@ export function createSupabaseApi(url: string, key: string): GameApi {
     setShowcase: carIds => rpc('set_showcase', { p_cars: carIds }),
 
     enterRace: (eventId, carId) => rpc<{ snapshot: Snapshot; entry: RaceEntry }>('enter_race', { p_event: eventId, p_car: carId }),
-    finishRace: (raceId, shiftSteps) => invoke<{ snapshot: Snapshot; result: RaceResult }>('races', { raceId, shiftSteps }),
+    finishRace: (raceId, inputs) => invoke<{ snapshot: Snapshot; result: RaceResult }>('races', { raceId, inputs }),
 
     async topUp() {
       // Credit purchases need a payment provider (checkout + webhook that credits the account).

@@ -1,4 +1,4 @@
-import type { OwnedCar, PackId, Pull, RaceEventId, RaceRewards, RaceRow, ShiftQuality, TasteId, Tier } from '@game'
+import type { CornerQuality, OwnedCar, PackId, Pull, RaceEventId, RaceInputs, RaceRewards, RaceRow, TasteId, Tier } from '@game'
 
 export interface Settings {
   sound: boolean
@@ -112,7 +112,6 @@ export interface RaceEntry {
   raceId: string
   eventId: RaceEventId
   carId: string
-  opponents: { name: string; car: string }[]
 }
 
 export interface RaceResult {
@@ -124,7 +123,10 @@ export interface RaceResult {
   time: number
   /** m/s */
   top: number
-  shifts: ShiftQuality[]
+  corners: CornerQuality[]
+  /** Duration of each sector, seconds */
+  splits: number[]
+  nitroUsed: number
   rewards: RaceRewards
 }
 
@@ -191,7 +193,7 @@ export interface GameApi {
   setShowcase(carIds: string[]): Promise<Snapshot>
 
   enterRace(eventId: RaceEventId, carId: string): Promise<{ snapshot: Snapshot; entry: RaceEntry }>
-  finishRace(raceId: string, shiftSteps: number[]): Promise<{ snapshot: Snapshot; result: RaceResult }>
+  finishRace(raceId: string, inputs: RaceInputs): Promise<{ snapshot: Snapshot; result: RaceResult }>
 
   topUp(bundleId: string): Promise<Snapshot>
   saveProfile(input: { username: string; email: string; region: string; settings: Settings }): Promise<Snapshot>
