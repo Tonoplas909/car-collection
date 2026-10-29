@@ -13998,7 +13998,9 @@
     ],
     "wiki": "Toyota Yaris (XP210)",
     "reviewed": false,
-    "photoMatch": "XP210|Yaris"
+    "photoMatch": "XP210|Yaris",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2020%20Toyota%20Yaris%20Design%20HEV%20CVT%201.5%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "toyota-corolla-e210-hybrid",
@@ -14025,7 +14027,9 @@
     ],
     "wiki": "Toyota Corolla (E210)",
     "reviewed": false,
-    "photoMatch": "E210|Corolla"
+    "photoMatch": "E210|Corolla",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2018%20Toyota%20Corolla%20%28MZEA12R%29%20Ascent%20Sport%20hatchback%20%282018-11-02%29%2001.jpg?width=800",
+    "photoCredit": "EurovisionNim · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "toyota-prius-xw50",
@@ -14052,7 +14056,9 @@
     ],
     "wiki": "Toyota Prius (XW50)",
     "reviewed": false,
-    "photoMatch": "XW50|Prius"
+    "photoMatch": "XW50|Prius",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2018%20Toyota%20Prius%20Excel%20VVT-i%20CVT%201.8.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "toyota-rav4-xa50-hybrid",
@@ -14079,7 +14085,9 @@
     ],
     "wiki": "Toyota RAV4 (XA50)",
     "reviewed": false,
-    "photoMatch": "XA50|RAV4"
+    "photoMatch": "XA50|RAV4",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2024%20Toyota%20RAV4%20Prime%20XSE%20Premium%20in%20Silver%20Sky%20with%20Midnight%20Black%20roof%2C%20front%20left.jpg?width=800",
+    "photoCredit": "Mr.choppers · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "toyota-bz4x",
@@ -14134,7 +14142,9 @@
     ],
     "wiki": "Toyota Hilux",
     "reviewed": false,
-    "photoMatch": "Hilux"
+    "photoMatch": "Hilux",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2016%20Toyota%20HiLux%20Invincible%20D-4D%204WD%202.4%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "toyota-land-cruiser-300",
@@ -14161,7 +14171,9 @@
     ],
     "wiki": "Toyota Land Cruiser (J300)",
     "reviewed": false,
-    "photoMatch": "J300|Land Cruiser 300"
+    "photoMatch": "J300|Land Cruiser 300",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2021%20Toyota%20Land%20Cruiser%20300%203.4%20ZX%20%28Colombia%29%20front%20view%2004.png?width=800",
+    "photoCredit": "Autosdeprimera · CC BY 3.0 · Wikimedia Commons"
   },
   {
     "id": "toyota-gr-yaris-rally1",
@@ -14188,7 +14200,9 @@
     ],
     "wiki": "Toyota GR Yaris Rally1",
     "reviewed": false,
-    "photoMatch": "Rally1"
+    "photoMatch": "Rally1",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Kalle%20Rovanper%C3%A4%20Rally%20Finland%202025%20Ouninpohja%20%28cropped%29.jpg?width=800",
+    "photoCredit": "Antti Leppänen · CC BY 4.0 · Wikimedia Commons"
   },
   {
     "id": "lexus-rc-f-track-edition",
@@ -14215,7 +14229,9 @@
     ],
     "wiki": "Lexus RC F",
     "reviewed": false,
-    "photoMatch": "Track"
+    "photoMatch": "Track",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2018%20Lexus%20RC%20300h%20F%20Sport%20LSS%2B%20CVT%202.5.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "lexus-is-500-f-sport-performance",
@@ -14242,7 +14258,9 @@
     ],
     "wiki": "Lexus IS",
     "reviewed": false,
-    "photoMatch": "IS ?500"
+    "photoMatch": "IS ?500",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2021%20Lexus%20IS300%20F-Sport%2C%20Front%20Left%2C%2010-10-2021.jpg?width=800",
+    "photoCredit": "Elise240SX · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "lexus-lc-500-convertible",
@@ -14269,7 +14287,9 @@
     ],
     "wiki": "Lexus LC",
     "reviewed": false,
-    "photoMatch": "LC ?500"
+    "photoMatch": "LC ?500",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2023%20Lexus%20LC500%20in%20Atomic%20Silver%2C%20front%20left.jpg?width=800",
+    "photoCredit": "Mr.choppers · CC BY-SA 3.0 · Wikimedia Commons"
   },
   {
     "id": "lexus-lx-600",
@@ -14296,7 +14316,9 @@
     ],
     "wiki": "Lexus LX",
     "reviewed": false,
-    "photoMatch": "LX ?600"
+    "photoMatch": "LX ?600",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2018%20Lexus%20LX%20570%20%28facelift%29%2C%20front%203.24.23.jpg?width=800",
+    "photoCredit": "Kevauto · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "honda-e",
@@ -14324,7 +14346,9 @@
     ],
     "wiki": "Honda e",
     "reviewed": false,
-    "photoMatch": "Honda e"
+    "photoMatch": "Honda e",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Honda%20e%20Advance%20%E2%80%93%20f%2018102020.jpg?width=800",
+    "photoCredit": "© M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "honda-civic-type-r-fk8-limited",
@@ -14378,7 +14402,9 @@
     ],
     "wiki": "Honda Civic (tenth generation)",
     "reviewed": false,
-    "photoMatch": "FK7|Civic"
+    "photoMatch": "FK7|Civic",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2017%20Honda%20Civic%20SR%20VTEC%201.0%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "honda-nsx-type-s",
@@ -14405,7 +14431,9 @@
     ],
     "wiki": "Honda NSX (second generation)",
     "reviewed": false,
-    "photoMatch": "Type ?S|NSX"
+    "photoMatch": "Type ?S|NSX",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Honda%2C%20Paris%20Motor%20Show%202018%2C%20Paris%20%281Y7A1625%29%20%28cropped%29.jpg?width=800",
+    "photoCredit": "Matti Blume · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "honda-n-box",
@@ -14432,7 +14460,9 @@
     ],
     "wiki": "Honda N-Box",
     "reviewed": false,
-    "photoMatch": "N-?Box"
+    "photoMatch": "N-?Box",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Honda%20N-BOX%20%286BA-JF5%29.jpg?width=800",
+    "photoCredit": "Tokumeigakarinoaoshima · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "honda-n-one-rs",
@@ -14459,7 +14489,9 @@
     ],
     "wiki": "Honda N-One",
     "reviewed": false,
-    "photoMatch": "N-?One"
+    "photoMatch": "N-?One",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Honda%20N-One%20G-L%20Package%2C%20front%20left.jpg?width=800",
+    "photoCredit": "DY5W-sport · CC BY-SA 3.0 · Wikimedia Commons"
   },
   {
     "id": "honda-fit-gk5",
@@ -14486,7 +14518,9 @@
     ],
     "wiki": "Honda Fit",
     "reviewed": false,
-    "photoMatch": "GK|Fit"
+    "photoMatch": "GK|Fit",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Honda%20Jazz%20Hybrid%20Executive%20%28IV%29%20%E2%80%93%20f%2018102020.jpg?width=800",
+    "photoCredit": "© M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "honda-s660-modulo-x",
@@ -14513,7 +14547,9 @@
     ],
     "wiki": "Honda S660",
     "reviewed": false,
-    "photoMatch": "S660"
+    "photoMatch": "S660",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2015%20Honda%20S660.jpg?width=800",
+    "photoCredit": "User3204 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "mazda2-dj",
@@ -14540,7 +14576,9 @@
     ],
     "wiki": "Mazda2",
     "reviewed": false,
-    "photoMatch": "Mazda ?2|DJ"
+    "photoMatch": "Mazda ?2|DJ",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2021%20Mazda2%20GT%20Sport%20NAV%20MHEV%201.5%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "mazda3-bp-skyactiv-x",
@@ -14567,7 +14605,9 @@
     ],
     "wiki": "Mazda3",
     "reviewed": false,
-    "photoMatch": "BP|Mazda ?3"
+    "photoMatch": "BP|Mazda ?3",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mazda3%20SKYACTIV-G.jpg?width=800",
+    "photoCredit": "TTTNIS · CC0 · Wikimedia Commons"
   },
   {
     "id": "mazda-cx-5-turbo",
@@ -14594,7 +14634,9 @@
     ],
     "wiki": "Mazda CX-5",
     "reviewed": false,
-    "photoMatch": "CX-?5"
+    "photoMatch": "CX-?5",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2024%20Mazda%20CX-5%202.5%20S%20Select%20in%20Platinum%20Quartz%20Metallic%2C%20front%20right.jpg?width=800",
+    "photoCredit": "Mr.choppers · CC BY-SA 3.0 · Wikimedia Commons"
   },
   {
     "id": "mazda-mx-30",
@@ -14622,7 +14664,9 @@
     ],
     "wiki": "Mazda MX-30",
     "reviewed": false,
-    "photoMatch": "MX-?30"
+    "photoMatch": "MX-?30",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2021%20Mazda%20MX-30%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "mazda-mx5-nd-2",
@@ -14704,7 +14748,9 @@
     ],
     "wiki": "Subaru WRX",
     "reviewed": false,
-    "photoMatch": "VB|WRX"
+    "photoMatch": "VB|WRX",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2022%20Subaru%20WRX%20Sport-Tech%20in%20World%20Rally%20Blue%20Pearl%2C%20Front%20Left%2C%2006-03-2022.jpg?width=800",
+    "photoCredit": "Elise240SX · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "subaru-wrx-sti-s209",
@@ -14787,7 +14833,9 @@
     ],
     "wiki": "Subaru Levorg",
     "reviewed": false,
-    "photoMatch": "Levorg"
+    "photoMatch": "Levorg",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2014-2017%20Subaru%20Levorg%20GT-S%20EyeSight.jpg?width=800",
+    "photoCredit": "TTTNIS · CC0 · Wikimedia Commons"
   },
   {
     "id": "subaru-solterra",
@@ -14843,7 +14891,9 @@
     ],
     "wiki": "Mitsubishi Lancer Evolution X",
     "reviewed": false,
-    "photoMatch": "Final"
+    "photoMatch": "Final",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2008%20Mitsubishi%20Lancer%20Evolution%20X.jpg?width=800",
+    "photoCredit": "IFCAR · Public domain · Wikimedia Commons"
   },
   {
     "id": "mitsubishi-outlander-phev",
@@ -14871,7 +14921,9 @@
     ],
     "wiki": "Mitsubishi Outlander PHEV",
     "reviewed": false,
-    "photoMatch": "Outlander"
+    "photoMatch": "Outlander",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2025%20Mitsubishi%20Outlander%20PHEV%20%28fourth%20generation%29%20IMG%203129.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "suzuki-ignis",
@@ -14898,7 +14950,9 @@
     ],
     "wiki": "Suzuki Ignis",
     "reviewed": false,
-    "photoMatch": "Ignis"
+    "photoMatch": "Ignis",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2018%20Suzuki%20Ignis%20SZ5%20SHVS%20Allgrip%201.2%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "suzuki-vitara-s",
@@ -14925,7 +14979,9 @@
     ],
     "wiki": "Suzuki Vitara",
     "reviewed": false,
-    "photoMatch": "Vitara"
+    "photoMatch": "Vitara",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2018%20Suzuki%20Vitara%20%28LY%29%20S%20Turbo%20wagon%20%282018-11-02%29%2001.jpg?width=800",
+    "photoCredit": "EurovisionNim · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "suzuki-alto-works",
@@ -14952,7 +15008,9 @@
     ],
     "wiki": "Suzuki Alto",
     "reviewed": false,
-    "photoMatch": "Alto"
+    "photoMatch": "Alto",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1994-1997%20Suzuki%20Alto.jpg?width=800",
+    "photoCredit": "TTTNIS · Public domain · Wikimedia Commons"
   },
   {
     "id": "suzuki-jimny-sierra",
@@ -14979,7 +15037,9 @@
     ],
     "wiki": "Suzuki Jimny",
     "reviewed": false,
-    "photoMatch": "Jimny"
+    "photoMatch": "Jimny",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2019%20Suzuki%20Jimny%20SZ5%204X4%20Automatic%201.5.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "daihatsu-copen-gr-sport",
@@ -15006,7 +15066,9 @@
     ],
     "wiki": "Daihatsu Copen",
     "reviewed": false,
-    "photoMatch": "Copen"
+    "photoMatch": "Copen",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Daihatsu%20Copen%20Robe.jpg?width=800",
+    "photoCredit": "TTTNIS · CC0 · Wikimedia Commons"
   },
   {
     "id": "nissan-leaf-ze1",
@@ -15059,7 +15121,9 @@
     ],
     "wiki": "Nissan Micra",
     "reviewed": false,
-    "photoMatch": "Micra"
+    "photoMatch": "Micra",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2015%20Nissan%20Micra%20SR%20in%20Brilliant%20Silver%2C%20front%20right%2C%202024-10-11.jpg?width=800",
+    "photoCredit": "Elise240SX · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "nissan-ariya-e-4orce",
@@ -15086,7 +15150,9 @@
     ],
     "wiki": "Nissan Ariya",
     "reviewed": false,
-    "photoMatch": "Ariya"
+    "photoMatch": "Ariya",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2023%20Nissan%20Ariya%20Advance%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "nissan-370z-2014",
@@ -15113,7 +15179,9 @@
     ],
     "wiki": "Nissan 370Z",
     "reviewed": false,
-    "photoMatch": "370Z"
+    "photoMatch": "370Z",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2012-2017%20Nissan%20Fairlady%20Z.jpg?width=800",
+    "photoCredit": "TTTNIS · CC0 · Wikimedia Commons"
   },
   {
     "id": "nissan-z-nismo-rz34",
@@ -15140,7 +15208,9 @@
     ],
     "wiki": "Nissan Z (RZ34)",
     "reviewed": false,
-    "photoMatch": "Nismo"
+    "photoMatch": "Nismo",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Nissan%20FAIRLADY%20Z%20%28Z34%29%20Version%20ST%2C%202022%2C%20left-front.jpg?width=800",
+    "photoCredit": "Kazyakuruma · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "nissan-gt-r-nismo-special",
@@ -15221,7 +15291,9 @@
     ],
     "wiki": "Nissan Juke",
     "reviewed": false,
-    "photoMatch": "Juke"
+    "photoMatch": "Juke",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Nissan%20Juke%20%28F16%29%20IMG%204903.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "nissan-gt-r50-italdesign",
@@ -15302,7 +15374,9 @@
     ],
     "wiki": "Hyundai Veloster",
     "reviewed": false,
-    "photoMatch": "Veloster"
+    "photoMatch": "Veloster",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2019%20Hyundai%20Veloster%20Turbo%20in%20Ignite%20Flame%2C%20Front%20Left%2C%2006-26-2022.jpg?width=800",
+    "photoCredit": "Elise240SX · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "hyundai-elantra-n",
@@ -15329,7 +15403,9 @@
     ],
     "wiki": "Hyundai Elantra",
     "reviewed": false,
-    "photoMatch": "Elantra"
+    "photoMatch": "Elantra",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2023%20Hyundai%20Elantra%20Limited%20in%20Silver%2C%20front%20left%2C%2004-04-2026.jpg?width=800",
+    "photoCredit": "Cutlass · CC0 · Wikimedia Commons"
   },
   {
     "id": "hyundai-ioniq-5-n",
@@ -15357,7 +15433,9 @@
     ],
     "wiki": "Hyundai Ioniq 5 N",
     "reviewed": false,
-    "photoMatch": "Ioniq ?5"
+    "photoMatch": "Ioniq ?5",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hyundai%20Ioniq%205%20AWD%20Techniq-Paket%20%E2%80%93%20f%2031122024.jpg?width=800",
+    "photoCredit": "© M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "hyundai-ioniq-6",
@@ -15384,7 +15462,9 @@
     ],
     "wiki": "Hyundai Ioniq 6",
     "reviewed": false,
-    "photoMatch": "Ioniq ?6"
+    "photoMatch": "Ioniq ?6",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2023%20Hyundai%20Ioniq%206%20Limited%2C%20front%204.27.23.jpg?width=800",
+    "photoCredit": "Kevauto · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "genesis-g70-33t",
@@ -15410,7 +15490,9 @@
     ],
     "wiki": "Genesis G70",
     "reviewed": false,
-    "photoMatch": "G70"
+    "photoMatch": "G70",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2022%20Genesis%20G70%202.0T%20Prestige%2C%20front%20left%2C%2009-09-2023.jpg?width=800",
+    "photoCredit": "MercurySable99 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "genesis-gv60-performance",
@@ -15437,7 +15519,9 @@
     ],
     "wiki": "Genesis GV60",
     "reviewed": false,
-    "photoMatch": "GV60"
+    "photoMatch": "GV60",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Genesis%20GV60%201X7A5760.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "kia-ev6-gt",
@@ -15464,7 +15548,9 @@
     ],
     "wiki": "Kia EV6",
     "reviewed": false,
-    "photoMatch": "EV6"
+    "photoMatch": "EV6",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2021%20Kia%20EV6%20GT-Line%20S.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "kia-ceed-gt",
@@ -15490,7 +15576,9 @@
     ],
     "wiki": "Kia Ceed",
     "reviewed": false,
-    "photoMatch": "Ceed"
+    "photoMatch": "Ceed",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2018%20Kia%20Ceed%20First%20Edition%201.4%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "kia-picanto-gt-line",
@@ -15516,7 +15604,9 @@
     ],
     "wiki": "Kia Picanto",
     "reviewed": false,
-    "photoMatch": "Picanto"
+    "photoMatch": "Picanto",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2018%20Kia%20Picanto%203%20Automatic%201.2%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "hyundai-i10-n-line",
@@ -15542,7 +15632,9 @@
     ],
     "wiki": "Hyundai i10",
     "reviewed": false,
-    "photoMatch": "i10"
+    "photoMatch": "i10",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hyundai%20i10%201.0%20Intro%20%28III%29%20%E2%80%93%20f%2003012021.jpg?width=800",
+    "photoCredit": "© M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "ford-fiesta-st-mk8",
@@ -15568,7 +15660,9 @@
     ],
     "wiki": "Ford Fiesta (seventh generation)",
     "reviewed": false,
-    "photoMatch": "Mk ?8|ST"
+    "photoMatch": "Mk ?8|ST",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2017%20Ford%20Fiesta%20Zetec%201.1%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "ford-focus-st-mk3",
@@ -15594,7 +15688,9 @@
     ],
     "wiki": "Ford Focus ST",
     "reviewed": false,
-    "photoMatch": "Focus ST"
+    "photoMatch": "Focus ST",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2018%20Ford%20Focus%20ST-Line%20X%201.0.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "ford-focus-st-mk4",
@@ -15620,7 +15716,9 @@
     ],
     "wiki": "Ford Focus (fourth generation)",
     "reviewed": false,
-    "photoMatch": "Focus ST"
+    "photoMatch": "Focus ST",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2018%20Ford%20Focus%20Titanium%20X%201.0.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "ford-puma-st",
@@ -15646,7 +15744,9 @@
     ],
     "wiki": "Ford Puma (2019)",
     "reviewed": false,
-    "photoMatch": "Puma"
+    "photoMatch": "Puma",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2020%20Ford%20Puma%20Titanium%20EcoBoost%20Hybrid%201.0%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "ford-mustang-ecoboost-s550",
@@ -15672,7 +15772,9 @@
     ],
     "wiki": "Ford Mustang (sixth generation)",
     "reviewed": false,
-    "photoMatch": "S550|Mustang"
+    "photoMatch": "S550|Mustang",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2019%20Ford%20Mustang%20GT%205.0%20facelift.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "ford-mustang-bullitt-2018",
@@ -15855,7 +15957,9 @@
     ],
     "wiki": "Ford Ranger Raptor",
     "reviewed": false,
-    "photoMatch": "Raptor"
+    "photoMatch": "Raptor",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ford%20Ranger%202.0%20EcoBlue%204WD%20Wildtrak%20X%20%28IV%29%20%E2%80%93%20f%2012102024.jpg?width=800",
+    "photoCredit": "© M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "ford-f150-raptor",
@@ -15881,7 +15985,9 @@
     ],
     "wiki": "Ford F-Series (thirteenth generation)",
     "reviewed": false,
-    "photoMatch": "Raptor"
+    "photoMatch": "Raptor",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2016%20Ford%20F-150%20XL%20SuperCab%204x2%20with%20XL%20Sport%20Package%2C%20front%20right%2C%2007-09-2023.jpg?width=800",
+    "photoCredit": "MercurySable99 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "ford-f150-raptor-r",
@@ -15907,7 +16013,9 @@
     ],
     "wiki": "Ford F-Series (fourteenth generation)",
     "reviewed": false,
-    "photoMatch": "Raptor ?R"
+    "photoMatch": "Raptor ?R",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2021%20Ford%20F-150%20SuperCrew%2C%20front%204.28.21.jpg?width=800",
+    "photoCredit": "Kevauto · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "ford-f150-lightning",
@@ -15934,7 +16042,9 @@
     ],
     "wiki": "Ford F-150 Lightning",
     "reviewed": false,
-    "photoMatch": "Lightning"
+    "photoMatch": "Lightning",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2022%20Ford%20F-150%20Lightning%20Lariat%20in%20Atlas%20Blue%20Metallic%2C%20Front%20Right%2C%2008-06-2022.jpg?width=800",
+    "photoCredit": "Elise240SX · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "ford-bronco-2021",
@@ -16013,7 +16123,9 @@
     ],
     "wiki": "Ford Mustang Mach-E",
     "reviewed": false,
-    "photoMatch": "Mach-?E"
+    "photoMatch": "Mach-?E",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2021%20Ford%20Mustang%20Mach-E%20Standard%20Range%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "chevrolet-corvette-c7-stingray",
@@ -16222,7 +16334,9 @@
     ],
     "wiki": "Chevrolet Bolt",
     "reviewed": false,
-    "photoMatch": "Bolt"
+    "photoMatch": "Bolt",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2022%20Chevrolet%20Bolt%20EV%202LT%2C%20NYC%20official%20fleet%201.2.23.jpg?width=800",
+    "photoCredit": "Kevauto · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "cadillac-ct4-v-blackwing",
@@ -16248,7 +16362,9 @@
     ],
     "wiki": "Cadillac CT4",
     "reviewed": false,
-    "photoMatch": "CT4"
+    "photoMatch": "CT4",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2023%20Cadillac%20CT4%20Luxury%2B%20in%20Summit%20White%2C%20front%20left.jpg?width=800",
+    "photoCredit": "Mr.choppers · CC BY-SA 3.0 · Wikimedia Commons"
   },
   {
     "id": "cadillac-escalade-v",
@@ -16274,7 +16390,9 @@
     ],
     "wiki": "Cadillac Escalade",
     "reviewed": false,
-    "photoMatch": "Escalade"
+    "photoMatch": "Escalade",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2026%20Cadillac%20Escalade%20ESV.jpg?width=800",
+    "photoCredit": "BuickCentury04 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "cadillac-celestiq",
@@ -16301,7 +16419,9 @@
     ],
     "wiki": "Cadillac Celestiq",
     "reviewed": false,
-    "photoMatch": "Celestiq"
+    "photoMatch": "Celestiq",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2025%20Cadillac%20Celestiq%20%22Vale%22%2C%20front%20right%20%28Greenwich%202025%29.jpg?width=800",
+    "photoCredit": "Mr.choppers · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "dodge-charger-scat-pack",
@@ -16509,7 +16629,9 @@
     ],
     "wiki": "Dodge Durango",
     "reviewed": false,
-    "photoMatch": "Durango"
+    "photoMatch": "Durango",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2021%20Dodge%20Durango%20GT%20%28facelift%29%2C%20front%206.21.22.jpg?width=800",
+    "photoCredit": "Kevauto · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "jeep-grand-cherokee-trackhawk",
@@ -16535,7 +16657,9 @@
     ],
     "wiki": "Jeep Grand Cherokee (WK2)",
     "reviewed": false,
-    "photoMatch": "Trackhawk"
+    "photoMatch": "Trackhawk",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2012%20Jeep%20Grand%20Cherokee%20%28WK2%20MY12%29%20Laredo%20CRD%204WD%20wagon%20%282012-10-26%29%2001.jpg?width=800",
+    "photoCredit": "OSX · Public domain · Wikimedia Commons"
   },
   {
     "id": "jeep-wrangler-rubicon-392",
@@ -16613,7 +16737,9 @@
     ],
     "wiki": "Ram 1500 TRX",
     "reviewed": false,
-    "photoMatch": "TRX"
+    "photoMatch": "TRX",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2021-22%20RAM%201500%20TRX.jpg?width=800",
+    "photoCredit": "Carlito714 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "hennessey-exorcist-camaro",
@@ -16666,7 +16792,9 @@
     ],
     "wiki": "Rivian R1T",
     "reviewed": false,
-    "photoMatch": "R1T"
+    "photoMatch": "R1T",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2022%20Rivian%20R1T%20%28in%20Glacier%20White%29%2C%20front%206.21.22.jpg?width=800",
+    "photoCredit": "Kevauto · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "rivian-r1s",
@@ -16693,7 +16821,9 @@
     ],
     "wiki": "Rivian R1S",
     "reviewed": false,
-    "photoMatch": "R1S"
+    "photoMatch": "R1S",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2023%20Rivian%20R1S%20Adventure%2C%20front%201.29.23.jpg?width=800",
+    "photoCredit": "Kevauto · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "lucid-air-grand-touring",
@@ -16774,7 +16904,9 @@
     ],
     "wiki": "Tesla Model 3",
     "reviewed": false,
-    "photoMatch": "Model 3"
+    "photoMatch": "Model 3",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tesla%20Model%203%20%282023%29%20Autofr%C3%BChling%20Ulm%20IMG%209282.jpg?width=800",
+    "photoCredit": "Alexander-93 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "tesla-model-y-performance",
@@ -16801,7 +16933,9 @@
     ],
     "wiki": "Tesla Model Y",
     "reviewed": false,
-    "photoMatch": "Model Y"
+    "photoMatch": "Model Y",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tesla%20Model%20Y%20Premium%20%28Facelift%29%20%E2%80%93%20f%2005052026.jpg?width=800",
+    "photoCredit": "© M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "tesla-model-s-p100d",
@@ -16855,7 +16989,9 @@
     ],
     "wiki": "Tesla Model X",
     "reviewed": false,
-    "photoMatch": "Model X"
+    "photoMatch": "Model X",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2017%20Tesla%20Model%20X%20100D%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "tesla-cybertruck-cyberbeast",
@@ -16882,7 +17018,9 @@
     ],
     "wiki": "Tesla Cybertruck",
     "reviewed": false,
-    "photoMatch": "Cybertruck"
+    "photoMatch": "Cybertruck",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2024%20Tesla%20Cybertruck%20Foundation%20Series%2C%20front%20left%20%28Greenwich%29.jpg?width=800",
+    "photoCredit": "Mr.choppers · CC BY-SA 3.0 · Wikimedia Commons"
   },
   {
     "id": "polestar-2-performance",
@@ -16909,7 +17047,9 @@
     ],
     "wiki": "Polestar 2",
     "reviewed": false,
-    "photoMatch": "Polestar ?2"
+    "photoMatch": "Polestar ?2",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Polestar%202%20%E2%80%93%20f%2002042021.jpg?width=800",
+    "photoCredit": "© M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "polestar-3",
@@ -16936,7 +17076,9 @@
     ],
     "wiki": "Polestar 3",
     "reviewed": false,
-    "photoMatch": "Polestar ?3"
+    "photoMatch": "Polestar ?3",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Polestar%203%20Auto%20Zuerich%202023%201X7A1307.jpg?width=800",
+    "photoCredit": "Alexander-93 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "volvo-s60-polestar-engineered",
@@ -16962,7 +17104,9 @@
     ],
     "wiki": "Volvo S60",
     "reviewed": false,
-    "photoMatch": "Polestar"
+    "photoMatch": "Polestar",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Volvo%20S60%20%283rd%20generation%29%20IMG%208468.jpg?width=800",
+    "photoCredit": "Alexander-93 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "mini-cooper-s-f56",
@@ -17041,7 +17185,9 @@
     ],
     "wiki": "Mini Electric",
     "reviewed": false,
-    "photoMatch": "Electric|SE"
+    "photoMatch": "Electric|SE",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mini%20Hatch%20%28F56%29%20Electric%20IMG%202679.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "mini-countryman-jcw",
@@ -17067,7 +17213,9 @@
     ],
     "wiki": "Mini Countryman (F60)",
     "reviewed": false,
-    "photoMatch": "Countryman"
+    "photoMatch": "Countryman",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2018%20Mini%20Countryman%20Cooper%20S%202.0%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "mini-clubman-jcw",
@@ -17355,7 +17503,9 @@
     ],
     "wiki": "Volkswagen Arteon",
     "reviewed": false,
-    "photoMatch": "Arteon"
+    "photoMatch": "Arteon",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2018%20Volkswagen%20Arteon%202.0.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "vw-tiguan-r",
@@ -17381,7 +17531,9 @@
     ],
     "wiki": "Volkswagen Tiguan",
     "reviewed": false,
-    "photoMatch": "Tiguan"
+    "photoMatch": "Tiguan",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Volkswagen%20Tiguan%20III%20IMG%208823%20%28cropped%29.jpg?width=800",
+    "photoCredit": "Alexander-93 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "vw-t-roc-r",
@@ -17407,7 +17559,9 @@
     ],
     "wiki": "Volkswagen T-Roc",
     "reviewed": false,
-    "photoMatch": "T-?Roc"
+    "photoMatch": "T-?Roc",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/VW%20T-Roc%201.5%20eTSI%20Style%20%28II%29%20%E2%80%93%20f%2005052026.jpg?width=800",
+    "photoCredit": "© M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "vw-id3",
@@ -17434,7 +17588,9 @@
     ],
     "wiki": "Volkswagen ID.3",
     "reviewed": false,
-    "photoMatch": "ID\\.?3"
+    "photoMatch": "ID\\.?3",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2020%20Volkswagen%20ID.3%201st%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "vw-id4-gtx",
@@ -17461,7 +17617,9 @@
     ],
     "wiki": "Volkswagen ID.4",
     "reviewed": false,
-    "photoMatch": "ID\\.?4"
+    "photoMatch": "ID\\.?4",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2025%20Volkswagen%20ID4%20Pro%20Redspot%20front.jpg?width=800",
+    "photoCredit": "LuvsMG481 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "vw-id-buzz",
@@ -17488,7 +17646,9 @@
     ],
     "wiki": "Volkswagen ID. Buzz",
     "reviewed": false,
-    "photoMatch": "Buzz"
+    "photoMatch": "Buzz",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Volkswagen%20ID.%20Buzz%201X7A6263.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "vw-id-r",
@@ -17514,7 +17674,9 @@
     ],
     "wiki": "Volkswagen I.D. R",
     "reviewed": false,
-    "photoMatch": "ID\\.? ?R"
+    "photoMatch": "ID\\.? ?R",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Volkswagen%20I.D.%20R%20Pikes%20Peak%20at%20IAA%202019%20IMG%200313.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "vw-amarok-v6",
@@ -17540,7 +17702,9 @@
     ],
     "wiki": "Volkswagen Amarok",
     "reviewed": false,
-    "photoMatch": "Amarok"
+    "photoMatch": "Amarok",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/VW%20Amarok%203.0%20TDI%204Motion%20Style%20%28II%29%20%E2%80%93%20f%2005072025.jpg?width=800",
+    "photoCredit": "© M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "skoda-octavia-rs-5e",
@@ -17566,7 +17730,9 @@
     ],
     "wiki": "Škoda Octavia RS",
     "reviewed": false,
-    "photoMatch": "Octavia"
+    "photoMatch": "Octavia",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Skoda%20Octavia%20IV%20liftback%20%28cropped%29.jpg?width=800",
+    "photoCredit": "Mike-fiesta · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "skoda-kodiaq-rs",
@@ -17592,7 +17758,9 @@
     ],
     "wiki": "Škoda Kodiaq",
     "reviewed": false,
-    "photoMatch": "Kodiaq"
+    "photoMatch": "Kodiaq",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/%C5%A0koda%20Kodiaq%20II%20IMG%209825.jpg?width=800",
+    "photoCredit": "Alexander-93 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "skoda-enyaq-rs",
@@ -17619,7 +17787,9 @@
     ],
     "wiki": "Škoda Enyaq iV",
     "reviewed": false,
-    "photoMatch": "Enyaq"
+    "photoMatch": "Enyaq",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/%C5%A0koda%20Enyaq%20IMG%201190.jpg?width=800",
+    "photoCredit": "Alexander-93 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "skoda-fabia-rs-rally2",
@@ -17673,7 +17843,9 @@
     ],
     "wiki": "Škoda Fabia R5",
     "reviewed": false,
-    "photoMatch": "R5"
+    "photoMatch": "R5",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Rajd%20Polski%20-%202018%20Miko%C5%82aj%20Marczyk%2001.jpg?width=800",
+    "photoCredit": "Makary · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "cupra-leon-vz",
@@ -17699,7 +17871,9 @@
     ],
     "wiki": "Cupra León",
     "reviewed": false,
-    "photoMatch": "Le[oó]n"
+    "photoMatch": "Le[oó]n",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2020%20SEAT%20Leon%20FR%20TSi%20Evo%201.5%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "cupra-born",
@@ -17726,7 +17900,9 @@
     ],
     "wiki": "Cupra Born",
     "reviewed": false,
-    "photoMatch": "Born"
+    "photoMatch": "Born",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cupra%20Born%20%E2%80%93%20f%2003042026.jpg?width=800",
+    "photoCredit": "© M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "cupra-ateca",
@@ -17752,7 +17928,9 @@
     ],
     "wiki": "Cupra Ateca",
     "reviewed": false,
-    "photoMatch": "Ateca"
+    "photoMatch": "Ateca",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2017%20SEAT%20Ateca%20Xcellence%201.4%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "vauxhall-corsa-vxr-e",
@@ -17804,7 +17982,9 @@
     ],
     "wiki": "Opel Insignia",
     "reviewed": false,
-    "photoMatch": "Insignia"
+    "photoMatch": "Insignia",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Opel%20Insignia%20Sports%20Tourer%201.5%20DIT%20Innovation%20%28B%29%20%E2%80%93%20Frontansicht%2C%2012.%20Mai%202017%2C%20D%C3%BCsseldorf.jpg?width=800",
+    "photoCredit": "© M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "opel-corsa-e",
@@ -17857,7 +18037,9 @@
     ],
     "wiki": "Peugeot 308",
     "reviewed": false,
-    "photoMatch": "308"
+    "photoMatch": "308",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2022%20-%20Peugeot%20308%20III%20%28C%29%20-%20121.jpg?width=800",
+    "photoCredit": "A.BourgeoisP · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "peugeot-508-pse",
@@ -17884,7 +18066,9 @@
     ],
     "wiki": "Peugeot 508",
     "reviewed": false,
-    "photoMatch": "508"
+    "photoMatch": "508",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2019%20Peugeot%20508%20GT-Line%20BlueHDi%201.5%20%28130%20PS%29%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "peugeot-e-208",
@@ -17911,7 +18095,9 @@
     ],
     "wiki": "Peugeot 208",
     "reviewed": false,
-    "photoMatch": "208"
+    "photoMatch": "208",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Peugeot%20208%20PureTech%20130%20EAT8%20Allure%20GT-Line%20%28II%29%20%E2%80%93%20f%2017102021.jpg?width=800",
+    "photoCredit": "© M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "citroen-ami",
@@ -17938,7 +18124,9 @@
     ],
     "wiki": "Citroën Ami",
     "reviewed": false,
-    "photoMatch": "Ami"
+    "photoMatch": "Ami",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ami%20%286066400260%29.jpg?width=800",
+    "photoCredit": "allen watkin from London, UK · CC BY-SA 2.0 · Wikimedia Commons"
   },
   {
     "id": "citroen-c4-cactus",
@@ -17964,7 +18152,9 @@
     ],
     "wiki": "Citroën C4 Cactus",
     "reviewed": false,
-    "photoMatch": "Cactus"
+    "photoMatch": "Cactus",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Citroen%20C4%20Cactus%20%282018%29%20IMG%204062.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "citroen-e-mehari",
@@ -17991,7 +18181,9 @@
     ],
     "wiki": "Citroën E-Méhari",
     "reviewed": false,
-    "photoMatch": "M[eé]hari"
+    "photoMatch": "M[eé]hari",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Citro%C3%ABn%20E-M%C3%A9hari.jpg?width=800",
+    "photoCredit": "JoachimKohler-HB · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "renault-clio-v",
@@ -18017,7 +18209,9 @@
     ],
     "wiki": "Renault Clio V",
     "reviewed": false,
-    "photoMatch": "Clio"
+    "photoMatch": "Clio",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Renault%20Clio%20%28V%2C%20Facelift%29%20%E2%80%93%20f%2002092025.jpg?width=800",
+    "photoCredit": "© M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "renault-megane-rs-280",
@@ -18096,7 +18290,9 @@
     ],
     "wiki": "Renault Mégane E-Tech Electric",
     "reviewed": false,
-    "photoMatch": "E-?Tech"
+    "photoMatch": "E-?Tech",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Renault%20M%C3%A9gane%20E-Tech%20IMG%204064.jpg?width=800",
+    "photoCredit": "Alexander-93 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "renault-zoe-ze50",
@@ -18123,7 +18319,9 @@
     ],
     "wiki": "Renault Zoe",
     "reviewed": false,
-    "photoMatch": "Zoe"
+    "photoMatch": "Zoe",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Renault%20Zoe%20R110%20Z.E.%2050%20Experience%20%28Facelift%29%20%E2%80%93%20f%2022112020.jpg?width=800",
+    "photoCredit": "© M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "renault-twingo-iii-gt",
@@ -18149,7 +18347,9 @@
     ],
     "wiki": "Renault Twingo",
     "reviewed": false,
-    "photoMatch": "Twingo"
+    "photoMatch": "Twingo",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Renault%20Twingo%20Dynamique%20%28III%29%20%E2%80%93%20Frontansicht%2C%2024.%20Oktober%202015%2C%20M%C3%BCnster.jpg?width=800",
+    "photoCredit": "M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "renault-5-e-tech",
@@ -18281,7 +18481,9 @@
     ],
     "wiki": "Dacia Sandero",
     "reviewed": false,
-    "photoMatch": "Sandero"
+    "photoMatch": "Sandero",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2023%20Dacia%20Sandero%20III%20DSC%206012.jpg?width=800",
+    "photoCredit": "Alexander-93 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "dacia-duster-ii",
@@ -18307,7 +18509,9 @@
     ],
     "wiki": "Dacia Duster",
     "reviewed": false,
-    "photoMatch": "Duster"
+    "photoMatch": "Duster",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Dacia%20Duster%20TCe%20130%20Extreme%20%28III%29%20%E2%80%93%20f%2013102024.jpg?width=800",
+    "photoCredit": "© M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "dacia-spring",
@@ -18387,7 +18591,9 @@
     ],
     "wiki": "Fiat Panda",
     "reviewed": false,
-    "photoMatch": "Panda"
+    "photoMatch": "Panda",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2018%20Fiat%20Panda%20Easy%201.2.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "abarth-695-biposto",
@@ -18413,7 +18619,9 @@
     ],
     "wiki": "Abarth 695",
     "reviewed": false,
-    "photoMatch": "Biposto|695"
+    "photoMatch": "Biposto|695",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1970%20Fiat%20500%20L%20--%202011%20DC%201.jpg?width=800",
+    "photoCredit": "IFCAR · Public domain · Wikimedia Commons"
   },
   {
     "id": "abarth-124-spider",
@@ -18492,7 +18700,9 @@
     ],
     "wiki": "Alfa Romeo Giulia (952)",
     "reviewed": false,
-    "photoMatch": "Giulia"
+    "photoMatch": "Giulia",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Alfa%20952%2026.06.19%20JM%20%281%29%20%28cropped%29.jpg?width=800",
+    "photoCredit": "Johannes Maximilian · GFDL 1.2 · Wikimedia Commons"
   },
   {
     "id": "alfa-romeo-tonale",
@@ -18518,7 +18728,9 @@
     ],
     "wiki": "Alfa Romeo Tonale",
     "reviewed": false,
-    "photoMatch": "Tonale"
+    "photoMatch": "Tonale",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2023-AR-Tonale-01%20%28bearb%20Sp%202%29.jpg?width=800",
+    "photoCredit": "Matthias v.d. Elbe · CC BY 4.0 · Wikimedia Commons"
   },
   {
     "id": "alfa-romeo-junior-veloce",
@@ -18572,7 +18784,9 @@
     ],
     "wiki": "BYD Han",
     "reviewed": false,
-    "photoMatch": "Han"
+    "photoMatch": "Han",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2023%20BYD%20Han%20DM-i%20%28facelift%29%2C%20front%208.17.23.jpg?width=800",
+    "photoCredit": "Kevauto · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "byd-seal",
@@ -18599,7 +18813,9 @@
     ],
     "wiki": "BYD Seal",
     "reviewed": false,
-    "photoMatch": "Seal"
+    "photoMatch": "Seal",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2022%20BYD%20Seal.jpg?width=800",
+    "photoCredit": "User3204 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "byd-atto-3",
@@ -18626,7 +18842,9 @@
     ],
     "wiki": "BYD Atto 3",
     "reviewed": false,
-    "photoMatch": "Atto"
+    "photoMatch": "Atto",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/BYD%20Atto%203%201X7A6491.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "byd-dolphin",
@@ -18653,7 +18871,9 @@
     ],
     "wiki": "BYD Dolphin",
     "reviewed": false,
-    "photoMatch": "Dolphin"
+    "photoMatch": "Dolphin",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2021%20BYD%20Dolphin%20EV%20%28front%29.jpg?width=800",
+    "photoCredit": "User3204 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "xiaomi-su7-max",
@@ -18734,7 +18954,9 @@
     ],
     "wiki": "Zeekr 001",
     "reviewed": false,
-    "photoMatch": "Zeekr"
+    "photoMatch": "Zeekr",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2022%20Zeekr%20001%20%28front%29.jpg?width=800",
+    "photoCredit": "User3204 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "nio-et7",
@@ -18761,7 +18983,9 @@
     ],
     "wiki": "NIO ET7",
     "reviewed": false,
-    "photoMatch": "ET7"
+    "photoMatch": "ET7",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/NIO%20ET7%201X7A6679%20%28cropped%29.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "mg-cyberster",
@@ -18788,7 +19012,9 @@
     ],
     "wiki": "MG Cyberster",
     "reviewed": false,
-    "photoMatch": "Cyberster"
+    "photoMatch": "Cyberster",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2024%20MG%20Cyberster.jpg?width=800",
+    "photoCredit": "MrWalkr · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "mg4-xpower",
@@ -18815,7 +19041,9 @@
     ],
     "wiki": "MG4 EV",
     "reviewed": false,
-    "photoMatch": "MG4"
+    "photoMatch": "MG4",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/MG4%20Electric%20%E2%80%93%20f%2021042025.jpg?width=800",
+    "photoCredit": "© M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "wuling-hongguang-mini-ev",
@@ -18842,7 +19070,9 @@
     ],
     "wiki": "Wuling Hongguang Mini EV",
     "reviewed": false,
-    "photoMatch": "Mini EV|Hongguang"
+    "photoMatch": "Mini EV|Hongguang",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2022%20Wuling%20Hongguang%20Mini%20EV%20GameBoy%20Edition%20%28front%29.jpg?width=800",
+    "photoCredit": "User3204 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "mahindra-thar-2020",
@@ -18868,7 +19098,9 @@
     ],
     "wiki": "Mahindra Thar",
     "reviewed": false,
-    "photoMatch": "Thar"
+    "photoMatch": "Thar",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mahindra%20Thar%20SUV%20in%20%22Red%20Rage%22%20color%20at%20Ashiana%20Brahmanda%2C%20East%20Singbhum%20India%20%28Ank%20Kumar%2C%20Infosys%20limited%29%2002%20%28cropped%29.jpg?width=800",
+    "photoCredit": "Ank Kumar · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "lada-niva-legend",
@@ -18894,7 +19126,9 @@
     ],
     "wiki": "Lada Niva",
     "reviewed": false,
-    "photoMatch": "Niva"
+    "photoMatch": "Niva",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1987%20Lada%20Niva%201600.jpg?width=800",
+    "photoCredit": "TTTNIS · Public domain · Wikimedia Commons"
   },
   {
     "id": "lada-vesta",
@@ -18920,7 +19154,9 @@
     ],
     "wiki": "Lada Vesta",
     "reviewed": false,
-    "photoMatch": "Vesta"
+    "photoMatch": "Vesta",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2024%20Lada%20Vesta%20sedan%20white%20front.jpg?width=800",
+    "photoCredit": "Throwawayacc222 · CC0 · Wikimedia Commons"
   },
   {
     "id": "aurus-senat",
@@ -18946,7 +19182,9 @@
     ],
     "wiki": "Aurus Senat",
     "reviewed": false,
-    "photoMatch": "Senat"
+    "photoMatch": "Senat",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Aurus%20Senat%20Genf%202019%201Y7A5897.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "togg-t10x",
@@ -18973,7 +19211,9 @@
     ],
     "wiki": "Togg T10X",
     "reviewed": false,
-    "photoMatch": "Togg|T10X"
+    "photoMatch": "Togg|T10X",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Togg%20T10X%20Grey.jpg?width=800",
+    "photoCredit": "Metuboy · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "hsv-gts-vf-ii",
@@ -18999,7 +19239,9 @@
     ],
     "wiki": "HSV GTS",
     "reviewed": false,
-    "photoMatch": "GTS"
+    "photoMatch": "GTS",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2010%20HSV%20GTS%20%28E%20Series%203%20MY11%29%20sedan%2001.jpg?width=800",
+    "photoCredit": "OSX · Public domain · Wikimedia Commons"
   },
   {
     "id": "fpv-gt-f",
@@ -19025,7 +19267,9 @@
     ],
     "wiki": "Ford Falcon GT",
     "reviewed": false,
-    "photoMatch": "Falcon|GT"
+    "photoMatch": "Falcon|GT",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/10%20Tango%20Code%20K%20Sed%2068S%2021H%3D%3D.JPG?width=800",
+    "photoCredit": "Sicnag · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "hsv-gtsr-w1",
@@ -19077,7 +19321,9 @@
     ],
     "wiki": "BMW 1 Series (F40)",
     "reviewed": false,
-    "photoMatch": "F40|M135"
+    "photoMatch": "F40|M135",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2019%20BMW%20118i%20SE%201.5%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "bmw-m140i-f20",
@@ -19103,7 +19349,9 @@
     ],
     "wiki": "BMW 1 Series (F20)",
     "reviewed": false,
-    "photoMatch": "M140|F20"
+    "photoMatch": "M140|F20",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/BMW%20118i%20Urban%20Line%20%28F20%29%20%E2%80%93%20Frontansicht%2C%2010.%20M%C3%A4rz%202012%2C%20D%C3%BCsseldorf.jpg?width=800",
+    "photoCredit": "M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "bmw-m240i-f22",
@@ -19129,7 +19377,9 @@
     ],
     "wiki": "BMW 2 Series (F22)",
     "reviewed": false,
-    "photoMatch": "M240|F22"
+    "photoMatch": "M240|F22",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2014-2018%20BMW%20M235i%20%28F22%29%20coupe%20%282018-07-30%29%2001.jpg?width=800",
+    "photoCredit": "EurovisionNim · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "bmw-m340i-g20",
@@ -19155,7 +19405,9 @@
     ],
     "wiki": "BMW 3 Series (G20)",
     "reviewed": false,
-    "photoMatch": "G20|M340"
+    "photoMatch": "G20|M340",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2019%20BMW%20318d%20SE%20Automatic%202.0%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "bmw-m2-competition-f87",
@@ -19441,7 +19693,9 @@
     ],
     "wiki": "BMW X3 (G01)",
     "reviewed": false,
-    "photoMatch": "X3"
+    "photoMatch": "X3",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/BMW%20G45%2020%20IMG%203794.jpg?width=800",
+    "photoCredit": "Alexander-93 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "bmw-x5-m-competition",
@@ -19467,7 +19721,9 @@
     ],
     "wiki": "BMW X5 (G05)",
     "reviewed": false,
-    "photoMatch": "X5 ?M"
+    "photoMatch": "X5 ?M",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/BMW%20G05%2045e%20IMG%203714.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "bmw-xm",
@@ -19494,7 +19750,9 @@
     ],
     "wiki": "BMW XM",
     "reviewed": false,
-    "photoMatch": "XM"
+    "photoMatch": "XM",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/BMW%20XM%20%28G09%29%20IMG%207778.jpg?width=800",
+    "photoCredit": "Alexander-93 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "bmw-i4-m50",
@@ -19521,7 +19779,9 @@
     ],
     "wiki": "BMW i4",
     "reviewed": false,
-    "photoMatch": "i4"
+    "photoMatch": "i4",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/BMW%20i4%20IMG%206695.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "bmw-ix-m60",
@@ -19548,7 +19808,9 @@
     ],
     "wiki": "BMW iX",
     "reviewed": false,
-    "photoMatch": "iX"
+    "photoMatch": "iX",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/BMW%20iX%20IAA%202021%201X7A0204.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "bmw-i3s",
@@ -19575,7 +19837,9 @@
     ],
     "wiki": "BMW i3",
     "reviewed": false,
-    "photoMatch": "i3"
+    "photoMatch": "i3",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/BMW%20i3%2050%20xDrive%20First%20Edition%20%28NA0%29%20%E2%80%93%20f2%2020082026.jpg?width=800",
+    "photoCredit": "© M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "bmw-i8-roadster",
@@ -19602,7 +19866,9 @@
     ],
     "wiki": "BMW i8",
     "reviewed": false,
-    "photoMatch": "i8"
+    "photoMatch": "i8",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2016%20BMW%20i8.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "bmw-z4-m40i-g29",
@@ -19628,7 +19894,9 @@
     ],
     "wiki": "BMW Z4 (G29)",
     "reviewed": false,
-    "photoMatch": "Z4|G29"
+    "photoMatch": "Z4|G29",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2019%20BMW%20Z4%20M40i%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "bmw-alpina-b5-g30",
@@ -19654,7 +19922,9 @@
     ],
     "wiki": "Alpina B5",
     "reviewed": false,
-    "photoMatch": "Alpina|B5"
+    "photoMatch": "Alpina|B5",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/BMW%20Alpina%20B5%20Touring%20%282462905306%29.jpg?width=800",
+    "photoCredit": "nakhon100 · CC BY 2.0 · Wikimedia Commons"
   },
   {
     "id": "bmw-alpina-b3-g20",
@@ -19680,7 +19950,9 @@
     ],
     "wiki": "Alpina B3",
     "reviewed": false,
-    "photoMatch": "Alpina|B3"
+    "photoMatch": "Alpina|B3",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/G21%20Alpina%20B3%20S.jpg?width=800",
+    "photoCredit": "MrWalkr · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "bmw-m2-g87-cs",
@@ -19732,7 +20004,9 @@
     ],
     "wiki": "Mercedes-Benz A-Class (W177)",
     "reviewed": false,
-    "photoMatch": "A ?35"
+    "photoMatch": "A ?35",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercedes-Benz%20A%20180%20Progressive%20%28W%20177%29%20%E2%80%93%20f%2016032019.jpg?width=800",
+    "photoCredit": "© M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "mercedes-cla45-s-amg",
@@ -19758,7 +20032,9 @@
     ],
     "wiki": "Mercedes-Benz CLA-Class",
     "reviewed": false,
-    "photoMatch": "CLA"
+    "photoMatch": "CLA",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercedes-Benz%20C118%20IMG%202673.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "mercedes-c43-amg-w205",
@@ -19836,7 +20112,9 @@
     ],
     "wiki": "Mercedes-Benz C-Class (W206)",
     "reviewed": false,
-    "photoMatch": "C ?63"
+    "photoMatch": "C ?63",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercedes-Benz%20W206%20IMG%205796.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "mercedes-s63-amg-w222",
@@ -19992,7 +20270,9 @@
     ],
     "wiki": "Mercedes-Benz SL-Class (R232)",
     "reviewed": false,
-    "photoMatch": "SL ?63|R232"
+    "photoMatch": "SL ?63|R232",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercedes-AMG%20SL%2043%20IMG%208050.jpg?width=800",
+    "photoCredit": "Alexander-93 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "mercedes-amg-gt-63-s-e-performance",
@@ -20045,7 +20325,9 @@
     ],
     "wiki": "Mercedes-Benz G-Class",
     "reviewed": false,
-    "photoMatch": "4x4|4×4"
+    "photoMatch": "4x4|4×4",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercedes-Benz%20W463%20G%20350%20BlueTEC%2001.jpg?width=800",
+    "photoCredit": "Julian Herzog (Website) · CC BY 4.0 · Wikimedia Commons"
   },
   {
     "id": "mercedes-glc63-s-coupe",
@@ -20071,7 +20353,9 @@
     ],
     "wiki": "Mercedes-Benz GLC-Class",
     "reviewed": false,
-    "photoMatch": "GLC"
+    "photoMatch": "GLC",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercedes-Benz%20X254%201X7A6343.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "mercedes-eqs-amg-53",
@@ -20098,7 +20382,9 @@
     ],
     "wiki": "Mercedes-Benz EQS",
     "reviewed": false,
-    "photoMatch": "EQS"
+    "photoMatch": "EQS",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercedes-Benz%20V297%20Classic-Days%202022%20DSC%200016.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "mercedes-maybach-s680",
@@ -20176,7 +20462,9 @@
     ],
     "wiki": "Audi S4",
     "reviewed": false,
-    "photoMatch": "S4|B9"
+    "photoMatch": "S4|B9",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2018%20Audi%20S4%203.0T%20Premium%20Plus%20in%20Daytona%20Gray%20Pearl%2C%20front%20right.jpg?width=800",
+    "photoCredit": "Mr.choppers · CC BY-SA 3.0 · Wikimedia Commons"
   },
   {
     "id": "audi-s5-b9",
@@ -20254,7 +20542,9 @@
     ],
     "wiki": "Audi RS 6",
     "reviewed": false,
-    "photoMatch": "RS ?6"
+    "photoMatch": "RS ?6",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2021%20Audi%20RS6%20Avant%20in%20Nardo%20Gray%2C%20front%20right.jpg?width=800",
+    "photoCredit": "Mr.choppers · CC BY-SA 3.0 · Wikimedia Commons"
   },
   {
     "id": "audi-rs7-c7",
@@ -20384,7 +20674,9 @@
     ],
     "wiki": "Audi R8 (Type 4S)",
     "reviewed": false,
-    "photoMatch": "Performance"
+    "photoMatch": "Performance",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2020%20Audi%20R8%20V10%205.2%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "audi-e-tron-55",
@@ -20411,7 +20703,9 @@
     ],
     "wiki": "Audi e-tron",
     "reviewed": false,
-    "photoMatch": "e-?tron"
+    "photoMatch": "e-?tron",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2020%20Audi%20e-Tron%20Sport%2050%20Quattro.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "porsche-911-992-carrera-s",
@@ -20541,7 +20835,9 @@
     ],
     "wiki": "Porsche 911 GT2 RS",
     "reviewed": false,
-    "photoMatch": "GT2 ?RS"
+    "photoMatch": "GT2 ?RS",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Porsche%20991%20GT2%20RS%20%2841654760692%29%20%28cropped%29.jpg?width=800",
+    "photoCredit": "Alexandre Prévot from Nancy, France · CC BY-SA 2.0 · Wikimedia Commons"
   },
   {
     "id": "porsche-911-992-gt3-touring",
@@ -21121,7 +21417,9 @@
     ],
     "wiki": "Jaguar F-Pace",
     "reviewed": false,
-    "photoMatch": "F-Pace"
+    "photoMatch": "F-Pace",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Jaguar%20F-Pace%20AWD%2020d%20registered%20March%202019%201999cc%2001%20%28cropped%29.jpg?width=800",
+    "photoCredit": "Charles01 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "jaguar-i-pace",
@@ -21148,7 +21446,9 @@
     ],
     "wiki": "Jaguar I-Pace",
     "reviewed": false,
-    "photoMatch": "I-?Pace"
+    "photoMatch": "I-?Pace",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2018%20Jaguar%20I-Pace%20EV400%20AWD%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "land-rover-defender-90-v8",
@@ -21226,7 +21526,9 @@
     ],
     "wiki": "Range Rover Sport",
     "reviewed": false,
-    "photoMatch": "SVR|Sport"
+    "photoMatch": "SVR|Sport",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2015%20Land%20Rover%20Range%20Rover%20Sport%20HSE%203.0%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "range-rover-sv",
@@ -21252,7 +21554,9 @@
     ],
     "wiki": "Range Rover (L460)",
     "reviewed": false,
-    "photoMatch": "Range Rover"
+    "photoMatch": "Range Rover",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2022%20Land%20Rover%20Range%20Rover%20SE%20P440e%20AWD%20Automatic%203.0%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "lotus-evora-400",
@@ -21409,7 +21713,9 @@
     ],
     "wiki": "Lotus 3-Eleven",
     "reviewed": false,
-    "photoMatch": "3-?Eleven"
+    "photoMatch": "3-?Eleven",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lotus%203-Eleven%201Y7A6172.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "lotus-eletre",
@@ -21436,7 +21742,9 @@
     ],
     "wiki": "Lotus Eletre",
     "reviewed": false,
-    "photoMatch": "Eletre"
+    "photoMatch": "Eletre",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lotus%20Eletre%20Automesse%20Ludwigsburg%202025%20DSC%202658.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "lotus-emeya",
@@ -21463,7 +21771,9 @@
     ],
     "wiki": "Lotus Emeya",
     "reviewed": false,
-    "photoMatch": "Emeya"
+    "photoMatch": "Emeya",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lotus%20Emeya%20IMG%204142.jpg?width=800",
+    "photoCredit": "Alexander-93 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "morgan-plus-six",
@@ -21489,7 +21799,9 @@
     ],
     "wiki": "Morgan Plus Six",
     "reviewed": false,
-    "photoMatch": "Plus ?Six"
+    "photoMatch": "Plus ?Six",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Morgan%20Plus%206%20IAA%202021%201X7A0138.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "morgan-plus-four",
@@ -21515,7 +21827,9 @@
     ],
     "wiki": "Morgan Plus Four",
     "reviewed": false,
-    "photoMatch": "Plus ?Four"
+    "photoMatch": "Plus ?Four",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2021%20Morgan%20Plus4%201.jpg?width=800",
+    "photoCredit": "Calreyn88 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "morgan-super-3",
@@ -21541,7 +21855,9 @@
     ],
     "wiki": "Morgan Super 3",
     "reviewed": false,
-    "photoMatch": "Super ?3"
+    "photoMatch": "Super ?3",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2022%20Morgan%20Super%203.jpg?width=800",
+    "photoCredit": "MrWalkr · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "caterham-seven-170",
@@ -21567,7 +21883,9 @@
     ],
     "wiki": "Caterham 7",
     "reviewed": false,
-    "photoMatch": "Seven"
+    "photoMatch": "Seven",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2010%20Caterham%207%20Roadsport%20175%201.6.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "ariel-nomad",
@@ -21645,7 +21963,9 @@
     ],
     "wiki": "Vauxhall VXR8",
     "reviewed": false,
-    "photoMatch": "VXR8"
+    "photoMatch": "VXR8",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2008%20Vauxhall%20VXR8%201.jpg?width=800",
+    "photoCredit": "Calreyn88 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "maserati-ghibli-s",
@@ -21749,7 +22069,9 @@
     ],
     "wiki": "Maserati Levante",
     "reviewed": false,
-    "photoMatch": "Levante"
+    "photoMatch": "Levante",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Maserati%20Levante%20S%20%2801%29.jpg?width=800",
+    "photoCredit": "Alexandre Prévot from Nancy, France · CC BY-SA 2.0 · Wikimedia Commons"
   },
   {
     "id": "maserati-grecale-trofeo",
@@ -21775,7 +22097,9 @@
     ],
     "wiki": "Maserati Grecale",
     "reviewed": false,
-    "photoMatch": "Grecale"
+    "photoMatch": "Grecale",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Maserati%20Grecale%20GT%201X7A6371.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "maserati-granturismo-trofeo",
@@ -21855,7 +22179,9 @@
     ],
     "wiki": "Maserati MC20",
     "reviewed": false,
-    "photoMatch": "Cielo|MC20"
+    "photoMatch": "Cielo|MC20",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Maserati%20MC20%20IAA%202021%201X7A0087.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "maserati-granturismo-mc-cabrio",
@@ -21881,7 +22207,9 @@
     ],
     "wiki": "Maserati GranCabrio",
     "reviewed": false,
-    "photoMatch": "GranCabrio"
+    "photoMatch": "GranCabrio",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Maserati%20GranTurismo%20Trofeo%201X7A0828.jpg?width=800",
+    "photoCredit": "Alexander-93 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "alfa-romeo-giulia-gta",
@@ -21959,7 +22287,9 @@
     ],
     "wiki": "Alfa Romeo 4C",
     "reviewed": false,
-    "photoMatch": "4C"
+    "photoMatch": "4C",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Festival%20automobile%20international%202014%20-%20Alfa%20Romeo%204C%20-%20009.jpg?width=800",
+    "photoCredit": "Thesupermat · CC BY-SA 3.0 · Wikimedia Commons"
   },
   {
     "id": "alfa-romeo-33-stradale-2023",
@@ -21986,7 +22316,9 @@
     ],
     "wiki": "Alfa Romeo 33 Stradale (2023)",
     "reviewed": false,
-    "photoMatch": "33 Stradale"
+    "photoMatch": "33 Stradale",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Alfa%20Romeo%2033%20Stradale%20%28cropped%29.jpg?width=800",
+    "photoCredit": "Original:  Alexandre Prevot from Nancy, France / Derivative · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "dallara-stradale",
@@ -22012,7 +22344,9 @@
     ],
     "wiki": "Dallara Stradale",
     "reviewed": false,
-    "photoMatch": "Stradale"
+    "photoMatch": "Stradale",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Dallara%20Stradale.jpg?width=800",
+    "photoCredit": "Calreyn88 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "de-tomaso-p72",
@@ -22039,7 +22373,9 @@
     ],
     "wiki": "De Tomaso P72",
     "reviewed": false,
-    "photoMatch": "P72"
+    "photoMatch": "P72",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2022%20De%20Tomaso%20P72%202.jpg?width=800",
+    "photoCredit": "Calreyn88 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "italdesign-zerouno",
@@ -22066,7 +22402,9 @@
     ],
     "wiki": "Italdesign Zerouno",
     "reviewed": false,
-    "photoMatch": "Zerouno"
+    "photoMatch": "Zerouno",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2017-03-07%20Geneva%20Motor%20Show%200818%20%28cropped%29.JPG?width=800",
+    "photoCredit": "Norbert Aepli, Switzerland (User:Noebu) · CC BY 4.0 · Wikimedia Commons"
   },
   {
     "id": "ferrari-488-spider",
@@ -22144,7 +22482,9 @@
     ],
     "wiki": "Ferrari F8 Tributo",
     "reviewed": false,
-    "photoMatch": "F8"
+    "photoMatch": "F8",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2020%20Ferrari%20F8%20Tributo%203.9.jpg?width=800",
+    "photoCredit": "Sam N · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "ferrari-812-gts",
@@ -22356,7 +22696,9 @@
     ],
     "wiki": "Ferrari Purosangue",
     "reviewed": false,
-    "photoMatch": "Purosangue"
+    "photoMatch": "Purosangue",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ferrari%20Purosangue%20DSC%207008.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "ferrari-296-gts",
@@ -22462,7 +22804,9 @@
     ],
     "wiki": "LaFerrari",
     "reviewed": false,
-    "photoMatch": "Aperta"
+    "photoMatch": "Aperta",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/LaFerrari%20in%20Beverly%20Hills%20%2814563979888%29.jpg?width=800",
+    "photoCredit": "Axion23 · CC BY 2.0 · Wikimedia Commons"
   },
   {
     "id": "ferrari-j50",
@@ -22570,7 +22914,9 @@
     ],
     "wiki": "Ferrari Roma",
     "reviewed": false,
-    "photoMatch": "Roma"
+    "photoMatch": "Roma",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2021%20Ferrari%20Roma%20in%20Rosso%20Fiorano%2C%20front%20right.jpg?width=800",
+    "photoCredit": "Mr.choppers · CC BY-SA 3.0 · Wikimedia Commons"
   },
   {
     "id": "ferrari-12cilindri-spider",
@@ -22596,7 +22942,9 @@
     ],
     "wiki": "Ferrari 12Cilindri",
     "reviewed": false,
-    "photoMatch": "12 ?Cilindri"
+    "photoMatch": "12 ?Cilindri",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2025%20Ferrari%2012Cilindri%20in%20Rosso%20Imola%2C%20front%20left.jpg?width=800",
+    "photoCredit": "Mr.choppers · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "ferrari-296-speciale",
@@ -22649,7 +22997,9 @@
     ],
     "wiki": "Ferrari F80",
     "reviewed": false,
-    "photoMatch": "F80"
+    "photoMatch": "F80",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/FerrariF80%20%28resized%29%20%28cropped%29.jpg?width=800",
+    "photoCredit": "Pauls.127 · CC0 · Wikimedia Commons"
   },
   {
     "id": "ferrari-amalfi",
@@ -22676,7 +23026,9 @@
     ],
     "wiki": "Ferrari Amalfi",
     "reviewed": false,
-    "photoMatch": "Amalfi"
+    "photoMatch": "Amalfi",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ferrari%20Amalfi%20%28retouched%29.jpg?width=800",
+    "photoCredit": "Alexandre Prevot (retouched by NearEMPTiness) · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "lamborghini-huracan-lp580-2",
@@ -22989,7 +23341,9 @@
     ],
     "wiki": "Lamborghini Veneno",
     "reviewed": false,
-    "photoMatch": "Veneno"
+    "photoMatch": "Veneno",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Geneva%20MotorShow%202013%20-%20Lamborghini%20Veneno%201.jpg?width=800",
+    "photoCredit": "Clément Bucco-Lechat · CC BY-SA 3.0 · Wikimedia Commons"
   },
   {
     "id": "lamborghini-sian-roadster",
@@ -23016,7 +23370,9 @@
     ],
     "wiki": "Lamborghini Sián FKP 37",
     "reviewed": false,
-    "photoMatch": "Si[aá]n"
+    "photoMatch": "Si[aá]n",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lamborghini%20Sian%20at%20IAA%202019%20IMG%200332.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "lamborghini-essenza-scv12",
@@ -23043,7 +23399,9 @@
     ],
     "wiki": "Lamborghini Essenza SCV12",
     "reviewed": false,
-    "photoMatch": "Essenza"
+    "photoMatch": "Essenza",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lamborghini%20Essenza%20SCV12%20001%20%28cropped%29.jpg?width=800",
+    "photoCredit": "JustAnotherCarDesigner · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "lamborghini-countach-lpi-800-4",
@@ -23070,7 +23428,9 @@
     ],
     "wiki": "Lamborghini Countach LPI 800-4",
     "reviewed": false,
-    "photoMatch": "Countach"
+    "photoMatch": "Countach",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2022%20Lamborghini%20Countach.jpg?width=800",
+    "photoCredit": "MrWalkr · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "lamborghini-urus-performante",
@@ -23096,7 +23456,9 @@
     ],
     "wiki": "Lamborghini Urus",
     "reviewed": false,
-    "photoMatch": "Urus"
+    "photoMatch": "Urus",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lamborghini%20Urus%20SE%20DSC%208524.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "lamborghini-temerario",
@@ -23122,7 +23484,9 @@
     ],
     "wiki": "Lamborghini Temerario",
     "reviewed": false,
-    "photoMatch": "Temerario"
+    "photoMatch": "Temerario",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lamborghini%20Temerario%20IMG%205361.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "lamborghini-revuelto-roadster",
@@ -23148,7 +23512,9 @@
     ],
     "wiki": "Lamborghini Revuelto",
     "reviewed": false,
-    "photoMatch": "Revuelto"
+    "photoMatch": "Revuelto",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lamborghini%20Revuelto%20DSC%206985%20%28cropped%29.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "mclaren-540c",
@@ -23461,7 +23827,9 @@
     ],
     "wiki": "McLaren P1",
     "reviewed": false,
-    "photoMatch": "P1"
+    "photoMatch": "P1",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/McLaren%20P1.jpg?width=800",
+    "photoCredit": "Axion23 (original)\nTony Patt (cropped) · CC BY 2.0 · Wikimedia Commons"
   },
   {
     "id": "mclaren-senna-gtr",
@@ -23488,7 +23856,9 @@
     ],
     "wiki": "McLaren Senna",
     "reviewed": false,
-    "photoMatch": "Senna"
+    "photoMatch": "Senna",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/McLaren%20Senna%20IMG%203279.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "mclaren-elva",
@@ -23515,7 +23885,9 @@
     ],
     "wiki": "McLaren Elva",
     "reviewed": false,
-    "photoMatch": "Elva"
+    "photoMatch": "Elva",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2021%20McLaren%20Elva%204.0%20Front.jpg?width=800",
+    "photoCredit": "Liam Walker · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "mclaren-w1",
@@ -23542,7 +23914,9 @@
     ],
     "wiki": "McLaren W1",
     "reviewed": false,
-    "photoMatch": "W1"
+    "photoMatch": "W1",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2024%20McLaren%20W1%20SP25.jpg?width=800",
+    "photoCredit": "MrWalkr · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "mclaren-solus-gt",
@@ -23569,7 +23943,9 @@
     ],
     "wiki": "McLaren Solus GT",
     "reviewed": false,
-    "photoMatch": "Solus"
+    "photoMatch": "Solus",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2023%20McLaren%20Solus%20GT.jpg?width=800",
+    "photoCredit": "MrWalkr · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "aston-martin-v12-vantage-s",
@@ -23859,7 +24235,9 @@
     ],
     "wiki": "Aston Martin DB12",
     "reviewed": false,
-    "photoMatch": "DB12"
+    "photoMatch": "DB12",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Aston%20Martin%20DB12%201X7A1921.jpg?width=800",
+    "photoCredit": "Alexander-93 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "aston-martin-valour",
@@ -23886,7 +24264,9 @@
     ],
     "wiki": "Aston Martin Valour",
     "reviewed": false,
-    "photoMatch": "Valour"
+    "photoMatch": "Valour",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2024%20Aston%20Martin%20Valour.jpg?width=800",
+    "photoCredit": "Calreyn88 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "aston-martin-v12-speedster",
@@ -23940,7 +24320,9 @@
     ],
     "wiki": "Aston Martin Valhalla",
     "reviewed": false,
-    "photoMatch": "Valhalla"
+    "photoMatch": "Valhalla",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2026%20Aston%20Martin%20Valhalla%20SCD%2026.jpg?width=800",
+    "photoCredit": "MrWalkr · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "aston-martin-vanquish-2024",
@@ -23993,7 +24375,9 @@
     ],
     "wiki": "Aston Martin Victor",
     "reviewed": false,
-    "photoMatch": "Victor"
+    "photoMatch": "Victor",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2011%20Aston%20Martin%20One-77%20SCD%2024.jpg?width=800",
+    "photoCredit": "MrWalkr · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "bentley-continental-gt-v8s",
@@ -24149,7 +24533,9 @@
     ],
     "wiki": "Bentley Mulsanne (2010)",
     "reviewed": false,
-    "photoMatch": "Mulsanne"
+    "photoMatch": "Mulsanne",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bentley%20Mulsanne%20%E2%80%93%20Frontansicht%20%285%29%2C%2030.%20August%202011%2C%20D%C3%BCsseldorf.jpg?width=800",
+    "photoCredit": "M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "bentley-bentayga",
@@ -24307,7 +24693,9 @@
     ],
     "wiki": "Rolls-Royce Dawn",
     "reviewed": false,
-    "photoMatch": "Dawn"
+    "photoMatch": "Dawn",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2019%20Rolls-Royce%20Dawn%20V12%20Automatic%206.6.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "rolls-royce-phantom-viii",
@@ -24333,7 +24721,9 @@
     ],
     "wiki": "Rolls-Royce Phantom VIII",
     "reviewed": false,
-    "photoMatch": "Phantom"
+    "photoMatch": "Phantom",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2019%20Rolls-Royce%20Phantom%20V12%20Automatic%206.75.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "rolls-royce-cullinan",
@@ -24359,7 +24749,9 @@
     ],
     "wiki": "Rolls-Royce Cullinan",
     "reviewed": false,
-    "photoMatch": "Cullinan"
+    "photoMatch": "Cullinan",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2019%20Rolls-Royce%20Cullinan%20V12%20Automatic%206.75%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "rolls-royce-spectre",
@@ -24386,7 +24778,9 @@
     ],
     "wiki": "Rolls-Royce Spectre",
     "reviewed": false,
-    "photoMatch": "Spectre"
+    "photoMatch": "Spectre",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2024%20Rolls-Royce%20Spectre%20in%20Midnight%20Sapphire%20over%20Silver%2C%20front%20left.jpg?width=800",
+    "photoCredit": "Mr.choppers · CC BY-SA 3.0 · Wikimedia Commons"
   },
   {
     "id": "rolls-royce-boat-tail",
@@ -24412,7 +24806,9 @@
     ],
     "wiki": "Rolls-Royce Boat Tail",
     "reviewed": false,
-    "photoMatch": "Boat Tail"
+    "photoMatch": "Boat Tail",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Rolls-Royce%20Boat%20Tail%20side.png?width=800",
+    "photoCredit": "pelican-actor · CC BY 2.0 · Wikimedia Commons"
   },
   {
     "id": "bugatti-chiron-pur-sport",
@@ -24466,7 +24862,9 @@
     ],
     "wiki": "Bugatti Mistral",
     "reviewed": false,
-    "photoMatch": "Mistral"
+    "photoMatch": "Mistral",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bugatti%20Mistral%202.jpg?width=800",
+    "photoCredit": "Calreyn88 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "bugatti-la-voiture-noire",
@@ -24520,7 +24918,9 @@
     ],
     "wiki": "Bugatti Centodieci",
     "reviewed": false,
-    "photoMatch": "Centodieci"
+    "photoMatch": "Centodieci",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2022%20Bugatti%20Centodieci%20in%20Grigio%20Chiaro%2C%20front%20left.jpg?width=800",
+    "photoCredit": "Mr.choppers · CC BY-SA 3.0 · Wikimedia Commons"
   },
   {
     "id": "bugatti-tourbillon",
@@ -24547,7 +24947,9 @@
     ],
     "wiki": "Bugatti Tourbillon",
     "reviewed": false,
-    "photoMatch": "Tourbillon"
+    "photoMatch": "Tourbillon",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Bugatti%20Tourbillon.jpg?width=800",
+    "photoCredit": "MrWalkr · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "koenigsegg-agera-rs",
@@ -24573,7 +24975,9 @@
     ],
     "wiki": "Koenigsegg Agera",
     "reviewed": false,
-    "photoMatch": "Agera"
+    "photoMatch": "Agera",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Agera%20RST%20Koenigsegg.jpg?width=800",
+    "photoCredit": "MrWalkr · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "koenigsegg-jesko-absolut",
@@ -24600,7 +25004,9 @@
     ],
     "wiki": "Koenigsegg Jesko",
     "reviewed": false,
-    "photoMatch": "Absolut"
+    "photoMatch": "Absolut",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/GIMS%202019%2C%20Le%20Grand-Saconnex%20%28GIMS0833%29.jpg?width=800",
+    "photoCredit": "Matti Blume · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "koenigsegg-gemera",
@@ -24627,7 +25033,9 @@
     ],
     "wiki": "Koenigsegg Gemera",
     "reviewed": false,
-    "photoMatch": "Gemera"
+    "photoMatch": "Gemera",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Koenigsegg%20Gemera.jpg?width=800",
+    "photoCredit": "MrWalkr · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "pagani-huayra-roadster",
@@ -24761,7 +25169,9 @@
     ],
     "wiki": "Rimac Concept One",
     "reviewed": false,
-    "photoMatch": "Concept One"
+    "photoMatch": "Concept One",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2016-03-01%20Geneva%20Motor%20Show%200977%20%28cropped%29.JPG?width=800",
+    "photoCredit": "Norbert Aepli, Switzerland (User:Noebu) · CC BY 4.0 · Wikimedia Commons"
   },
   {
     "id": "hispano-suiza-carmen",
@@ -24787,7 +25197,9 @@
     ],
     "wiki": "Hispano-Suiza Carmen",
     "reviewed": false,
-    "photoMatch": "Carmen"
+    "photoMatch": "Carmen",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2021%20Hispano-Suiza%20Carmen.jpg?width=800",
+    "photoCredit": "Calreyn88 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "zenvo-tsr-s",
@@ -24867,7 +25279,9 @@
     ],
     "wiki": "Gordon Murray Automotive T.50",
     "reviewed": false,
-    "photoMatch": "T\\.?50"
+    "photoMatch": "T\\.?50",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2024%20GMA%20T.50%20SCD24.jpg?width=800",
+    "photoCredit": "MrWalkr · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "gordon-murray-t33",
@@ -24894,7 +25308,9 @@
     ],
     "wiki": "Gordon Murray Automotive T.33",
     "reviewed": false,
-    "photoMatch": "T\\.?33"
+    "photoMatch": "T\\.?33",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/GMA%20T.33%20Spider%20at%20Quail%202023.jpg?width=800",
+    "photoCredit": "Prova MO · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "apollo-intensa-emozione",
@@ -24921,7 +25337,9 @@
     ],
     "wiki": "Apollo Intensa Emozione",
     "reviewed": false,
-    "photoMatch": "Intensa"
+    "photoMatch": "Intensa",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Apollo%20Intensa%20Emozione%20%28IE%29%20Golden%20Dragon%2C%20front%202.1.20.jpg?width=800",
+    "photoCredit": "Kevauto · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "toyota-yaris-wrc-2017",
@@ -24948,7 +25366,9 @@
     ],
     "wiki": "Toyota Yaris WRC",
     "reviewed": false,
-    "photoMatch": "Yaris WRC"
+    "photoMatch": "Yaris WRC",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/S%C3%A1bado%2019%2C%20Rally%20de%20Portugal%202018%20-%203.jpg?width=800",
+    "photoCredit": "Harpagornis · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "citroen-c3-wrc",
@@ -24975,7 +25395,9 @@
     ],
     "wiki": "Citroën C3 WRC",
     "reviewed": false,
-    "photoMatch": "C3"
+    "photoMatch": "C3",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/C3%20WRC%20in%20Monte%20Carlo%20-%20fotocredd%20Citro%C3%ABn%20Racing.jpg?width=800",
+    "photoCredit": "Citroën Racing · CC BY 4.0 · Wikimedia Commons"
   },
   {
     "id": "hyundai-i20-wrc",
@@ -25002,7 +25424,9 @@
     ],
     "wiki": "Hyundai i20 WRC",
     "reviewed": false,
-    "photoMatch": "i20"
+    "photoMatch": "i20",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chris%20Atkinson%20Rally%20Mexico%202014%20002.jpg?width=800",
+    "photoCredit": "Colin McMaster / McKlein · CC BY 3.0 · Wikimedia Commons"
   },
   {
     "id": "ford-fiesta-wrc-2017",
@@ -25029,7 +25453,9 @@
     ],
     "wiki": "Ford Fiesta WRC",
     "reviewed": false,
-    "photoMatch": "Fiesta"
+    "photoMatch": "Fiesta",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/S%C3%A1bado%2019%2C%20Rally%20de%20Portugal%202018%20-%204.jpg?width=800",
+    "photoCredit": "Harpagornis · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "vw-polo-r-wrc",
@@ -25056,7 +25482,9 @@
     ],
     "wiki": "Volkswagen Polo R WRC",
     "reviewed": false,
-    "photoMatch": "Polo R"
+    "photoMatch": "Polo R",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sebastien%20Ogier%20Baiao%20Rally%20de%20portugal%202016.jpg?width=800",
+    "photoCredit": "Harpagornis · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "ford-puma-rally1",
@@ -25083,7 +25511,9 @@
     ],
     "wiki": "Ford Puma Rally1",
     "reviewed": false,
-    "photoMatch": "Rally1|Puma"
+    "photoMatch": "Rally1|Puma",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/WRC%20Central%20European%20Rallye%202023%20Nr.%208%20%284%29.jpg?width=800",
+    "photoCredit": "Lukas Raich · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "hyundai-i20-n-rally1",
@@ -25110,7 +25540,9 @@
     ],
     "wiki": "Hyundai i20 N Rally1",
     "reviewed": false,
-    "photoMatch": "Rally1"
+    "photoMatch": "Rally1",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hyundai%20i20N%20Rally1%20No.11%20in%202022%20FIA%20World%20Rally%20Championship%20%282%29.jpg?width=800",
+    "photoCredit": "Tokumeigakarinoaoshima · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "toyota-gr010-hybrid",
@@ -25136,7 +25568,9 @@
     ],
     "wiki": "Toyota GR010 Hybrid",
     "reviewed": false,
-    "photoMatch": "GR010"
+    "photoMatch": "GR010",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2026%206%20Hours%20of%20Spa-Francorchamps%20Toyota%20Racing%20Toyota%20TR010%20Hybrid%20No.8%20%28DSC6131%29.jpg?width=800",
+    "photoCredit": "MarcelX42 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "porsche-963",
@@ -25162,7 +25596,9 @@
     ],
     "wiki": "Porsche 963",
     "reviewed": false,
-    "photoMatch": "963"
+    "photoMatch": "963",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2024%206%20Hours%20of%20Spa-Francorchamps%20Porsche%20Penske%20Motorsport%20Porsche%20963%20No.5%20%28DSC02380%29.jpg?width=800",
+    "photoCredit": "MarcelX42 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "ferrari-499p",
@@ -25188,7 +25624,9 @@
     ],
     "wiki": "Ferrari 499P",
     "reviewed": false,
-    "photoMatch": "499"
+    "photoMatch": "499",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2024%2024%20Hours%20of%20Le%20Mans%20%2854093434907%29.jpg?width=800",
+    "photoCredit": "Mickael Le rouzic · CC BY 2.0 · Wikimedia Commons"
   },
   {
     "id": "peugeot-9x8",
@@ -25214,7 +25652,9 @@
     ],
     "wiki": "Peugeot 9X8",
     "reviewed": false,
-    "photoMatch": "9X8"
+    "photoMatch": "9X8",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2026%206%20Hours%20of%20Spa-Francorchamps%20Peugeot%20TotalEnergies%20Peugeot%209X8%20No.93%20%28DSC07965%29.jpg?width=800",
+    "photoCredit": "MarcelX42 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "bmw-m-hybrid-v8",
@@ -25240,7 +25680,9 @@
     ],
     "wiki": "BMW M Hybrid V8",
     "reviewed": false,
-    "photoMatch": "M Hybrid"
+    "photoMatch": "M Hybrid",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2026%206%20Hours%20of%20Spa-Francorchamps%20BMW%20M%20Team%20WRT%20BMW%20M%20Hybrid%20V8%20No.20%20%28DSC2744%29.jpg?width=800",
+    "photoCredit": "MarcelX42 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "cadillac-v-series-r",
@@ -25266,7 +25708,9 @@
     ],
     "wiki": "Cadillac V-Series.R",
     "reviewed": false,
-    "photoMatch": "V-?Series"
+    "photoMatch": "V-?Series",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2026%206%20Hours%20of%20Spa-Francorchamps%20Cadillac%20Hertz%20Team%20Jota%20Cadillac%20V-Series.R%20No.12%20%28DSC07675%29.jpg?width=800",
+    "photoCredit": "MarcelX42 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "alpine-a424",
@@ -25292,7 +25736,9 @@
     ],
     "wiki": "Alpine A424",
     "reviewed": false,
-    "photoMatch": "A424"
+    "photoMatch": "A424",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2026%206%20Hours%20of%20Spa-Francorchamps%20Alpine%20Endurance%20Team%20Alpine%20A424%20No.36%20%28DSC01584%29.jpg?width=800",
+    "photoCredit": "MarcelX42 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "lamborghini-sc63",
@@ -25318,7 +25764,9 @@
     ],
     "wiki": "Lamborghini SC63",
     "reviewed": false,
-    "photoMatch": "SC63"
+    "photoMatch": "SC63",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lambo%20GTP%20WGI25%2001%20%28cropped%29.jpg?width=800",
+    "photoCredit": "SmackJam · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "mercedes-amg-project-one-concept",
@@ -25344,7 +25792,9 @@
     ],
     "wiki": "Mercedes-AMG Project One",
     "reviewed": false,
-    "photoMatch": "Project One"
+    "photoMatch": "Project One",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercedes-AMG%20One%20at%20the%202022%20Goodwood%20Festival%20of%20Speed.jpg?width=800",
+    "photoCredit": "Andrew Basterfield · CC BY-SA 2.0 · Wikimedia Commons"
   },
   {
     "id": "toyota-aygo-x",
@@ -25371,7 +25821,9 @@
     ],
     "wiki": "Toyota Aygo X",
     "reviewed": false,
-    "photoMatch": "Aygo"
+    "photoMatch": "Aygo",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2022%20Toyota%20Aygo%20X%20Edge%201.0%20VVT-i%20%28Front%29.jpg?width=800",
+    "photoCredit": "DieselFordMondeo · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "toyota-yaris-cross",
@@ -25398,7 +25850,9 @@
     ],
     "wiki": "Toyota Yaris Cross",
     "reviewed": false,
-    "photoMatch": "Yaris Cross"
+    "photoMatch": "Yaris Cross",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Toyota%20Yaris%20Cross%20Hybrid%20%28XP210%29%201X7A1846.jpg?width=800",
+    "photoCredit": "Alexander-93 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "toyota-mirai-jpd20",
@@ -25426,7 +25880,9 @@
     ],
     "wiki": "Toyota Mirai",
     "reviewed": false,
-    "photoMatch": "Mirai"
+    "photoMatch": "Mirai",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Toyota%20Mirai%20%28JPD20%29%20IMG%205303.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "hyundai-nexo",
@@ -25453,7 +25909,9 @@
     ],
     "wiki": "Hyundai Nexo",
     "reviewed": false,
-    "photoMatch": "Nexo"
+    "photoMatch": "Nexo",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hyundai%20Nexo%20IAA%202021%201X7A0241.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "hyundai-ioniq-electric",
@@ -25480,7 +25938,9 @@
     ],
     "wiki": "Hyundai Ioniq",
     "reviewed": false,
-    "photoMatch": "Ioniq"
+    "photoMatch": "Ioniq",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hyundai%20IONIQ%20electric%20Premium%20%E2%80%93%20Frontansicht%2C%207.%20Mai%202017%2C%20D%C3%BCsseldorf.jpg?width=800",
+    "photoCredit": "© M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "hyundai-kona-electric",
@@ -25534,7 +25994,9 @@
     ],
     "wiki": "Kia Soul EV",
     "reviewed": false,
-    "photoMatch": "Soul"
+    "photoMatch": "Soul",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2020%20Kia%20Soul%20First%20Edition%20EV%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "kia-niro-ev",
@@ -25561,7 +26023,9 @@
     ],
     "wiki": "Kia Niro",
     "reviewed": false,
-    "photoMatch": "Niro"
+    "photoMatch": "Niro",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Kia%20Niro%20%28SG2%29%20PHEV%20Leonberg%202022%201X7A0474.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "kia-ev9",
@@ -25588,7 +26052,9 @@
     ],
     "wiki": "Kia EV9",
     "reviewed": false,
-    "photoMatch": "EV9"
+    "photoMatch": "EV9",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Kia%20EV9%201X7A2472.jpg?width=800",
+    "photoCredit": "Alexander-93 · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "opel-adam-s",
@@ -25614,7 +26080,9 @@
     ],
     "wiki": "Opel Adam",
     "reviewed": false,
-    "photoMatch": "Adam"
+    "photoMatch": "Adam",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Opel%20Adam%201.4%20Slam%20%E2%80%93%20Frontansicht%2C%2015.%20Januar%202014%2C%20D%C3%BCsseldorf.jpg?width=800",
+    "photoCredit": "M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "fiat-500-abarth-595-competizione",
@@ -25640,7 +26108,9 @@
     ],
     "wiki": "Abarth 595",
     "reviewed": false,
-    "photoMatch": "Competizione|595"
+    "photoMatch": "Competizione|595",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Fiat%20500%20%282007%29%2002.JPG?width=800",
+    "photoCredit": "Ad Meskens · CC BY-SA 3.0 · Wikimedia Commons"
   },
   {
     "id": "fiat-124-spider-2016",
@@ -25720,7 +26190,9 @@
     ],
     "wiki": "Mercedes-Benz B-Class Electric Drive",
     "reviewed": false,
-    "photoMatch": "B ?250|B-Class"
+    "photoMatch": "B ?250|B-Class",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercedes-Benz%20B%20200%20CDI%20Sport-Paket%20%28W%20246%29%20%E2%80%93%20Frontansicht%2C%2021.%20April%202014%2C%20D%C3%BCsseldorf.jpg?width=800",
+    "photoCredit": "M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "mercedes-eqa",
@@ -25747,7 +26219,9 @@
     ],
     "wiki": "Mercedes-Benz EQA",
     "reviewed": false,
-    "photoMatch": "EQA"
+    "photoMatch": "EQA",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercedes-Benz%20H243%20IMG%205876.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "audi-s1",
@@ -25773,7 +26247,9 @@
     ],
     "wiki": "Audi S1",
     "reviewed": false,
-    "photoMatch": "S1"
+    "photoMatch": "S1",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2018%20Audi%20A1%20S%20Line%2030%20TFSi%20S-A%201.0.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "vw-golf-r-mk7-5",
@@ -25877,7 +26353,9 @@
     ],
     "wiki": "Mercedes-Benz GLE-Class",
     "reviewed": false,
-    "photoMatch": "GLE"
+    "photoMatch": "GLE",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercedes-Benz%20GLE%20350%20d%204MATIC%20AMG%20Line%20%28V%20167%29%20%E2%80%93%20f%2018042021.jpg?width=800",
+    "photoCredit": "© M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "bmw-x6-m-competition",
@@ -25903,7 +26381,9 @@
     ],
     "wiki": "BMW X6 (G06)",
     "reviewed": false,
-    "photoMatch": "X6"
+    "photoMatch": "X6",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/BMW%20G06%20IMG%203142.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "porsche-cayenne-turbo-e3",
@@ -25956,7 +26436,9 @@
     ],
     "wiki": "Volvo XC40 Recharge",
     "reviewed": false,
-    "photoMatch": "XC40"
+    "photoMatch": "XC40",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2019%20Volvo%20XC40%20T5%20Momentum%20in%20Bright%20Silver%20Metallic%2C%20front%20left%2C%202025-09-22.jpg?width=800",
+    "photoCredit": "Elise240SX · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "volvo-ex90",
@@ -25983,7 +26465,9 @@
     ],
     "wiki": "Volvo EX90",
     "reviewed": false,
-    "photoMatch": "EX90"
+    "photoMatch": "EX90",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Volvo%20EX90%20autoMOBIL%20T%C3%BCbingen%202025%20DSC%202740.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "subaru-brz-ts",
@@ -26010,7 +26494,9 @@
     ],
     "wiki": "Subaru BRZ",
     "reviewed": false,
-    "photoMatch": "BRZ"
+    "photoMatch": "BRZ",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2022%20Toyota%20GR86%20Premium%20in%20Halo%2C%20Front%20Right%2C%2004-10-2022.jpg?width=800",
+    "photoCredit": "Elise240SX · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "audi-tt-rs-roadster",
@@ -26036,7 +26522,9 @@
     ],
     "wiki": "Audi TT",
     "reviewed": false,
-    "photoMatch": "TT ?RS"
+    "photoMatch": "TT ?RS",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2019%20Audi%20TT%20Sport%2040%20TFSi%20S-A%202.0%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "audi-rs3-sedan-8v",
@@ -26062,7 +26550,9 @@
     ],
     "wiki": "Audi RS 3",
     "reviewed": false,
-    "photoMatch": "RS ?3"
+    "photoMatch": "RS ?3",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Audi%20A3%208Y%20Sedan%20IMG%205936.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "lykan-hypersport",
@@ -26089,7 +26579,9 @@
     ],
     "wiki": "W Motors Lykan HyperSport",
     "reviewed": false,
-    "photoMatch": "Lykan"
+    "photoMatch": "Lykan",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lykan%20HyperSport.jpg?width=800",
+    "photoCredit": "W Motors · CC BY 4.0 · Wikimedia Commons"
   },
   {
     "id": "brabus-rocket-900",
@@ -26115,7 +26607,9 @@
     ],
     "wiki": "Brabus Rocket",
     "reviewed": false,
-    "photoMatch": "Rocket"
+    "photoMatch": "Rocket",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Brabus%20900%20Rocket%20IMG%200536.jpg?width=800",
+    "photoCredit": "Alexander Migl · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "ruf-ctr-yellowbird",
@@ -26142,7 +26636,9 @@
     ],
     "wiki": "Ruf CTR",
     "reviewed": false,
-    "photoMatch": "CTR"
+    "photoMatch": "CTR",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2017-03-07%20Geneva%20Motor%20Show%201205.JPG?width=800",
+    "photoCredit": "Norbert Aepli, Switzerland (User:Noebu) · CC BY 4.0 · Wikimedia Commons"
   },
   {
     "id": "singer-dls",
@@ -26169,7 +26665,9 @@
     ],
     "wiki": "Singer Vehicle Design",
     "reviewed": false,
-    "photoMatch": "Singer"
+    "photoMatch": "Singer",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/SLY%205601%20%2815649077859%29.jpg?width=800",
+    "photoCredit": "steve lyon from los angeles, ca, usa · CC BY-SA 2.0 · Wikimedia Commons"
   },
   {
     "id": "shelby-super-snake-2018",
@@ -26221,7 +26719,9 @@
     ],
     "wiki": "Roush Performance",
     "reviewed": false,
-    "photoMatch": "Roush"
+    "photoMatch": "Roush",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/DaytonaCoupeEngines01.JPG?width=800",
+    "photoCredit": "Sodfijd at English Wikipedia · Public domain · Wikimedia Commons"
   },
   {
     "id": "callaway-corvette-sc757",
@@ -26273,7 +26773,9 @@
     ],
     "wiki": "Cadillac ATS",
     "reviewed": false,
-    "photoMatch": "ATS-?V"
+    "photoMatch": "ATS-?V",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cadillac%20ATS%202.0%20Turbo%20AWD%20Premium%20%E2%80%93%20Frontansicht%2C%2016.%20Oktober%202015%2C%20D%C3%BCsseldorf.jpg?width=800",
+    "photoCredit": "M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "renault-clio-rs-220-trophy",
@@ -26325,7 +26827,9 @@
     ],
     "wiki": "Citroën DS3",
     "reviewed": false,
-    "photoMatch": "DS3"
+    "photoMatch": "DS3",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/DS%203%20Crossback%20PureTech%20155%20EAT8%20So%20Chic%20%E2%80%93%20f%2025072020.jpg?width=800",
+    "photoCredit": "© M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "ford-fiesta-st200",
@@ -26351,7 +26855,9 @@
     ],
     "wiki": "Ford Fiesta ST",
     "reviewed": false,
-    "photoMatch": "ST ?200"
+    "photoMatch": "ST ?200",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ford%20Fiesta%20ST-Line%20%28VII%2C%20Facelift%29%20%E2%80%93%20f%2030012023.jpg?width=800",
+    "photoCredit": "© M 93 · CC BY-SA 3.0 de · Wikimedia Commons"
   },
   {
     "id": "nissan-leaf-ze0",
@@ -26459,7 +26965,9 @@
     ],
     "wiki": "Li Auto L9",
     "reviewed": false,
-    "photoMatch": "L9"
+    "photoMatch": "L9",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Li%20Auto%20L9%20IMG001.jpg?width=800",
+    "photoCredit": "Zotyefan · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "polaris-slingshot",
@@ -26485,7 +26993,9 @@
     ],
     "wiki": "Polaris Slingshot",
     "reviewed": false,
-    "photoMatch": "Slingshot"
+    "photoMatch": "Slingshot",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Polaris%20Slingshot%20front%203.4.18.jpg?width=800",
+    "photoCredit": "Kevauto · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "mercedes-amg-c63-s-coupe-c205",
@@ -26851,7 +27361,9 @@
     ],
     "wiki": "Audi R8 LMS",
     "reviewed": false,
-    "photoMatch": "LMS|GT3"
+    "photoMatch": "LMS|GT3",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2018%20Audi%20R8%20Coupe%20V10%20plus%20Front.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "ferrari-296-gt3",
@@ -26955,7 +27467,9 @@
     ],
     "wiki": "Aston Martin Vantage GT3",
     "reviewed": false,
-    "photoMatch": "GT3"
+    "photoMatch": "GT3",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2013%20Aston%20Martin%20V12%20Vantage%20S%20Automatic%205.9.jpg?width=800",
+    "photoCredit": "Vauxford · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "ford-mustang-gt3",
@@ -26981,7 +27495,9 @@
     ],
     "wiki": "Ford Mustang GT3",
     "reviewed": false,
-    "photoMatch": "GT3"
+    "photoMatch": "GT3",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pro%20Mustang%2064%20WGI25%2003%20%28cropped%29.jpg?width=800",
+    "photoCredit": "SmackJam · CC BY-SA 4.0 · Wikimedia Commons"
   },
   {
     "id": "chevrolet-corvette-z06-gt3r",
@@ -27060,6 +27576,8 @@
     ],
     "wiki": "Rimac Nevera",
     "reviewed": false,
-    "photoMatch": "Nevera"
+    "photoMatch": "Nevera",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Rimac%20Nevera.jpg?width=800",
+    "photoCredit": "MrWalkr · CC BY-SA 4.0 · Wikimedia Commons"
   }
 ]
