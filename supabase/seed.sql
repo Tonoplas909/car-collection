@@ -719,19 +719,20 @@ Tony Patt (cropped) · CC BY 2.0 · Wikimedia Commons'),
 on conflict (id) do update set make = excluded.make, model = excluded.model, gen = excluded.gen, year = excluded.year, country = excluded.country, cc = excluded.cc, tier = excluded.tier, hp = excluded.hp, nm = excluded.nm, acc = excluded.acc, top = excluded.top, kg = excluded.kg, value = excluded.value, blurb = excluded.blurb, pools = excluded.pools, tastes = excluded.tastes, photo_url = excluded.photo_url, photo_credit = excluded.photo_credit;
 
 insert into public.race_events (id, kind, len, place, fee, win, points) values
-  ('sprint', 'Sprint', 800, 'Suzuka East straight', 500, 2500, 120),
-  ('drag', 'Drag', 402, 'Quarter mile, Santa Pod', 300, 1500, 80),
-  ('run', 'Highway run', 1600, 'Autobahn A9, closed section', 1000, 6000, 220)
+  ('sprint', 'Circuit', 1500, 'Suzuka East', 500, 2500, 120),
+  ('drag', 'Drag', 1540, 'Santa Pod, launch loop', 300, 1500, 80),
+  ('touge', 'Touge', 910, 'Mount Haruna pass', 700, 3800, 160),
+  ('run', 'Highway run', 2520, 'Autobahn A9, closed section', 1000, 6000, 220)
 on conflict (id) do update set kind = excluded.kind, len = excluded.len, place = excluded.place, fee = excluded.fee, win = excluded.win, points = excluded.points;
 
 insert into public.seasons (id, ends_at) values (4, now() + interval '12 days 4 hours') on conflict (id) do nothing;
 
 insert into public.calendar_events (starts_at, name, rule, prize, event_id, fee, featured) values
-  (now() + interval '188252 seconds', 'Suzuka Sprint', '800 m · JDM cars only', 'Apex pack', 'sprint', 500, true),
-  (now() + interval '274652 seconds', 'Monte Carlo Rally', '1,600 m · Rally class', '10,000 CR', 'run', 1000, false),
-  (now() + interval '793052 seconds', 'Quarter Mile Night', '402 m · Any car', 'Rare car', 'drag', 300, false),
-  (now() + interval '879452 seconds', 'Autobahn Run', '1,600 m · Supercars', 'Legendary pack', 'run', 1000, false),
-  (now() + interval '1397852 seconds', 'Classics Cup', '800 m · Pre-1990', 'Heritage pack', 'sprint', 500, false);
+  (now() + interval '176526 seconds', 'Suzuka Sprint', 'Circuit · JDM cars only', 'Apex pack', 'sprint', 500, true),
+  (now() + interval '262926 seconds', 'Monte Carlo Rally', 'Highway · Rally class', '10,000 CR', 'run', 1000, false),
+  (now() + interval '781326 seconds', 'Quarter Mile Night', 'Drag · Any car', 'Rare car', 'drag', 300, false),
+  (now() + interval '867726 seconds', 'Autobahn Run', 'Highway · Supercars', 'Legendary pack', 'run', 1000, false),
+  (now() + interval '1386126 seconds', 'Classics Cup', 'Circuit · Pre-1990', 'Heritage pack', 'sprint', 500, false);
 
 -- House sellers keep the market stocked; one recent sale per car sets its 30-day average.
 insert into public.listings (seller_name, car_id, level, price, ends_at) values

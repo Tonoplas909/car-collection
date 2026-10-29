@@ -719,7 +719,8 @@ Tony Patt (cropped) · CC BY 2.0 · Wikimedia Commons'),
 on conflict (id) do update set make = excluded.make, model = excluded.model, gen = excluded.gen, year = excluded.year, country = excluded.country, cc = excluded.cc, tier = excluded.tier, hp = excluded.hp, nm = excluded.nm, acc = excluded.acc, top = excluded.top, kg = excluded.kg, value = excluded.value, blurb = excluded.blurb, pools = excluded.pools, tastes = excluded.tastes, photo_url = excluded.photo_url, photo_credit = excluded.photo_credit;
 
 insert into public.race_events (id, kind, len, place, fee, win, points) values
-  ('sprint', 'Sprint', 800, 'Suzuka East straight', 500, 2500, 120),
-  ('drag', 'Drag', 402, 'Quarter mile, Santa Pod', 300, 1500, 80),
-  ('run', 'Highway run', 1600, 'Autobahn A9, closed section', 1000, 6000, 220)
+  ('sprint', 'Circuit', 1500, 'Suzuka East', 500, 2500, 120),
+  ('drag', 'Drag', 1540, 'Santa Pod, launch loop', 300, 1500, 80),
+  ('touge', 'Touge', 910, 'Mount Haruna pass', 700, 3800, 160),
+  ('run', 'Highway run', 2520, 'Autobahn A9, closed section', 1000, 6000, 220)
 on conflict (id) do update set kind = excluded.kind, len = excluded.len, place = excluded.place, fee = excluded.fee, win = excluded.win, points = excluded.points;

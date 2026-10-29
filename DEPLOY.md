@@ -54,3 +54,11 @@ Le bouton « Continue with Discord » (inscription et connexion) et « Connect D
 npx supabase db push
 ```
 Si l'e-mail Discord est vérifié et correspond à un compte existant, Supabase relie l'identité Discord à ce compte au lieu d'en créer un second.
+
+## Courses sur circuit
+Les courses se jouent sur un circuit (freinage et nitro, boîte automatique). Le serveur rejoue les actions du joueur et pilote lui-même les adversaires avec les mêmes règles. Après avoir récupéré ce changement :
+```bash
+npx supabase db push
+npx supabase functions deploy races
+```
+La migration remplace `enter_race` (plus de liste d'adversaires dans la base) et met à jour les quatre épreuves, dont la nouvelle `touge`. Relancer `supabase/catalog.sql` n'est pas nécessaire (il contient les mêmes lignes). Une course commencée avant la mise à jour ne peut plus être envoyée : le joueur perd simplement ses frais d'entrée.

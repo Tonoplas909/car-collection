@@ -5,6 +5,7 @@ import { pgcrypto } from '@electric-sql/pglite/contrib/pgcrypto'
 import { readFileSync, readdirSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { RACE_EVENTS } from '../supabase/functions/_shared/game/race.ts'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const db = new PGlite({ extensions: { pgcrypto } })
@@ -121,7 +122,8 @@ check('proposer got the car and paid', snap.garage.some(g => g.carId === 'bmw-m3
 // Races
 await as(a)
 const entered = await rpc(`select enter_race('sprint', 'ferrari-f40')`)
-check('enter race charges fee', entered.snapshot.user.credits === 109500 && entered.entry.opponents.length === 3)
+check('enter race charges fee', entered.snapshot.user.credits === 109500 && entered.entry.eventId === 'sprint' && entered.entry.carId === 'ferrari-f40')
+check('opponents are drawn from the race id, not stored', entered.entry.opponents === undefined)
 await db.query('select apply_race_result($1, $2, $3)', [a, entered.entry.raceId, JSON.stringify({ place: 1, rewards: { points: 120, credits: 2500, xp: 9800 } })])
 snap = await rpc('select get_snapshot()')
 check('race rewards + level up', snap.user.credits === 112000 && snap.stats.racesWon === 1 && snap.stats.seasonPoints === 120 && snap.user.level === 1 && snap.user.xp === 9800)
@@ -159,6 +161,15 @@ check('discord name is cleaned up', pd1.username === 'MaxPower', pd1.username)
 check('discord name with no usable characters still gets a valid username', /^_[0-9a-f]{4}$/.test(pd2.username) || pd2.username.length >= 3, pd2.username)
 check('account with no email and no name gets a player name', pd3.username.startsWith('player'), pd3.username)
 
+// Circuit races: the four events match the shared rules, and the new one can be entered
+await as(a)
+const events = (await db.query('select id, kind, len, place, fee, win, points from race_events order by id')).rows
+const wanted = [...RACE_EVENTS].sort((x, y) => (x.id < y.id ? -1 : 1)).map(e => ({ id: e.id, kind: e.kind, len: e.len, place: e.place, fee: e.fee, win: e.win, points: e.points }))
+check('race events match RACE_EVENTS', JSON.stringify(events) === JSON.stringify(wanted), JSON.stringify(events))
+const creditsBefore = Number((await one('select credits from profiles where id = $1', [a])).credits)
+const touge = await rpc(`select enter_race('touge', 'ferrari-f40')`)
+check('touge costs 700', touge.snapshot.user.credits === creditsBefore - 700 && touge.entry.eventId === 'touge', touge.snapshot.user.credits)
+await expectErr('unknown event is refused', `select enter_race('nope', 'ferrari-f40')`, [], 'not_found')
 
 console.log(failures ? `\n${failures} FAILED` : '\nall checks passed')
 process.exit(failures ? 1 : 0)
