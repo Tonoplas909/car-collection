@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react'
 import { Link, Navigate } from 'react-router-dom'
-import { CATALOG, CARS_BY_ID, STARTER_PACK_SIZE, TASTES, carLabel, makeGen, type Car } from '@game'
+import { CARS_BY_ID, STARTER_PACK_SIZE, TASTES, carLabel, makeGen, type Car } from '@game'
 import { backend } from '../api'
 import { Photo, TIER_BAR } from '../components/ui'
 import { num } from '../lib/format'
@@ -90,10 +90,18 @@ export function LoginPage() {
   )
 }
 
-/** Cars shown in a taste card: the most valuable ones tagged with it that have a photo. */
+/** Hand-picked cars for each taste card, matching the examples written on it. */
+const TASTE_SHOWCASE: Record<string, string[]> = {
+  everyday: ['vw-golf-gti-mk1', 'mini-cooper-s', 'honda-civic-type-r-ep3', 'peugeot-205-gti', 'mazda-mx5-na'],
+  jdm: ['nissan-skyline-r34', 'toyota-supra-a80', 'mazda-rx7-fd', 'honda-nsx-na1', 'toyota-ae86'],
+  supercars: ['ferrari-f40', 'lamborghini-countach', 'mclaren-f1', 'lamborghini-diablo', 'ferrari-testarossa'],
+  classics: ['mercedes-300sl', 'datsun-240z', 'porsche-911-rs27', 'jaguar-etype-s1', 'aston-martin-db5'],
+  rally: ['lancia-delta-evo', 'ford-escort-cosworth', 'subaru-impreza-22b', 'audi-quattro', 'peugeot-205-t16'],
+  concepts: ['mercedes-c111', 'lancia-stratos-zero', 'jaguar-xj220', 'alfa-romeo-33-stradale', 'aston-martin-one-77'],
+}
 const TASTE_CARS: Record<string, Car[]> = Object.fromEntries(TASTES.map(t => [
   t.id,
-  CATALOG.filter(c => c.tastes.includes(t.id) && c.photoUrl).sort((a, b) => b.value - a.value).slice(0, 5),
+  (TASTE_SHOWCASE[t.id] ?? []).map(id => CARS_BY_ID[id]).filter((c): c is Car => !!c?.photoUrl),
 ]))
 
 /** Small photo (the catalog URLs ask Commons for 800 px, a taste card needs about half). */
