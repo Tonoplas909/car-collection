@@ -5,11 +5,15 @@ import { TIER_BAR, TIER_FG } from '../lib/tiers'
 
 export { TIER_BAR, TIER_FG }
 
-/** Striped placeholder until licensed photography is in; real photos print black and white. */
-export function Photo({ car, label = 'car photo', className = '', style }: { car?: Car; label?: string; className?: string; style?: CSSProperties }) {
+/** Car photo, or a striped placeholder when there is none. `gray` prints it black and white (cars not unlocked yet). */
+export function Photo({ car, label = 'car photo', className = '', style, gray, lazy }: {
+  car?: Car; label?: string; className?: string; style?: CSSProperties; gray?: boolean; lazy?: boolean
+}) {
   return (
     <div className={`photo ${className}`} style={style}>
-      {car?.photoUrl ? <img src={car.photoUrl} alt={`${car.make} ${car.model}`} /> : <span>{label}</span>}
+      {car?.photoUrl
+        ? <img src={car.photoUrl} alt={`${car.make} ${car.model}`} className={gray ? 'grayscale' : undefined} loading={lazy ? 'lazy' : undefined} decoding={lazy ? 'async' : undefined} />
+        : <span>{label}</span>}
     </div>
   )
 }

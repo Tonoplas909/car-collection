@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { GlobalFx } from './components/GlobalFx'
 import { AppShell, RequireSession } from './components/Shell'
 import { CreditsPage, EventsPage, FriendsPage, SettingsPage, UpgradePage } from './screens/Extras'
+import { CollectionPage } from './screens/Collection'
 import { GaragePage } from './screens/Garage'
 import { LandingPage } from './screens/Landing'
 import { LeaderboardPage } from './screens/Leaderboard'
@@ -29,6 +30,8 @@ export function App() {
         <Route element={<AppShell />}>
           <Route path="/garage" element={<GaragePage />} />
           <Route path="/garage/:carId" element={<GaragePage />} />
+          <Route path="/collection" element={<CollectionPage />} />
+          <Route path="/collection/:carId" element={<CollectionPage />} />
           <Route path="/packs" element={<PacksPage />} />
           <Route path="/market" element={<MarketPage />} />
           <Route path="/market/:listingId" element={<MarketPage />} />

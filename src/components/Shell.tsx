@@ -5,7 +5,7 @@ import { useIsMobile } from '../lib/hooks'
 import { useApp } from '../state/store'
 
 const PRIMARY = [
-  ['/garage', 'Garage'], ['/packs', 'Packs'], ['/race', 'Race'], ['/market', 'Market'], ['/leaderboard', 'Leaderboard'],
+  ['/garage', 'Garage'], ['/collection', 'Collection'], ['/packs', 'Packs'], ['/race', 'Race'], ['/market', 'Market'], ['/leaderboard', 'Leaderboard'],
 ] as const
 const SECONDARY = [['/events', 'Events'], ['/friends', 'Friends'], ['/settings', 'Settings']] as const
 
@@ -33,7 +33,7 @@ function TabBar() {
   const { pathname } = useLocation()
   const onProfile = pathname.startsWith('/profile')
   // Full-screen detail views (2b) replace the tab bar with their own action bar.
-  if (/^\/(garage|market)\/[^/]+/.test(pathname)) return null
+  if (/^\/(garage|market|collection)\/[^/]+/.test(pathname)) return null
   const tabs: [string, string][] = [
     ['/garage', 'Garage'], ['/packs', 'Packs'], ['/race', 'Race'], ['/market', 'Market'],
     onProfile ? ['/profile', 'Profile'] : ['/leaderboard', 'Ranks'],

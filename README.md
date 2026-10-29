@@ -40,6 +40,7 @@ All files are in `design/`.
 9. **Onboarding** (`Onboarding.dc.html`): 7a Sign up, 7b "What do you love?" (6 tastes, multi-select, biases first pack), 7c first pack opening.
 10. **Extras** (`Extras.dc.html`): 8a Settings, 8b Credits top-up (4 bundles + order summary), 8c Car upgrade (levels 1–5, cost curve, stat deltas), 8d Events calendar, 8e Friends.
 11. **States** (`States.dc.html`): 9a empty garage, 9b no listings, 9c race search timeout, 9d low credits, 9e confirm dialogs (buy / sell / swap).
+12. **Collection** (not in the handoff, added later): every car in the game with owned ones in colour and locked ones in black and white; filters by rarity, unlocked/locked and a search box; the side panel shows the specs and which packs can roll the car.
 
 ## Interactions & Behavior
 - **Navigation**: nav links between screens; mobile tab bar.

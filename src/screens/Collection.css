@@ -1,0 +1,14 @@
+/* Collection: every car in the game, locked ones in black and white. */
+.c-of { font-weight: 800; font-size: 32px; line-height: 1; letter-spacing: -.02em; color: var(--color-neutral-600); padding-bottom: 6px; }
+.g-head.mobile .c-of { font-size: 22px; padding-bottom: 4px; }
+.c-tools { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 10px 24px; border-bottom: 1px solid var(--color-divider); flex: none; }
+.c-search { flex: 1 1 220px; max-width: 320px; }
+.c-photo { position: relative; }
+.c-lock { position: absolute; top: 8px; right: 8px; display: grid; place-items: center; width: 24px; height: 24px; background: rgb(32 30 29 / .78); color: #fff; }
+.g-card.locked .g-card-model { color: var(--color-neutral-800); }
+.c-none { padding: 24px; margin: 0; }
+.g-panel .red-head.locked { background: var(--color-text); }
+@media (max-width: 767px) {
+  .c-tools { padding: 8px 16px; gap: 8px; }
+  .c-search { max-width: none; }
+}

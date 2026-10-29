@@ -23,7 +23,7 @@ export const PACKS: PackDef[] = [
   { id: 'heritage', name: 'Heritage', kicker: 'Classics', desc: 'Pre-1990 icons from Europe, Japan and America.', price: 8000,
     odds: [0.48, 0.34, 0.14, 0.04], guarantee: { count: 1, tier: 'Epic' } },
   { id: 'apex', name: 'Apex', kicker: 'Supercars', desc: 'Supercars, hypercars and flagship specials.', price: 25000,
-    odds: [0, 0.45, 0.43, 0.12], guarantee: { count: 2, tier: 'Epic' } },
+    odds: [0, 0.52, 0.4, 0.08], guarantee: { count: 2, tier: 'Epic' } },
 ]
 
 export const PACKS_BY_ID = Object.fromEntries(PACKS.map(p => [p.id, p])) as Record<PackId, PackDef>

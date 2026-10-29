@@ -1,7 +1,7 @@
 import { useLayoutEffect, useMemo, useRef, useState } from 'react'
-import { ChevronLeft } from 'lucide-react'
-import { useNavigate, useParams } from 'react-router-dom'
-import { CARS_BY_ID, TIER_RANK, carLabel, makeGen, marketFee, type Car, type OwnedCar, type Tier } from '@game'
+import { ArrowDown, ArrowUp, ChevronLeft } from 'lucide-react'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import { CARS_BY_ID, CATALOG, TIER_RANK, carLabel, makeGen, marketFee, type Car, type OwnedCar, type Tier } from '@game'
 import { Aside, Main, MobileHead } from '../components/Shell'
 import { ConfirmDialog, EmptyState, ModelName, Photo, TIER_BAR, TIER_FG, TierFilter } from '../components/ui'
 import { cr, num, serial } from '../lib/format'
@@ -16,7 +16,12 @@ const SORTERS: Record<Sort, (a: Item, b: Item) => number> = {
   tier: (a, b) => TIER_RANK[b.car.tier] - TIER_RANK[a.car.tier] || b.car.value - a.car.value,
   hp: (a, b) => b.car.hp - a.car.hp,
   value: (a, b) => b.car.value - a.car.value,
-  year: (a, b) => a.car.year - b.car.year,
+  year: (a, b) => b.car.year - a.car.year,
+}
+/** Every sorter puts the highest first (newest for Year); `asc` reverses it. */
+const sortItems = (items: Item[], sort: Sort, asc: boolean) => {
+  const out = [...items].sort(SORTERS[sort])
+  return asc ? out.reverse() : out
 }
 
 type Item = OwnedCar & { car: Car }
@@ -40,13 +45,18 @@ export function GaragePage() {
   return mobile ? <GarageMobile /> : <GarageDesktop initial={carId} />
 }
 
-function Sorts({ sort, onSort, compact }: { sort: Sort; onSort: (s: Sort) => void; compact?: boolean }) {
+function Sorts({ sort, onSort, asc, onDir, compact }: { sort: Sort; onSort: (s: Sort) => void; asc: boolean; onDir: () => void; compact?: boolean }) {
+  const label = asc ? (sort === 'year' ? 'Oldest first' : 'Lowest first') : (sort === 'year' ? 'Newest first' : 'Highest first')
   return (
     <div className={`g-sorts${compact ? ' compact' : ''}`}>
       <span className="muted">{compact ? 'Sort' : 'Sort by'}</span>
       {SORTS.map(([v, l]) => (
         <button key={v} aria-pressed={sort === v} onClick={() => onSort(v)}>{l}</button>
       ))}
+      <button className="g-dir" onClick={onDir} aria-label={`Reverse the order (now ${label.toLowerCase()})`} title={label}>
+        {asc ? <ArrowUp size={16} /> : <ArrowDown size={16} />}
+        {!compact && <span>{label}</span>}
+      </button>
     </div>
   )
 }
@@ -90,7 +100,8 @@ function GarageDesktop({ initial }: { initial?: string }) {
   const { items, counts, total } = useGarage()
   const [filter, setFilter] = useState<Tier | 'All'>('All')
   const [sort, setSort] = useState<Sort>('tier')
-  const list = useMemo(() => items.filter(i => filter === 'All' || i.car.tier === filter).sort(SORTERS[sort]), [items, filter, sort])
+  const [asc, setAsc] = useState(false)
+  const list = useMemo(() => sortItems(items.filter(i => filter === 'All' || i.car.tier === filter), sort, asc), [items, filter, sort, asc])
   const [sel, setSel] = useState<string | undefined>(initial)
   const current = items.find(i => i.carId === sel) ?? [...items].sort(SORTERS.tier)[0]
   const animate = useRef(false)
@@ -104,7 +115,7 @@ function GarageDesktop({ initial }: { initial?: string }) {
       <Main>
         <GarageHeader count={items.length} total={total} />
         <TierFilter value={filter} onChange={setFilter} counts={counts} />
-        <Sorts sort={sort} onSort={setSort} />
+        <Sorts sort={sort} onSort={setSort} asc={asc} onDir={() => setAsc(a => !a)} />
         <div className="g-scroll">
           <div className="g-grid">
             {list.map(i => (
@@ -215,15 +226,19 @@ function GarageMobile() {
   const navigate = useNavigate()
   const [filter, setFilter] = useState<Tier | 'All'>('All')
   const [sort, setSort] = useState<Sort>('tier')
-  const list = useMemo(() => items.filter(i => filter === 'All' || i.car.tier === filter).sort(SORTERS[sort]), [items, filter, sort])
+  const [asc, setAsc] = useState(false)
+  const list = useMemo(() => sortItems(items.filter(i => filter === 'All' || i.car.tier === filter), sort, asc), [items, filter, sort, asc])
   return (
     <>
       <MobileHead title={<span className="g-brand">MARQUE</span>} />
       <GarageHeader count={items.length} total={total} mobile />
+      <Link to="/collection" className="g-collection-link">
+        <span>Collection · {items.length} of {CATALOG.length} discovered</span><span aria-hidden="true">→</span>
+      </Link>
       {items.length ? (
         <>
           <div className="g-tiers-m"><TierFilter value={filter} onChange={setFilter} counts={counts} short /></div>
-          <Sorts sort={sort} onSort={setSort} compact />
+          <Sorts sort={sort} onSort={setSort} asc={asc} onDir={() => setAsc(a => !a)} compact />
           <div className="mscroll" style={{ padding: '12px 16px' }}>
             <div className="g-grid mobile">
               {list.map(i => <CarCard key={i.carId} item={i} selected={false} compact onPick={() => navigate(`/garage/${i.carId}`)} />)}
