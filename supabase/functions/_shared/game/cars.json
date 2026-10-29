@@ -448,9 +448,9 @@
     "blurb": "A sequential twin-turbo rotary in a low, light body. Near 50:50 weight distribution.",
     "wiki": "Mazda RX-7 (FD)",
     "reviewed": true,
-    "photoMatch": "FD|RX-?7",
-    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mazda-rx7-1st-generation01.jpg?width=800",
-    "photoCredit": "Taisyo · CC BY-SA 3.0 · Wikimedia Commons"
+    "photoMatch": "FD3S|FD",
+    "photoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mazda%20RX-7%20Spirit%20R%20(FD3S)%20(front%20three-quarter%20view)%20at%20Mazda%20Museum.jpg?width=800",
+    "photoCredit": "Aos.1905 · CC BY 4.0 · Wikimedia Commons"
   },
   {
     "id": "bmw-m3-e30",
