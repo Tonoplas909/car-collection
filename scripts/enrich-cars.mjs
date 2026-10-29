@@ -10,6 +10,7 @@
 //   npm run cars:enrich             fill in missing photos and print a report
 //   npm run cars:enrich -- --force  redo photos for every car
 //   npm run cars:enrich -- ferrari-f40 mclaren-f1   only these ids
+//   npm run cars:enrich -- --pending   the cars held back in supabase/cars.pending.json (those with a photo move to cars.json)
 //
 // Also writes data/review.html, a contact sheet to check photos, credits and specs by eye.
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
@@ -17,9 +18,13 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
-const file = join(root, 'supabase/functions/_shared/game/cars.json')
-const cars = JSON.parse(readFileSync(file, 'utf8'))
+const mainFile = join(root, 'supabase/functions/_shared/game/cars.json')
+const pendingFile = join(root, 'supabase/cars.pending.json')
 const args = process.argv.slice(2)
+// --pending works on the cars held back for lack of a photo; the ones that get a photo move into cars.json.
+const usePending = args.includes('--pending')
+const file = usePending ? pendingFile : mainFile
+const cars = JSON.parse(readFileSync(file, 'utf8'))
 const force = args.includes('--force')
 const only = args.filter(a => !a.startsWith('--'))
 
@@ -134,7 +139,7 @@ for (const car of cars) {
       car.photoUrl = `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(found.name)}?width=800`
       car.photoCredit = `${found.author} · ${found.license} · Wikimedia Commons`
       changed++
-      writeFileSync(file, JSON.stringify(cars, null, 2) + '\n') // keep progress if a later request fails
+      if (!usePending) writeFileSync(file, JSON.stringify(cars, null, 2) + '\n') // keep progress if a later request fails
     } else row.notes.push(`photo: ${lastError}`)
   }
   if (d.year && Math.abs(d.year - car.year) > 2) row.notes.push(`year: draft ${car.year}, Wikidata ${d.year}`)
@@ -142,7 +147,15 @@ for (const car of cars) {
   await sleep(400)
 }
 
-writeFileSync(file, JSON.stringify(cars, null, 2) + '\n')
+const save = () => {
+  if (!usePending) { writeFileSync(file, JSON.stringify(cars, null, 2) + '\n'); return }
+  const done = cars.filter(c => c.photoUrl)
+  writeFileSync(pendingFile, JSON.stringify(cars.filter(c => !c.photoUrl), null, 2) + '\n')
+  const main = JSON.parse(readFileSync(mainFile, 'utf8'))
+  const have = new Set(main.map(c => c.id))
+  writeFileSync(mainFile, JSON.stringify([...main, ...done.filter(c => !have.has(c.id))], null, 2) + '\n')
+}
+save()
 
 const esc = s => String(s ?? '').replace(/[&<>"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[ch])
 const rows = cars.map(c => {

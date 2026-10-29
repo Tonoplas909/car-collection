@@ -4,7 +4,7 @@
 //
 // Row: [id, make, model, gen, year, cc, tier, hp, nm, 0-100 s, top km/h, kg, value CR, pools, tastes, wikipedia title, blurb, photoMatch?]
 // pools: s street, h heritage, a apex.  tastes: e everyday, j jdm, p supercars, c classics, r rally, x concepts.
-import { readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { ROWS_NEW } from './cars-new.mjs'
@@ -172,7 +172,10 @@ const ROWS = [
 
 ROWS.push(...ROWS_NEW, ...ROWS_2A, ...ROWS_2B, ...ROWS_2C, ...ROWS_2D, ...ROWS_2E)
 const cars = JSON.parse(readFileSync(file, 'utf8'))
-const have = new Set(cars.map(c => c.id))
+const pendingFile = join(dirname(fileURLToPath(import.meta.url)), '../supabase/cars.pending.json')
+const pending = existsSync(pendingFile) ? JSON.parse(readFileSync(pendingFile, 'utf8')) : []
+// Cars held back for lack of a photo live in supabase/cars.pending.json; do not re-add them to the catalog.
+const have = new Set([...cars, ...pending].map(c => c.id))
 let added = 0
 for (const [id, make, model, gen, year, cc, tier, hp, nm, acc, top, kg, value, pools, tastes, wiki, blurb, photoMatch] of ROWS) {
   if (have.has(id)) continue

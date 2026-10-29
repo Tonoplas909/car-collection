@@ -1,0 +1,7129 @@
+[
+  {
+    "id": "toyota-bz4x",
+    "make": "Toyota",
+    "model": "bZ4X",
+    "gen": "",
+    "year": 2022,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Common",
+    "hp": 215,
+    "nm": 337,
+    "acc": 7.7,
+    "top": 160,
+    "kg": 2000,
+    "value": 14000,
+    "blurb": "Toyota’s first mass-market electric car, with two motors and all-wheel drive.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "jdm",
+      "concepts"
+    ],
+    "wiki": "Toyota bZ4X",
+    "reviewed": false,
+    "photoMatch": "bZ4X"
+  },
+  {
+    "id": "lexus-rc-f-track-edition",
+    "make": "Lexus",
+    "model": "RC F Track Edition",
+    "gen": "",
+    "year": 2020,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Epic",
+    "hp": 472,
+    "nm": 520,
+    "acc": 4.3,
+    "top": 270,
+    "kg": 1700,
+    "value": 90000,
+    "blurb": "A lighter RC F with carbon-fibre parts and bigger brakes, tuned for the track.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "jdm"
+    ],
+    "wiki": "Lexus RC F",
+    "reviewed": false,
+    "photoMatch": "Track"
+  },
+  {
+    "id": "lexus-lx-600",
+    "make": "Lexus",
+    "model": "LX 600",
+    "gen": "J310",
+    "year": 2022,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Rare",
+    "hp": 409,
+    "nm": 650,
+    "acc": 7,
+    "top": 210,
+    "kg": 2500,
+    "value": 52000,
+    "blurb": "A luxury off-roader based on the Land Cruiser 300 with a twin-turbo V6.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "jdm"
+    ],
+    "wiki": "Lexus LX",
+    "reviewed": false,
+    "photoMatch": "LX ?600"
+  },
+  {
+    "id": "honda-civic-type-r-fk8-limited",
+    "make": "Honda",
+    "model": "Civic Type R Limited Edition",
+    "gen": "FK8",
+    "year": 2020,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Epic",
+    "hp": 316,
+    "nm": 400,
+    "acc": 5.7,
+    "top": 272,
+    "kg": 1380,
+    "value": 74000,
+    "blurb": "A 100-car limited run of the FK8 with a lighter build and a Sunlight Yellow paint.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "jdm"
+    ],
+    "wiki": "Honda Civic Type R (FK8)",
+    "reviewed": false,
+    "photoMatch": "Limited|FK8"
+  },
+  {
+    "id": "honda-fit-gk5",
+    "make": "Honda",
+    "model": "Fit RS",
+    "gen": "GK5",
+    "year": 2015,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Common",
+    "hp": 130,
+    "nm": 155,
+    "acc": 9.9,
+    "top": 190,
+    "kg": 1050,
+    "value": 9000,
+    "blurb": "A roomy small car with the Magic Seat, here in the sportier RS trim.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "jdm"
+    ],
+    "wiki": "Honda Fit",
+    "reviewed": false,
+    "photoMatch": "GK|Fit"
+  },
+  {
+    "id": "mazda-mx5-nd-2",
+    "make": "Mazda",
+    "model": "MX-5 2.0 Skyactiv-G",
+    "gen": "ND",
+    "year": 2019,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Rare",
+    "hp": 181,
+    "nm": 205,
+    "acc": 6.5,
+    "top": 219,
+    "kg": 1050,
+    "value": 24000,
+    "blurb": "A revised ND with a revvier 2.0 litre engine that makes 181 hp.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "jdm"
+    ],
+    "wiki": "Mazda MX-5",
+    "reviewed": false,
+    "photoMatch": "ND|Mk ?4"
+  },
+  {
+    "id": "mazda-mx5-nd-rf",
+    "make": "Mazda",
+    "model": "MX-5 RF",
+    "gen": "ND",
+    "year": 2017,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Common",
+    "hp": 158,
+    "nm": 200,
+    "acc": 7.4,
+    "top": 214,
+    "kg": 1100,
+    "value": 19000,
+    "blurb": "A retractable-hardtop MX-5 with a fastback look.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "jdm"
+    ],
+    "wiki": "Mazda MX-5",
+    "reviewed": false,
+    "photoMatch": "RF"
+  },
+  {
+    "id": "subaru-wrx-sti-s209",
+    "make": "Subaru",
+    "model": "WRX STI S209",
+    "gen": "VA",
+    "year": 2019,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Epic",
+    "hp": 341,
+    "nm": 431,
+    "acc": 4.9,
+    "top": 255,
+    "kg": 1580,
+    "value": 120000,
+    "blurb": "A 209-car US-only run with the most powerful EJ boxer ever made.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "jdm",
+      "rally"
+    ],
+    "wiki": "Subaru WRX STI",
+    "reviewed": false,
+    "photoMatch": "S209"
+  },
+  {
+    "id": "subaru-wrx-sti-type-ra",
+    "make": "Subaru",
+    "model": "WRX STI Type RA",
+    "gen": "VA",
+    "year": 2018,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Epic",
+    "hp": 306,
+    "nm": 407,
+    "acc": 5,
+    "top": 255,
+    "kg": 1520,
+    "value": 90000,
+    "blurb": "A track-oriented STI with a carbon roof, forged wheels and a stiffer chassis.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "jdm",
+      "rally"
+    ],
+    "wiki": "Subaru WRX STI",
+    "reviewed": false,
+    "photoMatch": "Type ?RA"
+  },
+  {
+    "id": "subaru-levorg-vn5",
+    "make": "Subaru",
+    "model": "Levorg STI Sport",
+    "gen": "VN5",
+    "year": 2020,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Common",
+    "hp": 170,
+    "nm": 300,
+    "acc": 8.9,
+    "top": 210,
+    "kg": 1550,
+    "value": 14000,
+    "blurb": "A sporty estate with a 1.8 litre turbo and Subaru’s symmetrical all-wheel drive.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "jdm"
+    ],
+    "wiki": "Subaru Levorg",
+    "reviewed": false,
+    "photoMatch": "Levorg"
+  },
+  {
+    "id": "subaru-solterra",
+    "make": "Subaru",
+    "model": "Solterra",
+    "gen": "",
+    "year": 2022,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Common",
+    "hp": 215,
+    "nm": 336,
+    "acc": 6.9,
+    "top": 160,
+    "kg": 2000,
+    "value": 14000,
+    "blurb": "Subaru’s first electric SUV, built jointly with Toyota.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "jdm",
+      "concepts"
+    ],
+    "wiki": "Subaru Solterra",
+    "reviewed": false,
+    "photoMatch": "Solterra"
+  },
+  {
+    "id": "suzuki-alto-works",
+    "make": "Suzuki",
+    "model": "Alto Works",
+    "gen": "HA36S",
+    "year": 2015,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Common",
+    "hp": 64,
+    "nm": 98,
+    "acc": 10,
+    "top": 140,
+    "kg": 670,
+    "value": 9000,
+    "blurb": "A kei hot hatch with a turbo engine and a five-speed manual.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "jdm"
+    ],
+    "wiki": "Suzuki Alto",
+    "reviewed": false,
+    "photoMatch": "Alto"
+  },
+  {
+    "id": "nissan-leaf-ze1",
+    "make": "Nissan",
+    "model": "Leaf e+",
+    "gen": "ZE1",
+    "year": 2018,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Common",
+    "hp": 217,
+    "nm": 340,
+    "acc": 6.9,
+    "top": 157,
+    "kg": 1750,
+    "value": 12000,
+    "blurb": "The best-selling electric car of its era, here with a 62 kWh battery.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "Nissan Leaf",
+    "reviewed": false,
+    "photoMatch": "Leaf"
+  },
+  {
+    "id": "nissan-gt-r-nismo-special",
+    "make": "Nissan",
+    "model": "GT-R Nismo Special Edition",
+    "gen": "R35",
+    "year": 2020,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Epic",
+    "hp": 600,
+    "nm": 652,
+    "acc": 2.5,
+    "top": 315,
+    "kg": 1720,
+    "value": 200000,
+    "blurb": "A hand-built engine with the turbos from the GT3 race car.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "jdm"
+    ],
+    "wiki": "Nissan GT-R",
+    "reviewed": false,
+    "photoMatch": "Nismo"
+  },
+  {
+    "id": "nissan-gt-r-t-spec",
+    "make": "Nissan",
+    "model": "GT-R T-Spec",
+    "gen": "R35",
+    "year": 2024,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Epic",
+    "hp": 565,
+    "nm": 633,
+    "acc": 2.8,
+    "top": 315,
+    "kg": 1750,
+    "value": 170000,
+    "blurb": "Retro-colour paint, carbon ceramic brakes and an unchanged recipe, offered to mark the end of the R35.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "jdm"
+    ],
+    "wiki": "Nissan GT-R",
+    "reviewed": false,
+    "photoMatch": "T-?Spec"
+  },
+  {
+    "id": "nissan-juke-r-2",
+    "make": "Nissan",
+    "model": "Juke-R 2.0",
+    "gen": "",
+    "year": 2015,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Epic",
+    "hp": 600,
+    "nm": 652,
+    "acc": 2.8,
+    "top": 275,
+    "kg": 1740,
+    "value": 150000,
+    "blurb": "A crossover with a GT-R engine and all-wheel drive, built by hand in tiny numbers.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "jdm",
+      "concepts"
+    ],
+    "wiki": "Nissan Juke",
+    "reviewed": false,
+    "photoMatch": "Juke"
+  },
+  {
+    "id": "nissan-gt-r50-italdesign",
+    "make": "Nissan",
+    "model": "GT-R50 by Italdesign",
+    "gen": "",
+    "year": 2018,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Legendary",
+    "hp": 710,
+    "nm": 780,
+    "acc": 2.9,
+    "top": 320,
+    "kg": 1590,
+    "value": 1100000,
+    "blurb": "A 50-car, Italdesign-styled GT-R celebrating both companies’ 50th birthdays.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "jdm",
+      "concepts"
+    ],
+    "wiki": "Nissan GT-R50 by Italdesign",
+    "reviewed": false,
+    "photoMatch": "GT-?R ?50"
+  },
+  {
+    "id": "hyundai-kona-n",
+    "make": "Hyundai",
+    "model": "Kona N",
+    "gen": "OS",
+    "year": 2021,
+    "country": "South Korea",
+    "cc": "KR",
+    "tier": "Rare",
+    "hp": 276,
+    "nm": 392,
+    "acc": 5.5,
+    "top": 250,
+    "kg": 1510,
+    "value": 28000,
+    "blurb": "A small SUV with a hot-hatch engine and an electronically controlled differential.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "rally"
+    ],
+    "wiki": "Hyundai Kona N",
+    "reviewed": false,
+    "photoMatch": "Kona"
+  },
+  {
+    "id": "ford-mustang-bullitt-2018",
+    "make": "Ford",
+    "model": "Mustang Bullitt",
+    "gen": "S550",
+    "year": 2018,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Rare",
+    "hp": 460,
+    "nm": 569,
+    "acc": 4.3,
+    "top": 262,
+    "kg": 1700,
+    "value": 44000,
+    "blurb": "A Dark Highland Green homage to the 1968 film car, with a 5.0 litre V8.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Ford Mustang Bullitt",
+    "reviewed": false,
+    "photoMatch": "Bullitt"
+  },
+  {
+    "id": "ford-mustang-gt-s650",
+    "make": "Ford",
+    "model": "Mustang GT",
+    "gen": "S650",
+    "year": 2024,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Rare",
+    "hp": 480,
+    "nm": 569,
+    "acc": 4.2,
+    "top": 250,
+    "kg": 1720,
+    "value": 48000,
+    "blurb": "A 5.0 litre V8 and a digital dashboard in the seventh-generation Mustang.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Ford Mustang (seventh generation)",
+    "reviewed": false,
+    "photoMatch": "S650"
+  },
+  {
+    "id": "ford-mustang-dark-horse",
+    "make": "Ford",
+    "model": "Mustang Dark Horse",
+    "gen": "S650",
+    "year": 2024,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Rare",
+    "hp": 500,
+    "nm": 567,
+    "acc": 4.1,
+    "top": 250,
+    "kg": 1700,
+    "value": 58000,
+    "blurb": "A track-focused Mustang with the Coyote V8 and a Tremec six-speed manual.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Ford Mustang Dark Horse",
+    "reviewed": false,
+    "photoMatch": "Dark Horse"
+  },
+  {
+    "id": "ford-mustang-shelby-gt350r",
+    "make": "Ford",
+    "model": "Mustang Shelby GT350R",
+    "gen": "S550",
+    "year": 2016,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Epic",
+    "hp": 526,
+    "nm": 582,
+    "acc": 4.1,
+    "top": 290,
+    "kg": 1626,
+    "value": 120000,
+    "blurb": "A track-oriented GT350 with carbon wheels and no rear seat.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Shelby Mustang",
+    "reviewed": false,
+    "photoMatch": "GT350 ?R"
+  },
+  {
+    "id": "ford-mustang-gtd",
+    "make": "Ford",
+    "model": "Mustang GTD",
+    "gen": "S650",
+    "year": 2025,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Legendary",
+    "hp": 815,
+    "nm": 893,
+    "acc": 3.3,
+    "top": 325,
+    "kg": 1750,
+    "value": 340000,
+    "blurb": "A race-bred Mustang with a supercharged V8, a rear transaxle and a Nürburgring-lapped chassis.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Ford Mustang GTD",
+    "reviewed": false,
+    "photoMatch": "GTD"
+  },
+  {
+    "id": "ford-gt-mk-ii",
+    "make": "Ford",
+    "model": "GT Mk II",
+    "gen": "",
+    "year": 2019,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Legendary",
+    "hp": 700,
+    "nm": 745,
+    "acc": 2.7,
+    "top": 340,
+    "kg": 1250,
+    "value": 1300000,
+    "blurb": "A track-only GT with no speed limiter or ABS, built in a run of 45 cars.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "concepts"
+    ],
+    "wiki": "Ford GT Mk II",
+    "reviewed": false,
+    "photoMatch": "Mk ?II|GT"
+  },
+  {
+    "id": "ford-ranger-raptor",
+    "make": "Ford",
+    "model": "Ranger Raptor",
+    "gen": "T6",
+    "year": 2019,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Rare",
+    "hp": 210,
+    "nm": 500,
+    "acc": 10.5,
+    "top": 170,
+    "kg": 2400,
+    "value": 22000,
+    "blurb": "A pickup with Fox dampers and a wider body for fast off-road driving.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Ford Ranger Raptor",
+    "reviewed": false,
+    "photoMatch": "Raptor"
+  },
+  {
+    "id": "ford-bronco-2021",
+    "make": "Ford",
+    "model": "Bronco",
+    "gen": "U725",
+    "year": 2021,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Rare",
+    "hp": 300,
+    "nm": 420,
+    "acc": 7,
+    "top": 170,
+    "kg": 2100,
+    "value": 28000,
+    "blurb": "The Bronco name returns on a rugged body-on-frame SUV.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Ford Bronco (sixth generation)",
+    "reviewed": false,
+    "photoMatch": "Bronco"
+  },
+  {
+    "id": "ford-bronco-raptor",
+    "make": "Ford",
+    "model": "Bronco Raptor",
+    "gen": "U725",
+    "year": 2022,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Rare",
+    "hp": 418,
+    "nm": 563,
+    "acc": 5.5,
+    "top": 160,
+    "kg": 2500,
+    "value": 46000,
+    "blurb": "A wide-track Bronco with a twin-turbo V6 and desert suspension.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Ford Bronco (sixth generation)",
+    "reviewed": false,
+    "photoMatch": "Raptor"
+  },
+  {
+    "id": "chevrolet-corvette-c7-stingray",
+    "make": "Chevrolet",
+    "model": "Corvette Stingray",
+    "gen": "C7",
+    "year": 2014,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Rare",
+    "hp": 455,
+    "nm": 630,
+    "acc": 4,
+    "top": 290,
+    "kg": 1500,
+    "value": 56000,
+    "blurb": "The seventh-generation Corvette, with a 6.2 litre V8 and the new Stingray name.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Chevrolet Corvette (C7)",
+    "reviewed": false,
+    "photoMatch": "C7"
+  },
+  {
+    "id": "chevrolet-corvette-c7-grand-sport",
+    "make": "Chevrolet",
+    "model": "Corvette Grand Sport",
+    "gen": "C7",
+    "year": 2017,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Epic",
+    "hp": 460,
+    "nm": 630,
+    "acc": 3.7,
+    "top": 290,
+    "kg": 1500,
+    "value": 74000,
+    "blurb": "The Z06 chassis and wide body with the Stingray engine.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Chevrolet Corvette (C7)",
+    "reviewed": false,
+    "photoMatch": "Grand Sport"
+  },
+  {
+    "id": "chevrolet-corvette-c7-zr1",
+    "make": "Chevrolet",
+    "model": "Corvette ZR1",
+    "gen": "C7",
+    "year": 2019,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Legendary",
+    "hp": 755,
+    "nm": 969,
+    "acc": 2.85,
+    "top": 341,
+    "kg": 1600,
+    "value": 280000,
+    "blurb": "The most powerful front-engine Corvette ever, with a supercharged 6.2 litre V8.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Chevrolet Corvette (C7)",
+    "reviewed": false,
+    "photoMatch": "ZR1"
+  },
+  {
+    "id": "chevrolet-corvette-c8-e-ray",
+    "make": "Chevrolet",
+    "model": "Corvette E-Ray",
+    "gen": "C8",
+    "year": 2024,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Epic",
+    "hp": 655,
+    "nm": 826,
+    "acc": 2.5,
+    "top": 295,
+    "kg": 1700,
+    "value": 110000,
+    "blurb": "The first hybrid Corvette, with electric front-axle drive.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Chevrolet Corvette (C8)",
+    "reviewed": false,
+    "photoMatch": "E-?Ray"
+  },
+  {
+    "id": "chevrolet-corvette-c8-zr1",
+    "make": "Chevrolet",
+    "model": "Corvette ZR1",
+    "gen": "C8",
+    "year": 2025,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Legendary",
+    "hp": 1064,
+    "nm": 1130,
+    "acc": 2.3,
+    "top": 375,
+    "kg": 1700,
+    "value": 380000,
+    "blurb": "A twin-turbo flat-plane-crank V8 with 1,064 hp, the most powerful production Corvette.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Chevrolet Corvette (C8)",
+    "reviewed": false,
+    "photoMatch": "ZR1"
+  },
+  {
+    "id": "chevrolet-camaro-zl1-6th",
+    "make": "Chevrolet",
+    "model": "Camaro ZL1",
+    "gen": "6th gen",
+    "year": 2017,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Epic",
+    "hp": 650,
+    "nm": 881,
+    "acc": 3.5,
+    "top": 318,
+    "kg": 1800,
+    "value": 72000,
+    "blurb": "A supercharged 6.2 litre V8 and an Alpha platform tuned at the Nürburgring.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Chevrolet Camaro (sixth generation)",
+    "reviewed": false,
+    "photoMatch": "ZL1"
+  },
+  {
+    "id": "chevrolet-camaro-zl1-1le",
+    "make": "Chevrolet",
+    "model": "Camaro ZL1 1LE",
+    "gen": "6th gen",
+    "year": 2018,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Epic",
+    "hp": 650,
+    "nm": 881,
+    "acc": 3.5,
+    "top": 318,
+    "kg": 1730,
+    "value": 96000,
+    "blurb": "A track pack with aero parts, wider tyres and magnetic dampers.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Chevrolet Camaro (sixth generation)",
+    "reviewed": false,
+    "photoMatch": "1LE"
+  },
+  {
+    "id": "dodge-charger-scat-pack",
+    "make": "Dodge",
+    "model": "Charger Scat Pack",
+    "gen": "LD",
+    "year": 2015,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Rare",
+    "hp": 485,
+    "nm": 644,
+    "acc": 4.4,
+    "top": 270,
+    "kg": 1900,
+    "value": 36000,
+    "blurb": "A four-door muscle car with a 6.4 litre Hemi V8.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Dodge Charger (LX/LD)",
+    "reviewed": false,
+    "photoMatch": "Charger"
+  },
+  {
+    "id": "dodge-charger-srt-hellcat",
+    "make": "Dodge",
+    "model": "Charger SRT Hellcat",
+    "gen": "LD",
+    "year": 2015,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Epic",
+    "hp": 707,
+    "nm": 881,
+    "acc": 3.7,
+    "top": 327,
+    "kg": 2000,
+    "value": 66000,
+    "blurb": "A supercharged four-door with 707 hp, the fastest production saloon at the time.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Dodge Charger (LX/LD)",
+    "reviewed": false,
+    "photoMatch": "Hellcat"
+  },
+  {
+    "id": "dodge-charger-srt-hellcat-redeye",
+    "make": "Dodge",
+    "model": "Charger SRT Hellcat Redeye",
+    "gen": "LD",
+    "year": 2019,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Epic",
+    "hp": 797,
+    "nm": 959,
+    "acc": 3.6,
+    "top": 327,
+    "kg": 2020,
+    "value": 90000,
+    "blurb": "A Hellcat with a bigger supercharger and 797 hp.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Dodge Charger (LX/LD)",
+    "reviewed": false,
+    "photoMatch": "Redeye"
+  },
+  {
+    "id": "dodge-challenger-srt-hellcat-redeye",
+    "make": "Dodge",
+    "model": "Challenger SRT Hellcat Redeye",
+    "gen": "LC",
+    "year": 2019,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Epic",
+    "hp": 797,
+    "nm": 959,
+    "acc": 3.4,
+    "top": 327,
+    "kg": 1990,
+    "value": 94000,
+    "blurb": "A coupé with 797 hp and a Demon-derived supercharger.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Dodge Challenger (LC)",
+    "reviewed": false,
+    "photoMatch": "Redeye"
+  },
+  {
+    "id": "dodge-challenger-srt-super-stock",
+    "make": "Dodge",
+    "model": "Challenger SRT Super Stock",
+    "gen": "LC",
+    "year": 2020,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Epic",
+    "hp": 807,
+    "nm": 959,
+    "acc": 3.3,
+    "top": 270,
+    "kg": 2000,
+    "value": 98000,
+    "blurb": "A drag-strip-ready Challenger with wide drag-radial tyres.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Dodge Challenger (LC)",
+    "reviewed": false,
+    "photoMatch": "Super Stock"
+  },
+  {
+    "id": "dodge-challenger-rt-scat-pack-widebody",
+    "make": "Dodge",
+    "model": "Challenger R/T Scat Pack Widebody",
+    "gen": "LC",
+    "year": 2020,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Rare",
+    "hp": 485,
+    "nm": 644,
+    "acc": 4.2,
+    "top": 270,
+    "kg": 1980,
+    "value": 40000,
+    "blurb": "A wide-body 6.4 litre Hemi coupé with wider wheels and tyres.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Dodge Challenger (LC)",
+    "reviewed": false,
+    "photoMatch": "Widebody|Scat Pack"
+  },
+  {
+    "id": "dodge-challenger-demon-170",
+    "make": "Dodge",
+    "model": "Challenger SRT Demon 170",
+    "gen": "LC",
+    "year": 2023,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Legendary",
+    "hp": 1025,
+    "nm": 1281,
+    "acc": 1.7,
+    "top": 345,
+    "kg": 2000,
+    "value": 420000,
+    "blurb": "The last Challenger: 1,025 hp on E85, and a quarter mile run in under nine seconds.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Dodge Challenger SRT Demon 170",
+    "reviewed": false,
+    "photoMatch": "Demon 170|170"
+  },
+  {
+    "id": "jeep-wrangler-rubicon-392",
+    "make": "Jeep",
+    "model": "Wrangler Rubicon 392",
+    "gen": "JL",
+    "year": 2021,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Rare",
+    "hp": 470,
+    "nm": 637,
+    "acc": 4.5,
+    "top": 180,
+    "kg": 2300,
+    "value": 52000,
+    "blurb": "A V8 Wrangler with a 6.4 litre Hemi and off-road gear.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Jeep Wrangler (JL)",
+    "reviewed": false,
+    "photoMatch": "392|Rubicon"
+  },
+  {
+    "id": "jeep-wrangler-jl-sahara",
+    "make": "Jeep",
+    "model": "Wrangler Sahara",
+    "gen": "JL",
+    "year": 2018,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Rare",
+    "hp": 285,
+    "nm": 353,
+    "acc": 7.9,
+    "top": 160,
+    "kg": 1900,
+    "value": 22000,
+    "blurb": "A boxy, go-anywhere SUV with removable doors and a folding windscreen.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Jeep Wrangler (JL)",
+    "reviewed": false,
+    "photoMatch": "Wrangler"
+  },
+  {
+    "id": "hennessey-exorcist-camaro",
+    "make": "Hennessey",
+    "model": "Exorcist Camaro ZL1",
+    "gen": "",
+    "year": 2018,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Epic",
+    "hp": 1000,
+    "nm": 1355,
+    "acc": 3,
+    "top": 330,
+    "kg": 1800,
+    "value": 160000,
+    "blurb": "A tuned Camaro ZL1 with 1,000 hp from a supercharged 6.2 litre V8.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Hennessey Performance Engineering",
+    "reviewed": false,
+    "photoMatch": "Hennessey"
+  },
+  {
+    "id": "lucid-air-grand-touring",
+    "make": "Lucid",
+    "model": "Air Grand Touring",
+    "gen": "",
+    "year": 2022,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Epic",
+    "hp": 819,
+    "nm": 1200,
+    "acc": 3,
+    "top": 270,
+    "kg": 2400,
+    "value": 72000,
+    "blurb": "An electric saloon with a range of over 500 miles.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "Lucid Air",
+    "reviewed": false,
+    "photoMatch": "Lucid Air"
+  },
+  {
+    "id": "lucid-air-sapphire",
+    "make": "Lucid",
+    "model": "Air Sapphire",
+    "gen": "",
+    "year": 2023,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Epic",
+    "hp": 1234,
+    "nm": 1430,
+    "acc": 1.9,
+    "top": 330,
+    "kg": 2400,
+    "value": 160000,
+    "blurb": "A tri-motor electric saloon with 1,234 hp, one of the quickest four-doors ever built.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "concepts"
+    ],
+    "wiki": "Lucid Air",
+    "reviewed": false,
+    "photoMatch": "Sapphire"
+  },
+  {
+    "id": "tesla-model-s-p100d",
+    "make": "Tesla",
+    "model": "Model S P100D",
+    "gen": "",
+    "year": 2016,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Epic",
+    "hp": 612,
+    "nm": 967,
+    "acc": 2.5,
+    "top": 250,
+    "kg": 2250,
+    "value": 92000,
+    "blurb": "With Ludicrous Mode, the Model S P100D set a 0-60 mph time under 2.5 seconds.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "Tesla Model S",
+    "reviewed": false,
+    "photoMatch": "Model S"
+  },
+  {
+    "id": "mini-cooper-s-f56",
+    "make": "Mini",
+    "model": "Cooper S",
+    "gen": "F56",
+    "year": 2014,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Common",
+    "hp": 192,
+    "nm": 280,
+    "acc": 6.7,
+    "top": 235,
+    "kg": 1200,
+    "value": 12000,
+    "blurb": "The third BMW-era Mini Cooper S, with a 2.0 litre turbo.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Mini Hatch (F56)",
+    "reviewed": false,
+    "photoMatch": "F56|Cooper S"
+  },
+  {
+    "id": "mini-john-cooper-works-f56",
+    "make": "Mini",
+    "model": "John Cooper Works",
+    "gen": "F56",
+    "year": 2015,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Rare",
+    "hp": 231,
+    "nm": 320,
+    "acc": 6.3,
+    "top": 246,
+    "kg": 1260,
+    "value": 24000,
+    "blurb": "The quickest regular Mini, with 231 hp and Brembo brakes.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Mini Hatch (F56)",
+    "reviewed": false,
+    "photoMatch": "Works|JCW"
+  },
+  {
+    "id": "mini-clubman-jcw",
+    "make": "Mini",
+    "model": "Clubman John Cooper Works",
+    "gen": "F54",
+    "year": 2019,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Rare",
+    "hp": 306,
+    "nm": 450,
+    "acc": 4.9,
+    "top": 250,
+    "kg": 1600,
+    "value": 34000,
+    "blurb": "A six-door Mini with barn-style rear doors and 306 hp.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Mini Clubman (F54)",
+    "reviewed": false,
+    "photoMatch": "Clubman"
+  },
+  {
+    "id": "smart-eq-fortwo",
+    "make": "Smart",
+    "model": "EQ Fortwo",
+    "gen": "C453",
+    "year": 2017,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Common",
+    "hp": 82,
+    "nm": 160,
+    "acc": 11.5,
+    "top": 130,
+    "kg": 880,
+    "value": 7000,
+    "blurb": "A short, tidy electric city car that fits where nothing else will.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "Smart Fortwo Electric Drive",
+    "reviewed": false,
+    "photoMatch": "Fortwo"
+  },
+  {
+    "id": "vw-golf-gti-mk7",
+    "make": "Volkswagen",
+    "model": "Golf GTI",
+    "gen": "Mk7",
+    "year": 2014,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 217,
+    "nm": 350,
+    "acc": 6.5,
+    "top": 246,
+    "kg": 1350,
+    "value": 20000,
+    "blurb": "A 2.0 litre turbo GTI that proved the formula still worked after 40 years.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Volkswagen Golf Mk7",
+    "reviewed": false,
+    "photoMatch": "Mk ?7|GTI"
+  },
+  {
+    "id": "vw-golf-gti-mk7-performance",
+    "make": "Volkswagen",
+    "model": "Golf GTI Performance",
+    "gen": "Mk7",
+    "year": 2016,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 227,
+    "nm": 350,
+    "acc": 6.4,
+    "top": 250,
+    "kg": 1380,
+    "value": 24000,
+    "blurb": "A Mk7 GTI with a limited-slip differential and bigger brakes.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Volkswagen Golf Mk7",
+    "reviewed": false,
+    "photoMatch": "Performance|GTI"
+  },
+  {
+    "id": "vw-golf-gti-mk8",
+    "make": "Volkswagen",
+    "model": "Golf GTI",
+    "gen": "Mk8",
+    "year": 2021,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 241,
+    "nm": 370,
+    "acc": 6.3,
+    "top": 250,
+    "kg": 1430,
+    "value": 28000,
+    "blurb": "A GTI with a touch-slider dashboard and an electronic differential.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Volkswagen Golf Mk8",
+    "reviewed": false,
+    "photoMatch": "Mk ?8|GTI"
+  },
+  {
+    "id": "vw-golf-gti-clubsport-mk8",
+    "make": "Volkswagen",
+    "model": "Golf GTI Clubsport",
+    "gen": "Mk8",
+    "year": 2021,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 296,
+    "nm": 400,
+    "acc": 5.6,
+    "top": 250,
+    "kg": 1480,
+    "value": 42000,
+    "blurb": "The most powerful front-wheel-drive Golf, with 296 hp.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Volkswagen Golf Mk8",
+    "reviewed": false,
+    "photoMatch": "Clubsport"
+  },
+  {
+    "id": "vw-golf-gte",
+    "make": "Volkswagen",
+    "model": "Golf GTE",
+    "gen": "Mk7",
+    "year": 2015,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Common",
+    "hp": 201,
+    "nm": 350,
+    "acc": 7.6,
+    "top": 222,
+    "kg": 1599,
+    "value": 18000,
+    "blurb": "A plug-in hybrid with a GTI-style look and a 1.4 litre turbo.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "Volkswagen Golf Mk7",
+    "reviewed": false,
+    "photoMatch": "GTE"
+  },
+  {
+    "id": "vw-golf-gtd-mk7",
+    "make": "Volkswagen",
+    "model": "Golf GTD",
+    "gen": "Mk7",
+    "year": 2014,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Common",
+    "hp": 181,
+    "nm": 380,
+    "acc": 7.5,
+    "top": 230,
+    "kg": 1380,
+    "value": 16000,
+    "blurb": "A diesel hot hatch with a strong mid-range and low fuel use.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Volkswagen Golf Mk7",
+    "reviewed": false,
+    "photoMatch": "GTD"
+  },
+  {
+    "id": "vw-polo-gti-6c",
+    "make": "Volkswagen",
+    "model": "Polo GTI",
+    "gen": "6C",
+    "year": 2015,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Common",
+    "hp": 189,
+    "nm": 320,
+    "acc": 6.7,
+    "top": 237,
+    "kg": 1197,
+    "value": 16000,
+    "blurb": "A small, quick Polo with a 1.8 litre turbo and a dual-clutch gearbox.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Volkswagen Polo (Mk5)",
+    "reviewed": false,
+    "photoMatch": "GTI"
+  },
+  {
+    "id": "vw-polo-gti-aw",
+    "make": "Volkswagen",
+    "model": "Polo GTI",
+    "gen": "AW",
+    "year": 2018,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Common",
+    "hp": 197,
+    "nm": 320,
+    "acc": 6.7,
+    "top": 237,
+    "kg": 1280,
+    "value": 18000,
+    "blurb": "A sixth-generation Polo with a 2.0 litre turbo and 197 hp.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Volkswagen Polo (Mk6)",
+    "reviewed": false,
+    "photoMatch": "GTI"
+  },
+  {
+    "id": "vw-tiguan-r",
+    "make": "Volkswagen",
+    "model": "Tiguan R",
+    "gen": "",
+    "year": 2021,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 316,
+    "nm": 400,
+    "acc": 4.9,
+    "top": 250,
+    "kg": 1800,
+    "value": 44000,
+    "blurb": "A family SUV with the Golf R engine and torque vectoring.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Volkswagen Tiguan",
+    "reviewed": false,
+    "photoMatch": "Tiguan"
+  },
+  {
+    "id": "vw-t-roc-r",
+    "make": "Volkswagen",
+    "model": "T-Roc R",
+    "gen": "",
+    "year": 2019,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 296,
+    "nm": 400,
+    "acc": 4.9,
+    "top": 250,
+    "kg": 1650,
+    "value": 38000,
+    "blurb": "A small crossover that borrows the Golf R drivetrain.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Volkswagen T-Roc",
+    "reviewed": false,
+    "photoMatch": "T-?Roc"
+  },
+  {
+    "id": "vw-amarok-v6",
+    "make": "Volkswagen",
+    "model": "Amarok V6",
+    "gen": "",
+    "year": 2017,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 258,
+    "nm": 580,
+    "acc": 7.9,
+    "top": 193,
+    "kg": 2100,
+    "value": 24000,
+    "blurb": "A pickup with a 3.0 litre V6 diesel and permanent all-wheel drive.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Volkswagen Amarok",
+    "reviewed": false,
+    "photoMatch": "Amarok"
+  },
+  {
+    "id": "skoda-octavia-rs-5e",
+    "make": "Skoda",
+    "model": "Octavia RS 245",
+    "gen": "5E",
+    "year": 2017,
+    "country": "Czechia",
+    "cc": "CZ",
+    "tier": "Common",
+    "hp": 245,
+    "nm": 370,
+    "acc": 6.6,
+    "top": 250,
+    "kg": 1370,
+    "value": 16000,
+    "blurb": "A practical estate-sized hot hatch with a 2.0 litre turbo and a limited-slip differential.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Škoda Octavia RS",
+    "reviewed": false,
+    "photoMatch": "Octavia"
+  },
+  {
+    "id": "skoda-kodiaq-rs",
+    "make": "Skoda",
+    "model": "Kodiaq RS",
+    "gen": "",
+    "year": 2018,
+    "country": "Czechia",
+    "cc": "CZ",
+    "tier": "Rare",
+    "hp": 237,
+    "nm": 500,
+    "acc": 6.9,
+    "top": 220,
+    "kg": 1920,
+    "value": 32000,
+    "blurb": "A seven-seat SUV with a 2.0 biturbo diesel and a Nürburgring SUV record at launch.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Škoda Kodiaq",
+    "reviewed": false,
+    "photoMatch": "Kodiaq"
+  },
+  {
+    "id": "skoda-fabia-rs-rally2",
+    "make": "Skoda",
+    "model": "Fabia RS Rally2",
+    "gen": "",
+    "year": 2022,
+    "country": "Czechia",
+    "cc": "CZ",
+    "tier": "Epic",
+    "hp": 290,
+    "nm": 450,
+    "acc": 3.5,
+    "top": 200,
+    "kg": 1230,
+    "value": 150000,
+    "blurb": "A customer rally car, the dominant Rally2 machine of its era.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "rally",
+      "concepts"
+    ],
+    "wiki": "Škoda Fabia Rally2",
+    "reviewed": false,
+    "photoMatch": "Rally2"
+  },
+  {
+    "id": "cupra-leon-vz",
+    "make": "Cupra",
+    "model": "León VZ",
+    "gen": "KL",
+    "year": 2020,
+    "country": "Spain",
+    "cc": "ES",
+    "tier": "Rare",
+    "hp": 306,
+    "nm": 400,
+    "acc": 5.7,
+    "top": 250,
+    "kg": 1450,
+    "value": 34000,
+    "blurb": "A 2.0 litre turbo hatch with front-wheel drive and strong cornering.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Cupra León",
+    "reviewed": false,
+    "photoMatch": "Le[oó]n"
+  },
+  {
+    "id": "cupra-ateca",
+    "make": "Cupra",
+    "model": "Ateca",
+    "gen": "",
+    "year": 2018,
+    "country": "Spain",
+    "cc": "ES",
+    "tier": "Rare",
+    "hp": 296,
+    "nm": 400,
+    "acc": 5.2,
+    "top": 247,
+    "kg": 1640,
+    "value": 36000,
+    "blurb": "A compact SUV with the Golf R drivetrain and tuned steering.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Cupra Ateca",
+    "reviewed": false,
+    "photoMatch": "Ateca"
+  },
+  {
+    "id": "vauxhall-corsa-vxr-e",
+    "make": "Vauxhall",
+    "model": "Corsa VXR",
+    "gen": "E",
+    "year": 2015,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Rare",
+    "hp": 202,
+    "nm": 280,
+    "acc": 6.5,
+    "top": 230,
+    "kg": 1278,
+    "value": 18000,
+    "blurb": "A hot Corsa with a 1.6 litre turbo and a limited-slip differential.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Vauxhall Corsa",
+    "reviewed": false,
+    "photoMatch": "VXR|Corsa"
+  },
+  {
+    "id": "opel-corsa-e",
+    "make": "Opel",
+    "model": "Corsa-e",
+    "gen": "",
+    "year": 2020,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Common",
+    "hp": 136,
+    "nm": 260,
+    "acc": 8.1,
+    "top": 150,
+    "kg": 1500,
+    "value": 12000,
+    "blurb": "An electric supermini with a 50 kWh battery.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "Opel Corsa",
+    "reviewed": false,
+    "photoMatch": "Corsa"
+  },
+  {
+    "id": "peugeot-308-gti",
+    "make": "Peugeot",
+    "model": "308 GTi",
+    "gen": "T9",
+    "year": 2015,
+    "country": "France",
+    "cc": "FR",
+    "tier": "Rare",
+    "hp": 270,
+    "nm": 330,
+    "acc": 6,
+    "top": 250,
+    "kg": 1205,
+    "value": 28000,
+    "blurb": "A light front-wheel-drive hot hatch with a 1.6 litre turbo and a Torsen differential.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Peugeot 308",
+    "reviewed": false,
+    "photoMatch": "308"
+  },
+  {
+    "id": "renault-megane-rs-280",
+    "make": "Renault",
+    "model": "Mégane R.S. 280",
+    "gen": "Mk4",
+    "year": 2017,
+    "country": "France",
+    "cc": "FR",
+    "tier": "Rare",
+    "hp": 276,
+    "nm": 390,
+    "acc": 5.8,
+    "top": 255,
+    "kg": 1430,
+    "value": 30000,
+    "blurb": "A hot hatch with four-wheel steering and a 1.8 litre turbo.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Renault Mégane",
+    "reviewed": false,
+    "photoMatch": "RS|R\\.S"
+  },
+  {
+    "id": "renault-megane-rs-trophy-r-2019",
+    "make": "Renault",
+    "model": "Mégane R.S. Trophy-R",
+    "gen": "Mk4",
+    "year": 2019,
+    "country": "France",
+    "cc": "FR",
+    "tier": "Epic",
+    "hp": 296,
+    "nm": 400,
+    "acc": 5.7,
+    "top": 262,
+    "kg": 1306,
+    "value": 80000,
+    "blurb": "A track-focused Mégane that set a new front-wheel-drive lap record at the Nürburgring.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Renault Mégane",
+    "reviewed": false,
+    "photoMatch": "Trophy"
+  },
+  {
+    "id": "renault-5-e-tech",
+    "make": "Renault",
+    "model": "5 E-Tech",
+    "gen": "",
+    "year": 2024,
+    "country": "France",
+    "cc": "FR",
+    "tier": "Common",
+    "hp": 150,
+    "nm": 245,
+    "acc": 8,
+    "top": 150,
+    "kg": 1450,
+    "value": 15000,
+    "blurb": "An electric retro-styled supermini that revives the R5 in modern form.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "Renault 5 E-Tech",
+    "reviewed": false,
+    "photoMatch": "5 E-Tech"
+  },
+  {
+    "id": "alpine-a110-gt",
+    "make": "Alpine",
+    "model": "A110 GT",
+    "gen": "",
+    "year": 2022,
+    "country": "France",
+    "cc": "FR",
+    "tier": "Rare",
+    "hp": 296,
+    "nm": 340,
+    "acc": 4.2,
+    "top": 270,
+    "kg": 1119,
+    "value": 76000,
+    "blurb": "A grand-touring A110 with a more powerful engine and a softer ride.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Alpine A110 (2017)",
+    "reviewed": false,
+    "photoMatch": "A110"
+  },
+  {
+    "id": "alpine-a110-r",
+    "make": "Alpine",
+    "model": "A110 R",
+    "gen": "",
+    "year": 2023,
+    "country": "France",
+    "cc": "FR",
+    "tier": "Epic",
+    "hp": 296,
+    "nm": 340,
+    "acc": 3.9,
+    "top": 285,
+    "kg": 1082,
+    "value": 120000,
+    "blurb": "A lightweight, carbon-bodied A110 with a stiffer chassis and track tyres.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Alpine A110 (2017)",
+    "reviewed": false,
+    "photoMatch": "A110"
+  },
+  {
+    "id": "alpine-a290",
+    "make": "Alpine",
+    "model": "A290",
+    "gen": "",
+    "year": 2024,
+    "country": "France",
+    "cc": "FR",
+    "tier": "Rare",
+    "hp": 220,
+    "nm": 300,
+    "acc": 6.4,
+    "top": 170,
+    "kg": 1479,
+    "value": 32000,
+    "blurb": "A sporty electric hot hatch based on the Renault 5.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "Alpine A290",
+    "reviewed": false,
+    "photoMatch": "A290"
+  },
+  {
+    "id": "dacia-spring",
+    "make": "Dacia",
+    "model": "Spring",
+    "gen": "",
+    "year": 2021,
+    "country": "Romania",
+    "cc": "RO",
+    "tier": "Common",
+    "hp": 44,
+    "nm": 125,
+    "acc": 19.1,
+    "top": 125,
+    "kg": 970,
+    "value": 5500,
+    "blurb": "One of the cheapest electric cars in Europe.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "Dacia Spring",
+    "reviewed": false,
+    "photoMatch": "Spring"
+  },
+  {
+    "id": "fiat-500e",
+    "make": "Fiat",
+    "model": "500e",
+    "gen": "",
+    "year": 2020,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Common",
+    "hp": 118,
+    "nm": 220,
+    "acc": 9,
+    "top": 150,
+    "kg": 1330,
+    "value": 11000,
+    "blurb": "An electric 500 with the same curves and a very quiet motor.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "Fiat 500e",
+    "reviewed": false,
+    "photoMatch": "500e|500 ?e"
+  },
+  {
+    "id": "abarth-695-biposto",
+    "make": "Abarth",
+    "model": "695 Biposto",
+    "gen": "",
+    "year": 2015,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Rare",
+    "hp": 190,
+    "nm": 250,
+    "acc": 5.9,
+    "top": 230,
+    "kg": 997,
+    "value": 40000,
+    "blurb": "A stripped Abarth with a dog-ring gearbox and a polycarbonate rear window.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Abarth 695",
+    "reviewed": false,
+    "photoMatch": "Biposto|695"
+  },
+  {
+    "id": "abarth-124-spider",
+    "make": "Abarth",
+    "model": "124 Spider",
+    "gen": "",
+    "year": 2016,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Rare",
+    "hp": 170,
+    "nm": 250,
+    "acc": 6.8,
+    "top": 232,
+    "kg": 1060,
+    "value": 24000,
+    "blurb": "A Fiat-engined roadster on the MX-5 platform with an Abarth exhaust.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Fiat 124 Spider (2016)",
+    "reviewed": false,
+    "photoMatch": "124"
+  },
+  {
+    "id": "abarth-500e",
+    "make": "Abarth",
+    "model": "500e",
+    "gen": "",
+    "year": 2023,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Rare",
+    "hp": 155,
+    "nm": 235,
+    "acc": 7,
+    "top": 155,
+    "kg": 1410,
+    "value": 24000,
+    "blurb": "An electric Abarth with a fake engine noise and a stiffer chassis.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "Abarth 500e",
+    "reviewed": false,
+    "photoMatch": "500e"
+  },
+  {
+    "id": "alfa-romeo-junior-veloce",
+    "make": "Alfa Romeo",
+    "model": "Junior Veloce",
+    "gen": "",
+    "year": 2024,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Rare",
+    "hp": 280,
+    "nm": 345,
+    "acc": 5.9,
+    "top": 200,
+    "kg": 1600,
+    "value": 22000,
+    "blurb": "An electric small crossover with a front limited-slip differential.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "Alfa Romeo Junior",
+    "reviewed": false,
+    "photoMatch": "Junior"
+  },
+  {
+    "id": "xiaomi-su7-max",
+    "make": "Xiaomi",
+    "model": "SU7 Max",
+    "gen": "",
+    "year": 2024,
+    "country": "China",
+    "cc": "CN",
+    "tier": "Rare",
+    "hp": 673,
+    "nm": 838,
+    "acc": 2.78,
+    "top": 265,
+    "kg": 2205,
+    "value": 36000,
+    "blurb": "The first car from a smartphone maker, an electric saloon with dual motors.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "Xiaomi SU7",
+    "reviewed": false,
+    "photoMatch": "SU7"
+  },
+  {
+    "id": "xiaomi-su7-ultra",
+    "make": "Xiaomi",
+    "model": "SU7 Ultra",
+    "gen": "",
+    "year": 2024,
+    "country": "China",
+    "cc": "CN",
+    "tier": "Epic",
+    "hp": 1548,
+    "nm": 1770,
+    "acc": 1.98,
+    "top": 350,
+    "kg": 2360,
+    "value": 90000,
+    "blurb": "A tri-motor electric saloon with 1,548 hp that lapped the Nürburgring in under 7 minutes 10 seconds.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "concepts"
+    ],
+    "wiki": "Xiaomi SU7",
+    "reviewed": false,
+    "photoMatch": "SU7"
+  },
+  {
+    "id": "fpv-gt-f",
+    "make": "Ford",
+    "model": "Falcon GT F",
+    "gen": "FG X",
+    "year": 2014,
+    "country": "Australia",
+    "cc": "AU",
+    "tier": "Epic",
+    "hp": 468,
+    "nm": 570,
+    "acc": 4.9,
+    "top": 250,
+    "kg": 1800,
+    "value": 78000,
+    "blurb": "A farewell Falcon with a supercharged 5.0 litre V8.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Ford Falcon GT",
+    "reviewed": false,
+    "photoMatch": "Falcon|GT"
+  },
+  {
+    "id": "hsv-gtsr-w1",
+    "make": "HSV",
+    "model": "GTSR W1",
+    "gen": "",
+    "year": 2017,
+    "country": "Australia",
+    "cc": "AU",
+    "tier": "Legendary",
+    "hp": 636,
+    "nm": 815,
+    "acc": 3.8,
+    "top": 300,
+    "kg": 1900,
+    "value": 320000,
+    "blurb": "A 300-car final run of the Holden Commodore with the most powerful Aussie V8.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "HSV GTSR W1",
+    "reviewed": false,
+    "photoMatch": "W1"
+  },
+  {
+    "id": "bmw-m2-competition-f87",
+    "make": "BMW",
+    "model": "M2 Competition",
+    "gen": "F87",
+    "year": 2018,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 410,
+    "nm": 550,
+    "acc": 4.2,
+    "top": 250,
+    "kg": 1550,
+    "value": 70000,
+    "blurb": "A compact M car with the M3/M4 twin-turbo straight-six.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "BMW M2",
+    "reviewed": false,
+    "photoMatch": "Competition"
+  },
+  {
+    "id": "bmw-m2-cs-f87",
+    "make": "BMW",
+    "model": "M2 CS",
+    "gen": "F87",
+    "year": 2020,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 450,
+    "nm": 550,
+    "acc": 4,
+    "top": 280,
+    "kg": 1450,
+    "value": 98000,
+    "blurb": "A lightweight M2 with a carbon roof and bonnet.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "BMW M2",
+    "reviewed": false,
+    "photoMatch": "M2 CS"
+  },
+  {
+    "id": "bmw-m3-f80-cs",
+    "make": "BMW",
+    "model": "M3 CS",
+    "gen": "F80",
+    "year": 2018,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 454,
+    "nm": 600,
+    "acc": 3.9,
+    "top": 280,
+    "kg": 1585,
+    "value": 110000,
+    "blurb": "A limited M3 with a carbon bonnet and Alcantara interior.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "BMW M3 (F80)",
+    "reviewed": false,
+    "photoMatch": "M3 CS"
+  },
+  {
+    "id": "bmw-m3-g80-cs",
+    "make": "BMW",
+    "model": "M3 CS",
+    "gen": "G80",
+    "year": 2023,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 543,
+    "nm": 650,
+    "acc": 3.4,
+    "top": 302,
+    "kg": 1765,
+    "value": 130000,
+    "blurb": "The most powerful M3 saloon at launch, with a carbon-fibre bonnet and roof.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "BMW M3 (G80)",
+    "reviewed": false,
+    "photoMatch": "M3 CS"
+  },
+  {
+    "id": "bmw-m3-touring-g81",
+    "make": "BMW",
+    "model": "M3 Competition Touring",
+    "gen": "G81",
+    "year": 2022,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 503,
+    "nm": 650,
+    "acc": 3.6,
+    "top": 280,
+    "kg": 1840,
+    "value": 98000,
+    "blurb": "The first M3 estate, with a twin-turbo straight-six and all-wheel drive.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "BMW M3 (G80)",
+    "reviewed": false,
+    "photoMatch": "Touring|G81"
+  },
+  {
+    "id": "bmw-m4-g82-competition",
+    "make": "BMW",
+    "model": "M4 Competition",
+    "gen": "G82",
+    "year": 2021,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 503,
+    "nm": 650,
+    "acc": 3.5,
+    "top": 290,
+    "kg": 1725,
+    "value": 94000,
+    "blurb": "A coupé with a huge kidney grille and a twin-turbo straight-six.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "BMW M4 (G82)",
+    "reviewed": false,
+    "photoMatch": "G82|M4"
+  },
+  {
+    "id": "bmw-m4-csl",
+    "make": "BMW",
+    "model": "M4 CSL",
+    "gen": "G82",
+    "year": 2022,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 543,
+    "nm": 650,
+    "acc": 3.4,
+    "top": 307,
+    "kg": 1625,
+    "value": 170000,
+    "blurb": "A 1,000-car limited run with a carbon roof and no rear seats.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "BMW M4 CSL",
+    "reviewed": false,
+    "photoMatch": "CSL"
+  },
+  {
+    "id": "bmw-m4-dtm-champion",
+    "make": "BMW",
+    "model": "M4 DTM Champion Edition",
+    "gen": "F82",
+    "year": 2014,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 450,
+    "nm": 550,
+    "acc": 4.2,
+    "top": 250,
+    "kg": 1520,
+    "value": 90000,
+    "blurb": "A 23-car edition to celebrate BMW winning the 2014 DTM title.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "BMW M4",
+    "reviewed": false,
+    "photoMatch": "DTM"
+  },
+  {
+    "id": "bmw-m5-30-jahre",
+    "make": "BMW",
+    "model": "M5 30 Jahre Edition",
+    "gen": "F10",
+    "year": 2014,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 592,
+    "nm": 700,
+    "acc": 4.1,
+    "top": 305,
+    "kg": 1945,
+    "value": 120000,
+    "blurb": "A 300-car special for the M5’s 30th anniversary.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "BMW M5 (F10)",
+    "reviewed": false,
+    "photoMatch": "30 Jahre|M5"
+  },
+  {
+    "id": "bmw-m5-competition-f90",
+    "make": "BMW",
+    "model": "M5 Competition",
+    "gen": "F90",
+    "year": 2018,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 617,
+    "nm": 750,
+    "acc": 3.3,
+    "top": 305,
+    "kg": 1940,
+    "value": 100000,
+    "blurb": "A twin-turbo V8 with all-wheel drive that can also be switched to rear-wheel drive.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "BMW M5 (F90)",
+    "reviewed": false,
+    "photoMatch": "F90|M5"
+  },
+  {
+    "id": "bmw-x3-m-competition",
+    "make": "BMW",
+    "model": "X3 M Competition",
+    "gen": "F97",
+    "year": 2019,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 503,
+    "nm": 600,
+    "acc": 3.8,
+    "top": 285,
+    "kg": 1970,
+    "value": 58000,
+    "blurb": "A mid-sized SUV with the M3’s straight-six engine.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "BMW X3 (G01)",
+    "reviewed": false,
+    "photoMatch": "X3"
+  },
+  {
+    "id": "bmw-i3s",
+    "make": "BMW",
+    "model": "i3s",
+    "gen": "I01",
+    "year": 2018,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Common",
+    "hp": 181,
+    "nm": 270,
+    "acc": 6.9,
+    "top": 160,
+    "kg": 1260,
+    "value": 14000,
+    "blurb": "An electric city car with a carbon-fibre passenger cell and suicide doors.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "BMW i3",
+    "reviewed": false,
+    "photoMatch": "i3"
+  },
+  {
+    "id": "bmw-m2-g87-cs",
+    "make": "BMW",
+    "model": "M2 CS",
+    "gen": "G87",
+    "year": 2024,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 523,
+    "nm": 650,
+    "acc": 3.8,
+    "top": 285,
+    "kg": 1700,
+    "value": 120000,
+    "blurb": "The strongest M2, with 523 hp and a weight-saving carbon bonnet.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "BMW M2 (G87)",
+    "reviewed": false,
+    "photoMatch": "M2 CS|G87"
+  },
+  {
+    "id": "mercedes-c43-amg-w205",
+    "make": "Mercedes-Benz",
+    "model": "C 43 AMG",
+    "gen": "W205",
+    "year": 2016,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 390,
+    "nm": 520,
+    "acc": 4.7,
+    "top": 250,
+    "kg": 1680,
+    "value": 36000,
+    "blurb": "A V6 biturbo compact saloon with 4Matic.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Mercedes-Benz C-Class (W205)",
+    "reviewed": false,
+    "photoMatch": "C ?43"
+  },
+  {
+    "id": "mercedes-c63-s-amg-w205",
+    "make": "Mercedes-Benz",
+    "model": "C 63 S AMG",
+    "gen": "W205",
+    "year": 2015,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 503,
+    "nm": 700,
+    "acc": 4.1,
+    "top": 250,
+    "kg": 1730,
+    "value": 72000,
+    "blurb": "A twin-turbo V8 saloon with a hand-built engine.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Mercedes-Benz C-Class (W205)",
+    "reviewed": false,
+    "photoMatch": "C ?63"
+  },
+  {
+    "id": "mercedes-s63-amg-w222",
+    "make": "Mercedes-Benz",
+    "model": "S 63 AMG",
+    "gen": "W222",
+    "year": 2014,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 585,
+    "nm": 900,
+    "acc": 4,
+    "top": 250,
+    "kg": 2000,
+    "value": 66000,
+    "blurb": "A big luxury saloon with a twin-turbo V8 and 4Matic.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Mercedes-Benz S-Class (W222)",
+    "reviewed": false,
+    "photoMatch": "S ?63"
+  },
+  {
+    "id": "mercedes-s65-amg",
+    "make": "Mercedes-Benz",
+    "model": "S 65 AMG",
+    "gen": "W222",
+    "year": 2014,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 621,
+    "nm": 1000,
+    "acc": 4.3,
+    "top": 250,
+    "kg": 2185,
+    "value": 96000,
+    "blurb": "A twin-turbo V12 limousine with an enormous torque figure.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Mercedes-Benz S-Class (W222)",
+    "reviewed": false,
+    "photoMatch": "S ?65"
+  },
+  {
+    "id": "mercedes-amg-gt-c",
+    "make": "Mercedes-Benz",
+    "model": "AMG GT C",
+    "gen": "C190",
+    "year": 2017,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 550,
+    "nm": 680,
+    "acc": 3.7,
+    "top": 316,
+    "kg": 1650,
+    "value": 150000,
+    "blurb": "A wide-body GT with rear-wheel steering and 550 hp.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Mercedes-AMG GT",
+    "reviewed": false,
+    "photoMatch": "GT ?C"
+  },
+  {
+    "id": "mercedes-amg-gt-r-pro",
+    "make": "Mercedes-Benz",
+    "model": "AMG GT R Pro",
+    "gen": "C190",
+    "year": 2019,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 577,
+    "nm": 700,
+    "acc": 3.6,
+    "top": 318,
+    "kg": 1630,
+    "value": 260000,
+    "blurb": "A track-focused GT R with adjustable coilovers and carbon aero.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Mercedes-AMG GT",
+    "reviewed": false,
+    "photoMatch": "GT ?R ?Pro"
+  },
+  {
+    "id": "mercedes-amg-gt-4-door-63-s",
+    "make": "Mercedes-Benz",
+    "model": "AMG GT 63 S 4-Door",
+    "gen": "X290",
+    "year": 2019,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 639,
+    "nm": 900,
+    "acc": 3.2,
+    "top": 315,
+    "kg": 2045,
+    "value": 130000,
+    "blurb": "A four-door coupé with 639 hp and a drift mode.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Mercedes-AMG GT 4-Door Coupé",
+    "reviewed": false,
+    "photoMatch": "4-?Door|GT ?63"
+  },
+  {
+    "id": "mercedes-amg-gt-63-s-e-performance",
+    "make": "Mercedes-Benz",
+    "model": "AMG GT 63 S E Performance",
+    "gen": "X290",
+    "year": 2023,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 843,
+    "nm": 1400,
+    "acc": 2.9,
+    "top": 316,
+    "kg": 2350,
+    "value": 220000,
+    "blurb": "A plug-in hybrid four-door coupé with 843 hp.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "Mercedes-AMG GT 4-Door Coupé",
+    "reviewed": false,
+    "photoMatch": "GT ?63"
+  },
+  {
+    "id": "mercedes-glc63-s-coupe",
+    "make": "Mercedes-Benz",
+    "model": "GLC 63 S Coupé",
+    "gen": "C253",
+    "year": 2017,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 503,
+    "nm": 700,
+    "acc": 3.8,
+    "top": 250,
+    "kg": 1900,
+    "value": 70000,
+    "blurb": "A V8 coupé SUV with a sloping roof.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Mercedes-Benz GLC-Class",
+    "reviewed": false,
+    "photoMatch": "GLC"
+  },
+  {
+    "id": "mercedes-maybach-s680",
+    "make": "Mercedes-Benz",
+    "model": "Maybach S 680",
+    "gen": "Z223",
+    "year": 2021,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 612,
+    "nm": 900,
+    "acc": 4.5,
+    "top": 250,
+    "kg": 2300,
+    "value": 190000,
+    "blurb": "A V12 super-luxury limousine.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Mercedes-Maybach S-Class",
+    "reviewed": false,
+    "photoMatch": "Maybach"
+  },
+  {
+    "id": "audi-s3-8y",
+    "make": "Audi",
+    "model": "S3",
+    "gen": "8Y",
+    "year": 2020,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 306,
+    "nm": 400,
+    "acc": 4.8,
+    "top": 250,
+    "kg": 1495,
+    "value": 34000,
+    "blurb": "A 2.0 litre turbo all-wheel-drive hot hatch.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Audi A3 (8Y)",
+    "reviewed": false,
+    "photoMatch": "S3|8Y"
+  },
+  {
+    "id": "audi-s5-b9",
+    "make": "Audi",
+    "model": "S5",
+    "gen": "B9",
+    "year": 2017,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 354,
+    "nm": 500,
+    "acc": 4.7,
+    "top": 250,
+    "kg": 1735,
+    "value": 46000,
+    "blurb": "A 3.0 litre V6 coupé with quattro.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Audi A5 (F5)",
+    "reviewed": false,
+    "photoMatch": "S5|F5"
+  },
+  {
+    "id": "audi-rs4-b9",
+    "make": "Audi",
+    "model": "RS 4 Avant",
+    "gen": "B9",
+    "year": 2018,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 444,
+    "nm": 600,
+    "acc": 4.1,
+    "top": 250,
+    "kg": 1790,
+    "value": 70000,
+    "blurb": "A twin-turbo V6 estate that Audi built to replace the old V8.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Audi RS 4 Avant",
+    "reviewed": false,
+    "photoMatch": "RS ?4|B9"
+  },
+  {
+    "id": "audi-rs6-c7-performance",
+    "make": "Audi",
+    "model": "RS 6 Avant Performance",
+    "gen": "C7",
+    "year": 2015,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 597,
+    "nm": 750,
+    "acc": 3.7,
+    "top": 305,
+    "kg": 1950,
+    "value": 80000,
+    "blurb": "A twin-turbo V8 estate with 597 hp, a fast load carrier.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Audi RS 6",
+    "reviewed": false,
+    "photoMatch": "RS ?6"
+  },
+  {
+    "id": "audi-rs7-c7",
+    "make": "Audi",
+    "model": "RS 7 Sportback",
+    "gen": "C7",
+    "year": 2014,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 552,
+    "nm": 700,
+    "acc": 3.9,
+    "top": 250,
+    "kg": 1935,
+    "value": 76000,
+    "blurb": "A sleek fastback with a V8 twin-turbo and all-wheel drive.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Audi RS 7",
+    "reviewed": false,
+    "photoMatch": "RS ?7"
+  },
+  {
+    "id": "audi-rs7-c8",
+    "make": "Audi",
+    "model": "RS 7 Sportback",
+    "gen": "C8",
+    "year": 2020,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 592,
+    "nm": 800,
+    "acc": 3.6,
+    "top": 305,
+    "kg": 2065,
+    "value": 100000,
+    "blurb": "A second-generation RS 7 with mild-hybrid assistance.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Audi RS 7",
+    "reviewed": false,
+    "photoMatch": "RS ?7"
+  },
+  {
+    "id": "audi-rsq8",
+    "make": "Audi",
+    "model": "RS Q8",
+    "gen": "",
+    "year": 2020,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 592,
+    "nm": 800,
+    "acc": 3.8,
+    "top": 305,
+    "kg": 2315,
+    "value": 96000,
+    "blurb": "A coupé SUV with a twin-turbo V8 that lapped the Nürburgring in 7:42.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Audi RS Q8",
+    "reviewed": false,
+    "photoMatch": "RS ?Q8"
+  },
+  {
+    "id": "audi-rs-q3",
+    "make": "Audi",
+    "model": "RS Q3",
+    "gen": "",
+    "year": 2019,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 395,
+    "nm": 480,
+    "acc": 4.5,
+    "top": 250,
+    "kg": 1700,
+    "value": 52000,
+    "blurb": "A compact SUV with the RS 3’s five-cylinder.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Audi RS Q3",
+    "reviewed": false,
+    "photoMatch": "RS ?Q3"
+  },
+  {
+    "id": "porsche-911-992-carrera-s",
+    "make": "Porsche",
+    "model": "911 Carrera S",
+    "gen": "992",
+    "year": 2019,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 443,
+    "nm": 530,
+    "acc": 3.5,
+    "top": 308,
+    "kg": 1515,
+    "value": 90000,
+    "blurb": "A twin-turbo flat-six with a stiffer, wider body.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Porsche 911 (992)",
+    "reviewed": false,
+    "photoMatch": "992"
+  },
+  {
+    "id": "porsche-911-991-carrera-s-2",
+    "make": "Porsche",
+    "model": "911 Carrera S",
+    "gen": "991.2",
+    "year": 2016,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 414,
+    "nm": 500,
+    "acc": 3.7,
+    "top": 308,
+    "kg": 1430,
+    "value": 80000,
+    "blurb": "The first turbocharged Carrera, after the old naturally aspirated flat-six.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Porsche 911 (991)",
+    "reviewed": false,
+    "photoMatch": "991"
+  },
+  {
+    "id": "porsche-911-991-carrera-gts",
+    "make": "Porsche",
+    "model": "911 Carrera GTS",
+    "gen": "991.2",
+    "year": 2017,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 444,
+    "nm": 550,
+    "acc": 3.6,
+    "top": 312,
+    "kg": 1450,
+    "value": 96000,
+    "blurb": "A wider body and a centre-lock wheel on a power-boosted Carrera.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Porsche 911 (991)",
+    "reviewed": false,
+    "photoMatch": "GTS"
+  },
+  {
+    "id": "porsche-911-991-turbo-s",
+    "make": "Porsche",
+    "model": "911 Turbo S",
+    "gen": "991.2",
+    "year": 2016,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 572,
+    "nm": 700,
+    "acc": 2.9,
+    "top": 330,
+    "kg": 1600,
+    "value": 160000,
+    "blurb": "A 572 hp all-wheel-drive Turbo with rear-wheel steering.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Porsche 911 (991)",
+    "reviewed": false,
+    "photoMatch": "991.*Turbo|Turbo.*991"
+  },
+  {
+    "id": "porsche-911-992-gt3-touring",
+    "make": "Porsche",
+    "model": "911 GT3 Touring",
+    "gen": "992",
+    "year": 2022,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 502,
+    "nm": 470,
+    "acc": 3.4,
+    "top": 320,
+    "kg": 1418,
+    "value": 220000,
+    "blurb": "A GT3 without a big rear wing, for those who prefer a more subtle look.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "classics"
+    ],
+    "wiki": "Porsche 911 GT3",
+    "reviewed": false,
+    "photoMatch": "Touring"
+  },
+  {
+    "id": "porsche-911-992-st",
+    "make": "Porsche",
+    "model": "911 S/T",
+    "gen": "992",
+    "year": 2023,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 518,
+    "nm": 465,
+    "acc": 3.7,
+    "top": 300,
+    "kg": 1380,
+    "value": 330000,
+    "blurb": "A 1,963-car run for the 911’s 60th, with a manual gearbox and a GT3 RS engine.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "classics"
+    ],
+    "wiki": "Porsche 911 S/T",
+    "reviewed": false,
+    "photoMatch": "S/T"
+  },
+  {
+    "id": "porsche-911-992-dakar",
+    "make": "Porsche",
+    "model": "911 Dakar",
+    "gen": "992",
+    "year": 2023,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 473,
+    "nm": 570,
+    "acc": 3.4,
+    "top": 240,
+    "kg": 1605,
+    "value": 280000,
+    "blurb": "A raised 911 for off-road driving, with a 1,980-car limited production.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Porsche 911 Dakar",
+    "reviewed": false,
+    "photoMatch": "Dakar"
+  },
+  {
+    "id": "porsche-911-992-sport-classic",
+    "make": "Porsche",
+    "model": "911 Sport Classic",
+    "gen": "992",
+    "year": 2022,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 543,
+    "nm": 600,
+    "acc": 3.5,
+    "top": 320,
+    "kg": 1550,
+    "value": 260000,
+    "blurb": "A 1,250-car run with a ducktail and a manual gearbox, a nod to the 1970s.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "classics"
+    ],
+    "wiki": "Porsche 911 Sport Classic",
+    "reviewed": false,
+    "photoMatch": "Sport Classic"
+  },
+  {
+    "id": "porsche-911-991-speedster",
+    "make": "Porsche",
+    "model": "911 Speedster",
+    "gen": "991.2",
+    "year": 2019,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Legendary",
+    "hp": 500,
+    "nm": 460,
+    "acc": 4,
+    "top": 310,
+    "kg": 1465,
+    "value": 420000,
+    "blurb": "The last of the 991 line, a 1,948-car run with the GT3 engine and a manual gearbox.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "classics"
+    ],
+    "wiki": "Porsche 911 Speedster",
+    "reviewed": false,
+    "photoMatch": "Speedster"
+  },
+  {
+    "id": "porsche-cayman-gts-981",
+    "make": "Porsche",
+    "model": "Cayman GTS",
+    "gen": "981",
+    "year": 2014,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 340,
+    "nm": 380,
+    "acc": 4.9,
+    "top": 285,
+    "kg": 1345,
+    "value": 62000,
+    "blurb": "A mid-engine coupé with a 3.4 litre flat-six.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Porsche Cayman (981)",
+    "reviewed": false,
+    "photoMatch": "GTS"
+  },
+  {
+    "id": "porsche-718-cayman-s",
+    "make": "Porsche",
+    "model": "718 Cayman S",
+    "gen": "982",
+    "year": 2016,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 345,
+    "nm": 420,
+    "acc": 4.4,
+    "top": 285,
+    "kg": 1355,
+    "value": 42000,
+    "blurb": "The four-cylinder turbo that replaced the flat-six.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Porsche 718 Cayman",
+    "reviewed": false,
+    "photoMatch": "718"
+  },
+  {
+    "id": "porsche-718-cayman-gts-40",
+    "make": "Porsche",
+    "model": "718 Cayman GTS 4.0",
+    "gen": "982",
+    "year": 2020,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 394,
+    "nm": 420,
+    "acc": 4.5,
+    "top": 293,
+    "kg": 1405,
+    "value": 80000,
+    "blurb": "The return of a 4.0 litre naturally aspirated flat-six to the Cayman.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Porsche 718 Cayman",
+    "reviewed": false,
+    "photoMatch": "GTS"
+  },
+  {
+    "id": "porsche-718-boxster-spyder",
+    "make": "Porsche",
+    "model": "718 Boxster Spyder",
+    "gen": "982",
+    "year": 2019,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 414,
+    "nm": 420,
+    "acc": 4.3,
+    "top": 301,
+    "kg": 1420,
+    "value": 84000,
+    "blurb": "A manual-only roadster with the GT4’s 4.0 litre flat-six.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Porsche 718 Boxster",
+    "reviewed": false,
+    "photoMatch": "Spyder"
+  },
+  {
+    "id": "porsche-macan-turbo",
+    "make": "Porsche",
+    "model": "Macan Turbo",
+    "gen": "95B",
+    "year": 2014,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 400,
+    "nm": 550,
+    "acc": 4.8,
+    "top": 266,
+    "kg": 1925,
+    "value": 48000,
+    "blurb": "A compact SUV with a twin-turbo V6.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Porsche Macan",
+    "reviewed": false,
+    "photoMatch": "Macan"
+  },
+  {
+    "id": "porsche-macan-gts",
+    "make": "Porsche",
+    "model": "Macan GTS",
+    "gen": "95B",
+    "year": 2021,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 375,
+    "nm": 520,
+    "acc": 4.5,
+    "top": 272,
+    "kg": 1950,
+    "value": 52000,
+    "blurb": "A sportier Macan with a V6 and a lowered suspension.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Porsche Macan",
+    "reviewed": false,
+    "photoMatch": "Macan"
+  },
+  {
+    "id": "porsche-macan-electric-turbo",
+    "make": "Porsche",
+    "model": "Macan Turbo Electric",
+    "gen": "",
+    "year": 2024,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 630,
+    "nm": 1130,
+    "acc": 3.3,
+    "top": 260,
+    "kg": 2405,
+    "value": 84000,
+    "blurb": "The all-electric Macan with an 800-volt system.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "Porsche Macan",
+    "reviewed": false,
+    "photoMatch": "Macan"
+  },
+  {
+    "id": "porsche-panamera-turbo-s-e-hybrid-st",
+    "make": "Porsche",
+    "model": "Panamera Turbo S E-Hybrid Sport Turismo",
+    "gen": "971",
+    "year": 2017,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 680,
+    "nm": 850,
+    "acc": 3.4,
+    "top": 310,
+    "kg": 2295,
+    "value": 102000,
+    "blurb": "A plug-in hybrid estate with 680 hp.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Porsche Panamera",
+    "reviewed": false,
+    "photoMatch": "Sport Turismo"
+  },
+  {
+    "id": "porsche-panamera-gts-971",
+    "make": "Porsche",
+    "model": "Panamera GTS",
+    "gen": "971",
+    "year": 2018,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 453,
+    "nm": 620,
+    "acc": 4.1,
+    "top": 292,
+    "kg": 1920,
+    "value": 64000,
+    "blurb": "A 4.0 litre V8 four-door with a sports exhaust.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Porsche Panamera",
+    "reviewed": false,
+    "photoMatch": "Panamera"
+  },
+  {
+    "id": "porsche-panamera-turbo-s-972",
+    "make": "Porsche",
+    "model": "Panamera Turbo S E-Hybrid",
+    "gen": "972",
+    "year": 2024,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 630,
+    "nm": 900,
+    "acc": 3.1,
+    "top": 315,
+    "kg": 2100,
+    "value": 130000,
+    "blurb": "A plug-in hybrid with active suspension and a 4.0 litre V8.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "Porsche Panamera",
+    "reviewed": false,
+    "photoMatch": "Panamera"
+  },
+  {
+    "id": "porsche-taycan-4s",
+    "make": "Porsche",
+    "model": "Taycan 4S",
+    "gen": "",
+    "year": 2019,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 571,
+    "nm": 650,
+    "acc": 4,
+    "top": 250,
+    "kg": 2220,
+    "value": 78000,
+    "blurb": "An electric four-door with 571 hp.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "Porsche Taycan",
+    "reviewed": false,
+    "photoMatch": "Taycan"
+  },
+  {
+    "id": "porsche-taycan-turbo-gt",
+    "make": "Porsche",
+    "model": "Taycan Turbo GT",
+    "gen": "",
+    "year": 2024,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 1019,
+    "nm": 1340,
+    "acc": 2.2,
+    "top": 305,
+    "kg": 2220,
+    "value": 260000,
+    "blurb": "A 1,019 hp Taycan that lapped the Nürburgring faster than any electric car at the time.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "concepts"
+    ],
+    "wiki": "Porsche Taycan",
+    "reviewed": false,
+    "photoMatch": "Turbo GT"
+  },
+  {
+    "id": "porsche-cayenne-coupe-turbo-s-e-hybrid",
+    "make": "Porsche",
+    "model": "Cayenne Coupé Turbo S E-Hybrid",
+    "gen": "",
+    "year": 2023,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 670,
+    "nm": 900,
+    "acc": 3.8,
+    "top": 295,
+    "kg": 2400,
+    "value": 110000,
+    "blurb": "A sloping-roof plug-in hybrid with 670 hp.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Porsche Cayenne",
+    "reviewed": false,
+    "photoMatch": "Cayenne"
+  },
+  {
+    "id": "jaguar-f-type-svr",
+    "make": "Jaguar",
+    "model": "F-Type SVR",
+    "gen": "X152",
+    "year": 2016,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 567,
+    "nm": 700,
+    "acc": 3.5,
+    "top": 322,
+    "kg": 1720,
+    "value": 96000,
+    "blurb": "A supercharged V8 coupé with an active exhaust and all-wheel drive.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Jaguar F-Type",
+    "reviewed": false,
+    "photoMatch": "SVR"
+  },
+  {
+    "id": "jaguar-f-type-project-7",
+    "make": "Jaguar",
+    "model": "F-Type Project 7",
+    "gen": "",
+    "year": 2014,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 567,
+    "nm": 680,
+    "acc": 3.8,
+    "top": 300,
+    "kg": 1585,
+    "value": 220000,
+    "blurb": "A 250-car open-top track special with a tail inspired by the D-Type.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Jaguar F-Type Project 7",
+    "reviewed": false,
+    "photoMatch": "Project 7"
+  },
+  {
+    "id": "jaguar-xe-sv-project-8",
+    "make": "Jaguar",
+    "model": "XE SV Project 8",
+    "gen": "",
+    "year": 2017,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 592,
+    "nm": 700,
+    "acc": 3.3,
+    "top": 322,
+    "kg": 1745,
+    "value": 240000,
+    "blurb": "A 300-car, hand-built saloon with a fixed rear wing and a supercharged V8.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Jaguar XE SV Project 8",
+    "reviewed": false,
+    "photoMatch": "Project 8"
+  },
+  {
+    "id": "land-rover-defender-90-v8",
+    "make": "Land Rover",
+    "model": "Defender 90 V8",
+    "gen": "L663",
+    "year": 2022,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Rare",
+    "hp": 525,
+    "nm": 625,
+    "acc": 5.2,
+    "top": 240,
+    "kg": 2361,
+    "value": 62000,
+    "blurb": "A short-wheelbase Defender with a 5.0 litre supercharged V8.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Land Rover Defender (L663)",
+    "reviewed": false,
+    "photoMatch": "Defender"
+  },
+  {
+    "id": "land-rover-defender-110",
+    "make": "Land Rover",
+    "model": "Defender 110",
+    "gen": "L663",
+    "year": 2020,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Rare",
+    "hp": 296,
+    "nm": 400,
+    "acc": 8,
+    "top": 191,
+    "kg": 2200,
+    "value": 36000,
+    "blurb": "A modern take on the classic Defender with an aluminium monocoque.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Land Rover Defender (L663)",
+    "reviewed": false,
+    "photoMatch": "Defender"
+  },
+  {
+    "id": "lotus-evora-400",
+    "make": "Lotus",
+    "model": "Evora 400",
+    "gen": "",
+    "year": 2015,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Rare",
+    "hp": 400,
+    "nm": 410,
+    "acc": 4.2,
+    "top": 300,
+    "kg": 1395,
+    "value": 70000,
+    "blurb": "A supercharged V6 mid-engine coupé with an easier cabin.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Lotus Evora",
+    "reviewed": false,
+    "photoMatch": "Evora"
+  },
+  {
+    "id": "lotus-evora-gt430",
+    "make": "Lotus",
+    "model": "Evora GT430",
+    "gen": "",
+    "year": 2017,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 430,
+    "nm": 440,
+    "acc": 3.8,
+    "top": 305,
+    "kg": 1258,
+    "value": 120000,
+    "blurb": "The most powerful and lightest road Lotus at the time.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Lotus Evora",
+    "reviewed": false,
+    "photoMatch": "GT430"
+  },
+  {
+    "id": "lotus-exige-sport-350",
+    "make": "Lotus",
+    "model": "Exige Sport 350",
+    "gen": "",
+    "year": 2016,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Rare",
+    "hp": 345,
+    "nm": 400,
+    "acc": 3.9,
+    "top": 274,
+    "kg": 1125,
+    "value": 70000,
+    "blurb": "A supercharged V6 and a lightweight tub, in a coupé-sized package.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Lotus Exige",
+    "reviewed": false,
+    "photoMatch": "Exige"
+  },
+  {
+    "id": "lotus-exige-cup-430",
+    "make": "Lotus",
+    "model": "Exige Cup 430",
+    "gen": "",
+    "year": 2017,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 430,
+    "nm": 440,
+    "acc": 3.3,
+    "top": 290,
+    "kg": 1093,
+    "value": 110000,
+    "blurb": "The fastest road Lotus on the Hethel track at launch.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Lotus Exige",
+    "reviewed": false,
+    "photoMatch": "Cup"
+  },
+  {
+    "id": "lotus-elise-cup-250",
+    "make": "Lotus",
+    "model": "Elise Cup 250",
+    "gen": "S3",
+    "year": 2017,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Rare",
+    "hp": 243,
+    "nm": 244,
+    "acc": 4.6,
+    "top": 248,
+    "kg": 931,
+    "value": 52000,
+    "blurb": "A light supercharged roadster, still under a tonne.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Lotus Elise",
+    "reviewed": false,
+    "photoMatch": "Elise"
+  },
+  {
+    "id": "ariel-nomad",
+    "make": "Ariel",
+    "model": "Nomad",
+    "gen": "",
+    "year": 2015,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Rare",
+    "hp": 235,
+    "nm": 300,
+    "acc": 3.4,
+    "top": 200,
+    "kg": 735,
+    "value": 60000,
+    "blurb": "A road-legal off-road buggy with a Honda Civic engine.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Ariel Nomad",
+    "reviewed": false,
+    "photoMatch": "Nomad"
+  },
+  {
+    "id": "bac-mono-r",
+    "make": "BAC",
+    "model": "Mono R",
+    "gen": "",
+    "year": 2020,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 340,
+    "nm": 303,
+    "acc": 2.7,
+    "top": 280,
+    "kg": 555,
+    "value": 160000,
+    "blurb": "A track-ready single-seater with a power-to-weight ratio above 600 hp per tonne.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "BAC Mono",
+    "reviewed": false,
+    "photoMatch": "Mono"
+  },
+  {
+    "id": "vauxhall-vxr8-gts-r",
+    "make": "Vauxhall",
+    "model": "VXR8 GTS-R",
+    "gen": "",
+    "year": 2017,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 587,
+    "nm": 740,
+    "acc": 4.2,
+    "top": 250,
+    "kg": 1840,
+    "value": 90000,
+    "blurb": "A 30-car farewell VXR8 with a supercharged 6.2 litre V8.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Vauxhall VXR8",
+    "reviewed": false,
+    "photoMatch": "VXR8"
+  },
+  {
+    "id": "maserati-ghibli-s",
+    "make": "Maserati",
+    "model": "Ghibli S",
+    "gen": "M157",
+    "year": 2014,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Rare",
+    "hp": 404,
+    "nm": 550,
+    "acc": 5,
+    "top": 267,
+    "kg": 1810,
+    "value": 32000,
+    "blurb": "A twin-turbo V6 sports saloon with a Ferrari-built engine.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Maserati Ghibli (M157)",
+    "reviewed": false,
+    "photoMatch": "Ghibli"
+  },
+  {
+    "id": "maserati-ghibli-trofeo",
+    "make": "Maserati",
+    "model": "Ghibli Trofeo",
+    "gen": "M157",
+    "year": 2021,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 580,
+    "nm": 730,
+    "acc": 4.3,
+    "top": 326,
+    "kg": 1860,
+    "value": 82000,
+    "blurb": "A twin-turbo V8 Ghibli with a Ferrari-built engine.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Maserati Ghibli (M157)",
+    "reviewed": false,
+    "photoMatch": "Trofeo"
+  },
+  {
+    "id": "maserati-quattroporte-gts",
+    "make": "Maserati",
+    "model": "Quattroporte GTS",
+    "gen": "M156",
+    "year": 2014,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Rare",
+    "hp": 523,
+    "nm": 650,
+    "acc": 4.7,
+    "top": 307,
+    "kg": 1900,
+    "value": 52000,
+    "blurb": "A big saloon with a Ferrari-built V8 and a sonorous exhaust.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Maserati Quattroporte (M156)",
+    "reviewed": false,
+    "photoMatch": "Quattroporte"
+  },
+  {
+    "id": "maserati-granturismo-trofeo",
+    "make": "Maserati",
+    "model": "GranTurismo Trofeo",
+    "gen": "M189",
+    "year": 2023,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 550,
+    "nm": 650,
+    "acc": 3.5,
+    "top": 320,
+    "kg": 1795,
+    "value": 120000,
+    "blurb": "A new GranTurismo with a Nettuno twin-turbo V6.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "supercars"
+    ],
+    "wiki": "Maserati GranTurismo (2023)",
+    "reviewed": false,
+    "photoMatch": "GranTurismo"
+  },
+  {
+    "id": "maserati-granturismo-folgore",
+    "make": "Maserati",
+    "model": "GranTurismo Folgore",
+    "gen": "M189",
+    "year": 2023,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 761,
+    "nm": 1350,
+    "acc": 2.7,
+    "top": 320,
+    "kg": 2260,
+    "value": 150000,
+    "blurb": "The first all-electric GranTurismo, with three motors.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "Maserati GranTurismo (2023)",
+    "reviewed": false,
+    "photoMatch": "Folgore"
+  },
+  {
+    "id": "maserati-granturismo-mc-cabrio",
+    "make": "Maserati",
+    "model": "GranCabrio MC",
+    "gen": "",
+    "year": 2014,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 454,
+    "nm": 520,
+    "acc": 4.9,
+    "top": 289,
+    "kg": 1980,
+    "value": 64000,
+    "blurb": "An open four-seat grand tourer with a 4.7 litre V8.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Maserati GranCabrio",
+    "reviewed": false,
+    "photoMatch": "GranCabrio"
+  },
+  {
+    "id": "alfa-romeo-giulia-gta",
+    "make": "Alfa Romeo",
+    "model": "Giulia GTA",
+    "gen": "952",
+    "year": 2020,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 540,
+    "nm": 600,
+    "acc": 3.6,
+    "top": 300,
+    "kg": 1520,
+    "value": 190000,
+    "blurb": "A 500-car celebration of the 1965 GTA, with a carbon body and a Sauber-tuned aero kit.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Alfa Romeo Giulia GTA",
+    "reviewed": false,
+    "photoMatch": "GTA"
+  },
+  {
+    "id": "alfa-romeo-giulia-gtam",
+    "make": "Alfa Romeo",
+    "model": "Giulia GTAm",
+    "gen": "952",
+    "year": 2020,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 540,
+    "nm": 600,
+    "acc": 3.6,
+    "top": 300,
+    "kg": 1520,
+    "value": 230000,
+    "blurb": "A GTA with the rear seats deleted and a roll cage, built for the track.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Alfa Romeo Giulia GTA",
+    "reviewed": false,
+    "photoMatch": "GTAm"
+  },
+  {
+    "id": "ferrari-488-spider",
+    "make": "Ferrari",
+    "model": "488 Spider",
+    "gen": "",
+    "year": 2015,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 661,
+    "nm": 760,
+    "acc": 3,
+    "top": 325,
+    "kg": 1525,
+    "value": 290000,
+    "blurb": "A retractable-hardtop 488 with a twin-turbo V8.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Ferrari 488",
+    "reviewed": false,
+    "photoMatch": "488"
+  },
+  {
+    "id": "ferrari-488-pista-spider",
+    "make": "Ferrari",
+    "model": "488 Pista Spider",
+    "gen": "",
+    "year": 2018,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 711,
+    "nm": 770,
+    "acc": 2.85,
+    "top": 340,
+    "kg": 1415,
+    "value": 420000,
+    "blurb": "An open-top Pista with a lightweight carbon roof.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Ferrari 488 Pista",
+    "reviewed": false,
+    "photoMatch": "Pista"
+  },
+  {
+    "id": "ferrari-812-gts",
+    "make": "Ferrari",
+    "model": "812 GTS",
+    "gen": "",
+    "year": 2019,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 789,
+    "nm": 718,
+    "acc": 3,
+    "top": 340,
+    "kg": 1600,
+    "value": 560000,
+    "blurb": "The first V12 Ferrari spider since the 1960s.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Ferrari 812",
+    "reviewed": false,
+    "photoMatch": "812"
+  },
+  {
+    "id": "ferrari-812-competizione",
+    "make": "Ferrari",
+    "model": "812 Competizione",
+    "gen": "",
+    "year": 2021,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 819,
+    "nm": 692,
+    "acc": 2.85,
+    "top": 340,
+    "kg": 1487,
+    "value": 800000,
+    "blurb": "A 999-car run with the most powerful naturally aspirated V12 Ferrari had made.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Ferrari 812 Competizione",
+    "reviewed": false,
+    "photoMatch": "Competizione"
+  },
+  {
+    "id": "ferrari-812-competizione-a",
+    "make": "Ferrari",
+    "model": "812 Competizione A",
+    "gen": "",
+    "year": 2021,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 819,
+    "nm": 692,
+    "acc": 2.9,
+    "top": 340,
+    "kg": 1487,
+    "value": 1000000,
+    "blurb": "A targa-roof, 599-car open version of the Competizione.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Ferrari 812 Competizione",
+    "reviewed": false,
+    "photoMatch": "Competizione"
+  },
+  {
+    "id": "ferrari-portofino",
+    "make": "Ferrari",
+    "model": "Portofino",
+    "gen": "",
+    "year": 2017,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 592,
+    "nm": 760,
+    "acc": 3.5,
+    "top": 320,
+    "kg": 1664,
+    "value": 180000,
+    "blurb": "A folding-hardtop 2+2 with a twin-turbo V8.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "supercars"
+    ],
+    "wiki": "Ferrari Portofino",
+    "reviewed": false,
+    "photoMatch": "Portofino"
+  },
+  {
+    "id": "ferrari-portofino-m",
+    "make": "Ferrari",
+    "model": "Portofino M",
+    "gen": "",
+    "year": 2020,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 612,
+    "nm": 760,
+    "acc": 3.45,
+    "top": 320,
+    "kg": 1664,
+    "value": 200000,
+    "blurb": "A Portofino with an eight-speed gearbox and 612 hp.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "supercars"
+    ],
+    "wiki": "Ferrari Portofino",
+    "reviewed": false,
+    "photoMatch": "Portofino"
+  },
+  {
+    "id": "ferrari-gtc4lusso",
+    "make": "Ferrari",
+    "model": "GTC4Lusso",
+    "gen": "",
+    "year": 2016,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 680,
+    "nm": 697,
+    "acc": 3.4,
+    "top": 335,
+    "kg": 1920,
+    "value": 230000,
+    "blurb": "A four-seat, four-wheel-drive and four-wheel-steering V12 shooting brake.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "supercars"
+    ],
+    "wiki": "Ferrari GTC4Lusso",
+    "reviewed": false,
+    "photoMatch": "GTC4"
+  },
+  {
+    "id": "ferrari-gtc4lusso-t",
+    "make": "Ferrari",
+    "model": "GTC4Lusso T",
+    "gen": "",
+    "year": 2017,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 602,
+    "nm": 760,
+    "acc": 3.5,
+    "top": 320,
+    "kg": 1865,
+    "value": 200000,
+    "blurb": "A rear-wheel-drive, twin-turbo V8 version of the GTC4Lusso.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "supercars"
+    ],
+    "wiki": "Ferrari GTC4Lusso",
+    "reviewed": false,
+    "photoMatch": "GTC4"
+  },
+  {
+    "id": "ferrari-296-gts",
+    "make": "Ferrari",
+    "model": "296 GTS",
+    "gen": "",
+    "year": 2022,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 818,
+    "nm": 740,
+    "acc": 3,
+    "top": 330,
+    "kg": 1540,
+    "value": 520000,
+    "blurb": "A plug-in hybrid V6 spider with a folding hard top.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Ferrari 296 GTB",
+    "reviewed": false,
+    "photoMatch": "296"
+  },
+  {
+    "id": "ferrari-sf90-spider",
+    "make": "Ferrari",
+    "model": "SF90 Spider",
+    "gen": "",
+    "year": 2020,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 986,
+    "nm": 800,
+    "acc": 2.5,
+    "top": 340,
+    "kg": 1670,
+    "value": 900000,
+    "blurb": "A plug-in hybrid with a folding hard top and 986 hp.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Ferrari SF90 Stradale",
+    "reviewed": false,
+    "photoMatch": "SF90"
+  },
+  {
+    "id": "ferrari-sf90-xx-stradale",
+    "make": "Ferrari",
+    "model": "SF90 XX Stradale",
+    "gen": "",
+    "year": 2023,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 1030,
+    "nm": 900,
+    "acc": 2.3,
+    "top": 320,
+    "kg": 1560,
+    "value": 1700000,
+    "blurb": "A track-derived road car with an active rear wing and 1,030 hp.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "concepts"
+    ],
+    "wiki": "Ferrari SF90 XX Stradale",
+    "reviewed": false,
+    "photoMatch": "XX"
+  },
+  {
+    "id": "ferrari-j50",
+    "make": "Ferrari",
+    "model": "J50",
+    "gen": "",
+    "year": 2016,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 678,
+    "nm": 760,
+    "acc": 3,
+    "top": 325,
+    "kg": 1475,
+    "value": 1300000,
+    "blurb": "A 10-car special to mark 50 years of Ferrari in Japan.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "concepts"
+    ],
+    "wiki": "Ferrari J50",
+    "reviewed": false,
+    "photoMatch": "J50"
+  },
+  {
+    "id": "ferrari-monza-sp1",
+    "make": "Ferrari",
+    "model": "Monza SP1",
+    "gen": "",
+    "year": 2018,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 799,
+    "nm": 719,
+    "acc": 2.9,
+    "top": 300,
+    "kg": 1500,
+    "value": 1800000,
+    "blurb": "A single-seat speedster built as a tribute to 1950s Ferrari barchettas.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "concepts"
+    ],
+    "wiki": "Ferrari Monza SP1",
+    "reviewed": false,
+    "photoMatch": "Monza"
+  },
+  {
+    "id": "ferrari-monza-sp2",
+    "make": "Ferrari",
+    "model": "Monza SP2",
+    "gen": "",
+    "year": 2018,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 799,
+    "nm": 719,
+    "acc": 2.9,
+    "top": 300,
+    "kg": 1520,
+    "value": 1900000,
+    "blurb": "A two-seat version of the Monza SP1, with a windscreen-less barchetta body.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "concepts"
+    ],
+    "wiki": "Ferrari Monza SP1",
+    "reviewed": false,
+    "photoMatch": "Monza"
+  },
+  {
+    "id": "ferrari-296-speciale",
+    "make": "Ferrari",
+    "model": "296 Speciale",
+    "gen": "",
+    "year": 2025,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 868,
+    "nm": 842,
+    "acc": 2.8,
+    "top": 330,
+    "kg": 1410,
+    "value": 650000,
+    "blurb": "A lightened, more powerful 296 GTB with active aero.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Ferrari 296 GTB",
+    "reviewed": false,
+    "photoMatch": "296"
+  },
+  {
+    "id": "lamborghini-huracan-lp580-2",
+    "make": "Lamborghini",
+    "model": "Huracán LP 580-2",
+    "gen": "",
+    "year": 2016,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 572,
+    "nm": 540,
+    "acc": 3.4,
+    "top": 320,
+    "kg": 1389,
+    "value": 150000,
+    "blurb": "A rear-wheel-drive Huracán with a lower price and a looser tail.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Lamborghini Huracán",
+    "reviewed": false,
+    "photoMatch": "Hurac"
+  },
+  {
+    "id": "lamborghini-huracan-spyder",
+    "make": "Lamborghini",
+    "model": "Huracán LP 610-4 Spyder",
+    "gen": "",
+    "year": 2015,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 602,
+    "nm": 560,
+    "acc": 3.4,
+    "top": 324,
+    "kg": 1542,
+    "value": 200000,
+    "blurb": "A V10 spyder with a folding fabric roof.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Lamborghini Huracán",
+    "reviewed": false,
+    "photoMatch": "Spyder"
+  },
+  {
+    "id": "lamborghini-huracan-evo",
+    "make": "Lamborghini",
+    "model": "Huracán EVO",
+    "gen": "",
+    "year": 2019,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 631,
+    "nm": 600,
+    "acc": 2.9,
+    "top": 325,
+    "kg": 1422,
+    "value": 240000,
+    "blurb": "A Performante-derived V10 with four-wheel steering and a new infotainment system.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Lamborghini Huracán",
+    "reviewed": false,
+    "photoMatch": "EVO"
+  },
+  {
+    "id": "lamborghini-huracan-evo-spyder",
+    "make": "Lamborghini",
+    "model": "Huracán EVO Spyder",
+    "gen": "",
+    "year": 2019,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 631,
+    "nm": 600,
+    "acc": 3.1,
+    "top": 325,
+    "kg": 1542,
+    "value": 250000,
+    "blurb": "An open Huracán EVO with a fabric roof.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Lamborghini Huracán",
+    "reviewed": false,
+    "photoMatch": "EVO"
+  },
+  {
+    "id": "lamborghini-huracan-evo-rwd",
+    "make": "Lamborghini",
+    "model": "Huracán EVO RWD",
+    "gen": "",
+    "year": 2020,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 602,
+    "nm": 560,
+    "acc": 3.3,
+    "top": 325,
+    "kg": 1389,
+    "value": 210000,
+    "blurb": "A rear-wheel-drive EVO with a drift mode.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Lamborghini Huracán",
+    "reviewed": false,
+    "photoMatch": "RWD"
+  },
+  {
+    "id": "lamborghini-huracan-sterrato",
+    "make": "Lamborghini",
+    "model": "Huracán Sterrato",
+    "gen": "",
+    "year": 2023,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 602,
+    "nm": 560,
+    "acc": 3.4,
+    "top": 260,
+    "kg": 1470,
+    "value": 330000,
+    "blurb": "A lifted, rally-style Huracán built for gravel roads.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Lamborghini Huracán",
+    "reviewed": false,
+    "photoMatch": "Sterrato"
+  },
+  {
+    "id": "lamborghini-huracan-performante-spyder",
+    "make": "Lamborghini",
+    "model": "Huracán Performante Spyder",
+    "gen": "",
+    "year": 2017,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 631,
+    "nm": 600,
+    "acc": 3.1,
+    "top": 325,
+    "kg": 1507,
+    "value": 320000,
+    "blurb": "An open Performante with active aerodynamics.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Lamborghini Huracán",
+    "reviewed": false,
+    "photoMatch": "Performante"
+  },
+  {
+    "id": "lamborghini-aventador-sv",
+    "make": "Lamborghini",
+    "model": "Aventador LP 750-4 SV",
+    "gen": "",
+    "year": 2015,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 740,
+    "nm": 690,
+    "acc": 2.8,
+    "top": 350,
+    "kg": 1525,
+    "value": 520000,
+    "blurb": "A lighter, more powerful Aventador with a bigger rear wing.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Lamborghini Aventador",
+    "reviewed": false,
+    "photoMatch": "SV|Superveloce"
+  },
+  {
+    "id": "lamborghini-aventador-s",
+    "make": "Lamborghini",
+    "model": "Aventador S",
+    "gen": "",
+    "year": 2016,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 730,
+    "nm": 690,
+    "acc": 2.9,
+    "top": 350,
+    "kg": 1575,
+    "value": 470000,
+    "blurb": "An Aventador with four-wheel steering and an updated nose.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Lamborghini Aventador",
+    "reviewed": false,
+    "photoMatch": "Aventador ?S"
+  },
+  {
+    "id": "lamborghini-aventador-svj-roadster",
+    "make": "Lamborghini",
+    "model": "Aventador SVJ Roadster",
+    "gen": "",
+    "year": 2019,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 759,
+    "nm": 720,
+    "acc": 2.9,
+    "top": 350,
+    "kg": 1600,
+    "value": 800000,
+    "blurb": "A 800-car open-top SVJ with a removable carbon roof.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Lamborghini Aventador",
+    "reviewed": false,
+    "photoMatch": "Roadster"
+  },
+  {
+    "id": "lamborghini-aventador-ultimae",
+    "make": "Lamborghini",
+    "model": "Aventador Ultimae",
+    "gen": "",
+    "year": 2021,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 769,
+    "nm": 720,
+    "acc": 2.8,
+    "top": 355,
+    "kg": 1550,
+    "value": 850000,
+    "blurb": "The final Aventador, the most powerful naturally aspirated V12 Lamborghini had made.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Lamborghini Aventador",
+    "reviewed": false,
+    "photoMatch": "Ultimae"
+  },
+  {
+    "id": "mclaren-540c",
+    "make": "McLaren",
+    "model": "540C",
+    "gen": "",
+    "year": 2015,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 533,
+    "nm": 540,
+    "acc": 3.5,
+    "top": 320,
+    "kg": 1311,
+    "value": 140000,
+    "blurb": "The entry model of the Sports Series, with a lower-output V8.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "McLaren 570S",
+    "reviewed": false,
+    "photoMatch": "540|570"
+  },
+  {
+    "id": "mclaren-570gt",
+    "make": "McLaren",
+    "model": "570GT",
+    "gen": "",
+    "year": 2016,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 562,
+    "nm": 600,
+    "acc": 3.4,
+    "top": 328,
+    "kg": 1350,
+    "value": 160000,
+    "blurb": "A more practical 570S with a glass tailgate and a boot.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "McLaren 570S",
+    "reviewed": false,
+    "photoMatch": "570 ?GT"
+  },
+  {
+    "id": "mclaren-570s-spider",
+    "make": "McLaren",
+    "model": "570S Spider",
+    "gen": "",
+    "year": 2017,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 562,
+    "nm": 600,
+    "acc": 3.2,
+    "top": 328,
+    "kg": 1359,
+    "value": 170000,
+    "blurb": "A convertible 570S with a folding hard top.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "McLaren 570S",
+    "reviewed": false,
+    "photoMatch": "Spider"
+  },
+  {
+    "id": "mclaren-600lt",
+    "make": "McLaren",
+    "model": "600LT",
+    "gen": "",
+    "year": 2018,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 592,
+    "nm": 620,
+    "acc": 2.9,
+    "top": 328,
+    "kg": 1247,
+    "value": 220000,
+    "blurb": "A Longtail with a top-exit exhaust and a lightweight body.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "McLaren 600LT",
+    "reviewed": false,
+    "photoMatch": "600 ?LT"
+  },
+  {
+    "id": "mclaren-600lt-spider",
+    "make": "McLaren",
+    "model": "600LT Spider",
+    "gen": "",
+    "year": 2019,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 592,
+    "nm": 620,
+    "acc": 2.9,
+    "top": 328,
+    "kg": 1297,
+    "value": 240000,
+    "blurb": "An open-top Longtail with a carbon roof.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "McLaren 600LT",
+    "reviewed": false,
+    "photoMatch": "600 ?LT"
+  },
+  {
+    "id": "mclaren-650s-spider",
+    "make": "McLaren",
+    "model": "650S Spider",
+    "gen": "",
+    "year": 2014,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 641,
+    "nm": 678,
+    "acc": 3,
+    "top": 333,
+    "kg": 1370,
+    "value": 210000,
+    "blurb": "An open version of the 650S.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "McLaren 650S",
+    "reviewed": false,
+    "photoMatch": "650"
+  },
+  {
+    "id": "mclaren-675lt-spider",
+    "make": "McLaren",
+    "model": "675LT Spider",
+    "gen": "",
+    "year": 2016,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Legendary",
+    "hp": 666,
+    "nm": 700,
+    "acc": 3,
+    "top": 326,
+    "kg": 1270,
+    "value": 360000,
+    "blurb": "An open-top 675LT built in 500 cars.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "McLaren 675LT",
+    "reviewed": false,
+    "photoMatch": "675"
+  },
+  {
+    "id": "mclaren-720s-spider",
+    "make": "McLaren",
+    "model": "720S Spider",
+    "gen": "",
+    "year": 2019,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 710,
+    "nm": 770,
+    "acc": 2.9,
+    "top": 341,
+    "kg": 1332,
+    "value": 290000,
+    "blurb": "A folding-roof 720S with an even faster-opening roof.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "McLaren 720S",
+    "reviewed": false,
+    "photoMatch": "720"
+  },
+  {
+    "id": "mclaren-765lt-spider",
+    "make": "McLaren",
+    "model": "765LT Spider",
+    "gen": "",
+    "year": 2021,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Legendary",
+    "hp": 755,
+    "nm": 800,
+    "acc": 2.8,
+    "top": 330,
+    "kg": 1278,
+    "value": 520000,
+    "blurb": "A 765-car open-top Longtail.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "McLaren 720S",
+    "reviewed": false,
+    "photoMatch": "765"
+  },
+  {
+    "id": "mclaren-750s",
+    "make": "McLaren",
+    "model": "750S",
+    "gen": "",
+    "year": 2023,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 740,
+    "nm": 800,
+    "acc": 2.8,
+    "top": 332,
+    "kg": 1277,
+    "value": 300000,
+    "blurb": "A reworked 720S with more power and a lighter build.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "McLaren 750S",
+    "reviewed": false,
+    "photoMatch": "750"
+  },
+  {
+    "id": "mclaren-750s-spider",
+    "make": "McLaren",
+    "model": "750S Spider",
+    "gen": "",
+    "year": 2023,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 740,
+    "nm": 800,
+    "acc": 2.8,
+    "top": 332,
+    "kg": 1332,
+    "value": 320000,
+    "blurb": "An open-top 750S with a retractable hard top.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "McLaren 750S",
+    "reviewed": false,
+    "photoMatch": "750"
+  },
+  {
+    "id": "aston-martin-v12-vantage-s",
+    "make": "Aston Martin",
+    "model": "V12 Vantage S",
+    "gen": "",
+    "year": 2014,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 565,
+    "nm": 620,
+    "acc": 3.7,
+    "top": 330,
+    "kg": 1665,
+    "value": 130000,
+    "blurb": "A big V12 in the small Vantage body, with a seven-speed manual.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Aston Martin V12 Vantage",
+    "reviewed": false,
+    "photoMatch": "V12"
+  },
+  {
+    "id": "aston-martin-db11-v8",
+    "make": "Aston Martin",
+    "model": "DB11 V8",
+    "gen": "",
+    "year": 2017,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 503,
+    "nm": 675,
+    "acc": 4,
+    "top": 300,
+    "kg": 1760,
+    "value": 130000,
+    "blurb": "A DB11 with an AMG-sourced twin-turbo V8.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "supercars"
+    ],
+    "wiki": "Aston Martin DB11",
+    "reviewed": false,
+    "photoMatch": "DB11"
+  },
+  {
+    "id": "aston-martin-db11-amr",
+    "make": "Aston Martin",
+    "model": "DB11 AMR",
+    "gen": "",
+    "year": 2018,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 630,
+    "nm": 700,
+    "acc": 3.7,
+    "top": 334,
+    "kg": 1870,
+    "value": 160000,
+    "blurb": "A more powerful DB11 with a sharper chassis.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "supercars"
+    ],
+    "wiki": "Aston Martin DB11",
+    "reviewed": false,
+    "photoMatch": "AMR|DB11"
+  },
+  {
+    "id": "aston-martin-vanquish-s",
+    "make": "Aston Martin",
+    "model": "Vanquish S",
+    "gen": "",
+    "year": 2017,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 595,
+    "nm": 630,
+    "acc": 3.5,
+    "top": 323,
+    "kg": 1739,
+    "value": 150000,
+    "blurb": "A carbon-fibre V12 GT with 595 hp.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Aston Martin Vanquish",
+    "reviewed": false,
+    "photoMatch": "Vanquish"
+  },
+  {
+    "id": "aston-martin-rapide-s",
+    "make": "Aston Martin",
+    "model": "Rapide S",
+    "gen": "",
+    "year": 2014,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Rare",
+    "hp": 552,
+    "nm": 630,
+    "acc": 4.2,
+    "top": 327,
+    "kg": 1990,
+    "value": 70000,
+    "blurb": "A four-door V12 grand tourer.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Aston Martin Rapide",
+    "reviewed": false,
+    "photoMatch": "Rapide"
+  },
+  {
+    "id": "aston-martin-rapide-amr",
+    "make": "Aston Martin",
+    "model": "Rapide AMR",
+    "gen": "",
+    "year": 2018,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 595,
+    "nm": 630,
+    "acc": 4.4,
+    "top": 330,
+    "kg": 2000,
+    "value": 120000,
+    "blurb": "A final Rapide with a tuned V12 and AMR styling.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Aston Martin Rapide",
+    "reviewed": false,
+    "photoMatch": "Rapide"
+  },
+  {
+    "id": "aston-martin-v12-vantage-2022",
+    "make": "Aston Martin",
+    "model": "V12 Vantage",
+    "gen": "",
+    "year": 2022,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 690,
+    "nm": 753,
+    "acc": 3.4,
+    "top": 322,
+    "kg": 1700,
+    "value": 300000,
+    "blurb": "A 333-car run with a twin-turbo V12 and a manual gearbox option.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Aston Martin Vantage (2018)",
+    "reviewed": false,
+    "photoMatch": "V12"
+  },
+  {
+    "id": "aston-martin-vantage-f1-edition",
+    "make": "Aston Martin",
+    "model": "Vantage F1 Edition",
+    "gen": "",
+    "year": 2021,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 528,
+    "nm": 685,
+    "acc": 3.6,
+    "top": 314,
+    "kg": 1530,
+    "value": 140000,
+    "blurb": "A Vantage tuned to match the Aston Martin Formula 1 team’s safety car.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "supercars"
+    ],
+    "wiki": "Aston Martin Vantage (2018)",
+    "reviewed": false,
+    "photoMatch": "F1|Vantage"
+  },
+  {
+    "id": "aston-martin-dbx",
+    "make": "Aston Martin",
+    "model": "DBX",
+    "gen": "",
+    "year": 2020,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 542,
+    "nm": 700,
+    "acc": 4.5,
+    "top": 291,
+    "kg": 2245,
+    "value": 120000,
+    "blurb": "Aston Martin’s first SUV, with a twin-turbo V8.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Aston Martin DBX",
+    "reviewed": false,
+    "photoMatch": "DBX"
+  },
+  {
+    "id": "aston-martin-dbx707",
+    "make": "Aston Martin",
+    "model": "DBX707",
+    "gen": "",
+    "year": 2022,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 697,
+    "nm": 900,
+    "acc": 3.3,
+    "top": 310,
+    "kg": 2245,
+    "value": 190000,
+    "blurb": "The fastest SUV in the world at launch, with a 697 hp V8.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Aston Martin DBX",
+    "reviewed": false,
+    "photoMatch": "DBX"
+  },
+  {
+    "id": "aston-martin-v12-speedster",
+    "make": "Aston Martin",
+    "model": "V12 Speedster",
+    "gen": "",
+    "year": 2021,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Legendary",
+    "hp": 700,
+    "nm": 753,
+    "acc": 3.4,
+    "top": 300,
+    "kg": 1700,
+    "value": 600000,
+    "blurb": "An 88-car open-top roadster with no roof or windscreen.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "concepts"
+    ],
+    "wiki": "Aston Martin V12 Speedster",
+    "reviewed": false,
+    "photoMatch": "Speedster"
+  },
+  {
+    "id": "aston-martin-vanquish-2024",
+    "make": "Aston Martin",
+    "model": "Vanquish",
+    "gen": "",
+    "year": 2024,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Legendary",
+    "hp": 824,
+    "nm": 1000,
+    "acc": 3.2,
+    "top": 345,
+    "kg": 1760,
+    "value": 520000,
+    "blurb": "The new flagship GT with an 824 hp V12.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Aston Martin Vanquish",
+    "reviewed": false,
+    "photoMatch": "Vanquish"
+  },
+  {
+    "id": "aston-martin-victor",
+    "make": "Aston Martin",
+    "model": "Victor",
+    "gen": "",
+    "year": 2020,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Legendary",
+    "hp": 836,
+    "nm": 1000,
+    "acc": 3,
+    "top": 320,
+    "kg": 1450,
+    "value": 2000000,
+    "blurb": "A one-off, V12 manual-transmission special inspired by the One-77.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "concepts"
+    ],
+    "wiki": "Aston Martin Victor",
+    "reviewed": false,
+    "photoMatch": "Victor"
+  },
+  {
+    "id": "bentley-continental-gt-v8s",
+    "make": "Bentley",
+    "model": "Continental GT V8 S",
+    "gen": "",
+    "year": 2014,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 521,
+    "nm": 680,
+    "acc": 4.5,
+    "top": 308,
+    "kg": 2295,
+    "value": 66000,
+    "blurb": "A V8 Continental with a sportier chassis and a throatier exhaust.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Bentley Continental GT",
+    "reviewed": false,
+    "photoMatch": "Continental"
+  },
+  {
+    "id": "bentley-continental-gt3-r",
+    "make": "Bentley",
+    "model": "Continental GT3-R",
+    "gen": "",
+    "year": 2014,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 572,
+    "nm": 700,
+    "acc": 3.9,
+    "top": 330,
+    "kg": 2200,
+    "value": 150000,
+    "blurb": "A 300-car limited Continental that gives a nod to the GT3 race car.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Bentley Continental GT3-R",
+    "reviewed": false,
+    "photoMatch": "GT3"
+  },
+  {
+    "id": "bentley-continental-gt-2018",
+    "make": "Bentley",
+    "model": "Continental GT W12",
+    "gen": "",
+    "year": 2018,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 626,
+    "nm": 900,
+    "acc": 3.7,
+    "top": 333,
+    "kg": 2244,
+    "value": 100000,
+    "blurb": "A new platform and a W12 with 626 hp.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Bentley Continental GT (third generation)",
+    "reviewed": false,
+    "photoMatch": "Continental"
+  },
+  {
+    "id": "bentley-continental-gt-speed-2021",
+    "make": "Bentley",
+    "model": "Continental GT Speed",
+    "gen": "",
+    "year": 2021,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 650,
+    "nm": 900,
+    "acc": 3.5,
+    "top": 335,
+    "kg": 2260,
+    "value": 120000,
+    "blurb": "A W12 coupé with rear-wheel steering and a sport mode.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Bentley Continental GT (third generation)",
+    "reviewed": false,
+    "photoMatch": "Speed"
+  },
+  {
+    "id": "bentley-flying-spur-w12",
+    "make": "Bentley",
+    "model": "Flying Spur W12",
+    "gen": "",
+    "year": 2020,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 626,
+    "nm": 900,
+    "acc": 3.8,
+    "top": 333,
+    "kg": 2437,
+    "value": 110000,
+    "blurb": "A luxury four-door with a W12 and rear steering.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Bentley Flying Spur (third generation)",
+    "reviewed": false,
+    "photoMatch": "Flying Spur"
+  },
+  {
+    "id": "bentley-bentayga",
+    "make": "Bentley",
+    "model": "Bentayga W12",
+    "gen": "",
+    "year": 2016,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 600,
+    "nm": 900,
+    "acc": 4.1,
+    "top": 301,
+    "kg": 2440,
+    "value": 100000,
+    "blurb": "The fastest SUV in the world when launched, with a W12.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Bentley Bentayga",
+    "reviewed": false,
+    "photoMatch": "Bentayga"
+  },
+  {
+    "id": "bentley-bentayga-speed",
+    "make": "Bentley",
+    "model": "Bentayga Speed",
+    "gen": "",
+    "year": 2019,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 626,
+    "nm": 900,
+    "acc": 3.9,
+    "top": 306,
+    "kg": 2530,
+    "value": 140000,
+    "blurb": "The fastest production SUV at launch, reaching over 300 km/h.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Bentley Bentayga",
+    "reviewed": false,
+    "photoMatch": "Bentayga"
+  },
+  {
+    "id": "bentley-bacalar",
+    "make": "Bentley",
+    "model": "Bacalar",
+    "gen": "",
+    "year": 2020,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Legendary",
+    "hp": 650,
+    "nm": 900,
+    "acc": 3.6,
+    "top": 320,
+    "kg": 2200,
+    "value": 1600000,
+    "blurb": "A 12-car open-top roadster built by Mulliner.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "concepts"
+    ],
+    "wiki": "Bentley Bacalar",
+    "reviewed": false,
+    "photoMatch": "Bacalar"
+  },
+  {
+    "id": "bentley-batur",
+    "make": "Bentley",
+    "model": "Batur",
+    "gen": "",
+    "year": 2022,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Legendary",
+    "hp": 740,
+    "nm": 1000,
+    "acc": 3.4,
+    "top": 330,
+    "kg": 2300,
+    "value": 2000000,
+    "blurb": "A 18-car, Mulliner-built coupé with the most powerful Bentley W12 ever.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "concepts"
+    ],
+    "wiki": "Bentley Batur",
+    "reviewed": false,
+    "photoMatch": "Batur"
+  },
+  {
+    "id": "rolls-royce-ghost-2020",
+    "make": "Rolls-Royce",
+    "model": "Ghost",
+    "gen": "RR25",
+    "year": 2020,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 563,
+    "nm": 850,
+    "acc": 4.8,
+    "top": 250,
+    "kg": 2490,
+    "value": 190000,
+    "blurb": "A luxury saloon that is quieter than its predecessor.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Rolls-Royce Ghost (2020)",
+    "reviewed": false,
+    "photoMatch": "Ghost"
+  },
+  {
+    "id": "bugatti-chiron-pur-sport",
+    "make": "Bugatti",
+    "model": "Chiron Pur Sport",
+    "gen": "",
+    "year": 2020,
+    "country": "France",
+    "cc": "FR",
+    "tier": "Legendary",
+    "hp": 1479,
+    "nm": 1600,
+    "acc": 2.3,
+    "top": 350,
+    "kg": 1976,
+    "value": 2200000,
+    "blurb": "A lighter, more agile Chiron with a big fixed rear wing.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "concepts"
+    ],
+    "wiki": "Bugatti Chiron",
+    "reviewed": false,
+    "photoMatch": "Pur Sport"
+  },
+  {
+    "id": "bugatti-la-voiture-noire",
+    "make": "Bugatti",
+    "model": "La Voiture Noire",
+    "gen": "",
+    "year": 2019,
+    "country": "France",
+    "cc": "FR",
+    "tier": "Legendary",
+    "hp": 1479,
+    "nm": 1600,
+    "acc": 2.4,
+    "top": 420,
+    "kg": 1900,
+    "value": 2800000,
+    "blurb": "A one-off tribute to the Type 57 SC Atlantic, with six exhaust pipes.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "concepts"
+    ],
+    "wiki": "Bugatti La Voiture Noire",
+    "reviewed": false,
+    "photoMatch": "Voiture Noire"
+  },
+  {
+    "id": "pagani-huayra-roadster",
+    "make": "Pagani",
+    "model": "Huayra Roadster",
+    "gen": "",
+    "year": 2017,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 764,
+    "nm": 1000,
+    "acc": 3,
+    "top": 370,
+    "kg": 1280,
+    "value": 2000000,
+    "blurb": "An open-top Huayra with a removable carbon roof.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Pagani Huayra",
+    "reviewed": false,
+    "photoMatch": "Roadster"
+  },
+  {
+    "id": "pagani-huayra-imola",
+    "make": "Pagani",
+    "model": "Huayra Imola",
+    "gen": "",
+    "year": 2020,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 827,
+    "nm": 1100,
+    "acc": 2.7,
+    "top": 370,
+    "kg": 1246,
+    "value": 2400000,
+    "blurb": "A track-inspired Huayra with a lighter chassis and an AMG V12.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "concepts"
+    ],
+    "wiki": "Pagani Huayra",
+    "reviewed": false,
+    "photoMatch": "Imola"
+  },
+  {
+    "id": "pagani-huayra-r",
+    "make": "Pagani",
+    "model": "Huayra R",
+    "gen": "",
+    "year": 2021,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 838,
+    "nm": 750,
+    "acc": 2.4,
+    "top": 350,
+    "kg": 1050,
+    "value": 2400000,
+    "blurb": "A track-only Huayra with a naturally aspirated V12 that revs to 9,000 rpm.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "concepts"
+    ],
+    "wiki": "Pagani Huayra",
+    "reviewed": false,
+    "photoMatch": "Huayra ?R"
+  },
+  {
+    "id": "pagani-huayra-codalunga",
+    "make": "Pagani",
+    "model": "Huayra Codalunga",
+    "gen": "",
+    "year": 2022,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Legendary",
+    "hp": 840,
+    "nm": 1100,
+    "acc": 2.9,
+    "top": 350,
+    "kg": 1280,
+    "value": 2600000,
+    "blurb": "A long-tail Huayra built as a tribute to 1960s Le Mans coupés.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "concepts"
+    ],
+    "wiki": "Pagani Huayra",
+    "reviewed": false,
+    "photoMatch": "Codalunga"
+  },
+  {
+    "id": "zenvo-tsr-s",
+    "make": "Zenvo",
+    "model": "TSR-S",
+    "gen": "",
+    "year": 2016,
+    "country": "Denmark",
+    "cc": "DK",
+    "tier": "Legendary",
+    "hp": 1177,
+    "nm": 1100,
+    "acc": 2.8,
+    "top": 325,
+    "kg": 1450,
+    "value": 800000,
+    "blurb": "A Danish hypercar with a twin-charged V8 and active wings.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "concepts"
+    ],
+    "wiki": "Zenvo TSR-S",
+    "reviewed": false,
+    "photoMatch": "TSR"
+  },
+  {
+    "id": "arash-af10",
+    "make": "Arash",
+    "model": "AF10",
+    "gen": "",
+    "year": 2016,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Legendary",
+    "hp": 2080,
+    "nm": 1500,
+    "acc": 2,
+    "top": 323,
+    "kg": 1900,
+    "value": 700000,
+    "blurb": "A British hybrid hypercar with four electric motors and a V8.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "concepts"
+    ],
+    "wiki": "Arash AF10",
+    "reviewed": false,
+    "photoMatch": "AF10"
+  },
+  {
+    "id": "hyundai-i20-wrc",
+    "make": "Hyundai",
+    "model": "i20 WRC",
+    "gen": "",
+    "year": 2017,
+    "country": "South Korea",
+    "cc": "KR",
+    "tier": "Epic",
+    "hp": 380,
+    "nm": 450,
+    "acc": 3.5,
+    "top": 200,
+    "kg": 1190,
+    "value": 200000,
+    "blurb": "Hyundai’s World Rally Championship car of the 2017 generation.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "rally",
+      "concepts"
+    ],
+    "wiki": "Hyundai i20 WRC",
+    "reviewed": false,
+    "photoMatch": "i20"
+  },
+  {
+    "id": "hyundai-kona-electric",
+    "make": "Hyundai",
+    "model": "Kona Electric",
+    "gen": "OS",
+    "year": 2018,
+    "country": "South Korea",
+    "cc": "KR",
+    "tier": "Common",
+    "hp": 204,
+    "nm": 395,
+    "acc": 7.6,
+    "top": 167,
+    "kg": 1700,
+    "value": 13000,
+    "blurb": "A small electric SUV with a long range for its price.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "Hyundai Kona Electric",
+    "reviewed": false,
+    "photoMatch": "Kona"
+  },
+  {
+    "id": "fiat-500-abarth-595-competizione",
+    "make": "Abarth",
+    "model": "595 Competizione",
+    "gen": "",
+    "year": 2016,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Rare",
+    "hp": 180,
+    "nm": 230,
+    "acc": 6.7,
+    "top": 225,
+    "kg": 1035,
+    "value": 22000,
+    "blurb": "A track-flavoured 595 with a Record Monza exhaust.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Abarth 595",
+    "reviewed": false,
+    "photoMatch": "Competizione|595"
+  },
+  {
+    "id": "fiat-124-spider-2016",
+    "make": "Fiat",
+    "model": "124 Spider",
+    "gen": "348",
+    "year": 2016,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Common",
+    "hp": 140,
+    "nm": 240,
+    "acc": 7.5,
+    "top": 215,
+    "kg": 1060,
+    "value": 18000,
+    "blurb": "A modern roadster with a retro look, built on the Mazda MX-5 platform.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Fiat 124 Spider (2016)",
+    "reviewed": false,
+    "photoMatch": "124"
+  },
+  {
+    "id": "seat-mii-electric",
+    "make": "SEAT",
+    "model": "Mii Electric",
+    "gen": "",
+    "year": 2020,
+    "country": "Spain",
+    "cc": "ES",
+    "tier": "Common",
+    "hp": 83,
+    "nm": 212,
+    "acc": 12.3,
+    "top": 130,
+    "kg": 1235,
+    "value": 8000,
+    "blurb": "A tiny electric city car from the VW group’s Up! trio.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "SEAT Mii Electric",
+    "reviewed": false,
+    "photoMatch": "Mii"
+  },
+  {
+    "id": "audi-s1",
+    "make": "Audi",
+    "model": "S1",
+    "gen": "8X",
+    "year": 2014,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 231,
+    "nm": 370,
+    "acc": 5.9,
+    "top": 250,
+    "kg": 1355,
+    "value": 16000,
+    "blurb": "A small hot hatch with 231 hp and quattro all-wheel drive.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Audi S1",
+    "reviewed": false,
+    "photoMatch": "S1"
+  },
+  {
+    "id": "vw-golf-r-mk7-5",
+    "make": "Volkswagen",
+    "model": "Golf R 310",
+    "gen": "Mk7.5",
+    "year": 2017,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 310,
+    "nm": 400,
+    "acc": 4.6,
+    "top": 250,
+    "kg": 1450,
+    "value": 34000,
+    "blurb": "The facelifted Golf R with 310 hp and a dual-clutch gearbox.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Volkswagen Golf Mk7",
+    "reviewed": false,
+    "photoMatch": "Golf R"
+  },
+  {
+    "id": "vw-golf-gti-tcr",
+    "make": "Volkswagen",
+    "model": "Golf GTI TCR",
+    "gen": "Mk7.5",
+    "year": 2019,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 286,
+    "nm": 370,
+    "acc": 5.6,
+    "top": 250,
+    "kg": 1400,
+    "value": 38000,
+    "blurb": "A limited GTI with a track-oriented suspension and a front limited-slip differential.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Volkswagen Golf GTI TCR",
+    "reviewed": false,
+    "photoMatch": "TCR"
+  },
+  {
+    "id": "vw-golf-r-20-years",
+    "make": "Volkswagen",
+    "model": "Golf R 20 Years",
+    "gen": "Mk8",
+    "year": 2022,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 328,
+    "nm": 420,
+    "acc": 4.6,
+    "top": 270,
+    "kg": 1500,
+    "value": 52000,
+    "blurb": "A 2,000-car edition celebrating 20 years of the Golf R.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Volkswagen Golf Mk8",
+    "reviewed": false,
+    "photoMatch": "20 Years"
+  },
+  {
+    "id": "porsche-cayenne-turbo-e3",
+    "make": "Porsche",
+    "model": "Cayenne Turbo",
+    "gen": "E3",
+    "year": 2018,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 550,
+    "nm": 770,
+    "acc": 4.1,
+    "top": 286,
+    "kg": 2200,
+    "value": 72000,
+    "blurb": "A twin-turbo V8 SUV with 550 hp.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Porsche Cayenne",
+    "reviewed": false,
+    "photoMatch": "Cayenne"
+  },
+  {
+    "id": "subaru-brz-ts",
+    "make": "Subaru",
+    "model": "BRZ tS",
+    "gen": "ZC6",
+    "year": 2018,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Rare",
+    "hp": 205,
+    "nm": 212,
+    "acc": 7.6,
+    "top": 226,
+    "kg": 1200,
+    "value": 28000,
+    "blurb": "A tuned BRZ with Sachs dampers and a stiffer chassis.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "jdm"
+    ],
+    "wiki": "Subaru BRZ",
+    "reviewed": false,
+    "photoMatch": "BRZ"
+  },
+  {
+    "id": "audi-rs3-sedan-8v",
+    "make": "Audi",
+    "model": "RS 3 Sedan",
+    "gen": "8V",
+    "year": 2017,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Rare",
+    "hp": 394,
+    "nm": 480,
+    "acc": 4.1,
+    "top": 250,
+    "kg": 1500,
+    "value": 45000,
+    "blurb": "A four-door RS 3 with the five-cylinder turbo.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Audi RS 3",
+    "reviewed": false,
+    "photoMatch": "RS ?3"
+  },
+  {
+    "id": "singer-dls",
+    "make": "Singer",
+    "model": "DLS",
+    "gen": "",
+    "year": 2018,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Legendary",
+    "hp": 500,
+    "nm": 460,
+    "acc": 3.5,
+    "top": 290,
+    "kg": 1190,
+    "value": 1100000,
+    "blurb": "A restomod 911 with a Williams-developed 4.0 litre flat-six and a carbon body.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "classics"
+    ],
+    "wiki": "Singer Vehicle Design",
+    "reviewed": false,
+    "photoMatch": "Singer"
+  },
+  {
+    "id": "shelby-super-snake-2018",
+    "make": "Shelby",
+    "model": "Super Snake",
+    "gen": "S550",
+    "year": 2018,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Epic",
+    "hp": 800,
+    "nm": 1000,
+    "acc": 3.5,
+    "top": 300,
+    "kg": 1700,
+    "value": 120000,
+    "blurb": "A tuned Mustang with a supercharged 5.0 litre V8 and 800 hp.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Shelby Super Snake",
+    "reviewed": false,
+    "photoMatch": "Super Snake"
+  },
+  {
+    "id": "roush-mustang-stage-3",
+    "make": "Roush",
+    "model": "Mustang Stage 3",
+    "gen": "S550",
+    "year": 2018,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Rare",
+    "hp": 710,
+    "nm": 850,
+    "acc": 3.8,
+    "top": 290,
+    "kg": 1700,
+    "value": 78000,
+    "blurb": "A supercharged Mustang with a 710 hp output.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Roush Performance",
+    "reviewed": false,
+    "photoMatch": "Roush"
+  },
+  {
+    "id": "callaway-corvette-sc757",
+    "make": "Callaway",
+    "model": "Corvette SC757",
+    "gen": "C7",
+    "year": 2015,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Epic",
+    "hp": 757,
+    "nm": 969,
+    "acc": 3.1,
+    "top": 330,
+    "kg": 1600,
+    "value": 140000,
+    "blurb": "A supercharged Corvette Z06 tuned to 757 hp.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Callaway Cars",
+    "reviewed": false,
+    "photoMatch": "Callaway"
+  },
+  {
+    "id": "renault-clio-rs-220-trophy",
+    "make": "Renault",
+    "model": "Clio R.S. 220 Trophy",
+    "gen": "IV",
+    "year": 2016,
+    "country": "France",
+    "cc": "FR",
+    "tier": "Rare",
+    "hp": 217,
+    "nm": 260,
+    "acc": 6.6,
+    "top": 235,
+    "kg": 1200,
+    "value": 22000,
+    "blurb": "A sharper Clio RS with a dual-clutch gearbox and a Trophy chassis.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Renault Clio IV",
+    "reviewed": false,
+    "photoMatch": "Trophy"
+  },
+  {
+    "id": "citroen-ds3-performance",
+    "make": "Citroën",
+    "model": "DS3 Performance",
+    "gen": "",
+    "year": 2016,
+    "country": "France",
+    "cc": "FR",
+    "tier": "Rare",
+    "hp": 208,
+    "nm": 300,
+    "acc": 6.5,
+    "top": 235,
+    "kg": 1200,
+    "value": 24000,
+    "blurb": "A hot DS3 with a Torsen limited-slip differential.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Citroën DS3",
+    "reviewed": false,
+    "photoMatch": "DS3"
+  },
+  {
+    "id": "nissan-leaf-ze0",
+    "make": "Nissan",
+    "model": "Leaf",
+    "gen": "ZE0",
+    "year": 2014,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Common",
+    "hp": 107,
+    "nm": 254,
+    "acc": 11.5,
+    "top": 145,
+    "kg": 1500,
+    "value": 8000,
+    "blurb": "The first mass-market electric car with a modern lithium battery.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "Nissan Leaf",
+    "reviewed": false,
+    "photoMatch": "Leaf"
+  },
+  {
+    "id": "vw-e-golf",
+    "make": "Volkswagen",
+    "model": "e-Golf",
+    "gen": "Mk7",
+    "year": 2014,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Common",
+    "hp": 134,
+    "nm": 290,
+    "acc": 9.6,
+    "top": 150,
+    "kg": 1500,
+    "value": 11000,
+    "blurb": "An electric Golf that looks almost like a regular one.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "Volkswagen e-Golf",
+    "reviewed": false,
+    "photoMatch": "e-?Golf"
+  },
+  {
+    "id": "tesla-model-s-p85d",
+    "make": "Tesla",
+    "model": "Model S P85D",
+    "gen": "",
+    "year": 2014,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Epic",
+    "hp": 691,
+    "nm": 967,
+    "acc": 3.1,
+    "top": 250,
+    "kg": 2200,
+    "value": 80000,
+    "blurb": "The first dual-motor Model S, which introduced Insane Mode.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday",
+      "concepts"
+    ],
+    "wiki": "Tesla Model S",
+    "reviewed": false,
+    "photoMatch": "Model S"
+  },
+  {
+    "id": "mercedes-amg-c63-s-coupe-c205",
+    "make": "Mercedes-Benz",
+    "model": "C 63 S Coupé",
+    "gen": "C205",
+    "year": 2015,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 503,
+    "nm": 700,
+    "acc": 4,
+    "top": 250,
+    "kg": 1725,
+    "value": 78000,
+    "blurb": "A V8 coupé with a rear-drive layout and a wide body.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Mercedes-Benz C-Class (C205)",
+    "reviewed": false,
+    "photoMatch": "C ?63"
+  },
+  {
+    "id": "bmw-m4-f82-competition",
+    "make": "BMW",
+    "model": "M4 Competition Package",
+    "gen": "F82",
+    "year": 2016,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 450,
+    "nm": 550,
+    "acc": 4,
+    "top": 250,
+    "kg": 1560,
+    "value": 74000,
+    "blurb": "A twin-turbo straight-six coupé with sharper chassis tuning.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "BMW M4",
+    "reviewed": false,
+    "photoMatch": "M4"
+  },
+  {
+    "id": "aston-martin-vantage-v12-roadster",
+    "make": "Aston Martin",
+    "model": "V12 Vantage Roadster",
+    "gen": "",
+    "year": 2022,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 690,
+    "nm": 753,
+    "acc": 3.4,
+    "top": 322,
+    "kg": 1740,
+    "value": 330000,
+    "blurb": "A 249-car open-top V12 Vantage.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Aston Martin Vantage (2018)",
+    "reviewed": false,
+    "photoMatch": "Roadster"
+  },
+  {
+    "id": "jaguar-f-type-r-75",
+    "make": "Jaguar",
+    "model": "F-Type R 75",
+    "gen": "X152",
+    "year": 2023,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 575,
+    "nm": 700,
+    "acc": 3.5,
+    "top": 300,
+    "kg": 1740,
+    "value": 110000,
+    "blurb": "A farewell edition F-Type R to mark 75 years of Jaguar sports cars.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Jaguar F-Type",
+    "reviewed": false,
+    "photoMatch": "F-Type"
+  },
+  {
+    "id": "lotus-elise-sport-220",
+    "make": "Lotus",
+    "model": "Elise Sport 220",
+    "gen": "S3",
+    "year": 2016,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Rare",
+    "hp": 217,
+    "nm": 250,
+    "acc": 4.5,
+    "top": 240,
+    "kg": 914,
+    "value": 44000,
+    "blurb": "A 1.8 litre supercharged Elise built to be as light as possible.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Lotus Elise",
+    "reviewed": false,
+    "photoMatch": "Elise"
+  },
+  {
+    "id": "lotus-evora-gt410",
+    "make": "Lotus",
+    "model": "Evora GT410",
+    "gen": "",
+    "year": 2018,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Rare",
+    "hp": 410,
+    "nm": 420,
+    "acc": 4.2,
+    "top": 300,
+    "kg": 1325,
+    "value": 90000,
+    "blurb": "A Evora with more power and a comfortable cabin.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Lotus Evora",
+    "reviewed": false,
+    "photoMatch": "Evora"
+  },
+  {
+    "id": "lotus-exige-sport-380",
+    "make": "Lotus",
+    "model": "Exige Sport 380",
+    "gen": "",
+    "year": 2018,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Rare",
+    "hp": 375,
+    "nm": 410,
+    "acc": 3.6,
+    "top": 280,
+    "kg": 1110,
+    "value": 90000,
+    "blurb": "A lighter Exige with 375 hp and a carbon roof.",
+    "pools": [
+      "street"
+    ],
+    "tastes": [
+      "everyday"
+    ],
+    "wiki": "Lotus Exige",
+    "reviewed": false,
+    "photoMatch": "Exige"
+  },
+  {
+    "id": "mclaren-570s-gt4",
+    "make": "McLaren",
+    "model": "570S GT4",
+    "gen": "",
+    "year": 2016,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 562,
+    "nm": 600,
+    "acc": 3.2,
+    "top": 300,
+    "kg": 1350,
+    "value": 200000,
+    "blurb": "A customer racing version of the 570S for GT4 racing.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "concepts"
+    ],
+    "wiki": "McLaren 570S",
+    "reviewed": false,
+    "photoMatch": "GT4"
+  },
+  {
+    "id": "porsche-911-992-turbo-s-cabrio",
+    "make": "Porsche",
+    "model": "911 Turbo S Cabriolet",
+    "gen": "992",
+    "year": 2020,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 640,
+    "nm": 800,
+    "acc": 2.8,
+    "top": 330,
+    "kg": 1710,
+    "value": 230000,
+    "blurb": "An open-top Turbo S with a fabric roof and rear-wheel steering.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars"
+    ],
+    "wiki": "Porsche 911 (992)",
+    "reviewed": false,
+    "photoMatch": "Turbo"
+  },
+  {
+    "id": "nissan-gt-r-r35-track-edition",
+    "make": "Nissan",
+    "model": "GT-R Track Edition",
+    "gen": "R35",
+    "year": 2017,
+    "country": "Japan",
+    "cc": "JP",
+    "tier": "Epic",
+    "hp": 565,
+    "nm": 633,
+    "acc": 2.8,
+    "top": 315,
+    "kg": 1740,
+    "value": 130000,
+    "blurb": "A GT-R with the Nismo suspension and the standard engine.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "supercars",
+      "jdm"
+    ],
+    "wiki": "Nissan GT-R",
+    "reviewed": false,
+    "photoMatch": "Track Edition|GT-?R"
+  },
+  {
+    "id": "porsche-911-gt3-r-992",
+    "make": "Porsche",
+    "model": "911 GT3 R",
+    "gen": "992",
+    "year": 2023,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 565,
+    "nm": 470,
+    "acc": 3,
+    "top": 290,
+    "kg": 1300,
+    "value": 300000,
+    "blurb": "A customer GT3 racer with a 4.2 litre flat-six and a huge swan-neck wing.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "concepts"
+    ],
+    "wiki": "Porsche 911 GT3",
+    "reviewed": false,
+    "photoMatch": "GT3 ?R"
+  },
+  {
+    "id": "mercedes-amg-gt3-evo",
+    "make": "Mercedes-Benz",
+    "model": "AMG GT3 Evo",
+    "gen": "",
+    "year": 2020,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 550,
+    "nm": 650,
+    "acc": 3.1,
+    "top": 290,
+    "kg": 1285,
+    "value": 280000,
+    "blurb": "A front-engine V8 GT3 race car that has won the Bathurst 12 Hour and the Nürburgring 24 Hours.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "concepts"
+    ],
+    "wiki": "Mercedes-AMG GT3",
+    "reviewed": false,
+    "photoMatch": "GT3"
+  },
+  {
+    "id": "bmw-m4-gt3",
+    "make": "BMW",
+    "model": "M4 GT3",
+    "gen": "",
+    "year": 2022,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 590,
+    "nm": 700,
+    "acc": 3.1,
+    "top": 285,
+    "kg": 1300,
+    "value": 260000,
+    "blurb": "A twin-turbo straight-six GT3 car built by BMW Motorsport.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "concepts"
+    ],
+    "wiki": "BMW M4 GT3",
+    "reviewed": false,
+    "photoMatch": "GT3"
+  },
+  {
+    "id": "audi-r8-lms-gt3-evo-ii",
+    "make": "Audi",
+    "model": "R8 LMS GT3 Evo II",
+    "gen": "",
+    "year": 2022,
+    "country": "Germany",
+    "cc": "DE",
+    "tier": "Epic",
+    "hp": 585,
+    "nm": 560,
+    "acc": 3,
+    "top": 290,
+    "kg": 1250,
+    "value": 260000,
+    "blurb": "A naturally aspirated V10 race car, the last of the R8 line.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "concepts"
+    ],
+    "wiki": "Audi R8 LMS",
+    "reviewed": false,
+    "photoMatch": "LMS|GT3"
+  },
+  {
+    "id": "ferrari-296-gt3",
+    "make": "Ferrari",
+    "model": "296 GT3",
+    "gen": "",
+    "year": 2023,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 600,
+    "nm": 700,
+    "acc": 3,
+    "top": 290,
+    "kg": 1250,
+    "value": 320000,
+    "blurb": "A twin-turbo V6 GT3 customer car that replaced the 488 GT3.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "concepts"
+    ],
+    "wiki": "Ferrari 296 GT3",
+    "reviewed": false,
+    "photoMatch": "GT3"
+  },
+  {
+    "id": "lamborghini-huracan-gt3-evo2",
+    "make": "Lamborghini",
+    "model": "Huracán GT3 Evo2",
+    "gen": "",
+    "year": 2022,
+    "country": "Italy",
+    "cc": "IT",
+    "tier": "Epic",
+    "hp": 600,
+    "nm": 650,
+    "acc": 3,
+    "top": 290,
+    "kg": 1300,
+    "value": 280000,
+    "blurb": "A V10 race car with bodywork based on the Huracán STO.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "concepts"
+    ],
+    "wiki": "Lamborghini Huracán",
+    "reviewed": false,
+    "photoMatch": "GT3"
+  },
+  {
+    "id": "mclaren-720s-gt3-evo",
+    "make": "McLaren",
+    "model": "720S GT3 Evo",
+    "gen": "",
+    "year": 2023,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 600,
+    "nm": 700,
+    "acc": 3,
+    "top": 290,
+    "kg": 1250,
+    "value": 280000,
+    "blurb": "An updated GT3 racer with a stiffer carbon tub.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "concepts"
+    ],
+    "wiki": "McLaren 720S",
+    "reviewed": false,
+    "photoMatch": "GT3"
+  },
+  {
+    "id": "aston-martin-vantage-amr-gt3",
+    "make": "Aston Martin",
+    "model": "Vantage AMR GT3",
+    "gen": "",
+    "year": 2019,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 540,
+    "nm": 680,
+    "acc": 3.1,
+    "top": 290,
+    "kg": 1250,
+    "value": 250000,
+    "blurb": "A twin-turbo V8 customer race car, built for GT3 racing.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "concepts"
+    ],
+    "wiki": "Aston Martin Vantage GT3",
+    "reviewed": false,
+    "photoMatch": "GT3"
+  },
+  {
+    "id": "ford-mustang-gt3",
+    "make": "Ford",
+    "model": "Mustang GT3",
+    "gen": "",
+    "year": 2024,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Epic",
+    "hp": 500,
+    "nm": 600,
+    "acc": 3.2,
+    "top": 280,
+    "kg": 1300,
+    "value": 230000,
+    "blurb": "A GT3 racer with a 5.4 litre V8, built for the 24 Hours of Le Mans.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "concepts"
+    ],
+    "wiki": "Ford Mustang GT3",
+    "reviewed": false,
+    "photoMatch": "GT3"
+  },
+  {
+    "id": "chevrolet-corvette-z06-gt3r",
+    "make": "Chevrolet",
+    "model": "Corvette Z06 GT3.R",
+    "gen": "",
+    "year": 2024,
+    "country": "United States",
+    "cc": "US",
+    "tier": "Epic",
+    "hp": 600,
+    "nm": 650,
+    "acc": 3,
+    "top": 290,
+    "kg": 1300,
+    "value": 260000,
+    "blurb": "A mid-engine V8 GT3 car that has won at the 24 Hours of Daytona and Le Mans.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "concepts"
+    ],
+    "wiki": "Chevrolet Corvette (C8)",
+    "reviewed": false,
+    "photoMatch": "GT3"
+  },
+  {
+    "id": "bentley-continental-gt3",
+    "make": "Bentley",
+    "model": "Continental GT3",
+    "gen": "",
+    "year": 2018,
+    "country": "United Kingdom",
+    "cc": "GB",
+    "tier": "Epic",
+    "hp": 550,
+    "nm": 650,
+    "acc": 3.1,
+    "top": 285,
+    "kg": 1300,
+    "value": 240000,
+    "blurb": "A twin-turbo V8 GT3 racer based on the third-generation Continental.",
+    "pools": [
+      "apex"
+    ],
+    "tastes": [
+      "concepts"
+    ],
+    "wiki": "Bentley Continental GT3",
+    "reviewed": false,
+    "photoMatch": "GT3"
+  }
+]
