@@ -1,7 +1,8 @@
 # MARQUE — reste à faire
 
-- [x] **Relire le catalogue** : 201 fiches relues (specs et textes de mémoire, arbitrages faits avec le propriétaire du projet). Les photos restent à contrôler à l'œil dans `data/review.html` (`npm run cars:enrich`).
-- [x] **Photo manquante** : Fiesta ST Mk6 ajoutée (Calreyn88, CC BY-SA 4.0). Les 201 voitures ont une photo ; vérifier les crédits Commons.
+- [x] **Relire le catalogue** : 490 fiches (201 relues avec le propriétaire du projet, 289 ajoutées ensuite dont ~175 voitures de 2010 à 2025). Specs et textes écrits de mémoire, sans sources : à recouper si un chiffre vous semble faux. Photos des nouvelles voitures contrôlées à l'œil (une photo est remplacée par une recherche Commons quand elle montrait une mauvaise génération).
+- [x] **Photo manquante** : Fiesta ST Mk6 ajoutée (Calreyn88, CC BY-SA 4.0). Les 490 voitures ont une photo avec crédit Commons.
+- [ ] **Mettre à jour la base en ligne** : relancer `supabase/catalog.sql` dans le SQL Editor de Supabase (upsert, ne rien vider) pour ajouter les 289 nouvelles voitures.
 - [~] **Paiements** : écran « Credits » masqué sur le backend Supabase (`topUpEnabled` dans `src/api/index.ts`, route `/credits` redirigée vers `/packs`, boutons « Top up » remplacés par « Close »). La recharge reste active dans la démo locale (mock). Reste à brancher un fournisseur (checkout + webhook idempotent qui crédite le compte) puis passer `topUpEnabled` à `true`.
 - [x] **Déployer Supabase** : suivre `DEPLOY.md` (projet, `db push`, `catalog.sql`, fonctions `packs` et `races`, réglages Auth, variables GitHub, vérification). Migrations vérifiées avec `npm run test:db` (tous les tests passent).
 - [ ] **Vérification de bout en bout** : `npm test`, `npm run test:db`, `npm run lint`, `npm run build`, puis essai sur un vrai Supabase (pas seulement le mock localStorage).

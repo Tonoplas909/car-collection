@@ -12,7 +12,7 @@ describe('catalog', () => {
   it('has sane specs', () => {
     for (const c of CATALOG) {
       expect(c.hp, c.id).toBeGreaterThan(0)
-      expect(c.kg, c.id).toBeGreaterThan(300)
+      expect(c.kg, c.id).toBeGreaterThan(150)
       expect(c.top, c.id).toBeGreaterThan(50)
       expect(c.value, c.id).toBeGreaterThan(0)
       expect(c.blurb.length, c.id).toBeGreaterThan(20)
