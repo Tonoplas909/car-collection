@@ -58,6 +58,7 @@ export interface RaceCarSpec {
   /** km/h */
   top: number
   level: number
+  year: number
 }
 
 export function physics(c: RaceCarSpec) {

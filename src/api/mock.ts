@@ -338,7 +338,7 @@ export const mockApi: GameApi = {
       if (!race) throw new GameError('not_found', 'This race has already been scored.')
       delete db.races[raceId]
       const ev = RACE_EVENTS_BY_ID[race.eventId], car = getCar(race.carId)
-      const spec = { hp: car.hp, kg: car.kg, top: car.top, level: race.level }
+      const spec = { hp: car.hp, kg: car.kg, top: car.top, level: race.level, year: car.year }
       const { rows, place, time, top, shifts, rewards } = scoreRace(spec, ev, shiftSteps, { name: `You · ${s.user.username}`, car: `${car.make} ${carLabel(car)}` })
       s.user.credits += rewards.credits
       addXp(s, rewards.xp)

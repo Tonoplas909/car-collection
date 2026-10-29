@@ -213,7 +213,7 @@ export function RaceLivePage() {
 function LiveRace({ car, level, ev, opponents }: { car: Car; level: number; ev: RaceEvent; opponents: { name: string; car: string }[] }) {
   const mobile = useIsMobile()
   const navigate = useWipeNavigate()
-  const spec = useMemo(() => ({ hp: car.hp, kg: car.kg, top: car.top, level }), [car, level])
+  const spec = useMemo(() => ({ hp: car.hp, kg: car.kg, top: car.top, level, year: car.year }), [car, level])
   const opps = useMemo(() => calibrateOpponents(spec, ev.len).map((o, i) => ({ ...o, name: opponents[i]?.name ?? o.name, car: opponents[i]?.car ?? o.car })), [spec, ev.len, opponents])
   const sim = useRef(new RaceSim(spec, ev.len))
   const shifts = useRef<number[]>([])

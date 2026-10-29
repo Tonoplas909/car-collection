@@ -17,7 +17,7 @@ serve(async (body, { userId, asUser, admin }) => {
   const ev = RACE_EVENTS_BY_ID[race.event_id as RaceEventId]
   const { data: profile } = await admin.from('profiles').select('username').eq('id', userId).single()
   const scored = scoreRace(
-    { hp: car.hp, kg: car.kg, top: car.top, level: race.level as number },
+    { hp: car.hp, kg: car.kg, top: car.top, level: race.level as number, year: car.year },
     ev, shiftSteps,
     { name: `You · ${profile?.username ?? 'you'}`, car: `${car.make} ${carLabel(car)}` },
   )

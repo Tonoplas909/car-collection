@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { DT, GEARS, RaceSim, calibrateOpponents, perfectTime, raceRewards, replay, shiftQuality, RACE_EVENTS_BY_ID } from './race.ts'
 
-const r34 = { hp: 280, kg: 1560, top: 250, level: 5 }
+const r34 = { hp: 280, kg: 1560, top: 250, level: 5, year: 1999 }
 
 describe('race model', () => {
   it('classifies shift quality by the rev window', () => {
