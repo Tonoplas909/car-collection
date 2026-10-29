@@ -16,7 +16,7 @@ Flat, architectural. Archivo only. Zero corner radius. Strong 2px dividers (`var
 
 ## Design Tokens
 - **Colors**: bg `#f3f2f2`; surface `#eae9e9`; text `#201e1d`; accent `#ec3013` (hover/pressed `accent-600`, text-size accent `accent-700`); divider `rgba(32,30,29,.4)`; neutrals 200 `#eae7e7`, 300 `#d7d3d3`, 400 `#bab6b6`, 500 `#9b9797`, 600 `#7d7979`, 700 `#605d5d`, 800 `#444141`, 900 `#2d2b2b`.
-- **Tier colors**: Common neutral-400 bar; Rare text (#201e1d) bar; Epic accent-400 bar; Legendary accent (#ec3013), with white text on a red card.
+- **Tier colors**: Common grey, Rare blue, Epic purple, Legendary red (the accent), with white text on the red Legendary card. Tokens `--tier-*` in `src/styles/app.css` (changed from the handoff palette by product decision).
 - **Type**: Archivo. Headings weight 800, tight tracking (-0.03em to -0.06em on big numerals). Page titles 64–96px / line-height 0.85–0.9. Section labels 11px, uppercase, letter-spacing .08em, neutral-700. Body 14–15.5px, line-height 22–28px. Numbers use `font-variant-numeric: tabular-nums`.
 - **Spacing**: 4, 8, 12, 16, 24, 32 (scale), layouts use multiples of 4. **Radius**: 0 everywhere.
 - **Shadows**: sm `0 1px 2px #2d2b2b24`, md `0 3px 10px #2d2b2b29`, lg `0 12px 32px #2d2b2b38`.

@@ -1,7 +1,7 @@
 import { useEffect, useRef, type RefObject } from 'react'
 import { Link } from 'react-router-dom'
 import { CATALOG, CARS_BY_ID, carLabel, type Car } from '@game'
-import { Photo } from '../components/ui'
+import { Photo, TIER_BAR, TIER_FG } from '../components/ui'
 import { EASE, OUT, reduced } from '../lib/motion'
 import { useApp } from '../state/store'
 import './Landing.css'
@@ -99,8 +99,8 @@ function useLandingMotion(root: RefObject<HTMLDivElement | null>, marquee: RefOb
 
 function TierCard({ car }: { car: Car }) {
   const leg = car.tier === 'Legendary'
-  const bar = { Common: 'var(--color-neutral-400)', Rare: 'var(--color-text)', Epic: 'var(--color-accent-400)', Legendary: 'var(--color-accent-700)' }[car.tier]
-  const fg = { Common: 'var(--color-neutral-700)', Rare: 'var(--color-text)', Epic: 'var(--color-accent-700)', Legendary: 'inherit' }[car.tier]
+  const bar = leg ? 'var(--color-accent-700)' : TIER_BAR[car.tier]
+  const fg = leg ? 'inherit' : TIER_FG[car.tier]
   return (
     <div className={`lp-car${leg ? ' leg' : ''}`}>
       <div style={{ height: 6, background: bar }} />
