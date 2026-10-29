@@ -7,7 +7,7 @@ import { GaragePage } from './screens/Garage'
 import { LandingPage } from './screens/Landing'
 import { LeaderboardPage } from './screens/Leaderboard'
 import { MarketPage } from './screens/Market'
-import { FirstPackPage, LoginPage, SignUpPage, TastesPage } from './screens/Onboarding'
+import { AuthCallbackPage, FirstPackPage, LoginPage, SignUpPage, TastesPage } from './screens/Onboarding'
 import { PackRevealPage, PacksPage } from './screens/Packs'
 import { ProfilePage } from './screens/Profile'
 import { RaceLivePage, RaceResultsPage, RaceSetupPage } from './screens/Race'
@@ -24,6 +24,7 @@ export function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/auth/callback" element={<AuthCallbackPage />} />
         <Route path="/welcome/tastes" element={<TastesPage />} />
         <Route path="/welcome/pack" element={<FirstPackPage />} />
 

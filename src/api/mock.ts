@@ -5,7 +5,7 @@ import {
 } from '@game'
 import { DEMO_EMAIL, LB_PLAYERS, demoSnapshot, newPlayerSnapshot } from './seed'
 import {
-  GameError, type GameApi, type Leaderboard, type LeaderboardMetric, type LeaderboardScope, type PackOpening,
+  GameError, type DiscordLink, type GameApi, type Leaderboard, type LeaderboardMetric, type LeaderboardScope, type PackOpening,
   type RaceResult, type Snapshot,
 } from './types'
 
@@ -23,7 +23,13 @@ interface Db {
   /** Cars held while listed on the market, by listing id */
   escrow: Record<string, OwnedCar>
   races: Record<string, { eventId: RaceEventId; carId: string; level: number }>
+  /** Discord name linked to each account (demo only) */
+  discord?: Record<string, string>
 }
+
+const DISCORD_ACCOUNT = 'discord:demo'
+const DISCORD_NAME = 'durand#0001'
+const mockDiscordLink = (account: string, name: string): DiscordLink => ({ name, canUnlink: account !== DISCORD_ACCOUNT })
 
 function read(): Db {
   try {
@@ -128,6 +134,40 @@ export const mockApi: GameApi = {
   async signOut() {
     const db = read()
     db.session = null
+    write(db)
+  },
+
+  async signInWithDiscord() {
+    await tick()
+    const db = read()
+    const key = DISCORD_ACCOUNT
+    if (!db.accounts[key]) db.accounts[key] = newPlayerSnapshot(Date.now(), 'discord_player', '')
+    db.session = key
+    db.discord = { ...db.discord, [key]: DISCORD_NAME }
+    write(db)
+    return clone(db.accounts[key])
+  },
+
+  async discord() {
+    const db = read()
+    const name = db.session ? db.discord?.[db.session] : undefined
+    return name ? mockDiscordLink(db.session!, name) : null
+  },
+
+  async linkDiscord() {
+    await tick()
+    const db = read()
+    if (!db.session) throw new GameError('unauthenticated', 'Sign in to continue.')
+    db.discord = { ...db.discord, [db.session]: DISCORD_NAME }
+    write(db)
+    return mockDiscordLink(db.session, DISCORD_NAME)
+  },
+
+  async unlinkDiscord() {
+    const db = read()
+    if (!db.session || !db.discord?.[db.session]) return
+    if (db.session === DISCORD_ACCOUNT) throw new GameError('invalid', 'Discord is your only way to log in. Add another one first.')
+    delete db.discord[db.session]
     write(db)
   },
 

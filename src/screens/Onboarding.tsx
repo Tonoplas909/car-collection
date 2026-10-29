@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react'
-import { Link, Navigate } from 'react-router-dom'
+import { Link, Navigate, useSearchParams } from 'react-router-dom'
 import { CARS_BY_ID, STARTER_PACK_SIZE, TASTES, carLabel, makeGen, type Car } from '@game'
-import { backend } from '../api'
+import { backend, type Snapshot } from '../api'
 import { Photo, TIER_BAR } from '../components/ui'
 import { num } from '../lib/format'
 import { useWipeNavigate } from '../lib/hooks'
@@ -11,6 +11,29 @@ import './Onboarding.css'
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const usingMock = backend === 'mock'
+
+/** "Continue with Discord": creates the account on first use and logs in afterwards. */
+function DiscordButton({ onError }: { onError: (message: string) => void }) {
+  const navigate = useWipeNavigate()
+  const [busy, setBusy] = useState(false)
+  const go = async () => {
+    setBusy(true)
+    try {
+      // On Supabase the browser leaves for Discord (null); the local demo signs in right away.
+      const snap = await actions.signInWithDiscord()
+      if (snap) navigate(isNewPlayer(snap) ? '/welcome/tastes' : '/garage')
+    } catch (err) { onError((err as Error).message); setBusy(false) }
+  }
+  return (
+    <>
+      <button type="button" className="btn btn-secondary btn-lg" onClick={go} disabled={busy}>{busy ? 'Opening Discord…' : 'Continue with Discord'}</button>
+      <div className="ob-or"><span>or</span></div>
+    </>
+  )
+}
+
+/** A player who has not picked tastes or opened the starter pack yet. */
+const isNewPlayer = (s: Snapshot) => !s.garage.length && s.stats.packsOpened === 0 && s.stats.racesRun === 0
 
 function AuthLayout({ children }: { children: ReactNode }) {
   return (
@@ -53,6 +76,7 @@ export function SignUpPage() {
     <AuthLayout>
       <form className="ob-form" onSubmit={submit} noValidate>
         <span className="ob-form-title">Create your garage</span>
+        <DiscordButton onError={m => setErrors({ form: m })} />
         {field('username', 'Username', 'text', 'j.durand', 'username')}
         {field('email', 'Email', 'email', 'you@example.com', 'email')}
         {field('password', 'Password', 'password', 'At least 8 characters', 'new-password')}
@@ -79,6 +103,7 @@ export function LoginPage() {
     <AuthLayout>
       <form className="ob-form" onSubmit={submit}>
         <span className="ob-form-title">Welcome back</span>
+        <DiscordButton onError={setError} />
         <div className="field"><label htmlFor="email">Email</label><input id="email" className="input" type="email" autoComplete="email" value={f.email} onChange={e => setF({ ...f, email: e.target.value })} /></div>
         <div className="field"><label htmlFor="password">Password</label><input id="password" className="input" type="password" autoComplete="current-password" value={f.password} onChange={e => setF({ ...f, password: e.target.value })} /></div>
         {error && <span className="err">{error}</span>}
@@ -86,6 +111,28 @@ export function LoginPage() {
         <span style={{ fontSize: 14, color: 'var(--color-neutral-800)' }}>New here? <Link to="/signup">Create your garage</Link></span>
         {usingMock && <span className="ob-fine">Local demo: no backend is connected, so the demo garage loads with any password.</span>}
       </form>
+    </AuthLayout>
+  )
+}
+
+/** Where Discord (or any OAuth provider) sends the player back to. */
+export function AuthCallbackPage() {
+  const snap = useApp(s => s.snapshot)
+  const [params] = useSearchParams()
+  if (snap) {
+    const next = params.get('next')
+    return <Navigate to={next && next.startsWith('/') ? next : isNewPlayer(snap) ? '/welcome/tastes' : '/garage'} replace />
+  }
+  // The provider reports a refusal in the query string or in the hash.
+  const hash = new URLSearchParams(location.hash.replace(/^#/, ''))
+  const reason = params.get('error_description') ?? hash.get('error_description') ?? 'The sign-in did not complete.'
+  return (
+    <AuthLayout>
+      <div className="ob-form">
+        <span className="ob-form-title">Discord sign-in</span>
+        <span className="err">{reason}</span>
+        <Link to="/login" className="btn btn-primary btn-lg">Back to log in</Link>
+      </div>
     </AuthLayout>
   )
 }

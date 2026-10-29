@@ -9,10 +9,4 @@
 - [ ] **Vérification de bout en bout** : `npm test`, `npm run test:db`, `npm run lint`, `npm run build`, puis essai sur un vrai Supabase (pas seulement le mock localStorage).
 - [ ] **Finir le cahier des charges** : règle de pitié (Légendaire garanti tous les 20 packs), récompenses de saison du classement, défis entre amis. À confirmer dans le code.
 - [ ] **Nom et licences** : « MARQUE » est provisoire ; noms et images de voitures réelles demandent des droits.
-- [ ] **Liaison par compte Discord**
-  - Décidé : Discord sert à la fois à créer un compte (connexion) et à lier un compte existant.
-  - Création : activer le fournisseur Discord dans Supabase Auth (client ID/secret, URL de redirection) ; bouton « Continuer avec Discord » dans `src/screens/Onboarding.tsx` (crée le compte s'il n'existe pas).
-  - Liaison : `linkIdentity` pour un compte existant ; bloc « Compte lié » dans les réglages (`src/screens/Extras.tsx`) avec pseudo Discord et bouton pour délier.
-  - Mock : simuler la liaison dans `src/api/mock.ts` pour que le mode sans `.env.local` continue de marcher.
-  - Amis (facultatif) : proposer d'ajouter les amis Discord qui jouent aussi.
-  - Cas limite : si l'e-mail Discord correspond déjà à un compte, lier l'identité plutôt que créer un doublon.
+- [x] **Liaison par compte Discord** : fait. « Continue with Discord » sur l'inscription et la connexion (crée le compte au premier passage), page `/auth/callback`, bloc « Linked accounts » dans les réglages (connecter / déconnecter), migration `20261029000000_discord_sign_in.sql` (profil depuis le nom Discord, e-mail optionnel). À faire côté Supabase : `npx supabase db push`, activer « Allow manual linking » et autoriser l'URL `https://tonoplas909.github.io/car-collection/**` (voir `DEPLOY.md`). Non fait : proposer les amis Discord qui jouent aussi.

@@ -16,10 +16,17 @@ export function createSupabaseApi(url: string, key: string): GameApi {
     return c ? new GameError(c, text ?? message, needed ? Number(needed) : undefined) : new GameError('invalid', message)
   }
 
+  /** A Discord account may share no email: the server then sends null where the app expects a string. */
+  function withEmail<T>(value: T): T {
+    const candidates = [value, (value as { snapshot?: unknown } | null)?.snapshot] as ({ user?: { email: string | null } } | null | undefined)[]
+    for (const s of candidates) if (s?.user && s.user.email == null) s.user.email = ''
+    return value
+  }
+
   async function rpc<T>(fn: string, args?: Record<string, unknown>): Promise<T> {
     const { data, error } = await sb.rpc(fn, args)
     if (error) throw toGameError(error.message)
-    return data as T
+    return withEmail(data as T)
   }
 
   async function invoke<T>(fn: string, body: Record<string, unknown>): Promise<T> {
@@ -31,10 +38,14 @@ export function createSupabaseApi(url: string, key: string): GameApi {
       }
       throw new GameError('invalid', error.message)
     }
-    return data as T
+    return withEmail(data as T)
   }
 
   const snapshot = () => rpc<Snapshot>('get_snapshot')
+
+  /** Where Discord sends the player back: the app's own callback route (the URL must be allowed in Supabase Auth). */
+  const callbackUrl = (next?: string) =>
+    `${location.origin}${import.meta.env.BASE_URL}auth/callback${next ? `?next=${encodeURIComponent(next)}` : ''}`
 
   return {
     async load() {
@@ -57,6 +68,35 @@ export function createSupabaseApi(url: string, key: string): GameApi {
 
     async signOut() {
       await sb.auth.signOut()
+    },
+
+    async signInWithDiscord() {
+      const { error } = await sb.auth.signInWithOAuth({ provider: 'discord', options: { redirectTo: callbackUrl(), scopes: 'identify email' } })
+      if (error) throw new GameError('invalid', error.message)
+      return null
+    },
+
+    async discord() {
+      const { data } = await sb.auth.getUserIdentities()
+      const identities = data?.identities ?? []
+      const found = identities.find(i => i.provider === 'discord')
+      if (!found) return null
+      const meta = found.identity_data ?? {}
+      return { name: String(meta.full_name ?? meta.user_name ?? meta.name ?? 'Discord'), canUnlink: identities.length > 1 }
+    },
+
+    async linkDiscord() {
+      const { error } = await sb.auth.linkIdentity({ provider: 'discord', options: { redirectTo: callbackUrl('/settings'), scopes: 'identify email' } })
+      if (error) throw new GameError('invalid', error.message)
+      return null
+    },
+
+    async unlinkDiscord() {
+      const { data } = await sb.auth.getUserIdentities()
+      const found = data?.identities.find(i => i.provider === 'discord')
+      if (!found) return
+      const { error } = await sb.auth.unlinkIdentity(found)
+      if (error) throw new GameError('invalid', error.message)
     },
 
     async completeOnboarding(tastes) {

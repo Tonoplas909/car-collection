@@ -1,7 +1,7 @@
-import { useState, type CSSProperties, type FormEvent } from 'react'
+import { useEffect, useState, type CSSProperties, type FormEvent } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { CARS_BY_ID, CREDIT_BUNDLES, MAX_LEVEL, RACE_EVENTS_BY_ID, UPGRADE_DELTA, VAT, upgradeCost, upgradedStats } from '@game'
-import { backend, topUpEnabled, type Settings } from '../api'
+import { api, backend, topUpEnabled, type DiscordLink, type Settings } from '../api'
 import { Aside, Main, MobileHead } from '../components/Shell'
 import { ConfirmDialog, Photo } from '../components/ui'
 import { cr, euro, num, remaining } from '../lib/format'
@@ -18,6 +18,40 @@ const PREFS: [keyof Settings, string, string][] = [
   ['showGarageValue', 'Show my garage value', 'On your public profile'],
 ]
 const SETTING_TABS = ['Account', 'Notifications', 'Privacy', 'Payments', 'Language']
+
+/** Discord account linked to the player: connect it to log in with Discord, or disconnect it. */
+function LinkedAccounts() {
+  const [link, setLink] = useState<DiscordLink | null | undefined>(undefined)
+  const [busy, setBusy] = useState(false)
+  const [error, setError] = useState('')
+  useEffect(() => { void api.discord().then(setLink, () => setLink(null)) }, [])
+  const run = async (fn: () => Promise<DiscordLink | null | void>) => {
+    setBusy(true); setError('')
+    try {
+      // Linking leaves for Discord on Supabase (nothing comes back); the demo answers at once.
+      const r = await fn()
+      setLink(r === undefined ? null : r)
+    } catch (e) { setError((e as Error).message) } finally { setBusy(false) }
+  }
+  return (
+    <>
+      <span className="st-h">Linked accounts</span>
+      <div className="st-pref">
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <span style={{ fontWeight: 600 }}>Discord</span>
+          <span className="muted" style={{ fontSize: 13 }}>
+            {link === undefined ? 'Checking…' : link ? `Linked as ${link.name}. You can log in with it.` : 'Link it to log in with one click.'}
+          </span>
+          {link && !link.canUnlink && <span className="muted" style={{ fontSize: 13 }}>Discord is your only way to log in, so it cannot be removed.</span>}
+        </div>
+        {link
+          ? <button type="button" className="btn btn-secondary" disabled={busy || !link.canUnlink} onClick={() => run(async () => { await api.unlinkDiscord() })}>Disconnect</button>
+          : <button type="button" className="btn btn-secondary" disabled={busy || link === undefined} onClick={() => run(() => api.linkDiscord())}>{busy ? 'Opening Discord…' : 'Connect Discord'}</button>}
+      </div>
+      {error && <span className="err">{error}</span>}
+    </>
+  )
+}
 
 export function SettingsPage() {
   const snap = useSnapshot()
@@ -40,6 +74,8 @@ export function SettingsPage() {
       <div className="field"><label htmlFor="st-u">Username</label><input id="st-u" className="input" value={f.username} onChange={e => setF({ ...f, username: e.target.value })} /></div>
       <div className="field"><label htmlFor="st-e">Email</label><input id="st-e" className="input" type="email" value={f.email} onChange={e => setF({ ...f, email: e.target.value })} /></div>
       <div className="field"><label htmlFor="st-r">Region</label><input id="st-r" className="input" value={f.region} onChange={e => setF({ ...f, region: e.target.value })} /></div>
+      <div style={{ height: 2, background: 'var(--color-divider)' }} />
+      <LinkedAccounts />
       <div style={{ height: 2, background: 'var(--color-divider)' }} />
       <span className="st-h">Preferences</span>
       <div>

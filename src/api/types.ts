@@ -10,6 +10,7 @@ export interface Settings {
 export interface User {
   id: string
   username: string
+  /** Empty when the player signed up with a Discord account that shares no email */
   email: string
   region: string
   city: string
@@ -154,12 +155,25 @@ export class GameError extends Error {
   }
 }
 
+/** The Discord account linked to the player, if any. */
+export interface DiscordLink {
+  name: string
+  /** False when Discord is the only way to log in */
+  canUnlink: boolean
+}
+
 export interface GameApi {
   /** Current session's snapshot, or null when signed out. */
   load(): Promise<Snapshot | null>
   signUp(input: { username: string; email: string; password: string }): Promise<Snapshot>
   signIn(input: { email: string; password: string }): Promise<Snapshot>
   signOut(): Promise<void>
+  /** Sign in (or sign up) with Discord. On Supabase the browser leaves for Discord and this resolves with null; the local mock signs in directly. */
+  signInWithDiscord(): Promise<Snapshot | null>
+  discord(): Promise<DiscordLink | null>
+  /** Link Discord to the signed-in account. Same redirect behaviour as signInWithDiscord. */
+  linkDiscord(): Promise<DiscordLink | null>
+  unlinkDiscord(): Promise<void>
 
   completeOnboarding(tastes: TasteId[]): Promise<{ snapshot: Snapshot; carIds: string[] }>
   openPack(packId: PackId): Promise<{ snapshot: Snapshot; opening: PackOpening }>

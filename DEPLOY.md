@@ -31,7 +31,9 @@ npx supabase functions deploy races
 Dashboard → Authentication :
 - URL Configuration : Site URL = `https://tonoplas909.github.io/car-collection/`, et ajoutez la même URL (avec `**`) dans les Redirect URLs.
 - Providers → Email : décidez si la confirmation par e-mail est obligatoire.
-- (Plus tard) Providers → Discord, voir `TODO.md`.
+- Providers → Discord : activé avec le Client ID et le Client Secret de votre application Discord (portail développeur Discord → OAuth2 → Redirects : `https://<project-ref>.supabase.co/auth/v1/callback`).
+- Sign In / Providers → **Allow manual linking** : activé, pour que « Connect Discord » des réglages fonctionne sur un compte existant.
+- Redirect URLs : la page `/auth/callback` du site doit être autorisée (`https://tonoplas909.github.io/car-collection/**` couvre tout).
 
 ## 6. Brancher le front
 Dashboard → Project Settings → API : copiez l'URL du projet et la clé `anon`.
@@ -45,3 +47,10 @@ Sur le site publié : créer un compte, ouvrir le pack gratuit, lancer une cours
 
 ## En local contre le vrai projet
 Copiez `.env.example` en `.env.local` et renseignez les deux variables ; `npm run dev` utilise alors Supabase au lieu du mock.
+
+## Connexion avec Discord
+Le bouton « Continue with Discord » (inscription et connexion) et « Connect Discord » (réglages) utilisent le fournisseur Discord de Supabase. Une migration adapte la création de profil aux comptes Discord (pas de nom d'utilisateur, e-mail parfois absent) :
+```bash
+npx supabase db push
+```
+Si l'e-mail Discord est vérifié et correspond à un compte existant, Supabase relie l'identité Discord à ce compte au lieu d'en créer un second.

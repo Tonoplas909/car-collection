@@ -80,6 +80,12 @@ export const actions = {
   },
   signUp: (input: { username: string; email: string; password: string }) => withSnapshot(api.signUp(input)),
   signIn: (input: { email: string; password: string }) => withSnapshot(api.signIn(input)),
+  /** Resolves with the snapshot in the local demo; on Supabase the page redirects to Discord and this resolves with null. */
+  async signInWithDiscord() {
+    const snapshot = await api.signInWithDiscord()
+    if (snapshot) setState({ snapshot })
+    return snapshot
+  },
   async signOut() {
     await api.signOut()
     setState({ snapshot: null, raceEntry: null, raceResult: null, opening: null })

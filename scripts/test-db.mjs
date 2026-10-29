@@ -150,5 +150,15 @@ check('authenticated can buy', priv.buy === true)
 check('anon cannot read snapshots', priv.anon_snap === false)
 console.log('table update grant for authenticated (RLS has no update policy):', priv.upd)
 
+// Sign-in with Discord: no 'username' in the metadata, and sometimes no email
+const d1 = (await one(`insert into auth.users (email, raw_user_meta_data) values ('d@x.test', '{"full_name":"Max Power","name":"max#0","custom_claims":{"global_name":"Max ★"}}') returning id`)).id
+const d2 = (await one(`insert into auth.users (email, raw_user_meta_data) values (null, '{"custom_claims":{"global_name":"★★"}}') returning id`)).id
+const d3 = (await one(`insert into auth.users (email, raw_user_meta_data) values (null, '{}') returning id`)).id
+const pd1 = await one('select username from profiles where id = $1', [d1]); const pd2 = await one('select username from profiles where id = $1', [d2]); const pd3 = await one('select username from profiles where id = $1', [d3])
+check('discord name is cleaned up', pd1.username === 'MaxPower', pd1.username)
+check('discord name with no usable characters still gets a valid username', /^_[0-9a-f]{4}$/.test(pd2.username) || pd2.username.length >= 3, pd2.username)
+check('account with no email and no name gets a player name', pd3.username.startsWith('player'), pd3.username)
+
+
 console.log(failures ? `\n${failures} FAILED` : '\nall checks passed')
 process.exit(failures ? 1 : 0)
