@@ -138,7 +138,7 @@ describe('race inputs', () => {
     expect(validRaceInputs({ brake: [-1], nitro: [] })).toBe(false)
     expect(validRaceInputs({ brake: [1.5], nitro: [] })).toBe(false)
     expect(validRaceInputs({ brake: [20, 10], nitro: [] })).toBe(false)
-    expect(validRaceInputs({ brake: Array.from({ length: 41 }, (_, i) => i), nitro: [] })).toBe(false)
+    expect(validRaceInputs({ brake: Array.from({ length: 401 }, (_, i) => i), nitro: [] })).toBe(false)
     expect(validRaceInputs({ brake: [], nitro: [1, 2, 3] })).toBe(false)
     expect(validRaceInputs({ brake: [MAX_STEPS + 1], nitro: [] })).toBe(false)
     expect(validRaceInputs({ brake: [] })).toBe(false)
@@ -160,8 +160,23 @@ describe('race inputs', () => {
   it('the recorder keeps a mashed brake within what the server accepts', () => {
     const sim = new CircuitSim(r34, TRACKS.run)
     const rec = new RaceInputRecorder(sim)
-    for (let i = 0; i < 100; i++) { rec.press(); sim.step(); rec.release(); sim.step() }
+    for (let i = 0; i < 300; i++) { rec.press(); sim.step(); rec.release(); sim.step() }
     expect(validRaceInputs(rec.inputs)).toBe(true)
     expect(rec.inputs.brake.length % 2).toBe(0)
+  })
+
+  it('lets a driver pulse the brake all race long without the brake going dead', () => {
+    // 0.08 s on, 0.42 s off for 40 s: about 80 presses, well past the old 20-press limit
+    const sim = new CircuitSim(r34, TRACKS.run)
+    const rec = new RaceInputRecorder(sim)
+    const period = Math.round(0.5 / DT), on = Math.round(0.08 / DT)
+    for (let i = 0; i < 40 / DT; i++) {
+      if (i % period === 0) rec.press()
+      if (i % period === on) rec.release()
+      sim.step()
+    }
+    expect(rec.inputs.brake.length).toBeGreaterThan(40)
+    expect(validRaceInputs(rec.inputs)).toBe(true)
+    expect(sim.s.braking === (rec.inputs.brake.length % 2 === 1)).toBe(true)
   })
 })

@@ -61,4 +61,6 @@ Les courses se jouent sur un circuit (freinage et nitro, boîte automatique). Le
 npx supabase db push
 npx supabase functions deploy races
 ```
+Ordre conseillé : poussez le front (le site se déploie tout seul), puis lancez ces deux commandes sans attendre. Entre les deux, une course lancée échoue et ses frais d'entrée sont perdus : évitez de jouer pendant ces quelques minutes.
+
 La migration remplace `enter_race` (plus de liste d'adversaires dans la base) et met à jour les quatre épreuves, dont la nouvelle `touge`. Relancer `supabase/catalog.sql` n'est pas nécessaire (il contient les mêmes lignes). Une course commencée avant la mise à jour ne peut plus être envoyée : le joueur perd simplement ses frais d'entrée.

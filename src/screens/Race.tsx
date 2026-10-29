@@ -2,7 +2,7 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, typ
 import { Link, Navigate } from 'react-router-dom'
 import {
   CARS_BY_ID, CircuitSim, DT, MAX_RACE_SECONDS, NITRO, RACE_EVENTS, RACE_EVENTS_BY_ID, RaceInputRecorder, TIER_RANK, TRACKS,
-  carNotes, isCorner, opponentTraces, raceSpec, sectorStarts,
+  carNotes, isCorner, nextCorner, opponentTraces, raceSpec,
   type Car, type CornerQuality, type Focus, type RaceEvent,
 } from '@game'
 import { GameError, topUpEnabled, type RaceResult } from '../api'
@@ -232,7 +232,6 @@ function LiveRace({ raceId, car, level, ev }: { raceId: string; car: Car; level:
   const [sim] = useState(() => new CircuitSim(raceSpec(car, level), track))
   const [rec] = useState(() => new RaceInputRecorder(sim))
   const traces = useMemo(() => opponentTraces(raceId, car, ev.id), [raceId, car, ev.id])
-  const starts = useMemo(() => sectorStarts(track), [track])
   const phaseRef = useRef<Phase>('idle')
   const [phase, setPhase] = useState<Phase>('idle')
   const [count, setCount] = useState(3)
@@ -317,17 +316,16 @@ function LiveRace({ raceId, car, level, ev }: { raceId: string; car: Car; level:
   const hud = { pos: phase === 'idle' || phase === 'count' ? '—' : `${result?.place ?? pos} / 4`, time: seconds(tNow), sector: `${view.sector + 1} / ${track.sectors.length}` }
 
   const here = track.sectors[view.sector]
-  const nextIdx = track.sectors.findIndex((x, i) => i > view.sector && isCorner(x))
-  const next = nextIdx >= 0 ? track.sectors[nextIdx] : null
+  const ahead = phase === 'race' && view.slide <= 0 ? nextCorner(track, view.sector, view.d) : null
+  const next = ahead ? track.sectors[ahead.index] : null
   const approach = {
     label: next ? SECTOR_NAME[next.kind] : '',
-    dist: phase === 'race' && next && !isCorner(here) ? starts[nextIdx] - view.d : null,
+    dist: ahead ? ahead.dist : null,
     target: next ? next.vRef! * sim.notes.G : 0,
     v: view.v,
     note: phase !== 'race' ? ' '
       : view.slide > 0 ? 'Sliding: you carried too much speed into the corner.'
       : isCorner(here) ? `${SECTOR_NAME[here.kind]} · target ${kmh(here.vRef! * sim.notes.G)} km/h`
-      : nextIdx >= 0 ? `${SECTOR_NAME[next!.kind]} ahead`
       : 'Last straight. Use any nitro you have left.',
   }
   const stage = (
@@ -373,7 +371,7 @@ function LiveRace({ raceId, car, level, ev }: { raceId: string; car: Car; level:
   if (mobile) {
     const playing = phase === 'race' || phase === 'count'
     return (
-      <div className="mshell">
+      <div className="mshell lv-mlive">
         <div className="lv-hud-m">
           <Hud k="Position" v={hud.pos} /><Hud k="Time" v={hud.time} /><Hud k="Sector" v={hud.sector} />
         </div>

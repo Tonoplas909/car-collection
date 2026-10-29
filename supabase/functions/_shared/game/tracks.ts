@@ -104,6 +104,17 @@ export function sectorIndexAt(t: Track, d: number): number {
   return i
 }
 
+/**
+ * The corner to brake for next: the first corner after sector `sector`, and how far it is. From inside a corner
+ * it only counts once it is within `windowM`, so the cue for a hairpin right after a chicane shows up early.
+ */
+export function nextCorner(t: Track, sector: number, d: number, windowM = 200): { index: number; dist: number } | null {
+  const index = t.sectors.findIndex((s, i) => i > sector && isCorner(s))
+  if (index < 0) return null
+  const dist = sectorStarts(t)[index] - d
+  return isCorner(t.sectors[sector]) && dist > windowM ? null : { index, dist }
+}
+
 export interface Point { x: number; y: number }
 
 /** Points every `stepM` metres along the circuit, ending at the finish. Heading starts along +x. */

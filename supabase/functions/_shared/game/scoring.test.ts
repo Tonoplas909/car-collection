@@ -142,6 +142,23 @@ describe('win rate', () => {
   })
 })
 
+describe('car choice pays', () => {
+  it('a car among the best of its tier for the circuit wins most races, which is how credits are made', () => {
+    let wins = 0, n = 0
+    for (const tier of TIERS) {
+      const ranked = CATALOG.filter(c => c.tier === tier).map(c => ({ c, t: drive(c.id, 'sprint') })).sort((a, b) => a.t - b.t)
+      for (const { c: car } of ranked.slice(0, Math.ceil(ranked.length / 10))) {
+        for (let i = 0; i < 4; i++) {
+          const raceId = `pick-${i}`
+          wins += drive(car.id, 'sprint', 0, raceId) < Math.min(...opponentTraces(raceId, car, 'sprint').map(o => o.finishTime)) ? 1 : 0
+          n++
+        }
+      }
+    }
+    expect(wins / n).toBeGreaterThanOrEqual(0.6)
+  })
+})
+
 describe('scoreCircuitRace', () => {
   const car = CARS_BY_ID['toyota-supra-a80']
   const spec = raceSpec(car, 2)

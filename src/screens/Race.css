@@ -88,6 +88,8 @@
 
 
 /* 6f mobile live */
+/* Nothing on this screen scrolls or zooms: a stray double tap must not zoom the page mid-race */
+.lv-mlive { touch-action: none; }
 .lv-hud-m { padding: calc(12px + env(safe-area-inset-top)) 16px 12px; display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 2px solid var(--color-divider); flex: none; }
 .lv-hud-m .lv-hud { border: 0; padding: 0; }
 .lv-hud-m .label { font-size: 10px; }

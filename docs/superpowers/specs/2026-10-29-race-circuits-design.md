@@ -113,7 +113,7 @@ Frais, gains et points des trois épreuves existantes ne changent pas. `touge` :
 - **Déterminisme** : une course jouée pas à pas par le client et rejouée par `replay` à partir des entrées donne exactement le même temps, les mêmes qualités de virage et les mêmes temps par secteur.
 - **La voiture compte** : sur `touge`, une voiture légère à bonne tenue de route bat une voiture lourde plus puissante du catalogue ; sur `run`, la voiture à plus haute vitesse de pointe gagne ; sur `drag`, la meilleure accélération gagne.
 - **Fourchette de temps** : une voiture médiane de chaque rareté termine chaque épreuve en 35 à 55 s en pilotage parfait.
-- **Équilibre** : `autoDrive` avec erreur nulle bat les trois adversaires de même rareté sur au moins 80 % des graines, et `autoDrive` avec une grosse erreur ne les bat pas.
+- **Équilibre** : battre trois adversaires tirés au hasard dans sa rareté dépend surtout de la voiture. Mesuré en pilotage parfait sur le circuit mixte : la voiture médiane de sa rareté gagne environ 1 course sur 5, une voiture parmi les 10 % les plus rapides de sa rareté en gagne plus de 6 sur 10, et un pilote très approximatif n'en gagne presque aucune. Les tests fixent ces trois ordres de grandeur. Le seuil de 80 % prévu au départ n'est pas tenable avec trois adversaires tirés au hasard : c'est un choix de conception, à réviser après essai.
 - **Validation** : `validRaceInputs` refuse les pas négatifs, non entiers, décroissants, plus de 2 nitros et trop d'événements de frein.
 - **Adversaires** : même graine, mêmes adversaires ; trois adversaires distincts ; rareté respectée.
 - **Base** : `npm run test:db` exécute la migration, `enter_race`, `apply_race_result` et vérifie la ligne `touge`.

@@ -27,7 +27,7 @@ export const TUNING = {
 export const NITRO = { charges: 2, seconds: 2, accel: 1.5, vmax: 1.04 }
 export const MAX_RACE_SECONDS = 240
 export const MAX_STEPS = Math.round(MAX_RACE_SECONDS / DT)
-const MAX_BRAKE_EVENTS = 40
+const MAX_BRAKE_EVENTS = 400
 const MAX_NITRO_EVENTS = NITRO.charges
 
 const clamp = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, n))
