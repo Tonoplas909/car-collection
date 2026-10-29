@@ -1,5 +1,5 @@
 import { useLayoutEffect, useMemo, useRef, useState } from 'react'
-import { ChevronLeft, Lock } from 'lucide-react'
+import { ArrowDown, ArrowUp, ChevronLeft, Lock } from 'lucide-react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { CARS_BY_ID, CATALOG, PACKS_BY_ID, TIER_RANK, makeGen, type Car, type PackId, type Tier } from '@game'
 import { Aside, Main, MobileHead } from '../components/Shell'
@@ -14,7 +14,21 @@ import './Collection.css'
 type Status = 'all' | 'unlocked' | 'locked'
 const STATUSES: [Status, string][] = [['all', 'All'], ['unlocked', 'Unlocked'], ['locked', 'Locked']]
 
-const ALL = [...CATALOG].sort((a, b) => TIER_RANK[b.tier] - TIER_RANK[a.tier] || b.value - a.value)
+type Sort = 'tier' | 'hp' | 'value' | 'year' | 'name'
+const SORTS: [Sort, string][] = [['tier', 'Rarity'], ['hp', 'Power'], ['value', 'Value'], ['year', 'Year'], ['name', 'Name']]
+const byName = (a: Car, b: Car) => `${a.make} ${a.model} ${a.gen}`.localeCompare(`${b.make} ${b.model} ${b.gen}`)
+/** Each sorter gives the default order: highest first, newest first, A to Z for names. */
+const SORTERS: Record<Sort, (a: Car, b: Car) => number> = {
+  tier: (a, b) => TIER_RANK[b.tier] - TIER_RANK[a.tier] || b.value - a.value || byName(a, b),
+  hp: (a, b) => b.hp - a.hp || byName(a, b),
+  value: (a, b) => b.value - a.value || byName(a, b),
+  year: (a, b) => b.year - a.year || byName(a, b),
+  name: byName,
+}
+const dirLabel = (sort: Sort, asc: boolean) =>
+  sort === 'name' ? (asc ? 'Z to A' : 'A to Z') : asc ? (sort === 'year' ? 'Oldest first' : 'Lowest first') : (sort === 'year' ? 'Newest first' : 'Highest first')
+
+const ALL = [...CATALOG].sort(SORTERS.tier)
 
 /** Every car in the game, and which of them the player owns. */
 function useCollection() {
@@ -27,6 +41,8 @@ function useFiltered(owned: Set<string>) {
   const [filter, setFilter] = useState<Tier | 'All'>('All')
   const [status, setStatus] = useState<Status>('all')
   const [query, setQuery] = useState('')
+  const [sort, setSort] = useState<Sort>('tier')
+  const [asc, setAsc] = useState(false)
   const q = query.trim().toLowerCase()
   const base = useMemo(() => ALL.filter(c =>
     (status === 'all' || (status === 'unlocked') === owned.has(c.id)) &&
@@ -36,18 +52,34 @@ function useFiltered(owned: Set<string>) {
     for (const c of base) n[c.tier]++
     return n
   }, [base])
-  const list = useMemo(() => base.filter(c => filter === 'All' || c.tier === filter), [base, filter])
-  return { list, counts, filter, setFilter, status, setStatus, query, setQuery }
+  const list = useMemo(() => {
+    const out = base.filter(c => filter === 'All' || c.tier === filter).sort(SORTERS[sort])
+    return asc ? out.reverse() : out
+  }, [base, filter, sort, asc])
+  return { list, counts, filter, setFilter, status, setStatus, query, setQuery, sort, setSort, asc, toggleAsc: () => setAsc(a => !a) }
 }
 
-function Tools({ status, setStatus, query, setQuery }: Pick<ReturnType<typeof useFiltered>, 'status' | 'setStatus' | 'query' | 'setQuery'>) {
+type FilterState = ReturnType<typeof useFiltered>
+
+function Tools({ f, compact }: { f: FilterState; compact?: boolean }) {
+  const label = dirLabel(f.sort, f.asc)
   return (
-    <div className="c-tools">
-      <input className="input c-search" type="search" placeholder="Search make or model" aria-label="Search cars" value={query} onChange={e => setQuery(e.target.value)} />
-      <div className="bseg" role="group" aria-label="Show">
-        {STATUSES.map(([v, l]) => <button key={v} aria-pressed={status === v} onClick={() => setStatus(v)}>{l}</button>)}
+    <>
+      <div className="c-tools">
+        <input className="input c-search" type="search" placeholder="Search make or model" aria-label="Search cars" value={f.query} onChange={e => f.setQuery(e.target.value)} />
+        <div className="bseg" role="group" aria-label="Show">
+          {STATUSES.map(([v, l]) => <button key={v} aria-pressed={f.status === v} onClick={() => f.setStatus(v)}>{l}</button>)}
+        </div>
       </div>
-    </div>
+      <div className={`g-sorts${compact ? ' compact' : ''}`}>
+        <span className="muted">{compact ? 'Sort' : 'Sort by'}</span>
+        {SORTS.map(([v, l]) => <button key={v} aria-pressed={f.sort === v} onClick={() => f.setSort(v)}>{l}</button>)}
+        <button className="g-dir" onClick={f.toggleAsc} aria-label={`Reverse the order (now ${label.toLowerCase()})`} title={label}>
+          {f.asc ? <ArrowUp size={16} /> : <ArrowDown size={16} />}
+          {!compact && <span>{label}</span>}
+        </button>
+      </div>
+    </>
   )
 }
 
@@ -168,7 +200,7 @@ function CollectionDesktop({ initial }: { initial?: string }) {
       <Main>
         <Header ownedCount={ownedCount} />
         <TierFilter value={f.filter} onChange={f.setFilter} counts={f.counts} />
-        <Tools status={f.status} setStatus={f.setStatus} query={f.query} setQuery={f.setQuery} />
+        <Tools f={f} />
         <div className="g-scroll">
           {f.list.length ? (
             <div className="g-grid">
@@ -196,7 +228,7 @@ function CollectionMobile() {
       <MobileHead title={<span className="g-brand">COLLECTION</span>} />
       <Header ownedCount={ownedCount} mobile />
       <div className="g-tiers-m"><TierFilter value={f.filter} onChange={f.setFilter} counts={f.counts} short /></div>
-      <Tools status={f.status} setStatus={f.setStatus} query={f.query} setQuery={f.setQuery} />
+      <Tools f={f} compact />
       <div className="mscroll" style={{ padding: '12px 16px' }}>
         {f.list.length ? (
           <div className="g-grid mobile">
