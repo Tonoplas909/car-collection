@@ -1,10 +1,11 @@
-import { useState, type FormEvent, type ReactNode } from 'react'
+import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react'
 import { Link, Navigate } from 'react-router-dom'
-import { CARS_BY_ID, STARTER_PACK_SIZE, TASTES, carLabel, makeGen } from '@game'
+import { CATALOG, CARS_BY_ID, STARTER_PACK_SIZE, TASTES, carLabel, makeGen, type Car } from '@game'
 import { backend } from '../api'
 import { Photo, TIER_BAR } from '../components/ui'
 import { num } from '../lib/format'
 import { useWipeNavigate } from '../lib/hooks'
+import { reduced } from '../lib/motion'
 import { actions, useApp } from '../state/store'
 import './Onboarding.css'
 
@@ -89,6 +90,53 @@ export function LoginPage() {
   )
 }
 
+/** Cars shown in a taste card: the most valuable ones tagged with it that have a photo. */
+const TASTE_CARS: Record<string, Car[]> = Object.fromEntries(TASTES.map(t => [
+  t.id,
+  CATALOG.filter(c => c.tastes.includes(t.id) && c.photoUrl).sort((a, b) => b.value - a.value).slice(0, 5),
+]))
+
+/** Small photo (the catalog URLs ask Commons for 800 px, a taste card needs about half). */
+const thumb = (url: string) => url.replace('width=800', 'width=520')
+
+/**
+ * Photos of one taste, cross-fading every few seconds (static when motion is reduced).
+ * Photos mount a couple at a time and only loaded ones are shown, so a slow or failed image never leaves a hole.
+ */
+function TasteCarousel({ cars, index }: { cars: Car[]; index: number }) {
+  const [cur, setCur] = useState(-1)
+  const [mounted, setMounted] = useState(2)
+  const loaded = useRef(new Set<number>())
+  useEffect(() => {
+    if (cars.length < 2 || reduced()) return
+    // Slightly different periods so the cards do not all flip together.
+    const id = setInterval(() => {
+      setMounted(m => Math.min(cars.length, m + 1))
+      setCur(c => {
+        for (let k = 1; k <= cars.length; k++) { const j = (c + k) % cars.length; if (loaded.current.has(j)) return j }
+        return c
+      })
+    }, 3400 + index * 330)
+    return () => clearInterval(id)
+  }, [cars.length, index])
+  const car = cars[cur]
+  return (
+    <div className="ob-taste-photos">
+      {cars.slice(0, mounted).map((c, i) => (
+        <img key={c.id} src={thumb(c.photoUrl!)} alt={i === cur ? `${c.make} ${c.model}` : ''} aria-hidden={i !== cur}
+          className={i === cur ? 'cur' : undefined}
+          onLoad={() => { loaded.current.add(i); setCur(x => (x < 0 ? i : x)) }} />
+      ))}
+      {car && (
+        <span className="ob-taste-cap">
+          <b>{car.make} {car.model} · {car.year}</b>
+          {car.photoCredit && <span>Photo: {car.photoCredit}</span>}
+        </span>
+      )}
+    </div>
+  )
+}
+
 /* 7b */
 export function TastesPage() {
   const tastes = useApp(s => s.tastes)
@@ -103,13 +151,16 @@ export function TastesPage() {
         <span className="ob-title-note">Pick as many as you like. Your free pack leans toward them.</span>
       </div>
       <div className="split ob-tastes">
-        {TASTES.map(t => {
+        {TASTES.map((t, i) => {
           const on = tastes.includes(t.id)
           return (
             <button key={t.id} className={`ob-taste${on ? ' on' : ''}`} aria-pressed={on} onClick={() => toggle(t.id)}>
-              <span className="label" style={{ color: 'inherit' }}>{on ? 'Selected' : 'Select'}</span>
-              <span className="ob-taste-name">{t.name}</span>
-              <span style={{ fontSize: 14 }}>{t.examples}</span>
+              <TasteCarousel cars={TASTE_CARS[t.id]} index={i} />
+              <span className="ob-taste-text">
+                <span className="label" style={{ color: 'inherit' }}>{on ? 'Selected' : 'Select'}</span>
+                <span className="ob-taste-name">{t.name}</span>
+                <span style={{ fontSize: 14 }}>{t.examples}</span>
+              </span>
             </button>
           )
         })}
