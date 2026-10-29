@@ -66,6 +66,13 @@ const withSnapshot = async (p: Promise<Snapshot>) => {
   return snapshot
 }
 
+/** The server returns a pack rarest-last; show the cards in a random order so their position gives nothing away. */
+function shuffled(opening: PackOpening): PackOpening {
+  const pulls = [...opening.pulls]
+  for (let i = pulls.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [pulls[i], pulls[j]] = [pulls[j], pulls[i]] }
+  return { ...opening, pulls }
+}
+
 export const actions = {
   async init() {
     const snapshot = await api.load()
@@ -85,13 +92,15 @@ export const actions = {
   },
   async openPack(packId: PackId) {
     const { snapshot, opening } = await api.openPack(packId)
-    setState({ snapshot, opening })
-    return opening
+    const shown = shuffled(opening)
+    setState({ snapshot, opening: shown })
+    return shown
   },
   async claimFreePack() {
     const { snapshot, opening } = await api.claimFreePack()
-    setState({ snapshot, opening })
-    return opening
+    const shown = shuffled(opening)
+    setState({ snapshot, opening: shown })
+    return shown
   },
   buyListing: (listingId: string) => withSnapshot(api.buyListing(listingId)),
   listCar: (carId: string, price: number) => withSnapshot(api.listCar(carId, price)),

@@ -189,6 +189,7 @@ export function PackRevealPage() {
   const { open: openPack, busy, dialog } = useOpenPack()
   if (!opening) return <Navigate to="/packs" replace />
 
+  const pulls = opening.pulls
   const pack = opening.packId === 'free' ? PACKS_BY_ID.street : PACKS_BY_ID[opening.packId]
   const done = open.every(Boolean)
   const flip = (i: number) => { setStagger([]); setOpen(o => o.map((x, k) => (k === i ? true : x))) }
@@ -197,7 +198,7 @@ export function PackRevealPage() {
     setStagger(open.map(o => (o ? 0 : (k++) * 260)))
     setOpen(open.map(() => true))
   }
-  const newCount = opening.pulls.filter(p => !p.duplicate).length
+  const newCount = pulls.filter(p => !p.duplicate).length
   const anotherPack = async () => {
     if (!(await openPack(pack.id, true))) return
     setOpen([false, false, false, false, false])
@@ -214,7 +215,7 @@ export function PackRevealPage() {
           <span style={{ fontSize: 13, fontWeight: 800 }}>{open.filter(Boolean).length} / 5</span>
         </div>
         <div className="mscroll" style={{ display: 'flex', flexDirection: 'column' }}>
-          {opening.pulls.map((p, i) => {
+          {pulls.map((p, i) => {
             const c = CARS_BY_ID[p.carId], leg = p.tier === 'Legendary'
             return (
               <div key={i} className={`rm-card clickable${leg ? ' leg' : ''}`} onClick={() => flip(i)}>
@@ -235,7 +236,7 @@ export function PackRevealPage() {
         <div className="m-actions">
           {done ? (
             <>
-              <span className="muted" style={{ fontSize: 13 }}>{newCount} new · {opening.pulls.length - newCount} duplicates · +{cr(opening.creditsBack)}</span>
+              <span className="muted" style={{ fontSize: 13 }}>{newCount} new · {pulls.length - newCount} duplicates · +{cr(opening.creditsBack)}</span>
               <Link to="/garage" className="btn btn-primary btn-md">Go to garage</Link>
             </>
           ) : (
@@ -259,17 +260,15 @@ export function PackRevealPage() {
         <span className="muted tnum" style={{ marginLeft: 'auto', fontSize: 14 }}>{open.filter(Boolean).length} / 5 revealed</span>
       </div>
       <div className="split r-cards">
-        {opening.pulls.map((p, i) => {
+        {pulls.map((p, i) => {
           const c = CARS_BY_ID[p.carId], leg = p.tier === 'Legendary', d = stagger[i] ?? 0
           return (
             <div key={`${round}-${i}`} className="r-slot" onClick={() => flip(i)} role="button" tabIndex={0}
               aria-label={open[i] ? `${c.make} ${c.model}` : `Reveal card ${i + 1}`} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') flip(i) }}>
               <div className="r-card">
                 <div className="r-cover" style={{ transform: open[i] ? 'translateY(-101%)' : 'translateY(0)', transitionDelay: open[i] ? `${d}ms` : '0ms' }}>
-                  <div style={{ height: 6, background: TIER_BAR[p.tier], margin: '-16px -16px 0' }} />
                   <span className="r-n tnum">{pad2(i + 1)}</span>
                   <span style={{ marginTop: 'auto', fontSize: 13 }}>Click to reveal</span>
-                  <div style={{ height: 6, background: TIER_BAR[p.tier], margin: '0 -16px -16px' }} />
                 </div>
                 <div className={`r-face${leg ? ' leg' : ''}`} style={{ opacity: open[i] ? 1 : 0, transform: open[i] ? 'none' : 'translateY(32px)', transitionDelay: open[i] ? `${d + 350}ms` : '0ms' }}>
                   <div style={{ height: 6, background: TIER_BAR[p.tier] }} />
@@ -296,11 +295,11 @@ export function PackRevealPage() {
         {done ? (
           <div style={{ display: 'flex', gap: 32 }}>
             <div className="r-sum"><span className="label">New to garage</span><span>{newCount}</span></div>
-            <div className="r-sum"><span className="label">Duplicates</span><span>{opening.pulls.length - newCount}</span></div>
+            <div className="r-sum"><span className="label">Duplicates</span><span>{pulls.length - newCount}</span></div>
             <div className="r-sum"><span className="label">Credits back</span><span className="tnum">+{cr(opening.creditsBack)}</span></div>
           </div>
         ) : (
-          <span className="muted" style={{ fontSize: 14 }}>The tier colour on each card back shows its rarity before you flip it.</span>
+          <span className="muted" style={{ fontSize: 14 }}>Click a card to reveal it, or reveal them all at once.</span>
         )}
         <div style={{ display: 'flex', gap: 8, marginLeft: 'auto' }}>
           {done ? (
