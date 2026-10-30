@@ -29,7 +29,7 @@
 .pm-pack { border-bottom: 2px solid var(--color-divider); padding: 16px; display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 16px; }
 .pm-pack.hero { background: var(--color-accent); color: var(--color-bg); }
 .pm-art { aspect-ratio: 3 / 4; }
-.pm-art > span { font-size: 9px; }
+.pm-art .pk-mark { display: none; }
 .pm-body { display: flex; flex-direction: column; gap: 4px; }
 .pm-kind { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 800; }
 .pm-name { font-weight: 800; font-size: 28px; line-height: 1; }
@@ -88,3 +88,25 @@
   position: absolute; inset: 0; background: var(--color-text); color: var(--color-bg); display: flex; align-items: center; padding: 0 16px;
   font-weight: 800; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; transition: transform 600ms var(--ease);
 }
+
+/* Pack artwork: three photos piled like cards on a coloured field */
+.pk-art { position: relative; overflow: hidden; background: linear-gradient(160deg, var(--pk-a), var(--pk-b)); }
+.pk-art::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(115deg, transparent 36%, rgba(255, 255, 255, .26) 47%, rgba(255, 255, 255, .08) 53%, transparent 62%);
+}
+.pk-mark {
+  position: absolute; left: 7%; bottom: 3%; font-weight: 800; font-size: 30px; line-height: 1; letter-spacing: -.02em;
+  text-transform: uppercase; color: #fff; opacity: .2; white-space: nowrap;
+}
+.pk-card {
+  position: absolute; width: 72%; aspect-ratio: 4 / 3; padding: 3%; background: #fff; box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+  transition: transform 360ms var(--ease-out);
+}
+.pk-card > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.pk-0 { left: 39%; top: 25%; transform: translate(-50%, -50%) rotate(-7deg); }
+.pk-1 { left: 60%; top: 49%; z-index: 2; transform: translate(-50%, -50%) rotate(5deg); }
+.pk-2 { left: 41%; top: 73%; z-index: 3; transform: translate(-50%, -50%) rotate(-4deg); }
+.p-pack:hover .pk-0, .pm-pack:hover .pk-0 { transform: translate(-54%, -53%) rotate(-10deg); }
+.p-pack:hover .pk-1, .pm-pack:hover .pk-1 { transform: translate(-46%, -50%) rotate(8deg); }
+.p-pack:hover .pk-2, .pm-pack:hover .pk-2 { transform: translate(-54%, -47%) rotate(-7deg); }

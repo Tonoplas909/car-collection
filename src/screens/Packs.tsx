@@ -3,6 +3,7 @@ import { Link, Navigate } from 'react-router-dom'
 import { CARS_BY_ID, DUPLICATE_CREDITS, PACKS, PACKS_BY_ID, PITY_LIMIT, TIERS, makeGen, type PackDef, type PackId } from '@game'
 import { GameError, topUpEnabled } from '../api'
 import { Aside, Main, MobileHead } from '../components/Shell'
+import { PackArt } from '../components/PackArt'
 import { ConfirmDialog, Photo, TIER_BAR } from '../components/ui'
 import { clock, cr, num, pad2 } from '../lib/format'
 import { useIsMobile, useNow, useWipeNavigate } from '../lib/hooks'
@@ -69,7 +70,7 @@ function PacksDesktop() {
                   <span style={{ fontWeight: 800 }}>{p.kicker}</span>
                   <span style={{ marginLeft: 'auto' }}>{p.guarantee.count} {p.guarantee.tier}+</span>
                 </div>
-                <Photo label="pack artwork" className="p-pack-art" />
+                <PackArt pack={p.id} name={p.name} className="p-pack-art" />
                 <div className="p-pack-name">
                   <span>{p.name}</span>
                   <span className="p-pack-desc">{p.desc}</span>
@@ -147,7 +148,7 @@ function PacksMobile() {
           const odds = p.odds.map((o, i) => (o ? `${['Common', 'Rare', 'Epic', 'Legendary'][i]} ${pct(o)}` : '')).filter(Boolean).join(' · ')
           return (
             <div key={p.id} className={`pm-pack${hero ? ' hero' : ''}`}>
-              <Photo label="pack art" className="pm-art" />
+              <PackArt pack={p.id} name={p.name} className="pm-art" />
               <div className="pm-body">
                 <span className="pm-kind">{p.kicker}</span>
                 <span className="pm-name">{p.name}</span>
