@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { CARS_BY_ID, CATALOG } from './catalog.ts'
 import { MAX_RACE_SECONDS, MAX_STEPS, raceSpec, validRaceInputs } from './circuit.ts'
 import {
-  BOOST_FACTOR, BOOST_TIME, DRAG_LENGTH, DragSim, GEARS, GEAR_FACTOR, RPM_RATE, SHIFT_WINDOW, autoShift, replayDrag, shiftQuality,
+  DRAG_LENGTH, DragSim, GEARS, GEAR_FACTOR, RPM_RATE, SHIFT_BANDS, SHIFT_BOOST, autoShift, replayDrag, shiftQuality,
 } from './drag.ts'
 import { seededRng } from './opponents.ts'
 import { DT, RACE_EVENTS_BY_ID, raceRewards } from './race.ts'
@@ -31,11 +31,24 @@ describe('drag model', () => {
     }
   })
 
-  it('classifies shift quality by the rev window', () => {
+  it('rates a shift by how close the revs are to the middle of the window', () => {
     expect(shiftQuality(0.5)).toBe('Early')
-    expect(shiftQuality(SHIFT_WINDOW.start)).toBe('Perfect')
-    expect(shiftQuality(0.96)).toBe('Perfect')
-    expect(shiftQuality(SHIFT_WINDOW.perfect)).toBe('Late')
+    expect(shiftQuality(0.7)).toBe('Early')
+    expect(shiftQuality(0.8)).toBe('OK')
+    expect(shiftQuality(0.85)).toBe('Great')
+    expect(shiftQuality(0.9)).toBe('Perfect')
+    expect(shiftQuality(0.92)).toBe('Perfect')
+    expect(shiftQuality(0.96)).toBe('Great')
+    expect(shiftQuality(0.99)).toBe('OK')
+    expect(shiftQuality(1)).toBe('Late')
+  })
+
+  it('has a Perfect band that is narrow, inside a Great band, inside an OK band', () => {
+    expect(SHIFT_BANDS.perfect).toBeLessThan(SHIFT_BANDS.great)
+    expect(SHIFT_BANDS.great).toBeLessThan(SHIFT_BANDS.ok)
+    expect(SHIFT_BANDS.perfect * 2).toBeLessThanOrEqual(0.08)
+    expect(SHIFT_BANDS.center - SHIFT_BANDS.ok).toBeGreaterThan(0.7)
+    expect(SHIFT_BANDS.center + SHIFT_BANDS.ok).toBeGreaterThanOrEqual(1)
   })
 
   it('simulates in 1/120 s steps', () => {
@@ -57,19 +70,33 @@ describe('drag model', () => {
     expect(server.top).toBe(live.s.top)
   })
 
-  it('a perfect shift boosts the next 0.7 s, an early one does not', () => {
-    const after = (rpm: number) => {
+  it('boosts less the further the shift is from the middle, and not at all outside the window', () => {
+    const gain = (rpm: number) => {
       const sim = new DragSim(r34)
-      sim.s.gear = 1
       sim.s.rpm = rpm
       sim.s.v = 20
       sim.shift()
       const v0 = sim.s.v
-      for (let i = 0; i < Math.round(BOOST_TIME / DT); i++) sim.step()
+      for (let i = 0; i < Math.round(SHIFT_BOOST.Perfect.time / DT); i++) sim.step()
       return sim.s.v - v0
     }
-    expect(BOOST_FACTOR).toBe(1.3)
-    expect(after(0.9)).toBeGreaterThan(after(0.5) * 1.1)
+    expect(SHIFT_BOOST.Perfect).toEqual({ time: 0.7, factor: 1.3 })
+    expect(SHIFT_BOOST.Great.factor).toBeLessThan(SHIFT_BOOST.Perfect.factor)
+    expect(SHIFT_BOOST.OK.factor).toBeLessThan(SHIFT_BOOST.Great.factor)
+    expect(SHIFT_BOOST.Early).toEqual({ time: 0, factor: 1 })
+    expect(SHIFT_BOOST.Late).toEqual({ time: 0, factor: 1 })
+    expect(gain(0.9)).toBeGreaterThan(gain(0.85))
+    expect(gain(0.85)).toBeGreaterThan(gain(0.8))
+    expect(gain(0.8)).toBeGreaterThan(gain(0.5))
+  })
+
+  it('the autopilot with no error shifts Perfect every time', () => {
+    for (const id of ['toyota-supra-a80', 'bugatti-chiron', 'mini-cooper-s']) {
+      const s = spec(id)
+      const d = replayDrag(s, autoShift(s, seededRng('p'), 0))
+      expect(d.shifts.length, id).toBeGreaterThan(0)
+      expect(d.shifts.every(q => q === 'Perfect'), id).toBe(true)
+    }
   })
 
   it('never shifting is slower than shifting in the window, and still finishes', () => {

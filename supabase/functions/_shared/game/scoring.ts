@@ -1,8 +1,8 @@
 // Scores a race, circuit or drag: replays the player's inputs, drives the seeded opponents with the autopilot
 // and ranks the field. Shared by the Edge Function and the local mock backend.
 import { carLabel } from './catalog.ts'
-import { MAX_RACE_SECONDS, NITRO, autoDrive, raceSpec, replayCircuit, type CornerQuality, type RaceInputs } from './circuit.ts'
-import { DRAG_LENGTH, autoShift, replayDrag } from './drag.ts'
+import { MAX_RACE_SECONDS, NITRO, autoDrive, raceSpec, replayCircuit, type RaceInputs } from './circuit.ts'
+import { DRAG_LENGTH, autoShift, replayDrag, type ShiftQuality } from './drag.ts'
 import { opponentsFor, seededRng } from './opponents.ts'
 import { DT, RACE_EVENTS_BY_ID, raceRewards, type RaceEventId, type RaceRewards, type RaceRow } from './race.ts'
 import { TRACKS, trackLength } from './tracks.ts'
@@ -51,8 +51,8 @@ export interface ScoredRace {
   time: number
   /** m/s */
   top: number
-  /** The quality of each corner on a circuit, of each shift at the drag strip */
-  corners: CornerQuality[]
+  /** The quality of each corner on a circuit (Early, Perfect, Late), of each shift at the drag strip */
+  corners: ShiftQuality[]
   /** Duration of each sector, empty at the drag strip */
   splits: number[]
   nitroUsed: number
@@ -69,7 +69,7 @@ export interface ScoreArgs {
 }
 
 /** Rank the player's finish among the seeded opponents and work out the rewards. */
-function ranked(a: ScoreArgs, finished: boolean, finishTime: number, top: number, corners: CornerQuality[], splits: number[], nitroUsed: number): ScoredRace {
+function ranked(a: ScoreArgs, finished: boolean, finishTime: number, top: number, corners: ShiftQuality[], splits: number[], nitroUsed: number): ScoredRace {
   const time = finished ? finishTime : MAX_RACE_SECONDS
   const rows: RaceRow[] = [
     { name: a.player.name, car: label(a.car), time, me: true },

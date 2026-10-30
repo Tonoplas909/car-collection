@@ -1,4 +1,4 @@
-import type { CornerQuality, OwnedCar, PackId, Pull, RaceEventId, RaceInputs, RaceRewards, RaceRow, TasteId, Tier } from '@game'
+import type { OwnedCar, PackId, Pull, RaceEventId, RaceInputs, RaceRewards, RaceRow, ShiftQuality, TasteId, Tier } from '@game'
 
 export interface Settings {
   sound: boolean
@@ -124,7 +124,7 @@ export interface RaceResult {
   /** m/s */
   top: number
   /** The quality of each corner on a circuit, of each shift on the drag strip */
-  corners: CornerQuality[]
+  corners: ShiftQuality[]
   /** Duration of each sector, seconds. Empty on the drag strip. */
   splits: number[]
   nitroUsed: number

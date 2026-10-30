@@ -19,3 +19,8 @@
 .dg-finish { position: absolute; right: 0; top: 0; bottom: 0; width: 4px; background: var(--color-accent); }
 .dg-track-m { position: absolute; top: 50%; left: 16px; right: 20px; height: 0; }
 .dg-mlive { touch-action: none; }
+
+/* Names of the shift bands under the rev bar; on phones only PERFECT fits */
+.dg-legend { position: relative; height: 14px; font-size: 9px; font-weight: 800; letter-spacing: .02em; color: var(--color-neutral-700); }
+.dg-legend > span { position: absolute; top: 2px; transform: translateX(-50%); white-space: nowrap; }
+@media (max-width: 767px) { .dg-legend > .dg-minor { display: none; } }

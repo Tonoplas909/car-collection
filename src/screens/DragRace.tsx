@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { DT, DragSim, GEARS, MAX_RACE_SECONDS, SHIFT_WINDOW, opponentTraces, raceSpec, type Car, type RaceEvent } from '@game'
+import { DT, DragSim, GEARS, MAX_RACE_SECONDS, SHIFT_BANDS, opponentTraces, raceSpec, shiftQuality, type Car, type RaceEvent, type ShiftQuality } from '@game'
 import type { RaceResult } from '../api'
 import { Hud } from '../components/Hud'
 import { ModelName, TIER_BAR } from '../components/ui'
@@ -10,8 +10,26 @@ import './DragRace.css'
 
 type Phase = 'idle' | 'count' | 'race' | 'submitting' | 'done'
 
+/** Colour of the rev bar's fill for the band the revs are in right now */
+const FILL: Record<ShiftQuality, string> = {
+  Early: 'var(--color-text)', OK: 'var(--color-neutral-700)', Great: 'var(--color-accent-600)', Perfect: 'var(--color-accent)', Late: 'var(--color-neutral-500)',
+}
+/** The rev bar shows revs from this value to 1, so the shift window stays wide enough to aim at */
+const REV_FROM = 0.4
+const at = (rpm: number) => Math.min(1, Math.max(0, (rpm - REV_FROM) / (1 - REV_FROM)))
+
+/** The bands around the middle of the window, from the left edge to the right edge, with the label to show in each */
+const { center: C, perfect: P, great: G, ok: O } = SHIFT_BANDS
+const BANDS = [
+  { from: C - O, to: C - G, label: 'OK', fill: 'var(--color-neutral-300)', minor: true },
+  { from: C - G, to: C - P, label: 'GREAT', fill: 'var(--color-neutral-500)', minor: true },
+  { from: C - P, to: C + P, label: 'PERFECT', fill: 'var(--color-accent-300)', minor: false },
+  { from: C + P, to: C + G, label: 'GREAT', fill: 'var(--color-neutral-500)', minor: true },
+  { from: C + G, to: Math.min(1, C + O), label: 'OK', fill: 'var(--color-neutral-300)', minor: true },
+]
+
 interface View {
-  t: number; d: number; v: number; gear: number; rpm: number; quality: 'Early' | 'Perfect' | 'Late' | null
+  t: number; d: number; v: number; gear: number; rpm: number; quality: ShiftQuality | null
 }
 
 /** The drag strip: a straight quarter mile where the player shifts up in the rev window. */
@@ -98,7 +116,7 @@ export function DragRace({ raceId, car, level, ev }: { raceId: string; car: Car;
   ]
   const pos = [...lanes].sort((a, b) => b.d - a.d).findIndex(l => l.me) + 1
   const ticks = Array.from({ length: Math.ceil(ev.len / 100) - 1 }, (_, i) => ((i + 1) * 100) / ev.len * 100)
-  const rpmBg = view.rpm >= SHIFT_WINDOW.perfect ? 'var(--color-accent)' : view.rpm >= SHIFT_WINDOW.start ? 'var(--color-accent-600)' : 'var(--color-text)'
+  const rpmBg = FILL[shiftQuality(view.rpm)]
   const hud = { pos: phase === 'idle' || phase === 'count' ? '—' : `${result?.place ?? pos} / 4`, time: seconds(tNow), togo: `${Math.max(0, Math.round(ev.len - view.d))} m` }
 
   const overlay = phase === 'idle' ? { big: 'Ready', sub: 'Shift up when the revs enter the grey window: space bar or the button. A perfect shift gives a short boost.', fg: 'var(--color-text)', btn: 'Start race' }
@@ -145,6 +163,7 @@ export function DragRace({ raceId, car, level, ev }: { raceId: string; car: Car;
         </div>
         <div style={{ padding: '0 16px 12px', display: 'flex', flexDirection: 'column', gap: 6, flex: 'none' }}>
           <RevBar rpm={view.rpm} bg={rpmBg} height={36} />
+          <Legend />
           <span className="muted" style={{ fontSize: 11 }}>{hint}</span>
         </div>
         <div style={{ padding: '0 16px calc(16px + env(safe-area-inset-bottom))', flex: 'none' }}>
@@ -199,7 +218,7 @@ export function DragRace({ raceId, car, level, ev }: { raceId: string; car: Car;
             <span style={{ marginLeft: 'auto', fontWeight: 800, color: view.quality === 'Perfect' ? 'var(--color-accent-700)' : 'var(--color-text)' }}>{view.quality ? `${view.quality} shift` : ''}</span>
           </div>
           <RevBar rpm={view.rpm} bg={rpmBg} height={48} />
-          <div className="lv-rev-legend"><span>0</span><span>Shift window</span><span /></div>
+          <Legend />
         </div>
         <div className="lv-gauge" style={{ gap: 10 }}>
           <button className="btn btn-primary dg-shift" onPointerDown={e => { e.preventDefault(); shift() }} disabled={phase !== 'race' || view.gear >= GEARS}>Shift up</button>
@@ -213,9 +232,17 @@ export function DragRace({ raceId, car, level, ev }: { raceId: string; car: Car;
 function RevBar({ rpm, bg, height }: { rpm: number; bg: string; height: number }) {
   return (
     <div className="lv-rev" style={{ height }}>
-      <span style={{ left: `${SHIFT_WINDOW.start * 100}%`, width: `${(SHIFT_WINDOW.perfect - SHIFT_WINDOW.start) * 100}%`, background: 'var(--color-neutral-400)' }} />
-      <span style={{ left: `${SHIFT_WINDOW.perfect * 100}%`, right: 0, background: 'var(--color-accent-300)' }} />
-      <span style={{ left: 0, width: `${Math.round(rpm * 100)}%`, background: bg }} />
+      {BANDS.map((b, i) => <span key={i} style={{ left: `${at(b.from) * 100}%`, width: `${(at(b.to) - at(b.from)) * 100}%`, background: b.fill }} />)}
+      <span style={{ left: 0, width: `${at(rpm) * 100}%`, background: bg }} />
+    </div>
+  )
+}
+
+/** Names the bands under the rev bar */
+function Legend() {
+  return (
+    <div className="dg-legend" aria-hidden="true">
+      {BANDS.map((b, i) => <span key={i} className={b.minor ? 'dg-minor' : undefined} style={{ left: `${((at(b.from) + at(b.to)) / 2) * 100}%` }}>{b.label}</span>)}
     </div>
   )
 }

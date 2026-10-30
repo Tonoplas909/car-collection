@@ -3,7 +3,7 @@ import { Link, Navigate } from 'react-router-dom'
 import {
   CARS_BY_ID, CircuitSim, DT, MAX_RACE_SECONDS, NITRO, RACE_EVENTS, RACE_EVENTS_BY_ID, RaceInputRecorder, TIER_RANK,
   carNotes, cornerCue, cueAdvice, isCorner, nextCorner, opponentTraces, raceSpec, trackFor,
-  type Car, type CornerQuality, type Focus, type RaceEvent,
+  type Car, type Focus, type RaceEvent, type ShiftQuality,
 } from '@game'
 import { GameError, topUpEnabled, type RaceResult } from '../api'
 import { Aside, Main, MobileHead } from '../components/Shell'
@@ -27,6 +27,14 @@ const FOCUS: Record<Focus, [string, string]> = {
 }
 const SECTOR_NAME = { straight: 'Straight', sweeper: 'Fast bend', chicane: 'Chicane', hairpin: 'Hairpin', climb: 'Climb' } as const
 const kmh = (v: number) => Math.round(v * 3.6)
+/** Colours of the corner and shift strip on the results screen, from best to worst */
+const QUALITY_STYLE: Record<string, { background: string; color: string }> = {
+  Perfect: { background: 'var(--color-accent)', color: 'var(--color-bg)' },
+  Great: { background: 'var(--color-accent-600)', color: 'var(--color-bg)' },
+  OK: { background: 'var(--color-neutral-300)', color: 'var(--color-text)' },
+  Early: { background: 'var(--color-neutral-200)', color: 'var(--color-text)' },
+  Late: { background: 'var(--color-text)', color: 'var(--color-bg)' },
+}
 
 /** Enter the selected race (charges the entry fee) and go to the live screen. */
 function useFindRace() {
@@ -458,7 +466,7 @@ export function RaceResultsPage() {
   const drag = ev.id === 'drag'
   const best = result.rows[0].time
   const headline = won ? 'You won.' : result.place === 2 ? 'So close.' : 'Not this time.'
-  const cornersList: (CornerQuality | '—')[] = result.corners.length ? result.corners : ['—']
+  const cornersList: (ShiftQuality | '—')[] = result.corners.length ? result.corners : ['—']
   const perfect = result.corners.filter(q => q === 'Perfect').length
   const again = async () => {
     setBusy(true); setError('')
@@ -540,7 +548,7 @@ export function RaceResultsPage() {
           <span className="label">{drag ? 'Shifts' : 'Corners'}</span>
           <div style={{ display: 'flex', gap: 4 }}>
             {cornersList.map((q, i) => {
-              const style = q === 'Perfect' ? { background: 'var(--color-accent)', color: 'var(--color-bg)' } : q === 'Late' ? { background: 'var(--color-text)', color: 'var(--color-bg)' } : { background: 'var(--color-neutral-200)', color: 'var(--color-text)' }
+              const style = QUALITY_STYLE[q] ?? QUALITY_STYLE.Early
               return <span key={i} className="rs-shift" style={style}>{q}</span>
             })}
           </div>
