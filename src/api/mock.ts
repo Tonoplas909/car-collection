@@ -1,6 +1,6 @@
 import {
   CREDIT_BUNDLES, DUPLICATE_CREDITS, MAX_LEVEL, PACKS_BY_ID, RACE_EVENTS_BY_ID, SWAP_TTL_MS, XP_PER_LEVEL,
-  carLabel, getCar, rollPack, rollStarterPack, scoreCircuitRace, upgradeCost,
+  carLabel, getCar, rollPack, rollStarterPack, scoreRace, upgradeCost,
   type OwnedCar, type PackId, type PackRoll, type RaceEventId,
 } from '@game'
 import { DEMO_EMAIL, LB_PLAYERS, demoSnapshot, newPlayerSnapshot } from './seed'
@@ -338,7 +338,7 @@ export const mockApi: GameApi = {
       if (!race) throw new GameError('not_found', 'This race has already been scored.')
       delete db.races[raceId]
       const ev = RACE_EVENTS_BY_ID[race.eventId], car = getCar(race.carId)
-      const { rows, place, time, top, corners, splits, nitroUsed, rewards } = scoreCircuitRace({
+      const { rows, place, time, top, corners, splits, nitroUsed, rewards } = scoreRace({
         raceId, car, level: race.level, eventId: race.eventId, inputs, player: { name: `You · ${s.user.username}` },
       })
       s.user.credits += rewards.credits

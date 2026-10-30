@@ -1,19 +1,21 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import {
-  CARS_BY_ID, CircuitSim, DT, MAX_RACE_SECONDS, NITRO, RACE_EVENTS, RACE_EVENTS_BY_ID, RaceInputRecorder, TIER_RANK, TRACKS,
-  carNotes, cornerCue, cueAdvice, isCorner, nextCorner, opponentTraces, raceSpec,
+  CARS_BY_ID, CircuitSim, DT, MAX_RACE_SECONDS, NITRO, RACE_EVENTS, RACE_EVENTS_BY_ID, RaceInputRecorder, TIER_RANK,
+  carNotes, cornerCue, cueAdvice, isCorner, nextCorner, opponentTraces, raceSpec, trackFor,
   type Car, type CornerQuality, type Focus, type RaceEvent,
 } from '@game'
 import { GameError, topUpEnabled, type RaceResult } from '../api'
 import { Aside, Main, MobileHead } from '../components/Shell'
 import { CornerCue } from '../components/CornerCue'
+import { Hud } from '../components/Hud'
 import { RaceMap } from '../components/RaceMap'
 import { ConfirmDialog, EmptyState, ModelName, Photo, TIER_BAR } from '../components/ui'
 import { cr, num, seconds } from '../lib/format'
 import { useIsMobile, useWipeNavigate } from '../lib/hooks'
 import { animateRacePanel, sweep } from '../lib/motion'
 import { actions, getState, useApp, useSnapshot } from '../state/store'
+import { DragRace } from './DragRace'
 import './Race.css'
 
 const lenStr = (e: RaceEvent) => `${num(e.len)} m`
@@ -137,10 +139,10 @@ function RaceSetupDesktop() {
           <span className="mk">{car.make}</span>
           <span ref={title} className="model" style={{ fontSize: 40 }}>{car.model}</span>
         </div>
-        <div className="rc-map"><RaceMap track={TRACKS[ev.id]} size="sm" /></div>
+        <div className="rc-map"><RaceMap track={trackFor(ev.id)} size="sm" /></div>
         <div className="label" style={{ padding: '16px 24px 8px' }}>What counts</div>
         <div ref={opps} className="rc-opps">
-          {TRACKS[ev.id].focus.map(f => (
+          {trackFor(ev.id).focus.map(f => (
             <div key={f}><span style={{ fontWeight: 600 }}>{FOCUS[f][0]}</span><span className="muted" style={{ marginLeft: 'auto' }}>{FOCUS[f][1]}</span></div>
           ))}
         </div>
@@ -223,13 +225,14 @@ export function RaceLivePage() {
   const [entry] = useState(current)
   if (!entry || !snap) return <Navigate to="/race" replace />
   const owned = snap.garage.find(g => g.carId === entry.carId)
-  return <LiveRace key={entry.raceId} raceId={entry.raceId} car={CARS_BY_ID[entry.carId]} level={owned?.level ?? 0} ev={RACE_EVENTS_BY_ID[entry.eventId]} />
+  const live = { raceId: entry.raceId, car: CARS_BY_ID[entry.carId], level: owned?.level ?? 0, ev: RACE_EVENTS_BY_ID[entry.eventId] }
+  return entry.eventId === 'drag' ? <DragRace key={entry.raceId} {...live} /> : <LiveRace key={entry.raceId} {...live} />
 }
 
 function LiveRace({ raceId, car, level, ev }: { raceId: string; car: Car; level: number; ev: RaceEvent }) {
   const mobile = useIsMobile()
   const navigate = useWipeNavigate()
-  const track = TRACKS[ev.id]
+  const track = trackFor(ev.id)
   const [sim] = useState(() => new CircuitSim(raceSpec(car, level), track))
   const [rec] = useState(() => new RaceInputRecorder(sim))
   const traces = useMemo(() => opponentTraces(raceId, car, ev.id), [raceId, car, ev.id])
@@ -441,10 +444,6 @@ function LiveRace({ raceId, car, level, ev }: { raceId: string; car: Car; level:
   )
 }
 
-function Hud({ k, v }: { k: string; v: string }) {
-  return <div className="lv-hud"><span className="label">{k}</span><span className="lv-hud-v tnum">{v}</span></div>
-}
-
 /* ── Results (5c, 6i) ───────────────────────────────────────────────── */
 
 export function RaceResultsPage() {
@@ -456,6 +455,7 @@ export function RaceResultsPage() {
   if (!result) return <Navigate to="/race" replace />
   const ev = RACE_EVENTS_BY_ID[result.eventId]
   const won = result.place === 1
+  const drag = ev.id === 'drag'
   const best = result.rows[0].time
   const headline = won ? 'You won.' : result.place === 2 ? 'So close.' : 'Not this time.'
   const cornersList: (CornerQuality | '—')[] = result.corners.length ? result.corners : ['—']
@@ -523,8 +523,10 @@ export function RaceResultsPage() {
         <div className="split rs-stats">
           <div><span className="label">Your time</span><span className="tnum">{seconds(result.time)}</span></div>
           <div><span className="label">Top speed</span><span className="tnum">{Math.round(result.top * 3.6)} km/h</span></div>
-          <div><span className="label">Perfect corners</span><span className="tnum">{perfect} / {result.corners.length}</span></div>
-          <div><span className="label">Nitro used</span><span className="tnum">{result.nitroUsed} / {NITRO.charges}</span></div>
+          <div><span className="label">{drag ? 'Perfect shifts' : 'Perfect corners'}</span><span className="tnum">{perfect} / {result.corners.length}</span></div>
+          {drag
+            ? <div><span className="label">Gear reached</span><span className="tnum">{result.corners.length + 1}</span></div>
+            : <div><span className="label">Nitro used</span><span className="tnum">{result.nitroUsed} / {NITRO.charges}</span></div>}
         </div>
       </div>
       <aside className="rs-aside">
@@ -535,7 +537,7 @@ export function RaceResultsPage() {
           ))}
         </div>
         <div className="rs-shifts">
-          <span className="label">Corners</span>
+          <span className="label">{drag ? 'Shifts' : 'Corners'}</span>
           <div style={{ display: 'flex', gap: 4 }}>
             {cornersList.map((q, i) => {
               const style = q === 'Perfect' ? { background: 'var(--color-accent)', color: 'var(--color-bg)' } : q === 'Late' ? { background: 'var(--color-text)', color: 'var(--color-bg)' } : { background: 'var(--color-neutral-200)', color: 'var(--color-text)' }
@@ -543,12 +545,12 @@ export function RaceResultsPage() {
             })}
           </div>
         </div>
-        <div className="rs-shifts">
+        {result.splits.length > 0 && <div className="rs-shifts">
           <span className="label">Sector times</span>
           {result.splits.map((t, i) => (
             <div key={i} className="rs-reward" style={{ padding: '6px 0' }}><span style={{ fontSize: 14 }}>Sector {i + 1}</span><span className="tnum" style={{ fontSize: 16 }}>{seconds(t)}</span></div>
           ))}
-        </div>
+        </div>}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8, padding: '16px 24px 24px', marginTop: 'auto' }}>
           {error && <span className="err">{error}</span>}
           <button className="btn btn-primary rs-btn" onClick={again} disabled={busy}>{busy ? 'Entering…' : `Race again · ${cr(ev.fee)}`}</button>

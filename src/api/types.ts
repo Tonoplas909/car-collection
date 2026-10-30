@@ -123,8 +123,9 @@ export interface RaceResult {
   time: number
   /** m/s */
   top: number
+  /** The quality of each corner on a circuit, of each shift on the drag strip */
   corners: CornerQuality[]
-  /** Duration of each sector, seconds */
+  /** Duration of each sector, seconds. Empty on the drag strip. */
   splits: number[]
   nitroUsed: number
   rewards: RaceRewards

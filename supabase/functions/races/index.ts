@@ -1,6 +1,6 @@
 // Race results: the client only submits what the player did (brake and nitro steps). The server replays
 // the fixed-step simulation, drives the seeded opponents, ranks the field and applies the rewards.
-import { CARS_BY_ID, RACE_EVENTS_BY_ID, scoreCircuitRace, validRaceInputs, type RaceEventId } from '../_shared/game/index.ts'
+import { CARS_BY_ID, RACE_EVENTS_BY_ID, scoreRace, validRaceInputs, type RaceEventId } from '../_shared/game/index.ts'
 import { call, fail, json, serve } from '../_shared/http.ts'
 
 /** Allowance for the 3 s countdown, latency and clock skew when comparing against wall time. */
@@ -17,7 +17,7 @@ serve(async (body, { userId, asUser, admin }) => {
   const ev = RACE_EVENTS_BY_ID[race.event_id as RaceEventId]
   if (!car || !ev) return fail('not_found|Unknown car or event.', 404)
   const { data: profile } = await admin.from('profiles').select('username').eq('id', userId).single()
-  const scored = scoreCircuitRace({
+  const scored = scoreRace({
     raceId, car, level: race.level as number, eventId: ev.id, inputs,
     player: { name: `You · ${profile?.username ?? 'you'}` },
   })

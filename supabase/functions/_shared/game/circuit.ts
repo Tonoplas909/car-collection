@@ -26,6 +26,8 @@ export const TUNING = {
   brakeSoft: 0.3, brakeHard: 1.5,
   /** Autopilot: how far off the ideal braking distance one unit of `skill` puts it (a fraction of that distance) */
   aiError: 4,
+  /** Drag autopilot: how far off the middle of the shift window one unit of `skill` puts it (rev fraction) */
+  shiftError: 1.5,
   gravity: 9.81,
 }
 
@@ -34,6 +36,8 @@ export const MAX_RACE_SECONDS = 240
 export const MAX_STEPS = Math.round(MAX_RACE_SECONDS / DT)
 const MAX_BRAKE_EVENTS = 400
 const MAX_NITRO_EVENTS = NITRO.charges
+/** Drag: one shift per gear change, from 1st to 6th */
+const MAX_SHIFT_EVENTS = 5
 
 const clamp = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, n))
 
@@ -108,6 +112,8 @@ export interface RaceInputs {
   brake: number[]
   /** Steps at which nitro was fired */
   nitro: number[]
+  /** Drag only: the steps at which the player shifted up */
+  shift?: number[]
 }
 
 export interface CircuitState {
@@ -248,8 +254,8 @@ const stepsOk = (v: unknown, max: number): v is number[] =>
 
 export function validRaceInputs(v: unknown): v is RaceInputs {
   if (typeof v !== 'object' || v === null || Array.isArray(v)) return false
-  const { brake, nitro } = v as Record<string, unknown>
-  return stepsOk(brake, MAX_BRAKE_EVENTS) && stepsOk(nitro, MAX_NITRO_EVENTS)
+  const { brake, nitro, shift } = v as Record<string, unknown>
+  return stepsOk(brake, MAX_BRAKE_EVENTS) && stepsOk(nitro, MAX_NITRO_EVENTS) && (shift === undefined || stepsOk(shift, MAX_SHIFT_EVENTS))
 }
 
 /** Turns key and button events into the steps the server replays, driving the sim as it records. */

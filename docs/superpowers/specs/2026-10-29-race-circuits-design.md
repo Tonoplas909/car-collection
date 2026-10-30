@@ -1,6 +1,6 @@
 # Courses sur circuit — design
 
-Date : 2026-10-29. Statut : en attente de relecture.
+Date : 2026-10-29. Statut : validé et livré. Mis à jour le 2026-10-30 : le repère de virage et l'aide au freinage, puis le Drag redevenu une ligne droite avec passage de vitesses.
 
 ## Objectif
 
@@ -68,6 +68,9 @@ Les identifiants `drag`, `sprint` et `run` sont conservés (lignes déjà en bas
 | `run` | autoroute, grands virages rapides | vitesse de pointe |
 
 Frais, gains et points des trois épreuves existantes ne changent pas. `touge` : frais 700, gain 3 800, 160 points.
+
+### Drag : une ligne droite avec passage de vitesses (ajouté le 2026-10-30)
+Le Drag n'est pas un circuit : c'est un quart de mile (402 m) en ligne droite, sans virage ni frein, avec la boîte manuelle d'origine (`drag.ts`). 6 rapports ; le régime monte dans chaque rapport (`1,1 / rapport^0,85` par seconde) ; on passe la vitesse quand le régime entre dans la zone 82 à 97 % (espace ou bouton). Un passage dans la zone (« Perfect ») donne un boost de 0,7 s à ×1,3 d'accélération ; trop tôt ou trop tard, pas de boost ; à 100 % le limiteur coupe la puissance (×0,3). Les entrées sont la liste des pas où le joueur a passé une vitesse (`RaceInputs.shift`, au plus 5). Les adversaires sont les mêmes que sur circuit (3 voitures de la même rareté tirées de l'identifiant de course), pilotés par un passeur automatique dont le défaut de timing dépend de `skill`. Mesuré : le quart de mile dure 12,7 s pour la voiture médiane du catalogue (6 à 14 s pour la plupart) ; la voiture médiane de sa rareté gagne 2 à 3 courses sur 10 en passant parfaitement, un pilote approximatif presque aucune.
 
 ### Adversaires
 - Trois vraies voitures du catalogue, de même rareté que la voiture du joueur, tirées avec un générateur pseudo-aléatoire initialisé par l'identifiant de course (jamais `Math.random`).

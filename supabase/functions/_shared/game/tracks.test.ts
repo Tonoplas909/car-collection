@@ -1,11 +1,14 @@
 import { describe, expect, it } from 'vitest'
-import { TRACKS, isCorner, layoutTrack, nextCorner, pointAt, sectorIndexAt, sectorStarts, trackLength, type TrackId } from './tracks.ts'
+import { DRAG_TRACK, TRACKS, isCorner, layoutTrack, nextCorner, pointAt, sectorIndexAt, sectorStarts, trackLength, type TrackId } from './tracks.ts'
 
 const ids = Object.keys(TRACKS) as TrackId[]
 
 describe('circuits', () => {
-  it('has the four events', () => {
-    expect(ids.sort()).toEqual(['drag', 'run', 'sprint', 'touge'])
+  it('has the three circuits, and the drag strip apart', () => {
+    expect(ids.sort()).toEqual(['run', 'sprint', 'touge'])
+    expect(DRAG_TRACK.id).toBe('drag')
+    expect(trackLength(DRAG_TRACK)).toBe(402)
+    expect(DRAG_TRACK.sectors.some(isCorner)).toBe(false)
   })
 
   it('every circuit has 6 to 8 sectors and sane corner speeds', () => {
@@ -23,7 +26,7 @@ describe('circuits', () => {
   })
 
   it('declares what each circuit rewards', () => {
-    expect(TRACKS.drag.focus).toEqual(['accel'])
+    expect(DRAG_TRACK.focus).toEqual(['accel'])
     expect(TRACKS.touge.focus).toEqual(['grip'])
     expect(TRACKS.run.focus).toEqual(['top'])
     expect([...TRACKS.sprint.focus].sort()).toEqual(['accel', 'grip', 'top'])

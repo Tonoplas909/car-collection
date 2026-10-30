@@ -1,10 +1,11 @@
-// Scores a circuit race: replays the player's inputs, drives the seeded opponents with the autopilot and
-// ranks the field. Shared by the Edge Function and the local mock backend.
+// Scores a race, circuit or drag: replays the player's inputs, drives the seeded opponents with the autopilot
+// and ranks the field. Shared by the Edge Function and the local mock backend.
 import { carLabel } from './catalog.ts'
 import { MAX_RACE_SECONDS, NITRO, autoDrive, raceSpec, replayCircuit, type CornerQuality, type RaceInputs } from './circuit.ts'
+import { DRAG_LENGTH, autoShift, replayDrag } from './drag.ts'
 import { opponentsFor, seededRng } from './opponents.ts'
-import { DT, RACE_EVENTS_BY_ID, raceRewards, type RaceRewards, type RaceRow } from './race.ts'
-import { TRACKS, trackLength, type TrackId } from './tracks.ts'
+import { DT, RACE_EVENTS_BY_ID, raceRewards, type RaceEventId, type RaceRewards, type RaceRow } from './race.ts'
+import { TRACKS, trackLength } from './tracks.ts'
 import type { Car } from './types.ts'
 
 const label = (c: Car) => `${c.make} ${carLabel(c)}`
@@ -17,15 +18,19 @@ export interface OpponentTrace {
   distanceAt(t: number): number
 }
 
-/** Each opponent's whole run, driven by the autopilot with a generator seeded from the race and their handle. */
-export function opponentTraces(raceId: string, player: Car, trackId: TrackId): OpponentTrace[] {
-  const track = TRACKS[trackId]
-  const length = trackLength(track)
+/**
+ * Each opponent's whole run, driven by the autopilot (braking on circuits, shifting at the drag strip) with a
+ * generator seeded from the race and their handle.
+ */
+export function opponentTraces(raceId: string, player: Car, eventId: RaceEventId): OpponentTrace[] {
+  const length = eventId === 'drag' ? DRAG_LENGTH : trackLength(TRACKS[eventId])
   return opponentsFor(raceId, player).map(o => {
     const spec = raceSpec(o.car, 0)
-    const inputs = autoDrive(spec, track, seededRng(`${raceId}:${o.name}`), o.skill)
+    const rng = seededRng(`${raceId}:${o.name}`)
     const dist = [0]
-    const end = replayCircuit(spec, track, inputs, s => dist.push(s.d))
+    const end = eventId === 'drag'
+      ? replayDrag(spec, autoShift(spec, rng, o.skill), s => dist.push(s.d))
+      : replayCircuit(spec, TRACKS[eventId], autoDrive(spec, TRACKS[eventId], rng, o.skill), s => dist.push(s.d))
     return {
       name: o.name,
       car: label(o.car),
@@ -40,36 +45,47 @@ export function opponentTraces(raceId: string, player: Car, trackId: TrackId): O
   })
 }
 
-export interface ScoredCircuitRace {
+export interface ScoredRace {
   rows: RaceRow[]
   place: number
   time: number
   /** m/s */
   top: number
+  /** The quality of each corner on a circuit, of each shift at the drag strip */
   corners: CornerQuality[]
+  /** Duration of each sector, empty at the drag strip */
   splits: number[]
   nitroUsed: number
   rewards: RaceRewards
 }
 
-export function scoreCircuitRace(a: {
+export interface ScoreArgs {
   raceId: string
   car: Car
   level: number
-  eventId: TrackId
+  eventId: RaceEventId
   inputs: RaceInputs
   player: { name: string }
-}): ScoredCircuitRace {
-  const run = replayCircuit(raceSpec(a.car, a.level), TRACKS[a.eventId], a.inputs)
-  const time = run.finished ? run.finishTime : MAX_RACE_SECONDS
+}
+
+/** Rank the player's finish among the seeded opponents and work out the rewards. */
+function ranked(a: ScoreArgs, finished: boolean, finishTime: number, top: number, corners: CornerQuality[], splits: number[], nitroUsed: number): ScoredRace {
+  const time = finished ? finishTime : MAX_RACE_SECONDS
   const rows: RaceRow[] = [
     { name: a.player.name, car: label(a.car), time, me: true },
     ...opponentTraces(a.raceId, a.car, a.eventId).map(o => ({ name: o.name, car: o.car, time: o.finishTime, me: false })),
   ].sort((x, y) => x.time - y.time || Number(x.me) - Number(y.me))
   const place = rows.findIndex(r => r.me) + 1
-  return {
-    rows, place, time, top: run.top, corners: run.corners, splits: run.splits,
-    nitroUsed: NITRO.charges - run.nitroLeft,
-    rewards: raceRewards(RACE_EVENTS_BY_ID[a.eventId], place),
+  return { rows, place, time, top, corners, splits, nitroUsed, rewards: raceRewards(RACE_EVENTS_BY_ID[a.eventId], place) }
+}
+
+/** Score a submitted race: replay the player's inputs, rank them against the seeded opponents, work out the rewards. */
+export function scoreRace(a: ScoreArgs): ScoredRace {
+  const spec = raceSpec(a.car, a.level)
+  if (a.eventId === 'drag') {
+    const run = replayDrag(spec, a.inputs.shift ?? [])
+    return ranked(a, run.finished, run.finishTime, run.top, run.shifts, [], 0)
   }
+  const run = replayCircuit(spec, TRACKS[a.eventId], a.inputs)
+  return ranked(a, run.finished, run.finishTime, run.top, run.corners, run.splits, NITRO.charges - run.nitroLeft)
 }

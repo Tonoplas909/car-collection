@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest'
 import { RACE_EVENTS, RACE_EVENTS_BY_ID, raceRewards } from './race.ts'
-import { TRACKS, trackLength } from './tracks.ts'
+import { TRACKS, trackFor, trackLength } from './tracks.ts'
 
 describe('race events', () => {
-  it('has one event per circuit, sized from its circuit', () => {
-    expect(RACE_EVENTS.map(e => e.id).sort()).toEqual(Object.keys(TRACKS).sort())
-    for (const e of RACE_EVENTS) expect(e.len).toBe(trackLength(TRACKS[e.id]))
+  it('has one event per circuit plus the drag strip, sized from its track', () => {
+    expect(RACE_EVENTS.map(e => e.id).sort()).toEqual([...Object.keys(TRACKS), 'drag'].sort())
+    for (const e of RACE_EVENTS) expect(e.len).toBe(trackLength(trackFor(e.id)))
   })
 
   it('prices the mountain pass above the circuit', () => {

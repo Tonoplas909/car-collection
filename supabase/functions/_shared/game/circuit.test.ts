@@ -65,14 +65,15 @@ describe('circuit simulation', () => {
   it('brakes harder the later it is pressed, up to emergency braking', () => {
     // Braking assist: with a corner ahead the car slows to its speed by the corner, as hard as it needs to
     const lost = (dist: number) => {
-      const sim = new CircuitSim(r34, TRACKS.drag)
-      sim.s.d = 300 - dist
+      // the first corner of the circuit is at 320 m; its speed is below 50 m/s
+      const sim = new CircuitSim(r34, TRACKS.sprint)
+      sim.s.d = 320 - dist
       sim.s.v = 50
       sim.setBrake(true)
       for (let i = 0; i < 12; i++) sim.step()
       return { lost: 50 - sim.s.v, B: sim.notes.B }
     }
-    const early = lost(280), late = lost(40)
+    const early = lost(300), late = lost(10)
     expect(early.lost).toBeGreaterThan(0)
     expect(late.lost).toBeGreaterThan(early.lost)
     expect(late.lost).toBeCloseTo(TUNING.brakeHard * late.B * 0.1, 6)
@@ -139,7 +140,7 @@ describe('circuit simulation', () => {
   })
 
   it('a race held on the brake never finishes and stops at the cap with finite numbers', () => {
-    const s = replayCircuit(r34, TRACKS.drag, { brake: [0], nitro: [] })
+    const s = replayCircuit(r34, TRACKS.sprint, { brake: [0], nitro: [] })
     expect(s.finished).toBe(false)
     expect(Math.abs(s.t - MAX_RACE_SECONDS)).toBeLessThanOrEqual(DT)
     for (const n of [s.t, s.d, s.v, s.top, s.finishTime]) expect(Number.isFinite(n)).toBe(true)

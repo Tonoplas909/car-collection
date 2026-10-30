@@ -3,7 +3,7 @@ import { CARS_BY_ID, CATALOG } from './catalog.ts'
 import { MAX_RACE_SECONDS, autoDrive, raceSpec, replayCircuit } from './circuit.ts'
 import { OPPONENT_NAMES, opponentsFor, seededRng } from './opponents.ts'
 import { RACE_EVENTS_BY_ID, raceRewards } from './race.ts'
-import { opponentTraces, scoreCircuitRace } from './scoring.ts'
+import { opponentTraces, scoreRace } from './scoring.ts'
 import { TRACKS, type TrackId } from './tracks.ts'
 import { TIERS } from './types.ts'
 
@@ -74,7 +74,6 @@ describe('driving skill', () => {
 describe('the car matters', () => {
   it('trades places with the circuit', () => {
     // A light 118 hp roadster against a 1,479 hp hypercar
-    expect(drive('bugatti-chiron', 'drag')).toBeLessThan(drive('lotus-elise-s1', 'drag'))
     expect(drive('bugatti-chiron', 'run')).toBeLessThan(drive('lotus-elise-s1', 'run'))
     expect(drive('lotus-elise-s1', 'touge')).toBeLessThan(drive('bugatti-chiron', 'touge'))
     expect(drive('lotus-elise-s1', 'touge')).toBeLessThan(drive('tesla-model-s-plaid', 'touge'))
@@ -159,14 +158,14 @@ describe('car choice pays', () => {
   })
 })
 
-describe('scoreCircuitRace', () => {
+describe('scoreRace', () => {
   const car = CARS_BY_ID['toyota-supra-a80']
   const spec = raceSpec(car, 2)
   const args = (inputs: ReturnType<typeof autoDrive>) => ({ raceId: 'abc', car, level: 2, eventId: 'sprint' as TrackId, inputs, player: { name: 'You · tester' } })
   const inputs = autoDrive(spec, TRACKS.sprint, seededRng('p'), 0)
 
   it('ranks four drivers, rewards the place and is repeatable', () => {
-    const r = scoreCircuitRace(args(inputs))
+    const r = scoreRace(args(inputs))
     expect(r.rows).toHaveLength(4)
     expect(r.rows.filter(x => x.me)).toHaveLength(1)
     expect([...r.rows].sort((a, b) => a.time - b.time)).toEqual(r.rows)
@@ -174,11 +173,11 @@ describe('scoreCircuitRace', () => {
     expect(r.rewards).toEqual(raceRewards(RACE_EVENTS_BY_ID.sprint, r.place))
     expect(r.splits).toHaveLength(TRACKS.sprint.sectors.length)
     expect(r.nitroUsed).toBeGreaterThanOrEqual(1)
-    expect(scoreCircuitRace(args(inputs))).toEqual(r)
+    expect(scoreRace(args(inputs))).toEqual(r)
   })
 
   it('a race held on the brake comes last with finite numbers', () => {
-    const r = scoreCircuitRace(args({ brake: [0], nitro: [] }))
+    const r = scoreRace(args({ brake: [0], nitro: [] }))
     expect(r.place).toBe(4)
     expect(r.time).toBe(MAX_RACE_SECONDS)
     expect(Number.isFinite(r.top)).toBe(true)

@@ -1,7 +1,8 @@
 // Circuits for the races: a list of sectors per event. Corner sectors carry a reference corner speed
 // (`vRef`, m/s) that a car's grip scales; the simulation lives in circuit.ts.
 
-export type TrackId = 'drag' | 'sprint' | 'touge' | 'run'
+/** The circuits. Drag is a straight line driven by drag.ts, see DRAG_TRACK. */
+export type TrackId = 'sprint' | 'touge' | 'run'
 export type SectorKind = 'straight' | 'sweeper' | 'chicane' | 'hairpin' | 'climb'
 /** The car notes a circuit rewards. */
 export type Focus = 'accel' | 'grip' | 'top'
@@ -19,26 +20,12 @@ export interface Sector {
 }
 
 export interface Track {
-  id: TrackId
+  id: TrackId | 'drag'
   focus: Focus[]
   sectors: Sector[]
 }
 
 export const TRACKS: Record<TrackId, Track> = {
-  // Santa Pod: launches out of two hard stops.
-  drag: {
-    id: 'drag',
-    focus: ['accel'],
-    sectors: [
-      { kind: 'straight', len: 300, turn: 0 },
-      { kind: 'hairpin', len: 70, turn: 180, vRef: 15 },
-      { kind: 'straight', len: 280, turn: 0 },
-      { kind: 'chicane', len: 90, turn: -35, vRef: 24 },
-      { kind: 'straight', len: 320, turn: 0 },
-      { kind: 'hairpin', len: 80, turn: -170, vRef: 16 },
-      { kind: 'straight', len: 400, turn: 0 },
-    ],
-  },
   // Suzuka East: a bit of everything.
   sprint: {
     id: 'sprint',
@@ -83,6 +70,11 @@ export const TRACKS: Record<TrackId, Track> = {
     ],
   },
 }
+
+/** The quarter mile: one straight, no corners. Driven by drag.ts, not by the circuit simulation. */
+export const DRAG_TRACK: Track = { id: 'drag', focus: ['accel'], sectors: [{ kind: 'straight', len: 402, turn: 0 }] }
+
+export const trackFor = (id: TrackId | 'drag'): Track => (id === 'drag' ? DRAG_TRACK : TRACKS[id])
 
 export const trackLength = (t: Track) => t.sectors.reduce((a, s) => a + s.len, 0)
 
