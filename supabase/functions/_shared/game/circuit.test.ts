@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { CATALOG } from './catalog.ts'
 import {
-  CircuitSim, MAX_RACE_SECONDS, MAX_STEPS, NITRO, RaceInputRecorder, carNotes, cornerQuality, raceSpec, replayCircuit, validRaceInputs,
+  CircuitSim, MAX_RACE_SECONDS, MAX_STEPS, NITRO, RaceInputRecorder, TUNING, carNotes, cornerQuality, raceSpec, replayCircuit, validRaceInputs,
 } from './circuit.ts'
 import { DT } from './race.ts'
 import { TRACKS, isCorner, sectorStarts } from './tracks.ts'
@@ -62,13 +62,31 @@ describe('circuit simulation', () => {
     expect(server.corners).toHaveLength(track.sectors.filter(isCorner).length)
   })
 
-  it('braking sheds speed at the braking rate', () => {
-    const sim = new CircuitSim(r34, TRACKS.run)
+  it('brakes harder the later it is pressed, up to emergency braking', () => {
+    // Braking assist: with a corner ahead the car slows to its speed by the corner, as hard as it needs to
+    const lost = (dist: number) => {
+      const sim = new CircuitSim(r34, TRACKS.drag)
+      sim.s.d = 300 - dist
+      sim.s.v = 50
+      sim.setBrake(true)
+      for (let i = 0; i < 12; i++) sim.step()
+      return { lost: 50 - sim.s.v, B: sim.notes.B }
+    }
+    const early = lost(280), late = lost(40)
+    expect(early.lost).toBeGreaterThan(0)
+    expect(late.lost).toBeGreaterThan(early.lost)
+    expect(late.lost).toBeCloseTo(TUNING.brakeHard * late.B * 0.1, 6)
+  })
+
+  it('stops the car at the normal braking rate when no corner is left', () => {
+    const track = TRACKS.sprint // ends on a straight
+    const sim = new CircuitSim(r34, track)
+    sim.s.sector = track.sectors.length - 1
+    sim.s.d = sectorStarts(track)[track.sectors.length - 1] + 1
     sim.s.v = 50
     sim.setBrake(true)
     for (let i = 0; i < 120; i++) sim.step()
-    expect(sim.s.v).toBeLessThan(50 - 0.9 * sim.notes.B)
-    expect(sim.s.v).toBeGreaterThan(0)
+    expect(sim.s.v).toBeCloseTo(50 - sim.notes.B, 6)
   })
 
   it('scrubs off speed that is carried into a corner and flags it Late', () => {

@@ -2,12 +2,13 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, typ
 import { Link, Navigate } from 'react-router-dom'
 import {
   CARS_BY_ID, CircuitSim, DT, MAX_RACE_SECONDS, NITRO, RACE_EVENTS, RACE_EVENTS_BY_ID, RaceInputRecorder, TIER_RANK, TRACKS,
-  carNotes, isCorner, nextCorner, opponentTraces, raceSpec,
+  carNotes, cornerCue, cueAdvice, isCorner, nextCorner, opponentTraces, raceSpec,
   type Car, type CornerQuality, type Focus, type RaceEvent,
 } from '@game'
 import { GameError, topUpEnabled, type RaceResult } from '../api'
 import { Aside, Main, MobileHead } from '../components/Shell'
-import { ApproachStrip, RaceMap } from '../components/RaceMap'
+import { CornerCue } from '../components/CornerCue'
+import { RaceMap } from '../components/RaceMap'
 import { ConfirmDialog, EmptyState, ModelName, Photo, TIER_BAR } from '../components/ui'
 import { cr, num, seconds } from '../lib/format'
 import { useIsMobile, useWipeNavigate } from '../lib/hooks'
@@ -316,16 +317,20 @@ function LiveRace({ raceId, car, level, ev }: { raceId: string; car: Car; level:
   const hud = { pos: phase === 'idle' || phase === 'count' ? '—' : `${result?.place ?? pos} / 4`, time: seconds(tNow), sector: `${view.sector + 1} / ${track.sectors.length}` }
 
   const here = track.sectors[view.sector]
-  const ahead = phase === 'race' && view.slide <= 0 ? nextCorner(track, view.sector, view.d) : null
+  const ahead = phase === 'race' ? nextCorner(track, view.sector, view.d) : null
   const next = ahead ? track.sectors[ahead.index] : null
+  const cue = ahead && next ? cornerCue(sim.notes, next, view.v, ahead.dist) : null
   const approach = {
     label: next ? SECTOR_NAME[next.kind] : '',
     dist: ahead ? ahead.dist : null,
-    target: next ? next.vRef! * sim.notes.G : 0,
     v: view.v,
+    cue,
+    advice: cueAdvice(cue, view.v, view.braking, isCorner(here)),
+    braking: view.braking,
+    slide: phase === 'race' && view.slide > 0,
     note: phase !== 'race' ? ' '
-      : view.slide > 0 ? 'Sliding: you carried too much speed into the corner.'
-      : isCorner(here) ? `${SECTOR_NAME[here.kind]} · target ${kmh(here.vRef! * sim.notes.G)} km/h`
+      : view.slide > 0 ? 'You carried too much speed into the corner.'
+      : isCorner(here) ? `${SECTOR_NAME[here.kind]}: hold on, the road opens up soon.`
       : 'Last straight. Use any nitro you have left.',
   }
   const stage = (
@@ -385,7 +390,7 @@ function LiveRace({ raceId, car, level, ev }: { raceId: string; car: Car; level:
         </div>
         {phase === 'idle' || phase === 'done'
           ? <div style={{ padding: '8px 16px 12px', flex: 'none' }}><span className="muted" style={{ fontSize: 12 }}>{overlay?.sub}</span></div>
-          : <ApproachStrip {...approach} />}
+          : <CornerCue {...approach} />}
         <div style={{ padding: '0 16px calc(16px + env(safe-area-inset-bottom))', flex: 'none' }}>
           {playing ? controls('lv-controls-m')
             : <button className="lv-shift-m" onClick={onOverlay} disabled={!overlay?.btn}>{overlay?.btn ?? overlay?.big}</button>}
@@ -413,7 +418,7 @@ function LiveRace({ raceId, car, level, ev }: { raceId: string; car: Car; level:
           </div>
         )}
       </div>
-      <ApproachStrip {...approach} />
+      <CornerCue {...approach} />
       <div className="lv-bottom">
         <div className="lv-gauge"><span className="label">Speed</span><span className="lv-big tnum">{kmh(view.v)}</span><span className="lv-unit">km/h</span></div>
         <div className="lv-gauge"><span className="label">Gear</span><span className="lv-big">{gear}</span><span className="lv-unit">automatic</span></div>

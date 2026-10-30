@@ -1,6 +1,7 @@
 /* App-level styles on top of ds.css (the design-system source of truth, copied as-is). */
 
 :root {
+  --cue-ok: #1f9d55;
   --ease: cubic-bezier(.76, 0, .24, 1);
   --ease-out: cubic-bezier(.2, .8, .2, 1);
   --stripes: repeating-linear-gradient(135deg, var(--color-surface) 0 8px, var(--color-neutral-300) 8px 16px);

@@ -1,7 +1,7 @@
 // Circuit race simulation. The client runs it live with `CircuitSim`; the server rebuilds the same run
 // with `replayCircuit` from the brake and nitro steps the player submitted. Fixed step, no randomness.
 import { DT, type RaceCarSpec } from './race.ts'
-import { isCorner, trackLength, sectorStarts, type Track } from './tracks.ts'
+import { isCorner, trackLength, sectorStarts, type Sector, type Track } from './tracks.ts'
 import type { Car, Rng } from './types.ts'
 
 /** Every balance constant of the race model, in one place. */
@@ -19,8 +19,13 @@ export const TUNING = {
    * it, braking late would be free.
    */
   slide: 2.5, slideFloor: 0.2, slideSeconds: 1.5, slideSpan: 0.5, slideMaxSeconds: 6,
-  /** Autopilot: aims at this share of the corner speed (inside the Perfect window), off by up to `skill · aiError` */
-  aiTarget: 1.045, aiError: 4,
+  /**
+   * Braking assist: with the brake held and a corner ahead, the car slows to the corner speed by the corner, braking
+   * as hard as needed, between brakeSoft × B (pressed very early) and brakeHard × B (pressed late). Past that it slides.
+   */
+  brakeSoft: 0.3, brakeHard: 1.5,
+  /** Autopilot: how far off the ideal braking distance one unit of `skill` puts it (a fraction of that distance) */
+  aiError: 4,
   gravity: 9.81,
 }
 
@@ -60,8 +65,42 @@ export const raceSpec = (car: Car, level: number): RaceCarSpec => ({ hp: car.hp,
 
 export type CornerQuality = 'Early' | 'Perfect' | 'Late'
 
+/** Entry speed over the corner speed: the Perfect band, and the speed the corner cue aims for inside it. */
+export const ENTRY_WINDOW = { low: 0.93, aim: 1, high: 1.05 }
+
 /** `r` is the speed at corner entry over the corner speed. */
-export const cornerQuality = (r: number): CornerQuality => (r < 0.93 ? 'Early' : r <= 1.05 ? 'Perfect' : 'Late')
+export const cornerQuality = (r: number): CornerQuality => (r < ENTRY_WINDOW.low ? 'Early' : r <= ENTRY_WINDOW.high ? 'Perfect' : 'Late')
+
+/** What the screen shows for the next corner: the green zone and when to start braking. Speeds in m/s. */
+export interface CornerCue {
+  low: number
+  aim: number
+  high: number
+  /** Metres until the braking point for the current speed; 0 or less means brake now. */
+  toBrake: number
+}
+
+export function cornerCue(notes: CarNotes, corner: Sector, v: number, dist: number): CornerCue {
+  const vc = corner.vRef! * notes.G
+  const aim = vc * ENTRY_WINDOW.aim
+  return { low: vc * ENTRY_WINDOW.low, aim, high: vc * ENTRY_WINDOW.high, toBrake: dist - (v > aim ? (v * v - aim * aim) / (2 * notes.B) : 0) }
+}
+
+export type CueAdvice = 'go' | 'brake' | 'release'
+
+/** Braking this far before the braking point, already down to the corner speed, is just slow: let go and go again. */
+const EARLY_BRAKE_M = 60
+
+/**
+ * Brake from the braking point until the corner starts (the assist holds the corner speed), then let go.
+ * `cue` is for the next corner ahead, null when there is none; `inCorner` says the car is in a corner now.
+ */
+export function cueAdvice(cue: CornerCue | null, v: number, braking: boolean, inCorner: boolean): CueAdvice {
+  if (!cue) return braking ? 'release' : 'go'
+  if (v > cue.aim && cue.toBrake <= 0) return 'brake'
+  if (braking && !inCorner) return v <= cue.aim && cue.toBrake > EARLY_BRAKE_M ? 'release' : 'brake'
+  return braking ? 'release' : 'go'
+}
 
 /** What the player did: steps (not seconds) so the server can replay it exactly. */
 export interface RaceInputs {
@@ -97,6 +136,8 @@ export class CircuitSim {
   readonly length: number
   s: CircuitState
   private starts: number[]
+  /** For each sector, the corner that comes next after it (-1 when none): what the braking assist holds the speed at. */
+  private cornerAfter: number[]
   private sectorStartT = 0
 
   constructor(spec: RaceCarSpec, track: Track) {
@@ -104,6 +145,7 @@ export class CircuitSim {
     this.track = track
     this.length = trackLength(track)
     this.starts = sectorStarts(track)
+    this.cornerAfter = track.sectors.map((_, i) => track.sectors.findIndex((x, j) => j > i && isCorner(x)))
     this.s = {
       step: 0, t: 0, d: 0, v: 0, sector: 0, braking: false, nitroLeft: NITRO.charges, nitroT: 0, slide: 0, top: 0,
       corners: [], splits: [], finished: false, finishTime: 0,
@@ -120,8 +162,8 @@ export class CircuitSim {
     const q = cornerQuality(r)
     // Corners that follow each other leave no room to speed up, so entering slowly is not a mistake there.
     this.s.corners.push(joined && q === 'Early' ? 'Perfect' : q)
-    if (r > 1.05) {
-      const x = r - 1.05
+    if (r > ENTRY_WINDOW.high) {
+      const x = r - ENTRY_WINDOW.high
       this.s.v = vc * Math.max(TUNING.slideFloor, 1 - TUNING.slide * x)
       this.s.slide = Math.min(TUNING.slideMaxSeconds, (TUNING.slideSeconds * x) / TUNING.slideSpan)
     }
@@ -138,7 +180,18 @@ export class CircuitSim {
     const boosted = s.nitroT > 0 && !s.braking
     const vc = isCorner(sec) ? sec.vRef! * G : Infinity
     if (s.braking) {
-      s.v -= B * DT
+      const next = this.cornerAfter[s.sector]
+      if (next < 0) {
+        s.v -= B * DT
+      } else {
+        // Braking assist: slow to the speed of the next corner by the time it starts, and hold it, never below
+        const aim = this.track.sectors[next].vRef! * G * ENTRY_WINDOW.aim
+        if (s.v > aim) {
+          const dist = this.starts[next] - s.d
+          const need = dist > 0.5 ? (s.v * s.v - aim * aim) / (2 * dist) : Infinity
+          s.v = Math.max(s.v - Math.min(Math.max(need, TUNING.brakeSoft * B), TUNING.brakeHard * B) * DT, aim)
+        }
+      }
     } else if (s.slide <= 0) {
       const a = A * (boosted ? NITRO.accel : 1) * Math.max(0, 1 - s.v / (vmax * (boosted ? NITRO.vmax : 1))) - TUNING.gravity * (sec.grade ?? 0)
       s.v = Math.min(s.v + a * DT, Math.max(s.v, vc))
@@ -234,8 +287,9 @@ export class RaceInputRecorder {
 }
 
 /**
- * Autopilot: the opponents' driver and the ideal line for tests and tuning. Per corner it picks a target
- * entry speed off by up to `skill` (a fraction), brakes to reach it, and fires nitro on long sections.
+ * Autopilot: the opponents' driver and the ideal line for tests and tuning. It presses the brake where the car can
+ * still just reach the corner speed (brakeHard) and holds it until the corner starts. Per corner it is off by up
+ * to `skill` (a fraction of the braking distance, early or late), and it fires nitro on long sections.
  */
 export function autoDrive(spec: RaceCarSpec, track: Track, rng: Rng, skill: number): RaceInputs {
   const sim = new CircuitSim(spec, track)
@@ -243,14 +297,19 @@ export function autoDrive(spec: RaceCarSpec, track: Track, rng: Rng, skill: numb
   const starts = sectorStarts(track)
   const { sectors } = track
   const { G, B } = sim.notes
-  const entry = sectors.map(s => (isCorner(s) ? s.vRef! * G * TUNING.aiTarget * (1 + (rng() * 2 - 1) * skill * TUNING.aiError) : 0))
+  const err = sectors.map(s => (isCorner(s) ? (rng() * 2 - 1) * skill * TUNING.aiError : 0))
+  let holding = -1
   let boosted = -1
   while (!sim.s.finished && sim.s.step < MAX_STEPS) {
     const { sector, v, d } = sim.s
-    let j = sector + 1
-    while (j < sectors.length && !isCorner(sectors[j])) j++
-    if (j < sectors.length && v > entry[j] && starts[j] - d <= (v * v - entry[j] * entry[j]) / (2 * B)) rec.press()
-    else rec.release()
+    const j = sectors.findIndex((x, i) => i > sector && isCorner(x))
+    if (holding >= 0 && sector >= holding) holding = -1
+    if (j >= 0 && holding < 0) {
+      const aim = sectors[j].vRef! * G * ENTRY_WINDOW.aim
+      const needed = v > aim ? (v * v - aim * aim) / (2 * B * TUNING.brakeHard) : 0
+      if (v > aim && starts[j] - d <= needed * Math.max(0, 1 + err[j])) holding = j
+    }
+    if (holding >= 0) rec.press(); else rec.release()
     if (!isCorner(sectors[sector]) && sectors[sector].len >= 150 && boosted !== sector) { boosted = sector; rec.nitro() }
     sim.step()
   }

@@ -41,7 +41,7 @@ Le freinage `B` (m/s²) vaut `8 + 4·G`. Les constantes vivent dans une table un
 Pas fixe `DT = 1/120 s`, comme aujourd'hui. À chaque pas :
 1. Le secteur courant se déduit de la distance parcourue.
 2. Sans frein : `v += A · (1 − v/vmax) · DT`. Pendant un nitro : `A ×1,5`, `vmax ×1,04`.
-3. Frein maintenu : plus d'accélération, `v −= B · DT`.
+3. Frein maintenu : plus d'accélération. Sans virage devant, `v −= B · DT`. Avec un virage devant, **aide au freinage** : la voiture ralentit pour arriver à la vitesse du virage (`vc`) au moment d'y entrer, avec la décélération qu'il faut, entre 0,3 × B (freinage très tôt) et 1,5 × B (freinage tard), puis tient cette vitesse sans descendre dessous. Si même 1,5 × B ne suffit pas, c'est la glissade (règle 4). Sans cette aide, freiner à la bonne seconde près pour une épingle prise à 300 km/h demande une précision de 0,02 s, que personne ne peut tenir.
 4. Dans un virage de vitesse cible `vc = vRef · G` : si `v > vc`, la voiture glisse, `v −= 6 · (v − vc) · DT` ; l'accélération est plafonnée à `vc`.
    Au-dessus de 1,05 × la vitesse du virage à l'entrée, la voiture part en glissade : sa vitesse tombe à `vc · max(0,2 ; 1 − 2,5 · (r − 1,05))` et elle ne peut plus accélérer pendant 1,5 s par 0,5 d'excès (6 s au plus). Sans cette règle, freiner tard serait gratuit, parce que le frottement ci-dessus absorbe l'excès en une fraction de seconde.
 5. La distance avance de `v · DT`. La course finit à la ligne, avec interpolation du temps comme aujourd'hui.
@@ -101,7 +101,7 @@ Frais, gains et points des trois épreuves existantes ne changent pas. `touge` :
 
 ### Interface (`src/screens/Race.tsx`, `Race.css`)
 - **Préparation** : le panneau de droite remplace la liste fixe d'adversaires par le tracé du circuit (SVG), la liste des secteurs et les notes que l'épreuve valorise. La sélection de voiture, les animations de balayage et le test de timeout restent.
-- **Course** : une carte SVG du circuit avec 4 points qui avancent (le joueur en rouge), construite en « tortue » à partir des angles des secteurs. En dessous, une bande d'approche affiche la distance au prochain virage avec des panneaux à 100, 50 et 25 m, la vitesse cible et la vitesse actuelle. En haut : position, temps, secteur n/N, charges de nitro. Deux boutons à l'écran, un grand Frein (maintenu) et un Nitro, utilisés surtout sur mobile (`touch-action: none`, `pointerdown`/`pointerup`).
+- **Course** : une carte SVG du circuit avec 4 points qui avancent (le joueur en rouge), construite en « tortue » à partir des angles des secteurs, et le classement. Sous la carte, le **repère de virage** : une barre de route sur les 250 m devant, avec un drapeau « BRAKE » à l'endroit où commencer à freiner (freinage normal, il reste de la marge jusqu'à 1,5 × B) ; une jauge de vitesse avec une zone verte (la vitesse à avoir à l'entrée du virage) et une aiguille ; et un mot d'ordre en gros : GO, BRAKE!, RELEASE! ou SLIDING. On freine quand le drapeau arrive, on garde le frein jusqu'au virage, on relâche dans le virage. Deux boutons à l'écran, un grand Frein (maintenu) et un Nitro, utilisés surtout sur mobile (`touch-action: none`, `pointerdown`/`pointerup`).
 - **Résultats** : classement identique, plus les temps par secteur et la bande de qualité des virages.
 - Le texte « Ready » explique les deux commandes avant le départ.
 
