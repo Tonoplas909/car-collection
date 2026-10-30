@@ -23,7 +23,7 @@
 .ob-taste-cap { position: absolute; left: 0; bottom: 0; max-width: 100%; box-sizing: border-box; padding: 6px 12px; display: flex; flex-direction: column; background: rgb(32 30 29 / .72); color: #fff; font-size: 12px; line-height: 1.3; }
 .ob-taste-cap > span { font-size: 9px; opacity: .75; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .ob-taste.on .ob-taste-photos::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: var(--color-accent); }
-@media (prefers-reduced-motion: reduce) { .ob-taste-photos > img { transition: none; } }
+html[data-reduce-motion] .ob-taste-photos > img { transition: none; }
 .split > .ob-taste:hover { background: var(--color-surface); }
 .split > .ob-taste.on { background: var(--color-text); color: var(--color-bg); }
 .ob-taste-name { font-weight: 800; font-size: 36px; line-height: 1; }

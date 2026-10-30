@@ -54,10 +54,7 @@ html { scroll-behavior: smooth; }
   background: #201e1d; border-right: 12px solid #ec3013; transform: translateX(-101%);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .list-row, .rise-in { animation: none; }
-  html { scroll-behavior: auto; }
-}
+/* Motion is switched off by the Reduce motion setting only (see lib/motion.ts), not by the system flag. */
 html[data-reduce-motion] .list-row, html[data-reduce-motion] .rise-in { animation: none; }
 html[data-reduce-motion] * { transition-duration: 0s !important; }
 

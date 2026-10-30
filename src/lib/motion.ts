@@ -3,9 +3,18 @@
 export const EASE = 'cubic-bezier(.76,0,.24,1)'
 export const OUT = 'cubic-bezier(.2,.8,.2,1)'
 
-/** True when the OS asks for reduced motion or the player turned motion off in Settings. */
+/**
+ * True when the player turned motion off in Settings. The system's "reduce motion" flag is deliberately not used here:
+ * Windows reports it on PCs set to "best performance", over remote sessions and in some power modes, without the owner
+ * ever choosing it, and the game then lost half its animations with no way to bring them back.
+ */
 export function reduced() {
-  return matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.dataset.reduceMotion === 'true'
+  return document.documentElement.dataset.reduceMotion === 'true'
+}
+
+/** Whether the system asks for reduced motion. Settings says so; the animations do not follow it by themselves. */
+export function systemPrefersReducedMotion() {
+  return matchMedia('(prefers-reduced-motion: reduce)').matches
 }
 
 function run(el: Element | null | undefined, kf: Keyframe[], o: KeyframeAnimationOptions) {

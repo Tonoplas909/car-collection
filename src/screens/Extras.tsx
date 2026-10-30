@@ -6,6 +6,7 @@ import { Aside, Main, MobileHead } from '../components/Shell'
 import { ConfirmDialog, Photo } from '../components/ui'
 import { cr, euro, num, remaining } from '../lib/format'
 import { useIsMobile, useNow, useWipeNavigate } from '../lib/hooks'
+import { systemPrefersReducedMotion } from '../lib/motion'
 import { actions, useSnapshot } from '../state/store'
 import './Extras.css'
 
@@ -101,6 +102,9 @@ export function SettingsPage() {
         {rule}
         <span className="st-h">Preferences</span>
         {toggles(PREFS)}
+        {systemPrefersReducedMotion() && !prefs.reduceMotion && (
+          <p className="muted st-note">Your system asks for reduced motion. The animations stay on here unless you turn Reduce motion on.</p>
+        )}
       </>
     ),
     notifications: (
